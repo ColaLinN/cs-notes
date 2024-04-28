@@ -10,7 +10,7 @@ const SKILLS: IconProps[] = [
     style: { left: '4%', top: '5%' },
   },
   {
-    icon: 'logos:vercel',
+    icon: 'logos:vercel-icon',
     style: { right: '2%', top: '11%' },
   },
   {
@@ -19,7 +19,7 @@ const SKILLS: IconProps[] = [
   },
 
   {
-    icon: 'logos:typescript',
+    icon: 'logos:java',
     style: { top: '5%', left: '54%' },
   },
   {
@@ -27,11 +27,11 @@ const SKILLS: IconProps[] = [
     style: { top: '9%', left: '60%' },
   },
   {
-    icon: "logos:github",
+    icon: "logos:github-icon",
     style: { top: '14%', left: '30%' },
   },
   {
-    icon: 'logos:openai',
+    icon: 'logos:openai-icon',
     style: { top: '19%', left: '38%' },
   },
   {

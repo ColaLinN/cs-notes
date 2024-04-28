@@ -18,7 +18,7 @@ const config: Config = {
   // organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -37,15 +37,13 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -97,16 +95,15 @@ const config: Config = {
           items: [
             {
               label: "Tech Videos",
-              to: "docs/tech-videos/",
+              to: "docs/intro",
             },
             {
               label: "CS Stack",
-              to: "docs/cs-stack/",
+              to: "docs/intro",
             },
             {
               label: "About",
-              // position: "right",
-              to: "docs/about/",
+              to: "docs/intro",
             },
           ],
         },
@@ -126,7 +123,7 @@ const config: Config = {
           items: [
             {
               label: 'Distribution Systems',
-              to: '/docs/distributed-systems/intro',
+              to: '/docs/distributed-systems/overview',
             },
             {
               label: 'Leetcode',
