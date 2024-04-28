@@ -93,9 +93,9 @@ function Name() {
           e.currentTarget.style.setProperty('--mouse-y', `${bounding.y}px`)
         }}
       >
-        <Translate id="homepage.hero.name">Fenglyu's Docs Site</Translate>
+        <Translate id="homepage.hero.name">Fenglyu's Doc</Translate>
       </span>
-      <span className={styles.wave}> 👋</span>
+      <span className={styles.wave}> 🥳 💿</span>
     </motion.div>
   )
 }
@@ -105,11 +105,11 @@ export default function Hero() {
     <motion.div className={styles.hero}>
       <div className={styles.intro}>
         <Name />
-        <motion.p custom={2} initial="hidden" animate="visible" variants={variants}>
+        <motion.div className={styles.hero_desc} custom={2} initial="hidden" animate="visible" variants={variants}>
           <Translate id="homepage.hero.text">
-            {`I will share what I have learned and what I am interested in here.`}
+            {`I share my knowledge and interests here.`}
           </Translate>
-        </motion.p>
+        </motion.div>
         <motion.div custom={3} initial="hidden" animate="visible" variants={variants}>
           {/* <SocialLinks /> */}
         </motion.div>

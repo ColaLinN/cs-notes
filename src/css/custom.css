@@ -4,9 +4,25 @@
  * work well for content-centric websites.
  */
 
+/* navbar */
+.navbar {
+  box-shadow: none;
+}
+
+.navbar__title {
+  margin-left: 12px;
+  color: var(--ifm-color-primary);
+}
+
+.navbar__logo {
+  flex: 0 0 auto;
+  height: 2rem;
+  margin-right: .5rem
+}
+
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
+  --ifm-color-primary: #008cff;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;

@@ -3,7 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Fenglyu Docs Site',
+  title: 'Fenglyu Doc Site',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
@@ -63,12 +63,15 @@ const config: Config = {
       // backgroundColor: "#fafbfc", // Defaults to `#fff`.
       // textColor: "#091E42", // Defaults to `#000`.
     // },
+    // hideableSidebar: true,
     navbar: {
-      title: 'Fenglyu Docs Site',
+      title: 'Fenglyu Doc Site',
       logo: {
-        alt: 'Fenglyu Docs Site Logo',
+        alt: 'Fenglyu Doc Site Logo',
+        // src: 'https://avatars.githubusercontent.com/u/41199987?v=4',
         src: 'img/logo.svg',
       },
+      
       items: [
         // {
         //   type: 'docSidebar',
@@ -79,31 +82,31 @@ const config: Config = {
         {
           type: 'doc',
           docId: 'distributed-systems/intro',
-          position: 'left',
+          position: 'right',
           label: 'Distributed Systems', // the name
          },
         {
           type: 'doc',
           docId: 'leetcode/intro',
-          position: 'left',
+          position: 'right',
           label: 'Leetcode',
          },
          {
           label: "Others",
-          position: "left",
+          position: "right",
           items: [
             {
-              label: "技术视频",
-              to: "docs/videos/",
+              label: "Tech Videos",
+              to: "docs/tech-videos/",
             },
             {
-              label: "CSS 完全指南",
-              to: "docs/css/css-tutorial-intro",
+              label: "CS Stack",
+              to: "docs/cs-stack/",
             },
             {
-              label: "资源导航",
+              label: "About",
               // position: "right",
-              to: "docs/resources/",
+              to: "docs/about/",
             },
           ],
         },
@@ -122,8 +125,12 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'Distribution Systems',
+              to: '/docs/distributed-systems/intro',
+            },
+            {
+              label: 'Leetcode',
+              to: '/docs/leetcode/intro',
             },
           ],
         },
@@ -155,10 +162,17 @@ const config: Config = {
               label: 'GitHub',
               href: 'https://github.com/ColaLinN/fenglyu-docs-site-v1',
             },
+            {
+              html: `
+                <a href="https://docusaurus.io/zh-CN/" target="_blank" rel="noreferrer noopener">
+                  <img src="/img/buildwith.png" alt="build with docusaurus" width="120" height="50"/>
+                <a/>
+                `,
+            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Fenglyu. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Fenglyu`,
     },
     prism: {
       theme: prismThemes.github,
