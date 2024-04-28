@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import Hero from '@site/src/components/Hero';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
@@ -34,7 +35,8 @@ export default function Home(): JSX.Element {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
+      <Hero />
+      {/* <HomepageHeader /> */}
       <main>
         <HomepageFeatures />
       </main>
