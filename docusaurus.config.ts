@@ -95,14 +95,14 @@ const config: Config = {
           items: [
             {
               label: "Tech Videos",
-              to: "docs/intro",
+              to: "/videos",
             },
             {
               label: "CS Stack",
-              to: "docs/intro",
+              to: "/cs-stack", 
             },
             {
-              label: "About",
+              label: "All",
               to: "docs/intro",
             },
           ],
