@@ -3,9 +3,10 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Fenglyu Doc Site',
+  title: 'Fenglyu\'s Doc',
   tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  // favicon: 'img/favicon.ico',
+  favicon: 'img/fenglyu-v1.jpg',
 
   // Set the production url of your site here
   url: 'https://docs.fenglyulin.com',
@@ -55,6 +56,7 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
+    // image: 'img/fenglyu-v1.jpg',
     // announcementBar: {
       // id: "feature_release", // Any value that will identify this message.
       // content: `更新<a href='/docs/videos/browser/js-web-animations-api'>《与 CSS Keyframes 媲美的原生 JS 高性能动画 API 教程》配套文本</a>`,
@@ -63,11 +65,12 @@ const config: Config = {
     // },
     // hideableSidebar: true,
     navbar: {
-      title: 'Fenglyu Doc Site',
+      title: 'Fenglyu\'s Doc',
       logo: {
-        alt: 'Fenglyu Doc Site Logo',
+        alt: 'Fenglyu\'s Doc Logo',
         // src: 'https://avatars.githubusercontent.com/u/41199987?v=4',
-        src: 'img/logo.svg',
+        // src: 'img/logo.svg',
+        src: 'img/fenglyu-v1.jpg',
       },
       
       items: [
@@ -107,7 +110,10 @@ const config: Config = {
             },
           ],
         },
-        {to: '/blog', label: 'Blog', position: 'right'},
+        {
+          // to: '/blog', 
+          href: 'https://fenglyulin.com/',
+          label: 'Blog', position: 'right'},
         {
           href: 'https://github.com/ColaLinN/fenglyu-docs-site-v1',
           label: 'GitHub',
@@ -161,7 +167,7 @@ const config: Config = {
             },
             {
               html: `
-                <a href="https://docusaurus.io/zh-CN/" target="_blank" rel="noreferrer noopener">
+                <a href="https://docusaurus.io/" target="_blank" rel="noreferrer noopener">
                   <img src="/img/buildwith.png" alt="build with docusaurus" width="120" height="50"/>
                 <a/>
                 `,
