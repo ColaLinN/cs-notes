@@ -1,6 +1,6 @@
 ---
 slug: overview
-title: DS Overview
+title: Why Distributed Systems?
 # id: the-overview-of-distributed-systems
 # hide_title: false
 hide_table_of_contents: false
@@ -14,46 +14,44 @@ tags:
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+##  Why Distributed Systems?
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Dsitributed System has been used broadly in real life. For example, Google, Amazon, Tiktok, etc. 
 
-## Getting Started
+**The Challenges/Ability of Distributed System**
 
-Get started by **creating a new site**.
+1. Failure Tolerance
+2. Managing Distributed State
+3. Scalability
+4. Architecture and Design
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## Thought Experiement: Two General Problem
 
-### What you'll need
+1. It is impossible to reach a final agreement.
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+2. But we can solve it by bypassing some assumptions and allow trade-offs.
 
-## Generate a new site
+## RPC(Remote Procedure Call) Semantics
 
-Generate a new Docusaurus site using the **classic template**.
+Purpose: We need to define the message protocol which hides the complexity of the communicates
 
-The classic template will automatically be added to your project after you run the command:
+Three Semantics
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+1. At-least-once
+   1. It is useful when the operation is Idempotent
+2. At-most-once
+   1. When should we discard the old RPC?
+      1. Three Choices:
+         1. Option1: Never
+         2. Option2: 
+         3. Option3: Only allow one outstanding request at a time, server discards the request <= Seq+1
+3. Exactly-once
+   1. Real-world case: launch a missile, need to ensure the command is sent exactly once so that the boom will not be triggered twice
+   1. it's not possible because the server can crash, either
+      1. the server crashed before the execution arrived
+      2. the server crashes after the execution arrives
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
 
-The command also installs all necessary dependencies you need to run Docusaurus.
 
-## Start your site
 
-Run the development server:
 
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
