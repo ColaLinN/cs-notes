@@ -1,0 +1,97 @@
+
+
+
+
+857 [Minimum Cost to Hire K Workers](https://leetcode.cn/problems/minimum-cost-to-hire-k-workers/)
+
+Solutions:
+
+1. After determined the wage based on a worker, we can find the other workers who satisfy the rule 1&2: the wage must be in the ratio of wage compared to other workers, also should larger than the minimum wage of the worker.
+2. How to find the other worker who can be satisfied efficiently? We can calculate a ratio r = minWage/quality, so that the wokers with r less than current woker's r can be satisfied.
+   1. let's say current base woker's quality is q1, minW1. For the wokerX with qX and minWX.
+      1. If the `minW1/q1` > `minWX/qX`, then the wage assigned to wokerX will be `minW1*qX/q1` > `minWx`
+3. Thus we only need to find the k wokers with r less than current r. 
+4. How to calculate the total wage needed? Asumming that we have `qualitySum` of current k wokers, we can tell the total wage by `qualitySum*r1` = sum of `q1*minW1/q1` + `q2*minW1/q1` + ... + `qk*minW1/q1`
+5. How to find the k wokers with r less than current r? Max-Heap. (为什么叫最大堆？)
+
+
+
+```Python
+class Solution:
+    def mincostToHireWorkers(self, quality: List[int], wage: List[int], k: int) -> float:
+        pairs = sorted(zip(quality, wage), key=lambda p: p[1] / p[0])  # 按照 r 值排序
+        h = [-q for q, _ in pairs[:k]]  # 加负号变成最大堆
+        heapify(h)
+        sum_q = -sum(h)
+        ans = sum_q * pairs[k - 1][1] / pairs[k - 1][0]  # 选 r 值最小的 k 名工人
+        for q, w in pairs[k:]:  # 后面的工人 r 值更大
+            if q < -h[0]:  # 但是 sum_q 可以变小，从而可能得到更优的答案
+                sum_q += heapreplace(h, -q) + q  # 更新堆顶和 sum_q
+                ans = min(ans, sum_q * w / q)
+        return ans
+```
+
+
+
+```python
+class Solution:
+    def mincostToHireWorkers(self, quality: List[int], wage: List[int], k: int) -> float:
+        pairs = sorted(zip(quality, wage), key=lambda p: p[1]/p[0])
+        h = [-q for q, _ in pairs[:k]]
+        heapify(h)
+        sumQ = -sum(h)
+        ans = sumQ * pairs[k-1][1] / pairs[k-1][0]  # sumQ * minWage1 / q1
+        for q, w in pairs[k:]:
+            if q < -h[0]: # If the sumQ is smaller than previous, can try to calc the ans
+                sumQ += heapreplace(h, -q) + q # heapreplace 函数用新的质量值替换堆中最大的质量，并更新总质量。
+                ans = min(ans, sumQ * w / q)
+        return ans
+```
+
+
+
+这段代码是一个解决“雇佣工人最小成本问题”的Python函数。代码逻辑大致可以分成以下几个部分：
+
+1. **函数定义**:
+    ```python
+    class Solution:
+        def mincostToHireWorkers(self, quality: List[int], wage: List[int], k: int) -> float:
+    ```
+    这定义了一个名为`Solution`的类，其中包含一个名为`mincostToHireWorkers`的方法。这个方法接收三个参数：`quality`（每个工人的质量，以整数列表表示）、`wage`（每个工人期望的最低工资，以整数列表表示）和`k`（需要雇佣的工人数）。方法返回一个浮点数，表示最小的成本。
+
+2. **排序工人**:
+    ```python
+    pairs = sorted(zip(quality, wage), key=lambda p: p[1]/p[0])
+    ```
+    这行代码将工人按照“单位质量工资”（即工资除以质量）进行排序。这样可以先考虑单位成本最低的工人。
+
+3. **初始化优先队列**:
+    ```python
+    h = [-q for q, _ in pairs[:k]]
+    heapify(h)
+    sumQ = -sum(h)
+    ```
+    这段代码创建了一个最大堆`h`，存储前`k`个工人的质量的负值（为了在Python中使用最小堆模拟最大堆）。`sumQ`是前`k`个工人质量的总和。
+
+4. **计算初始答案**:
+    ```python
+    ans = sumQ * pairs[k-1][1] / pairs[k-1][0]
+    ```
+    使用单位质量工资最高的工人（也就是第`k`个工人，因为前`k`个是排序后的列表）的比率计算初始的最小成本。
+
+5. **遍历并更新结果**:
+    ```python
+    for q, w in pairs[k:]:
+        if q < -h[0]: # If the sumQ is smaller than previous, can try to calc the ans
+            sumQ += heapreplace(h, -q) + q
+            ans = min(ans, sumQ * w / q)
+    ```
+    遍历排序后余下的工人。如果当前工人的质量小于堆中最大的质量，更新堆和`sumQ`（总质量），并尝试找到一个更低的成本。`heapreplace`函数用新的质量值替换堆中最大的质量，并更新总质量。
+
+6. **返回结果**:
+    ```python
+    return ans
+    ```
+    最后返回计算出的最小成本。
+
+这个算法通过维护一个固定大小的最大堆，以及不断更新当前的最优解，来找出满足工资要求的最小成本组合。
