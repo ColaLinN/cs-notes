@@ -8,10 +8,6 @@ HTTP持久连接，keep-alive，
 
 
 
-
-
-
-
 编码提高传输效率
 
 - 报文（message）是HTTP通信的基本单位，由8位字节流（octet sequence）组成
