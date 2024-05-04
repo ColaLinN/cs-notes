@@ -8,14 +8,19 @@ tags: [leetcode]
 
 
 
-# TODO
+# Data Structures
 
+## Array
 
+array
 
+1. pop
+2. append
+3. not in/ in
 
+zip
 
-
-Dictionary
+## Dictionary
 
 ```python showLineNumbersEEE
 a = dict()
@@ -28,17 +33,27 @@ a.values()
 // Uncaught TypeError: Cannot read properties of null (reading 'toUpperCase')
 ```
 
-bit operation
+# Sorting
+
+sorted
+
+
+
+# 二分查找
+
+bisect_left
+
+```
+```
+
+
+
+
+
+# bit operation
 
 1. &=
 2. |=
-
-
-array
-
-1. pop
-2. append
-3. not in/ in
 
 
 

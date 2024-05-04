@@ -1,6 +1,6 @@
 ---
 slug: overview
-title: Why Distributed Systems?
+title: Why do we need Distributed Systems?
 # id: the-overview-of-distributed-systems
 # hide_title: false
 hide_table_of_contents: false
@@ -14,6 +14,12 @@ tags:
 sidebar_position: 1
 ---
 
+In this series of articles, I will try my best to writing notes of the distributed system, I hope you will also learn from it.
+
+I am not seriouly doing researching, so there might be mistakes, feel free to discuss with me here [issue](https://github.com/ColaLinN/fenglyu-docs-site-v1/issues).
+
+I will like to go through each critical definition one by one, so there will be. 
+
 ##  Why Distributed Systems?
 
 Dsitributed System has been used broadly in real life. For example, Google, Amazon, Tiktok, etc. 
@@ -25,33 +31,20 @@ Dsitributed System has been used broadly in real life. For example, Google, Amaz
 3. Scalability
 4. Architecture and Design
 
-## Thought Experiement: Two General Problem
+So now, do you still thinking
 
-1. It is impossible to reach a final agreement.
+## Thought Experiement: Two General's Problem
 
-2. But we can solve it by bypassing some assumptions and allow trade-offs.
+From this thought experiement, we know that It is impossible to reach a final agreement with unstable communication channel.
 
-## RPC(Remote Procedure Call) Semantics
+But, we can solve it in engineering ways by bypassing some assumptions and allow trade-offs. 
 
-Purpose: We need to define the message protocol which hides the complexity of the communicates
+There are lots of solutions published, such as the following:
 
-Three Semantics
+1. TODO
 
-1. At-least-once
-   1. It is useful when the operation is Idempotent
-2. At-most-once
-   1. When should we discard the old RPC?
-      1. Three Choices:
-         1. Option1: Never
-         2. Option2: 
-         3. Option3: Only allow one outstanding request at a time, server discards the request <= Seq+1
-3. Exactly-once
-   1. Real-world case: launch a missile, need to ensure the command is sent exactly once so that the boom will not be triggered twice
-   1. it's not possible because the server can crash, either
-      1. the server crashed before the execution arrived
-      2. the server crashes after the execution arrives
+> For example, the Consensus Algorithmn
 
+# Reference
 
-
-
-
+1. [Two General's Problem, Wiki](https://en.wikipedia.org/wiki/Two_Generals%27_Problem)
