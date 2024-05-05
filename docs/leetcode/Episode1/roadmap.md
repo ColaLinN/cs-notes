@@ -1,20 +1,12 @@
 ---
-sidebar_position: 4
+sidebar_position: 0
 title: Roadmap
 tags: [leetcode]
 ---
 
+Foucsing on: 滑动窗口、二分、位运算、动态规划、字符串、图论、数学、贪心、常用数据结构（前缀和、堆栈、线段树）
 
-
-
-
-Follow 灵神
-
-
-
-
-
-# 基础算法精讲·题目汇总
+# 基础算法精讲题单 from 灵茶山艾府
 
 https://github.com/EndlessCheng/codeforces-go/blob/master/leetcode/README.md
 
@@ -66,8 +58,6 @@ https://github.com/EndlessCheng/codeforces-go/blob/master/leetcode/README.md
 
 https://github.com/EndlessCheng/codeforces-go/blob/master/leetcode/SOLUTIONS.md
 
-的分类
-
 1. 哈希表
 2. 链表
 3. 双向链表
@@ -92,3 +82,11 @@ https://github.com/EndlessCheng/codeforces-go/blob/master/leetcode/SOLUTIONS.md
 22. 树
 23. 最短路
 24. 
+
+题单
+
+![image-20240505220528468](./roadmap.assets/image-20240505220528468.png)
+
+”前缀和“很重要
+
+![image-20240505220501993](./roadmap.assets/image-20240505220501993.png)

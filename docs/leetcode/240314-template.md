@@ -1,8 +1,10 @@
 ---
 sidebar_position: 1
-title: Template
+title: Algorithmn Template
 tags: [leetcode]
 ---
+
+# Algorithmn Template
 
 双指针
 
