@@ -751,6 +751,18 @@ for j in range(100000):
 print(A)
 ```
 
+### @cache
+
+递归时用来记忆相同参数的返回
+
+```python
+@cache
+def dfs(i,j):
+  if i == n: return 0
+	if j == m: return 0
+  return max(dfs(i+1, j), dfs(i, j+1)) + grid[i][j]
+```
+
 ## Reference
 
 1. [Built-in Types, Python Doc](https://docs.python.org/3/library/stdtypes.html#)
