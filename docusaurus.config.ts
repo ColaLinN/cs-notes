@@ -125,7 +125,7 @@ const config: Config = {
         {
           // to: '/blog', 
           href: 'https://fenglyulin.com/',
-          label: 'Blog', position: 'right'},
+          label: 'Fenglyu\'Log', position: 'right'},
         {
           href: 'https://github.com/ColaLinN/fenglyu-docs-site-v1',
           label: 'GitHub',
