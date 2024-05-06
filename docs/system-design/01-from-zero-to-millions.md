@@ -1,9 +1,11 @@
-#! https://zhuanlan.zhihu.com/p/670352310
+---
+sidebar_position: 1
+id: from-zero-to-millions
+title: Scale From Zero to Millions
+tags: [System Design, Scalability, Load Balancer, Cache, Database, CDN, Message Queue, Logging, Metrics, Automation]
+---
 
-
-# 从零到一百万用户 Scale from zero to millions of user
-
-这是一篇《System Design Interview》的读书笔记，主要是为了学习系统设计的基本知识，以及如何从零开始设计一个系统，逐步优化，最终达到百万用户的规模。
+# Scale from zero to millions of user
 
 ## Single server
 
@@ -241,5 +243,5 @@ The improvements involved in this chapter is:
 
 
 
-
-
+Reference
+1. System Design Interview by Alex Xu

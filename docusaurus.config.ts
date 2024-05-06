@@ -93,6 +93,18 @@ const config: Config = {
           label: 'Leetcode',
          },
          {
+          type: 'doc',
+          docId: 'database/essential-knowledge',
+          position: 'right',
+          label: 'Database',
+         },
+         {
+          type: 'doc',
+          docId: 'system-design/from-zero-to-millions',
+          position: 'right',
+          label: 'System Design',
+         },
+         {
           label: "Others",
           position: "right",
           items: [
@@ -134,6 +146,14 @@ const config: Config = {
             {
               label: 'Leetcode',
               to: '/docs/leetcode/240201-why',
+            },
+            {
+              label: 'Database',
+              to: '/docs/database/essential-knowledge',
+            },           
+            {
+              label: 'System Design',
+              to: '/docs/system-design/from-zero-to-millions',
             },
           ],
         },

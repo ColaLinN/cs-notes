@@ -1,4 +1,8 @@
-
+---
+sidebar_position: 2
+title: MySQL Lock Types
+tags: [MySQL, Database]
+---
 
 # Lock types
 

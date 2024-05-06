@@ -1,6 +1,10 @@
+---
+sidebar_position: 1
+title: Essential Knowledge of MySQL Database
+tags: [MySQL, Database]
+---
 
-
-# **Essential Knowledge of MySQL Database**
+# Essential Knowledge of MySQL Database
 
 ## How is a query processed?
 
@@ -14,7 +18,7 @@ Optimizer: Decide using which index. Start by reading which table while executin
 
 Executor: Authentication. Maintaining binglog. Interacting with Storage Engine.
 
-Storage Engine:
+### Storage Engine
 
 1. InnoDB
 2. MyISAM: doesn’t support Txn, row lock, redolog-based crash-safe
@@ -44,13 +48,13 @@ Isolation Level: RU, Read Uncommitted < RC, Read Committed < RR, Repeatable Read
 
 Avoid the Long Txn: set the `autocommit` as `1` to enable implicitly starting the Txn while executing a single command. For example, the start and end of a `select` operation also means the start and end of the corresponding Txn.
 
-Detect the Long Txn:
+### Detect the Long Txn
 
 ```sql
 select * from information_schema.innodb_trx where TIME_TO_SEC(timediff(now(),trx_started))>60
 ```
 
-Under the hood:
+### Under the hood
 
 1. ```
    undo log
@@ -123,27 +127,29 @@ Under the hood:
 
 Index: used to expedite the query process
 
-Index struct: Hash Table, Array, Binary Balance Tree, B+ Tree
+### Index struct Types
 
-Hash Table:
+Hash Table, Array, Binary Balance Tree, B+ Tree
+
+## Hash Table
 
 1. Pros: Easy to query and add Key-Value Data
    1. Use Linked List to solve hash coalition problem
 2. Cons: Hard to query a range of data, need to scan all data
 3. Applicable Scenario: 只有等值查询
 
-Array:
+### Array
 
 1. Pros: Easy to query data(binary query O(log(N))), easy to query a range of data
 2. Cons: Hard to insert/update data, the time cost is high to relocate/rearrange the data
 3. Applicable Scenario: Static Data Storage
 
-Binary Balance Tree:
+### Binary Balance Tree
 
 1. Pros: Easy to query data(binary query O(log(N))), easy to query a range of data. The time complexity of an update/insert is O(log(N)) to keep the binary tree balanced.
 2. Cons: The time of query depends on the layers of the tree, normally 1M nodes of data will need a tree with 20 layers.
 
-B+ Tree:
+### B+ Tree
 
 1. Terms:
    1. N-Node Tree; If the N is 1200, there will be only 4 layers of tree to store 1.7B data. `1200^3`
@@ -172,7 +178,7 @@ Others: Skip Table; LSM; etc
 
 ## Lock
 
-Global Lock
+### Global Lock
 
 1. FTWRL(Flush Table with Read Lock).
 
@@ -207,7 +213,7 @@ Global Lock
       1. This `readonly` env variable is used to judge whether a DB is master/slave DB.
       2. Disaster/Exception Recovery: `FTWRL` can be released if the client crashes but this command cannot.
 
-Table Lock
+### Table Lock
 
 1. Lock and Unlock Commands such as 
 
@@ -231,7 +237,7 @@ Table Lock
          1. Avoid conducting long txn
          2. Use `wait n`  params in DDL, in order to give up the waiting DML-Write. Can retry until it succeeds.
 
-Row Lock
+### Row Lock
 
 1. Two-Phase Lock Protocol
    1. Try to acquire the lock when need it.
@@ -276,4 +282,4 @@ Row Lock
 
 Reference:
 
-1. 
+1. [MySQL 45 Talks](https://time.geekbang.org/column/139)

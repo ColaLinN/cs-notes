@@ -1,7 +1,8 @@
-
-
-
-
+---
+sidebar_position: 23
+title: Program Paradigm
+tags: [System Design]
+---
 
 
 # Program Paradigm

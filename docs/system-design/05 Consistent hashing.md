@@ -1,4 +1,8 @@
-
+---
+sidebar_position: 5
+title: Consistent Hashing
+tags: [System Design]
+---
 
 # 一致性哈希
 
