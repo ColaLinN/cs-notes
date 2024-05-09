@@ -1,0 +1,8 @@
+
+
+
+
+TODO: 
+
+- [ ] ORM best practice
+

@@ -8,6 +8,13 @@ sidebar_position: 3
 
 ## Time, Clock, and Ordering of Event
 
+Why do we need the logical lock?
+
+Reason:
+
+1. The physical lock is not accurate and unique among all machines
+2. How do we sync the time?
+
 ```
 1. The accuracy of the physical clock 
 
@@ -151,11 +158,5 @@ sidebar_position: 3
          2. Happens before
             1. if Cx[i] <= Cy[i] for all i, and there exsits j such that Cx[j] < Cy[j]
                1. that means Cx happens before Cy
-
-
-
-
-
-
 ```
 

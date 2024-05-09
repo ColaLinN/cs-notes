@@ -19,8 +19,6 @@ Distributed State:
 
 New problem occurs while introducing distributed state
 
-
-
 ## Consistency
 
 - Serializability

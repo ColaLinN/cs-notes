@@ -28,3 +28,8 @@ Three Semantics
       1. the server crashed before the execution arrived
       2. the server crashes after the execution arrives
 
+
+
+TODO: 
+
+The RPC semantics in Kafka implementation
