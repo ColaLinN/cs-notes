@@ -62,7 +62,7 @@ https://github.com/EndlessCheng/codeforces-go/blob/master/leetcode/SOLUTIONS.md
 2. 链表
 3. 双向链表
 4. 二叉树
-5. 滑动窗口
+5. 滑动窗口 [题单](https://leetcode.cn/circle/discuss/0viNMK/)
 6. 二分
 7. 技术性枚举
 8. 前后缀分解
@@ -90,3 +90,8 @@ https://github.com/EndlessCheng/codeforces-go/blob/master/leetcode/SOLUTIONS.md
 ”前缀和“很重要
 
 ![image-20240505220501993](./roadmap.assets/image-20240505220501993.png)
+
+
+
+## [测试及对拍 Testing](https://github.com/EndlessCheng/codeforces-go?tab=readme-ov-file#%E6%B5%8B%E8%AF%95%E5%8F%8A%E5%AF%B9%E6%8B%8D-testing)
+
