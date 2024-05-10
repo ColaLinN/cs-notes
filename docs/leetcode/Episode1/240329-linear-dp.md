@@ -10,9 +10,9 @@ tags: [leetcode]
 
 
 
-## 最长公共子序列
+## 一、最长公共子序列
 
-### 01 例题最长公共子序列
+### 最长公共子序列
 
 【最长公共子序列 编辑距离】 https://www.bilibili.com/video/BV1TM4y1o7ug/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70
 
@@ -43,7 +43,23 @@ tags: [leetcode]
    2. 对于X≠Y，dfs(i-1, j)不考虑j的情况就变成了dfs(i-1, j-1)。dfs(i, j-1)不考虑i的情况也变成了dfs(i-1, j-1)。dfs(i-1, j-1)是被max(dfs(i-1, j), dfs(i, j-1))包含在内的，所以有：
    3. dfs(i, j) = max(dfs(i-1, j), dfs(i, j-1))
 
+```python
+class Solution:
+    def longestCommonSubsequence(self, text1: str, text2: str) -> int:
+        n = len(text1)
+        m = len(text2)
+        dp = [[0 for j in range(m+1)] for i in range(n+1)]
 
+        for i in range(1, n+1, 1):
+            for j in range(1, m+1, 1):
+                if text1[i-1] == text2[j-1]:
+                  	# note, here dp[i-1][j-1] should plus 1 because we count current `text1[i-1] == text2[j-1]`
+                    dp[i][j] = max(dp[i-1][j-1] + 1, dp[i-1][j], dp[i][j-1])
+                else:
+                    dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+        print(dp)
+        return dp[n][m]
+```
 
 灵神的回溯、递归三步走
 
@@ -53,7 +69,7 @@ tags: [leetcode]
 
 ![image-20240329172350775](./240329 线性DP.assets/image-20240329172350775.png)
 
-### 02 [72. Edit Distance](https://leetcode.cn/problems/edit-distance/)
+### [72. Edit Distance](https://leetcode.cn/problems/edit-distance/)
 
 编辑距离：
 
@@ -62,9 +78,30 @@ tags: [leetcode]
 2. else
    1. Dfs(i, j) = min(dfs(i-1, j) + dfs(i, j-1) + dfs(i-1, j-1)) + 1
 
+```python
+class Solution:
+    def minDistance(self, word1: str, word2: str) -> int:
+        cnt = inf
+        preFij = 0
+        f = [i for i in range(len(word2)+1)]
+        for i in range(1, len(word1)+1):
+            preFij = f[0]
+            f[0] = i
+            for j in range(1, len(word2)+1):
+                tmp = f[j]
+                if word1[i-1] == word2[j-1]:
+                    f[j] = preFij
+                else:
+                    f[j] = min(f[j], f[j-1], preFij)+1
+                preFij = tmp
+        return f[len(word2)]
+```
 
 
-## 最长递增子序列 Longest Increasing Subqequence
+
+
+
+## 二、最长递增子序列 Longest Increasing Subqequence
 
 【最长递增子序列【基础算法精讲 20】】 https://www.bilibili.com/video/BV1ub411Q7sB/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70
 

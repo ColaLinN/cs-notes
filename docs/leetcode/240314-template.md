@@ -32,6 +32,17 @@ tags: [leetcode]
 1. 组合型
 1. 排列型
 
+动态规划
+
+1. Core
+2. 01 backup
+3. Linear
+4. state machine
+5. Tree-based
+6. etc
+
+数据结构
+
 
 
 ## 双指针
@@ -140,13 +151,62 @@ golang
 ```
 ```
 
-
-
 ### 2 组合型与剪枝（选哪个）
 
 ### 3 排列型
 
-## DP
+## Dynamic Plan
+
+### 最长公共子序列
+
+### 最长公共子序列
+
+【最长公共子序列 编辑距离】 https://www.bilibili.com/video/BV1TM4y1o7ug/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70
+
+术语
+
+1. 子数组、子串：subarray/substring，一般是连续的
+2. 子序列：subsequence，是不连续的
+
+启发思路：
+
+1. 两个字符串的每个字母对，本质上也是选或不选。
+
+考虑字符串S1和S2的最后一对字母X与Y，有
+
+1. 选X和Y
+2. 选X，不选Y
+3. 不选X，选Y
+4. 不选X，不选Y
+
+则最长公共子序列有两种情况，对于s1[i]=X和s2[j]=Y
+
+1. 如果X=Y
+   1. dfs(i, j) = max(dfs(i-1, j), dfs(i, j-1), dfs(i-1, j-1)+1)
+   2. 对于dfs(i, j)，如果X=Y。那么dfs(i-1, j-1)的长度一定>=max(dfs(i-1, j), dfs(i, j-1))，所以我们在X=Y的情况下可以忽略dfs(i-1, j), dfs(i, j-1)，所以有：
+   3. dfs(i, j) = dfs(i-1, j-1)+1
+2. 如果X≠Y
+   1. dfs(i, j) = max(dfs(i-1, j), dfs(i, j-1), dfs(i-1, j-1))
+   2. 对于X≠Y，dfs(i-1, j)不考虑j的情况就变成了dfs(i-1, j-1)。dfs(i, j-1)不考虑i的情况也变成了dfs(i-1, j-1)。dfs(i-1, j-1)是被max(dfs(i-1, j), dfs(i, j-1))包含在内的，所以有：
+   3. dfs(i, j) = max(dfs(i-1, j), dfs(i, j-1))
+
+```python
+class Solution:
+    def longestCommonSubsequence(self, text1: str, text2: str) -> int:
+        n = len(text1)
+        m = len(text2)
+        dp = [[0 for j in range(m+1)] for i in range(n+1)]
+
+        for i in range(1, n+1, 1):
+            for j in range(1, m+1, 1):
+                if text1[i-1] == text2[j-1]:
+                  	# note, here dp[i-1][j-1] should plus 1 because we count current `text1[i-1] == text2[j-1]`
+                    dp[i][j] = max(dp[i-1][j-1] + 1, dp[i-1][j], dp[i][j-1])
+                else:
+                    dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+        print(dp)
+        return dp[n][m]
+```
 
 ### 最长递增子序列
 
