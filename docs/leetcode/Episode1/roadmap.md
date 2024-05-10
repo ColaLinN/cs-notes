@@ -74,7 +74,7 @@ https://github.com/EndlessCheng/codeforces-go/blob/master/leetcode/SOLUTIONS.md
 14. 有限队列栈
 15. 位运算
 16. 贡献法
-17. 动态规划
+17. 动态规划 [题单](https://leetcode.cn/circle/discuss/tXLS3i/)
 18. 数学
 19. 贪心
 20. 构造
