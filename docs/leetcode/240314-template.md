@@ -34,9 +34,9 @@ tags: [leetcode]
 
 
 
-# 双指针
+## 双指针
 
-## 1 双向双指针
+### 1 双向双指针
 
 经典题目有
 
@@ -51,15 +51,11 @@ def findTarget(nums, target):
 	
 ```
 
+### 2 同向双指针
 
+## 回溯
 
-## 2 同向双指针
-
-
-
-# 回溯
-
-## 1 子集型（选或不选）
+### 1 子集型（选或不选）
 
 讲解：
 
@@ -146,13 +142,110 @@ golang
 
 
 
-## 2 组合型与剪枝（选哪个）
+### 2 组合型与剪枝（选哪个）
 
+### 3 排列型
 
+## DP
 
+### 最长递增子序列
 
+【最长递增子序列【基础算法精讲 20】】 https://www.bilibili.com/video/BV1ub411Q7sB/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70
 
-## 3 排列型
+动态规划做法：
 
+1. 递归：`dfs[j] = max(nums[i]) + 1`
+   1. 子问题：结尾为nums[j]的最长递增子序列长度是？
+   2. 当前操作：往前`[0, j)`枚举小于nums[j]的nums[i]
+   3. 下一个子问题：结尾为nums[i]的最长递增子序列长度是？
+2. 时间复杂度`O(n^2)`，空间复杂度`O(n)`
 
+```python
+class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        @cache
+        def dfs(j):
+            res = 0
+            for i in range(j):
+                if nums[i] < nums[j]:
+                    res = max(res, dfs(i))
+            return res + 1
+        return max(dfs(i) for i in range(len(nums)))
+```
+
+数组版记忆化搜索
+
+- 时间复杂度`O(n^2)`，空间复杂度`O(n)`
+
+```python
+class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        cache = [-inf] * len(nums)
+        # @cache
+        def dfs(j):
+            if cache[j] >= 0: return cache[j]
+            res = 0
+            for i in range(j):
+                if nums[i] < nums[j]:
+                    res = max(res, dfs(i))
+            cache[j] = res + 1
+            return cache[j]
+        return max(dfs(i) for i in range(len(nums)))
+```
+
+递归改递推：`f[j] = max(f[i]) + 1`
+
+- 时间复杂度`O(n^2)`，空间复杂度`O(n)`
+
+```python
+class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        f = [0] * len(nums)
+        for j in range(len(nums)):
+            for i in range(j):
+                if nums[i] < nums[j]:
+                    f[j] = max(f[i], f[j]) 
+            f[j] += 1
+        return max(f)
+```
+
+进一步优化时间复杂度，引入新概念：g数组
+
+1. g数组的长度代表当前最长递增子序列长度
+   1. 更新算法
+      1. 如果找到g数组中第一个大于nums[i]的元素g[k]，将g[k]更新为nums[i]
+      2. 如果g数组中没有大于nums[i]的元素，则把nums[i]加到g数组的后面
+   2. 可以反证、归纳证明g一定是严格递增的
+      1. 假设`j-1 <= j`有`g[j-1] == g[j]`，但是根据我们的更新算法，对于`i <= j`, g[i]一定小于g[j]，与`g[j-1] == g[j]`矛盾
+2. 时间复杂度`O(nlongn)`, 即数组长度n乘以每次二分查找的logn
+3. 空间复杂度`O(n)`
+
+```python
+class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        g = []
+        for i in range(len(nums)):
+            k = bisect_left(g, nums[i])
+            if k == len(g):
+                g.append(nums[i])
+            else:
+                g[k] = nums[i]
+        return len(g)
+```
+
+进一步优化空间复杂度为O(1)
+
+```python
+class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        ng = 0
+        for i in range(len(nums)):
+            k = bisect_left(nums, nums[i], 0, ng)
+            if k == ng:
+                nums[k] = nums[i]
+                ng += 1
+            else:
+                nums[k] = nums[i]
+        return ng
+```
 
