@@ -155,9 +155,7 @@ golang
 
 ### 3 排列型
 
-## Dynamic Plan
-
-### 最长公共子序列
+## Dynamic Planning
 
 ### 最长公共子序列
 
