@@ -107,7 +107,12 @@ export default function Hero() {
         <Name />
         <motion.div className={styles.hero_desc} custom={2} initial="hidden" animate="visible" variants={variants}>
           <Translate id="homepage.hero.text">
-            {`I share my knowledge and interests here.`}
+            {`I share knowledge 📚 and thoughts 🤔 here. `}
+          </Translate>
+        </motion.div>
+        <motion.div className={styles.hero_desc} custom={2} initial="hidden" animate="visible" variants={variants}>
+          <Translate id="homepage.hero.text">
+            {`This site  was established in May 2024. ✨ More content is coming soon. 🚀`}
           </Translate>
         </motion.div>
         <motion.div custom={3} initial="hidden" animate="visible" variants={variants}>
