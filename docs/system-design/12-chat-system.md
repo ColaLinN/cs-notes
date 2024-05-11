@@ -4,7 +4,16 @@ title: Chat System
 tags: [System Design]
 ---
 
-In this article, we will explore the design of chat system.
+## How to design a WeChat?
+
+In this article, we will explore the design of chat system inlcuding the following points
+
+- Chat server for real-time messaging
+- Suport group chat
+- Presence servers for online/offline status
+- Service discovery supports load balancing
+- Key-value stores for chat history
+- Push notifications services for sending push notification
 
 ![image-20240511123108871](./12-chat-system.assets/image-20240511123108871.png)
 
@@ -93,8 +102,8 @@ Cons:
 We can have a high level design consists of the follwing entities.
 
 - Chat servers, it's `stateful` because of the persistent websocket connection.
-- Presence servers, it's also `stateful` for presenting the online status.
-- API servers, it includes the user management, authentication, group management, service discovery.
+- Presence servers, it's also `stateful` for presenting the online/offline status.
+- API servers. Handling everything including the user, authentication, group management, service discovery, etc.
 - Push Notification
 - Load Balancing
 - KV store
@@ -103,22 +112,119 @@ We can have a high level design consists of the follwing entities.
 
 
 
+### Why chose key-value store for the chat history?
 
+The generic data such as user profile, setting, user friend list are stored in robust and reliable relational databases.
 
+In terms of chat history, it's pattern is a bit different:
 
+1. The amount of data is enormous. For example, Whatsapp process 60 billion messages a day.
+2. Recent chats are accessed frequently.
+3. Random access of data. User might use features such as search, view your mentioned, view history, jump to specific messages, etc.
+4. The read to write ratio is about 1:1 on 1 chat systems
 
-Why NoSQL Key-value store for the chat history?
+Here, we choose key-value store for the following reasons:
 
-Presence status?
+1. Key-value stores are low latency, high performance.
+2. Allow easy horizontal scaling.
+3. Support random search features while relational databases do not handle long tail of data well (random access is expensive) because indexes grows large.
+4. It has been adopted by proven reliable chat applications. For example, both Facebook messenger (HBase) and discord (Cassandra) use key-value stores.
 
-Messages synchronization among different clinents?
+### Data models
 
-- The max_read_index
+**Message table for 1 on 1 chat**
 
-Group messages flows
+The message_id can be used to order messages. We won't use create_time because two messages can be created at the same time.
 
-Table design
+![image-20240511181051571](./12-chat-system.assets/image-20240511181051571.png)
+
+**Message table for group chat**
+
+We use the composite primary consists of channel_id and message_id. 
+
+channel_id is the group id, so we can know this message should be sent to which group.
+
+user_id is the sender.
+
+![image-20240511181123970](./12-chat-system.assets/image-20240511181123970.png)
+
+**How to generate message_id?**
+
+It's an important topic worth exploring. message_id must satisfy the following two requirements:
+
+1. IDs must be unique
+2. IDs should be sortable by time, meaning ID of new messages should be newer than old ones.
+
+There are solutions come to minds:
+
+1. Use the `auto_increment` keyword in MySQL. However, NoSQL doesn't provide such feature. 
+2. Use UUID generator to generate global 64-bit sequence number like Snowflake.
+3. Use local sequence number generator.
+   1. Local means the message_id is only unique and ordering within a channel_id.
+   2. This approach is easier in comparison to the global UUID generator.
+
+## Design Deep Dive
+
+### Service discovery
+
+The service discovery will pick up the best services for clients based on predefined criteria.
+
+1. Geographical location, find the servers closest to the clients
+2. Server Capacity, for load balancing.
+
+> What's the diff between this and load balancer?
+
+![image-20240511182703749](./12-chat-system.assets/image-20240511182703749.png)
+
+### Message Flow
+
+**1 on 1 chat flow**
+
+- Message sync queue
+
+![image-20240511182717946](./12-chat-system.assets/image-20240511182717946.png)
+
+- Message synchronization across multiple devices
+  - The max_read_index on app of devices
+
+![image-20240511182747157](./12-chat-system.assets/image-20240511182747157.png)
+
+**small group chat flow**
+
+available for a 500 ppl group chat
+
+### Presence status: online/offlilne
+
+login 
+
+- set status as online
+
+logout
+
+- set status as offline
+
+disconnect
+
+- Heartbeat
+- Set status as offline while timeout
+
+![image-20240511183824732](./12-chat-system.assets/image-20240511183824732.png)
 
 Online status fanout
 
-**service discovery**
+- publish-subscribe channel
+
+![image-20240511183812976](./12-chat-system.assets/image-20240511183812976.png)
+
+## Wrap Up
+
+Additional talking points
+
+- Exetend the chat system to support photos and videos.
+- End-to-end encryption.
+- Caching messages on client side.
+- Improve load time.
+- Fault tolerance.
+  - Service single ponint of failure. State machine replication.
+  - Message lost. Messsage resent mechanism.
+
