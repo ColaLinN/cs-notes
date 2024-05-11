@@ -146,16 +146,11 @@ class Solution:
 
 ```
 
-golang
-
-```
-```
-
 ### 2 组合型与剪枝（选哪个）
 
 ### 3 排列型
 
-## Dynamic Planning
+## 线性DP
 
 ### 最长公共子序列
 
@@ -306,4 +301,10 @@ class Solution:
                 nums[k] = nums[i]
         return ng
 ```
+
+## 区间DP
+
+
+
+## 状态压缩DP
 

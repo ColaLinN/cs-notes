@@ -70,7 +70,8 @@ Client holds the long connection open until timeout or new messages coming.
 
 Pros:
 
-- Can 
+- Real-time.
+- Reduce the latency to establish connection.
 
 Cons:
 
@@ -191,7 +192,7 @@ The service discovery will pick up the best services for clients based on predef
 
 **small group chat flow**
 
-available for a 500 ppl group chat
+available for a 500 ppl small group chat
 
 ### Presence status: online/offlilne
 

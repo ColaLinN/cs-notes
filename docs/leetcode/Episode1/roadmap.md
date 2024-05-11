@@ -35,8 +35,8 @@ https://github.com/EndlessCheng/codeforces-go/blob/master/leetcode/README.md
 5. 动态规划 9
    1. [动态规划 - 从记忆化搜索到递推](https://www.bilibili.com/video/BV1Xj411K7oF/) 👌
    2. [0-1 背包 完全背包 至多/恰好/至少 ](https://www.bilibili.com/video/BV16Y411v7Y6/) 👌
-   3. [最长公共子序列 LCS](https://www.bilibili.com/video/BV1TM4y1o7ug/)
-   4. [最长递增子序列 LIS](https://www.bilibili.com/video/BV1ub411Q7sB/)
+   3. [最长公共子序列 LCS](https://www.bilibili.com/video/BV1TM4y1o7ug/) 👌
+   4. [最长递增子序列 LIS ](https://www.bilibili.com/video/BV1ub411Q7sB/)👌
    5. [状态机 DP](https://www.bilibili.com/video/BV1ho4y1W7QK/)
    6. [区间 DP](https://www.bilibili.com/video/BV1Gs4y1E7EU/)
    7. [树形 DP - 直径系列](https://www.bilibili.com/video/BV17o4y187h1/)
@@ -52,6 +52,12 @@ https://github.com/EndlessCheng/codeforces-go/blob/master/leetcode/README.md
 - [单调栈（矩形系列/字典序最小/贡献法）](https://leetcode.cn/circle/discuss/9oZFK9/)
 - [网格图（DFS/BFS/综合应用）](https://leetcode.cn/circle/discuss/YiXPXW/)
 - [位运算（基础/性质/拆位/试填/恒等式/贪心/脑筋急转弯）](https://leetcode.cn/circle/discuss/dHn9Vk/)
+
+TODO List
+
+- [ ] 排序算法：冒泡、归并、快速排序
+- [ ] 按概率生成随机数
+- [ ] 
 
 
 # 灵茶山艾府·高质量题解精选
