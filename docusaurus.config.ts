@@ -157,23 +157,23 @@ const config: Config = {
             },
           ],
         },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/ColaLin7',
-            },
-          ],
-        },
+        // {
+        //   title: 'Community',
+        //   items: [
+        //     {
+        //       label: 'Stack Overflow',
+        //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+        //     },
+        //     {
+        //       label: 'Discord',
+        //       href: 'https://discordapp.com/invite/docusaurus',
+        //     },
+        //     {
+        //       label: 'Twitter',
+        //       href: 'https://twitter.com/ColaLin7',
+        //     },
+        //   ],
+        // },
         {
           title: 'More',
           items: [
@@ -185,13 +185,13 @@ const config: Config = {
               label: 'GitHub',
               href: 'https://github.com/ColaLinN/fenglyu-docs-site-v1',
             },
-            {
-              html: `
-                <a href="https://docusaurus.io/" target="_blank" rel="noreferrer noopener">
-                  <img src="/img/buildwith.png" alt="build with docusaurus" width="120" height="50"/>
-                <a/>
-                `,
-            },
+            // {
+            //   html: `
+            //     <a href="https://docusaurus.io/" target="_blank" rel="noreferrer noopener">
+            //       <img src="/img/buildwith.png" alt="build with docusaurus" width="120" height="50"/>
+            //     <a/>
+            //     `,
+            // },
           ],
         },
       ],
