@@ -4,7 +4,7 @@ title: Algorithmn Template
 tags: [leetcode]
 ---
 
-# Algorithmn Template
+## Category
 
 双指针
 
@@ -13,37 +13,45 @@ tags: [leetcode]
 
 二分查找
 
+1. Red-Blue Painting Approach
+
 链表
 
-1. 反转
-2. 快慢
+1. Reverse
+2. Fast Slow Pointer。链表中点，环形链表入口
 3. 删除
 
 二叉树
 
-1. 深度遍历
-2. 广度遍历
-3. 前中后序遍历
-4. 层序遍历
+1. DFS, Depth First Search
+2. BFS, Breadth First Search
+3. Pre-order, In-order, Post-order Traversal
+4. Level-order Traversal
 
 回溯
 
-1. 子集型
-1. 组合型
-1. 排列型
+1. 子集型，选或不选
+1. 组合型，选哪个
+1. 排列型，排除已选
 
 动态规划
 
-1. Core
-2. 01 backup
-3. Linear
-4. state machine
-5. Tree-based
-6. etc
+1. Dp principle
+2. Backup DP
+3. Linear DP
+4. State Machine DP
+5. Interval DP
+6. Tree DP
+7. etc
 
 数据结构
 
-
+1. 线段树
+2. 树状数组
+3. 堆、大小顶堆
+4. 栈、单调栈
+5. 队列、优先队列
+6. etc
 
 ## 双指针
 
@@ -51,15 +59,30 @@ tags: [leetcode]
 
 经典题目有
 
-1. 目标数
-2. 三个目标数
-3. 小于某个数的连续子集
-4. 接雨水 Waterfall
+1. 两数之和
+2. 目标数
+3. 三个目标数
+4. 小于某个数的连续子集
+5. 接雨水 Waterfall
    1. 也是一种前缀集的题
 
 ```
-def findTarget(nums, target):
-	
+func twoSum(numbers []int, target int) []int {
+    var i int = 0
+    var j = len(numbers) - 1
+    var res = make([]int, 0)
+    for i < j {
+        var curSum int = numbers[i] + numbers[j]
+        if curSum < target {
+            i +=1
+        } else if curSum > target {
+            j -=1
+        } else {
+            res = []int{i + 1, j +1}
+            break
+        }
+    }
+    return res
 ```
 
 ### 2 同向双指针
@@ -68,7 +91,7 @@ def findTarget(nums, target):
 
 ### 1 子集型（选或不选）
 
-讲解：
+Intro
 
 1. 本质上是看选不选某个元素，是一个增量构造答案的过程，这个过程适合用递归解决。
 2. 举例
@@ -83,11 +106,9 @@ def findTarget(nums, target):
    1. 输入的视角
    2. 答案视角
 
+[78. Subsets](https://leetcode.cn/problems/subsets/)
 
-
-经典例题
-
-1. [78. Subsets](https://leetcode.cn/problems/subsets/)
+sample
 
 ```
 Example 1:
@@ -96,9 +117,7 @@ Input: nums = [1,2,3]
 Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
 ```
 
-Rug
-
-python
+code
 
 ```python
 class Solution:
@@ -143,12 +162,96 @@ class Solution:
                 path.pop() # 恢复现场，lol
         dfsV2(0) # 从零开始
         return ans
-
 ```
 
 ### 2 组合型与剪枝（选哪个）
 
-### 3 排列型
+
+
+###  3 排列型（需要考虑排除已选的数）
+
+【回溯算法套路③排列型回溯+N皇后【基础算法精讲 16】】 https://www.bilibili.com/video/BV1mY411D7f6/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70
+
+[46. Permutations](https://leetcode.cn/problems/permutations/) 全排列
+
+```python
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        n = len(nums)
+        if n == 0:
+            return []
+
+        ans = []
+        path = [0] * n
+        def dfs(i, s): # 使用set来帮助统计path
+            if i == n:
+                ans.append(path.copy())
+                return
+            for x in s:
+                path[i] = x
+                dfs(i+1, s - {x}) # python的set的语法糖
+        dfs(0, set(nums))
+        return ans
+```
+
+## Backup DP
+
+【0-1背包 完全背包】 https://www.bilibili.com/video/BV16Y411v7Y6/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70
+
+1. 递归，自顶向下
+2. 记忆化搜索
+3. 递推，自底向上
+4. 二维数组
+5. 一维数组
+
+### 零一背包
+
+有 n 个物品，第 i 个物品的体积为 w[i]，价值为 v[i]，**每个物品至多选一个**，求体积和不超过 capacity 时的最大价值和。
+
+1. 当前 dfs 维
+2. `dfs[i][j] = max(dfs[i-1][j], dfs[i-1][j-w[i]] + v[i]])`
+3. 一维数组递推，从右往左，因为
+
+### 完全背包
+
+有 n 个物品，第 i 个物品的体积为 w[i]，价值为 v[i]，**每个物品可以重复选**，求体积和不超过 capacity 时的最大价值和。
+
+1. 一维数组递推，从左往右
+
+### 常见变形
+
+1. 至多装capacity，求方案数/最大价值和
+2. 恰好装capacity，求方案数/最大/最小价值和
+3. 至少装capacity，求方案数/最小价值和
+
+### [494. Target Sum](https://leetcode.cn/problems/target-sum/)
+
+递归写法
+
+1. if nums[i] > c
+   1. dfs(n, c) = dfs(n-1, c)
+2. else
+   1. dfs(n, c) = dfs(n-1, c) + dfs(n-1, nums[i]-c)
+
+```python
+class Solution:
+    def findTargetSumWays(self, nums: List[int], target: int) -> int:
+        # p
+        # s-p
+        # p-(s-p)=t
+        # p=(t+s)/2
+        n = len(nums)
+        s = sum(nums)
+        cap = (s+target)/2
+        @cache
+        def dfs(i, c):
+            if i < 0:
+                return 1 if c == 0 else 0
+            if nums[i] > c:
+                return dfs(i-1, c)
+            return dfs(i-1, c)+ dfs(i-1, c-nums[i])
+        return dfs(n-1, cap)
+```
 
 ## 线性DP
 
@@ -302,9 +405,47 @@ class Solution:
         return ng
 ```
 
-## 区间DP
+## 状态机DP
+
+### 至多交易k次
+
+[188. Best Time to Buy and Sell Stock IV](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/)
+
+```markdown
+Input: k = 2, prices = [3,2,6,5,0,3]
+Output: 7
+Explanation: Buy on day 2 (price = 2) and sell on day 3 (price = 6), profit = 6-2 = 4. Then buy on day 5 (price = 0) and sell on day 6 (price = 3), profit = 3-0 = 3.
+```
+
+递归要点
+
+- 持有时 `hold == 1`，卖出 `dfs(i, j, 0) = max(dfs(i-1, j, 0), dfs(i-1, j - 1, 1) + prices[i])`
+- 不持有时 `hold == 0`, 买入 `dfs(i, j, 1) = max(dfs(i-1, j, 1), dfs(i-1, j, 0) - prices[i])`
+- 买入或卖出算作一次交易。代码中的 `j-1` 可以是在买股票的时候，也可以是在卖股票的时候
+
+![image-20240513012816162](./240314-template.assets/image-20240513012816162.png)
+
+dfs 递归写法
+
+```python
+class Solution:
+    def maxProfit(self, k: int, prices: List[int]) -> int:
+        n = len(prices)
+        @cache
+        def dfs(i: int, j: int, hold: bool) -> int:
+            if j < 0:
+                return -inf
+            if i < 0:
+                return -inf if hold else 0
+            if hold:
+                return max(dfs(i - 1, j, True), dfs(i - 1, j - 1, False) - prices[i])
+            return max(dfs(i - 1, j, False), dfs(i - 1, j, True) + prices[i])
+        return dfs(n - 1, k, False)
+```
+
+## Interval DP
 
 
 
-## 状态压缩DP
+## Tree DP
 

@@ -5,7 +5,7 @@ tags: [leetcode]
 ---
 
 
-![image-20240229171154275](./240229 03 二分查找.assets/image-20240229171154275.png)
+![image-20240229171154275](./240229-binary-search.assets/image-20240229171154275.png)
 
 
 

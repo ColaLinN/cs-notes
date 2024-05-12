@@ -771,3 +771,4 @@ def dfs(i,j):
 4. [Bisect, Python Doc](https://docs.python.org/3/library/bisect.html)
 5. [What does * represent in function argument list in python?, StackOverflow](https://stackoverflow.com/questions/57667742/what-does-represent-in-function-argument-list-in-python)
 6. [Python Lambda, W3C](https://www.w3schools.com/python/python_lambda.asp)
+7. [分享｜从集合论到位运算，常见位运算技巧分类总结！——灵神](https://leetcode.cn/circle/discuss/CaOJ45/)

@@ -4,14 +4,11 @@ title: Backtrace Combination
 tags: [leetcode]
 ---
 
+组合型（选哪个）
 
+## 01 [77. Combinations](https://leetcode.cn/problems/combinations/)
 
-
-# 组合型（选哪个）
-
-01 [77. Combinations](https://leetcode.cn/problems/combinations/)
-
-```
+```python
 class Solution:
     def combine(self, n: int, k: int) -> List[List[int]]:
         ans = []
@@ -29,11 +26,9 @@ class Solution:
         return ans
 ```
 
+## 02 [216. Combination Sum III](https://leetcode.cn/problems/combination-sum-iii/)
 
-
-02 [216. Combination Sum III](https://leetcode.cn/problems/combination-sum-iii/)
-
-```
+```python
 class Solution:
     def combinationSum3(self, k: int, n: int) -> List[List[int]]:
         ans = []
@@ -53,11 +48,9 @@ class Solution:
         return ans
 ```
 
+## 03 [22. Generate Parentheses](https://leetcode.cn/problems/generate-parentheses/)
 
-
-03 [22. Generate Parentheses](https://leetcode.cn/problems/generate-parentheses/)
-
-```
+```python
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         ans = []

@@ -1,15 +1,10 @@
 ---
 sidebar_position: 22
-title: DP Core
+title: DP Principle
 tags: [leetcode]
 ---
 
-
-# DP Core
-
 [【动态规划入门：从记忆化搜索到递推】 https://www.bilibili.com/video/BV1Xj411K7oF/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70](https://www.bilibili.com/video/BV1Xj411K7oF/)
-
-
 
 核心：状态定义和状态转移
 
@@ -17,11 +12,9 @@ tags: [leetcode]
 
 自底向上：递推，即递推
 
+## 01 [198. House Robber](https://leetcode.cn/problems/house-robber/)
 
-
-01 [198. House Robber](https://leetcode.cn/problems/house-robber/)
-
-（自顶向下）递归思路：
+### 递归思路（自顶向下）
 
 1. 大白话：
    1. 自顶向下，从n开始，可以选择打劫或不打劫，自然其打劫的金额是不同的。选择打劫，则需要跳过n-1的房子的钱
@@ -52,7 +45,7 @@ class Solution:
         return dfs(n-1)
 ```
 
-递归思路（手动记忆化搜索）
+### 递归（手动记忆化搜索）
 
 ```
 class Solution:
@@ -76,13 +69,7 @@ class Solution:
         return dfs(n-1)
 ```
 
-
-
-
-
-
-
-（自底向上）递推思路：
+### 递推思路（自底向上）
 
 f[n]=max(f[n-1], f[n-2]+val[n])
 
@@ -102,24 +89,18 @@ class Solution:
         return f[n-1]
 ```
 
+## 一维数组递推，是从左往右还是从右往左？
 
-
-
-
-
-
-
+### 配图
 
 ![image-20240329014541239](./240324 02 DP核心思想.assets/image-20240329014541239.png)
 
-原理：
+### 原理
 
 1. S1区域是上一轮的数据，从左往右推的时候会被覆盖掉，所以需要从右往左更新当前值
 2. S2区域是上一轮的数据，同上，避免被覆盖，需要从左往右更新
 3. S3区域是下一轮的数据，如果当前值需要这里的数据，则需要从左往右更新
 4. S4区域是下一轮的数据，如果当前值需要这里的数据，则需要从右往左更新
-
-
 
 
 

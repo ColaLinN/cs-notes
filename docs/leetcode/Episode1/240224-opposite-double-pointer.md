@@ -8,18 +8,12 @@ tags: [leetcode]
 
 https://www.bilibili.com/video/BV1bP411c7oJ/?vd_source=66a0b89065d7f04805223fd7f2d613a6
 
-经典句子：
-
 数组是排好序的
 
 1. 如果是暴力的话，相当于用O(1)的时间只能获得O(1)的信息
 2. 如果是双向指针的画，相当于用O(1)的时间知道了O(n)的信息，排除掉了O(n)的可能。
 
-
-
-
-
-# 01 [167. 两数之和 II - 输入有序数组](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/)
+## 01 [167. 两数之和 II - 输入有序数组](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/)
 
 ```golang
 func twoSum(numbers []int, target int) []int {
@@ -41,11 +35,9 @@ func twoSum(numbers []int, target int) []int {
 }
 ```
 
-
-
 https://leetcode.cn/problems/two-sum/description/
 
-两数之和，哈希
+### 两数之和，哈希
 
 ```golang
 func twoSum(nums []int, target int) []int {
@@ -69,9 +61,7 @@ func twoSum(nums []int, target int) []int {
 }
 ```
 
-
-
-# 02 [15. 三数之和](https://leetcode.cn/problems/3sum/submissions/505014360/)
+## 02 [15. 三数之和](https://leetcode.cn/problems/3sum/submissions/505014360/)
 
 ```golang
 func threeSum(nums []int) [][]int {
@@ -109,9 +99,7 @@ func threeSum(nums []int) [][]int {
 }
 ```
 
-
-
-# 03 [16. 最近的三数之和](https://leetcode.cn/problems/3sum-closest/description/)
+## 03 [16. 最近的三数之和](https://leetcode.cn/problems/3sum-closest/description/)
 
 ```
 func threeSumClosest(nums []int, target int) int {
@@ -156,11 +144,9 @@ func threeSumClosest(nums []int, target int) int {
 }
 ```
 
+## 05 [2824. Count Pairs Whose Sum is Less than Target](https://leetcode.cn/problems/count-pairs-whose-sum-is-less-than-target/)
 
-
-# 05 [2824. Count Pairs Whose Sum is Less than Target](https://leetcode.cn/problems/count-pairs-whose-sum-is-less-than-target/)
-
-可以暴力，暴力反而是最快的😅
+### 可以暴力，暴力反而是最快的😅
 
 ```
 func countPairs(nums []int, target int) int {
@@ -176,9 +162,7 @@ func countPairs(nums []int, target int) int {
 }
 ```
 
-
-
-也可以双向双指针
+### 双向双指针
 
 ```
 func countPairs(nums []int, target int) int {
@@ -239,13 +223,9 @@ func triangleNumber(nums []int) int {
 
 
 
+## 双指针02，前缀和的思想
 
-
-# 双指针02
-
-有**前缀和**的思想
-
-## 01 [11. Container With Most Water](https://leetcode.cn/problems/container-with-most-water/)
+### 01 [11. Container With Most Water](https://leetcode.cn/problems/container-with-most-water/)
 
 ```
 func maxArea(height []int) int {

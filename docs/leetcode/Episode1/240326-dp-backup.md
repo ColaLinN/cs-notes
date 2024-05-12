@@ -1,53 +1,51 @@
 ---
 sidebar_position: 24
-title: 01 Backup DP
+title: Backup DP
 tags: [leetcode]
 ---
 
 
 
-零一背包活用
+## 背包问题
 
-
-
-零一背包
+【0-1背包 完全背包】 https://www.bilibili.com/video/BV16Y411v7Y6/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70
 
 1. 递归，自顶向下
-2. 递推，自底向上
-3. 两个数组
-4. 一个数组，从右往左
+2. 记忆化搜索
+3. 递推，自底向上
+4. 二维数组
+5. 一维数组
 
-完全背包
+### 零一背包
 
-1. 递归
-2. 递推
-3. 两个数组
-4. 一个数组，从左往右
+有 n 个物品，第 i 个物品的体积为 w[i]，价值为 v[i]，**每个物品至多选一个**，求体积和不超过 capacity 时的最大价值和。
 
+1. 当前 dfs 维
+2. `dfs[i][j] = max(dfs[i-1][j], dfs[i-1][j-w[i]] + v[i]])`
+3. 一维数组递推，从右往左，因为
 
+### 完全背包
 
+有 n 个物品，第 i 个物品的体积为 w[i]，价值为 v[i]，**每个物品可以重复选**，求体积和不超过 capacity 时的最大价值和。
 
+1. 一维数组递推，从左往右
 
-常见变形：
+### 常见变形
 
 1. 至多装capacity，求方案数/最大价值和
 2. 恰好装capacity，求方案数/最大/最小价值和
 3. 至少装capacity，求方案数/最小价值和
 
+## 01 [494. Target Sum](https://leetcode.cn/problems/target-sum/) 01 背包
 
-
-
-
-# 01 [494. Target Sum](https://leetcode.cn/problems/target-sum/) 01 背包
-
-递归写法，记忆化搜索
+### 递归写法，记忆化搜索
 
 1. if nums[i] > c
    1. dfs(n, c) = dfs(n-1, c)
 2. else
    1. dfs(n, c) = dfs(n-1, c) + dfs(n-1, nums[i]-c)
 
-```
+```python
 class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
         # p
@@ -65,26 +63,9 @@ class Solution:
                 return dfs(i-1, c)
             return dfs(i-1, c)+ dfs(i-1, c-nums[i])
         return dfs(n-1, cap)
-
-
-# 手动构造cache失败
-# Root Cause, 应为dfs的参数有两个，要是想搜索，需要二维数组来记录
-        cache = [-1] * n
-        def dfs(i, c):
-            if i < 0:
-                return 1 if c == 0 else 0
-            if cache[i] != -1:
-                return cache[i]
-            res = dfs(i-1, c)
-            if nums[i] <= c:
-                res += dfs(i-1, c-nums[i])
-            cache[i] = res
-            return res
-        return dfs(n-1, cap)
-
 ```
 
-正确的递归记忆化搜索，用二维数组
+### 记忆化搜索，二维数组
 
 ```
 class Solution:
@@ -116,7 +97,7 @@ class Solution:
         return dfs(n-1, cap)
 ```
 
-递推写法，其实就是自底向上的记忆化搜索
+### 递推写法，自底向上的记忆化搜索
 
 f[n] [c] = f[n-1] [c] + f[n-1] [nums[i] - c]
 
@@ -125,9 +106,7 @@ f[n] [c] = f[n-1] [c] + f[n-1] [nums[i] - c]
 2. else
    1. f[n+1] [c] = f[n] [c] + f[n] [nums[i] - c]
 
-
-
-```
+```python
 class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
         # p
@@ -190,27 +169,23 @@ class Solution:
         return f[target]
 ```
 
+## 02 [322. Coin Change](https://leetcode.cn/problems/coin-change/) 完全背包
 
-
-# 02 [322. Coin Change](https://leetcode.cn/problems/coin-change/) 完全背包
-
-递归思路，自顶向下记忆化搜索
+### 递归思路，自顶向下记忆化搜索
 
 1. if remained_amount < x， 只能不选当前硬币
    1. dfs(n, amount) = dfs(n-1, amount)
 2. Else，选或不选当前硬币，且可以重复选择当前硬币
    1. dfs(n, amount) = min(dfs(n-1, amount), dfs(n, amount-nums[n])+1)
 
-递推：
+### 递推
 
 1. 二维数组
    1. f[n] [amount] = min(f[n-1] [amount], f[n] [amount-nums[n]]+1)
 2. 一维数组
    1. f[c] = min(f[c], f[c-x]+1)，从左往右更新，因为下一个数的计算基于更新后的前一个数
 
-
-
-递归法
+### 递归
 
 ```
 class Solution:
@@ -229,7 +204,7 @@ class Solution:
         return dfs(n-1, target) if dfs(n-1, target) < inf else -1
 ```
 
-一维数组递推法
+### 一维数组递推法
 
 ```
 class Solution:
@@ -249,11 +224,11 @@ class Solution:
 
 
 
-03 [518. Coin Change II](https://leetcode.cn/problems/coin-change-ii/)
+## 03 [518. Coin Change II](https://leetcode.cn/problems/coin-change-ii/)
 
 管你0-1背包还是完全背包我都一把梭
 
-递归
+### 递归
 
 ```
 class Solution:
@@ -272,7 +247,7 @@ class Solution:
         return dfs(n-1, target)
 ```
 
-递推
+### 递推
 
 ```
 class Solution:
