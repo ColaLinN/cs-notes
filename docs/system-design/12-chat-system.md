@@ -6,25 +6,25 @@ tags: [System Design]
 
 ## How to design a WeChat?
 
-In this article, we will explore the design of chat system inlcuding the following points
+In this article, we will explore the design of chat system including the following points.
 
 - Chat server for real-time messaging
-- Suport group chat
+- Support group chat
 - Presence servers for online/offline status
-- Service discovery supports load balancing
+- Service discovery supports load balancing.
 - Key-value stores for chat history
-- Push notifications services for sending push notification
+- Push notification services for sending push notification.
 
 ![image-20240511123108871](./12-chat-system.assets/image-20240511123108871.png)
 
-## The questions to the scope
+## The questions about the scope
 
-1. Is the chat app 1 on 1 or group based?
-2. Mobile app? Or web app? Or both?
+1. Is the chat app 1 on 1 or group-based?
+2. Mobile app? Or a web app? Or both?
 3. What's the scale of the app? A startup app or massive scale?
 4. Group chat member limit?
 5. Message length limit?
-6. End-to-end encryption required?
+6. Is end-to-end encryption required?
 7. Should server store message? How long should we store the chat history? Archive?
 8. Should message reception be real-time?
 9. Online status?
@@ -36,7 +36,7 @@ In this article, we will explore the design of chat system inlcuding the followi
 
 ## Client-initiated connection techniques
 
-Client initiate HTTP connection to server and send msg to others through servers.
+Client initiates HTTP connection to server and send msg to others through servers.
 
 The keep-alive is efficient as it reduces the number of handshakes.
 
@@ -85,13 +85,13 @@ Cons:
 
 Websocket is initiated by client. It is bi-directional and persistent.
 
-It starts as a HTTP connection and be upgraded to websocket via some well defined handshake.
+It starts as a HTTP connection and be upgraded to websocket via some well-defined handshake.
 
 ![image-20240511123322758](./12-chat-system.assets/image-20240511123322758.png)
 
 Pros:
 
-- Bi-directinal and persistent
+- Bi-directional and persistent
 - It works even if a firewall is in place because it utilizes port 80 and 443 which are used by HTTP/HTTPS.
 
 Cons:
@@ -103,8 +103,8 @@ Cons:
 We can have a high level design consists of the follwing entities.
 
 - Chat servers, it's `stateful` because of the persistent websocket connection.
-- Presence servers, it's also `stateful` for presenting the online/offline status.
-- API servers. Handling everything including the user, authentication, group management, service discovery, etc.
+- Presence servers are also `stateful` for presenting the online/offline status.
+- API servers. Handling everything, including the user, authentication, group management, service discovery, etc.
 - Push Notification
 - Load Balancing
 - KV store
@@ -121,8 +121,8 @@ In terms of chat history, it's pattern is a bit different:
 
 1. The amount of data is enormous. For example, Whatsapp process 60 billion messages a day.
 2. Recent chats are accessed frequently.
-3. Random access of data. User might use features such as search, view your mentioned, view history, jump to specific messages, etc.
-4. The read to write ratio is about 1:1 on 1 chat systems
+3. Random access to data. Users might use features such as search, view your mentioned, view history, jump to specific messages, etc.
+4. The read-to-write ratio is about 1:1 on 1 chat systems
 
 Here, we choose key-value store for the following reasons:
 
@@ -156,13 +156,13 @@ It's an important topic worth exploring. message_id must satisfy the following t
 1. IDs must be unique
 2. IDs should be sortable by time, meaning ID of new messages should be newer than old ones.
 
-There are solutions come to minds:
+There are solutions come to mind:
 
-1. Use the `auto_increment` keyword in MySQL. However, NoSQL doesn't provide such feature. 
-2. Use UUID generator to generate global 64-bit sequence number like Snowflake.
-3. Use local sequence number generator.
-   1. Local means the message_id is only unique and ordering within a channel_id.
-   2. This approach is easier in comparison to the global UUID generator.
+1. Use the `auto_increment` keyword in MySQL. However, NoSQL doesn't provide such a feature. 
+2. Use UUID generator to generate global 64-bit sequence numbers like Snowflake.
+3. Use a local sequence number generator.
+   1. Local means the message_id is only unique and ordered within a channel_id.
+   2. This approach is easier than the global UUID generator.
 
 ## Design Deep Dive
 
@@ -194,7 +194,7 @@ The service discovery will pick up the best services for clients based on predef
 
 available for a 500 ppl small group chat
 
-### Presence status: online/offlilne
+### Presence status: online/offline
 
 login 
 
@@ -223,7 +223,7 @@ Additional talking points
 
 - Exetend the chat system to support photos and videos.
 - End-to-end encryption.
-- Caching messages on client side.
+- Caching messages on the client side.
 - Improve load time.
 - Fault tolerance.
   - Service single ponint of failure. State machine replication.
