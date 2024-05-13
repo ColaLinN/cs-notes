@@ -1,6 +1,6 @@
 ---
 sidebar_position: 11
-title: Same Direction Double Pointer
+title: Same Direction Pointer/Sliding Window
 tags: [leetcode]
 ---
 
@@ -8,7 +8,7 @@ tags: [leetcode]
 
 
 
-如题，同向双指针是一种可变的滑动窗口，只不过零把固定的叫做滑动窗口罢了
+同向双指针是一种可变的滑动窗口，只不过零把固定的叫做滑动窗口罢了
 
 最重要的就是要发现单调性，发现可以通过一次比较来发现多个相同条件的子数组/元素
 
