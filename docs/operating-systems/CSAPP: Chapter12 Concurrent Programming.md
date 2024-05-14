@@ -1,6 +1,6 @@
 
 
-# 并发编程
+# Parallel Programming
 
 如果逻辑控制流在时间上重叠，那么它们就是并发的（concurrent）
 
@@ -78,13 +78,7 @@ Posix线程（Pthreads）是C程序中处理线程的一个标准接口
 
 ## 协程（go routine）
 
-
-
-
-
-
-
-## reference
+## Reference
 
 1. CSAPP: Chapter12 Optimize Program Performance
 

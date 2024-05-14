@@ -155,6 +155,10 @@ const config: Config = {
               label: 'System Design',
               to: '/docs/system-design/from-zero-to-millions',
             },
+            {
+              label: 'Operating Systems',
+              to: '/docs/operating-systems/overview',
+            },
           ],
         },
         // {
