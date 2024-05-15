@@ -37,7 +37,7 @@ class Solution:
         return sum(activeTime)
 ```
 
-![image-20240516005234718](./20240515 - 2589 - Hard - Pointer Tree - multi-dimensional array.assets/image-20240516005234718.png)
+![image-20240516005234718](./20240515 2589 - Hard - Pointer Tree - multi-dimensional array.assets/image-20240516005234718.png)
 
 ## 数值空间大的话，线段树
 
