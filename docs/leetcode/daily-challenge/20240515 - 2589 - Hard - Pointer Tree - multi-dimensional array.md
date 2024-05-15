@@ -6,6 +6,8 @@
 
 [2589. Minimum Time to Complete All Tasks](https://leetcode.cn/problems/minimum-time-to-complete-all-tasks/)
 
+## 暴力
+
 ```
 1 <= tasks.length <= 2000
 1 <= starti, endi <= 2000
@@ -35,7 +37,9 @@ class Solution:
         return sum(activeTime)
 ```
 
-如果数值空间大的话，考虑用线段树
+![image-20240516005234718](./20240515 - 2589 - Hard - Pointer Tree - multi-dimensional array.assets/image-20240516005234718.png)
+
+## 数值空间大的话，线段树
 
 ```python
 class Solution:

@@ -16,6 +16,8 @@ tags: [leetcode]
   - 找到 jobs 中第一个满足 `j.endTime <= i.startTime` 下标 `j`
   - 对于 i 位置元素`<entTime, startTime, profit>`，计算 `f[i+1] = max(f[i], f[j]+p)`
 
+![image-20240516004318155](./20240504 1235 - Hard - DP multi-dimensional array.assets/image-20240516004318155.png)
+
 ```python
 class Solution:
     def jobScheduling(self, startTime: List[int], endTime: List[int], profit: List[int]) -> int:
