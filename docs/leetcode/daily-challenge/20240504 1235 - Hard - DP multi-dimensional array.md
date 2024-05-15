@@ -10,9 +10,11 @@ tags: [leetcode]
 
 思路
 
-- 按结束时间排序元组`<startTime，startTime，profit>`，得到排序后的jobs
+- 按结束时间排序元组`<startTime，startTime，profit>`，得到排序后的 jobs
 - 动态规划：
-  - 遍历元组，对于每个i位置元素`<entTime, startTime, profit>`，我们计算 `f[i+1] = max(f[i], f[j]+p)`
+  - 从前往后遍历元组
+  - 找到 jobs 中第一个满足 `j.endTime <= i.startTime` 下标 `j`
+  - 对于 i 位置元素`<entTime, startTime, profit>`，计算 `f[i+1] = max(f[i], f[j]+p)`
 
 ```python
 class Solution:

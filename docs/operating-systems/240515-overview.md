@@ -24,7 +24,7 @@ Virtualization converts a physical entity into multiple logical entities.
 
 There are two virtualized techniques: 
 
-- Time-division multiplexing: Several processes can be executed in a processor. Each process takes turns occupying the processor, executes a small slice of time at a time, and switches quickly.
+- Time-division multiplexing: A processor can execute several processes. Each process takes turns occupying the processor, executes a small slice of time at a time, and switches quickly.
 - Space-division multiplexing: Virtual Memory, which abstracts physical memory into address space, with each process having its own address space. Pages in address space are mapped to physical memory. The pages in the address space do not all need to be in physical address, when a page that is not in physical memory is used, a page replacement algorithm is performed to replace the page into memory.
 
 ### 4. Asynchronization
@@ -115,3 +115,6 @@ The traps is used while programs makes System Call in user mode.
 
 
 
+## Reference
+
+1. [Operating System Overview](https://www.cyc2018.xyz/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20-%20%E6%A6%82%E8%BF%B0.html#%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8)
