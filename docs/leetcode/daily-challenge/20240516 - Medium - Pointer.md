@@ -4,7 +4,7 @@
 
 
 
-
+https://leetcode.cn/problems/maximum-number-of-weeks-for-which-you-can-work/description/?envType=daily-question&envId=2024-05-16
 
 ```python
 class Solution:
