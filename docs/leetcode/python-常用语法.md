@@ -643,6 +643,7 @@ import bisect
 data = [('red', 5), ('blue', 1), ('yellow', 8), ('black', 0)]
 data = sorted(data, key=lambda r:r[1])
 print(data)
+# [('black', 0), ('blue', 1), ('red', 5), ('yellow', 8)]
 keys = [d[1] for d in data]
 for k in keys:
   print(k, bisect.bisect_left(keys, k), data[bisect.bisect_left(keys, k)])

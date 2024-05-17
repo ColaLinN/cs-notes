@@ -141,7 +141,7 @@ Note that there must still be concurrent events
    1. For two vectors x and y, if `Cx[i] < Cy[i]`, and `Cx[j] > Cy[j]` for some `i` and `j`
 2. Happens before
    1. If `Cx[i] <= Cy[i]` for all i, and there exists j such that `Cx[j] < Cy[j]`
-      1. That means `Cx` happens before `Cy`
+      1. That means `Cx` happens before `Cy` 
 
 ## Others
 
