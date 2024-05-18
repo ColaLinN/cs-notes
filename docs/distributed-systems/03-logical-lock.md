@@ -8,60 +8,91 @@ sidebar_position: 3
 
 ## Time, Clock, and Ordering of Event
 
-## Questions
+## Ordering of Event
 
-### Why do we need the logical lock?
+### Why need to order event?
 
-Reason: The physical lock is not accurate and unique among all machines
+- In real life, some things should happen in order. 
+- For example, 
+  - News should be corrected before being released.
+  - Membership card is only activated after the user paid
+  - Multiple updates of content should happen in order.
+  - The privacy should be updated before posting
 
-### How do we sync the time?
+### How to order event?
 
-Physical Lock
-1. Beacon-based approach
-   1. The master periodically broadcasts the time to clients
-   2. Problem: the unstable latency in sending synchronize
+- Label each event with its physical time
 
-2. Interrogation-based protocols
-   1. The clients repeatedly query the server, the delay is RTT (Round Traced Time)
-   2. Problem:  NTP, PTP (TBC)
+## Physical Lock
 
-### How to order events without the physical clock?
+### Approach #1 synchronization
 
-Happens-before
+Beacon-based approach 
 
-Sample:
+1. Designate server with GPS/atomic clock as the master
+2. The master periodically broadcasts the time to clients. Clients resets the time upon receipt
+3. Problem: the unstable latency in event sending and receiving
 
-1. For example, Cooking before Eating, Eating before Sleep
-2. Transitivity: Cooking before Sleep
+![image-20240518145737808](./03-logical-lock.assets/image-20240518145737808.png)
 
-Happens before relationship
+### Approach #2 Interrogation-based protocols
 
-1. Captures logical causal dependencies between events
-2. (Irreflexive) partial ordering: → (TBC)
-   1. `a -> b, then b -\->a`
-   2. `a -> b, b -> c then a -> c`
+![image-20240518145916218](./03-logical-lock.assets/image-20240518145916218.png)
 
-Concept (TBC)
+1. Client queries server
+2. Time = `T1 + (T2-T0)/2`
+3. Multiple samples, average over several servers; throw out outliers
+4. Take into account the clock rate skew
+5. Protocols: 
+   1. NTP (Network Time Protocol), used in server sync, log records, etc.
+   2. PTP (Precision Time Protocol), used in electricity network, financial trading system, et.
+
+### Physical Lock Problem
+
+- Physical lock is not accurate.
+- Physical lock is not the same among multiple machines.
+
+## How to order events without physical clock?
+
+### Happens-before
+
+1. Captures logical (causal) dependencies between events
+2. For example, 
+   1. Cooking before Eating, Eating before Sleep.
+   2. Transitivity: Cooking Before Sleep
+
+3. (Irreflexive) partial ordering: `->` 
+   1. `a -/-> b`
+   2. `a -> b, then b -\->a`
+   3. `a -> b, b -> c then a -> c`
+
+
+### Happens before In distributed systems
 
 1. Processes
 2. Messages
-3. Events: what's the event? send msg, recv msg, **event happens**
+3. Events: send ms; receive msg; event happens
+
+![image-20240518151123342](./03-logical-lock.assets/image-20240518151123342.png)
 
 Rules
 
-1. Within a process, a comes before b, we have a → b
+1. Happends-before
+   1. Within a process, `a` comes before `b`, we have `a -> b`
 
-   Transitivity: if `a → b` and` b → c` then `a → c`
+   2. `a -> b` means `b` could have been influenced by `a`
 
-2. `a → b` means "b could have been influenced by a"
+2. Transitivity
+   1.  if `a -> b` and` b -> c` then `a -> c`
 
-3. `a → b` and `b → a`: events are **concurrent**
+3. Concurent
+   1. `a -/-> b` and `b -/-> a`: events are **concurrent**
+   2. Concurrent Means: No one can tell whether a or b happened first.
 
-   1. Concurrent Means: No one can tell whether a or b happened first.
 
 ## Lamport Logical Clock
 
-![image-20240517042445675](./03-logical-lock.assets/image-20240517042445675.png)
+We need to mark each event with timestamp to preserve the happens-before order of events.
 
 ### Goal
 
@@ -74,41 +105,40 @@ if `a < b`, then `C(a) < C(b)`
 
 ### Implementation
 
-1. Keep a local clock T
+1. Keep a local clock `T` on each process
 2. Increment T whenever an event happens
-3. Send Clock value Tm (Time of Message) on all messages
-4. On receiving or sending mesage: `T = max(T, Tm) + 1`
-   1. The receiving message's T will reset the current machine's T
+3. Send clock time on all messages as `Tm`
+4. On message receipt: `T = max(T, Tm) + 1`
+
+![image-20240517042445675](./03-logical-lock.assets/image-20240517042445675.png)
 
 ### Use the logical clock to form a total ordering
 
-1. If `C(a) < C(b)`, then `a => b`
-2. If `C(a)==C(b)`, we need to check the processID
-3. **`a ->b` does not mean `a => b`. because the T on different processes is different**
-   1. `a->b` means `a=>b`
-   2. But `a=>b`, i.e. `C(a)<C(b)` doesn't mean `a->b`!!!!!
+1. New relation: `=>`
+2. If `C(a) < C(b)`, then `a => b`
+3. If `C(a)==C(b)`, we need to check the processID
+4. `a->b` means `a=>b`
+   1. In converse,  `a=>b`, i.e. `C(a)<C(b)` doesn't mean `a->b`. For example, the event `B(T=4) ` ie concurent to `D(T=1)`, we cannot said `D -> B` based on the `C(D) > C(B)`
 
-### Mutual Exclusion
 
-Implementation
+### Mutual Exclusion Implementation with Logical Lock
 
-1. To acquire the lock: Send request to everyone, including itself
+![image-20240518153026610](./03-logical-lock.assets/image-20240518153026610.png)
 
-2. Three request types:
+1. Three types of requests:
 
-   1. Request (broadcast)
-   2. Release  (broadcast)
+   1. Acquire Lock (broadcast)
+   2. Release Lock (broadcast)
    3. Acknowledge (on receipt)
+2. Each node:
 
-3. Each Node:
-
-   1. Holds the request queue
+   1. Holds the lock `acquiring queue`
    2. Records the latest timestamp received from other Nodes
 
-### Problem
+### Logical Lock Problem
 
 1. When `a -> b`, then `C(a) < C(b)`
-2. But on converse, if `C(a) < C(b)`, it doesn't mean a -> b, they could also be concurrent in different processes
+2. But on converse, if `C(a) < C(b)`, it doesn't mean `a -> b`, they could also be concurrent in different processes
 
 ## Vector Clock
 
