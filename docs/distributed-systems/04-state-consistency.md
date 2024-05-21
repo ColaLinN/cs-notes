@@ -158,7 +158,7 @@ One of the strongest guarantees for concurrent objects.
 
 > In database theory, the CAP theorem, also named Brewer's theorem after computer scientist Eric Brewer, states that any distributed data store can provide only two of the following three guarantees
 
-These CAP properties cannot be acheived at the same time.
+These `CAP` properties cannot be achieved at the same time.
 
 ### BASE
 
@@ -166,11 +166,10 @@ These CAP properties cannot be acheived at the same time.
 2. Soft State
 3. Eventually Consistent
 
-BASE theorem is the result of the trade-off between consistency and availability in CAP. Its core idea is: if strong consistency cannot be achevied, each system can adopt their own approaches to make the system acheive eventual consistency.
-
-
+`BASE` theorem is the result of the trade-off between consistency and availability in CAP. Its core idea is: if strong consistency cannot be achieved, each system can adopt their approaches to make the system achieve eventual consistency.
 
 ## Reference
 
 1. NUS CS5223 Distributed System Course
 1. Distributed State by John K. Ousterhou
+1. [Distributed System](https://www.cyc2018.xyz/%E5%85%B6%E5%AE%83/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/%E5%88%86%E5%B8%83%E5%BC%8F.html#%E5%9B%9B%E3%80%81base)

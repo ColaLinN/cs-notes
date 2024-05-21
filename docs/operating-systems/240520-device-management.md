@@ -4,14 +4,14 @@
 
 ## Disk Structure
 
-- **Platter (盘面)**：One disk has several platters.
+- **Platter (盘面)**: One disk has several platters.
 - **Track (磁道)**: A circular band on the surface of a disk. A disk surface can have multiple tracks.
 - **Track Sector (扇区)**: An arc segment of a track. A track can have multiple sectors, and it is the smallest physical storage unit, commonly available in sizes of 512 bytes and 4 KB.
 - **Head (磁头)**: Positioned very close to the disk surface, it converts the magnetic field on the disk surface into electrical signals (read) or converts electrical signals into the magnetic field on the disk surface (write).
 - **Actuator arm (制动手臂)**: Moves the head between tracks.
 - **Spindle (主轴)**: Rotates the entire disk surface.
 
-![image-20240521010305707](./20240520-device-management.assets/image-20240521010305707.png)
+![image-20240521010305707](./240520-device-management.assets/image-20240521010305707.png)
 
 
 
@@ -49,7 +49,7 @@ The following is an example.
 
 - So, total overhead movement  (total distance covered by the disk arm) = `(82-50)+(170-82)+(170-43)+(140-43)+(140-24)+(24-16)+(190-16) = 642`
 
-![First Come First Serve](./20240520-device-management.assets/fcfs3.jpg)
+![First Come First Serve](./240520-device-management.assets/fcfs3.jpg)
 
 ### 2. Shortest Seek Time First (SSTF)
 
@@ -74,11 +74,11 @@ In the following example:
 
 
 
-![Shortest Seek Time First](./20240520-device-management.assets/sstf1.jpg)
+![Shortest Seek Time First](./240520-device-management.assets/sstf1.jpg)
 
 ### 3. Elevator Algorithm (SCAN)
 
-The elevator always moves at the same direction, and change the moving direction until there is no requests in the current direction.
+The elevator always moves in the same direction, and changes the moving direction until there are no requests in the current direction.
 
 Pros:
 
@@ -98,7 +98,7 @@ In the following example:
 
 - So, total overhead movement  (total distance covered by the disk arm) = `(199-50) + (199-16) = 332`
 
-![image-20240521014132591](./20240520-device-management.assets/image-20240521014132591.png)
+![image-20240521014132591](./240520-device-management.assets/image-20240521014132591.png)
 
 ## Reference
 

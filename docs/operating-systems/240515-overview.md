@@ -24,22 +24,22 @@ Virtualization converts a physical entity into multiple logical entities.
 
 There are two virtualized techniques: 
 
-- Time-division multiplexing: A processor can execute several processes. Each process takes turns occupying the processor, executes a small slice of time at a time, and switches quickly.
-- Space-division multiplexing: Virtual Memory, which abstracts physical memory into address space, with each process having its own address space. Pages in address space are mapped to physical memory. The pages in the address space do not all need to be in physical address, when a page that is not in physical memory is used, a page replacement algorithm is performed to replace the page into memory.
+- **Time-division multiplexing**: A processor can execute several processes. Each process takes turns occupying the processor, executes a small slice of time at a time, and switches quickly.
+- **Space-division multiplexing**: Virtual Memory, which abstracts physical memory into address space, with each process having its own address space. Pages in address space are mapped to physical memory. The pages in the address space do not all need to be in physical address, when a page that is not in physical memory is used, a page replacement algorithm is performed to replace the page into memory.
 
 ### 4. Asynchronization
 
-The process does not end/complete at once but walks and stops, moving at an unknowable speed.
+The process does not end/complete at once but rather progresses intermittently, moving forward at an unpredictable speed.
 
 ## Basic Functionalities
 
 ### 1. Process Management
 
 - Process Control
+- Process Scheduling
 - Process Synchronization
 - Process Communication
 - Deadlock Handling
-- Process Scheduling
 
 ### 2. Memory Management
 
@@ -112,8 +112,6 @@ The exception is caused by internal events during CPU's instruction execution, s
 ### 3. Traps
 
 The traps is used while programs makes System Call in user mode.
-
-
 
 ## Reference
 
