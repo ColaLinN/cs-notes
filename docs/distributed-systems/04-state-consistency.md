@@ -56,7 +56,7 @@ When client updates file
 
 Performance
 
-- Performance is bad because all updates go though the server's disk
+- Performance is bad because all updates go through the server's disk
 
 Consistency
 
