@@ -8,7 +8,11 @@ tags: [leetcode]
 
 [98. Validate Binary Search Tree](https://leetcode.cn/problems/validate-binary-search-tree/)
 
-普通写法
+Front Order Traversal: root, left, right
+
+Middle Order Traversal: left, root, right
+
+## Recursion
 
 ```
 # Definition for a binary tree node.
@@ -28,7 +32,7 @@ class Solution:
         return isBST(root, float("-inf"), float("inf"))
 ```
 
-前序遍历
+## Front Order Traversal
 
 由于是前序，只能把范围往下传
 
@@ -46,9 +50,7 @@ class Solution:
         return left < root.val < right and self.isValidBST(root.left, left, root.val) and self.isValidBST(root.right, root.val, right)
 ```
 
-
-
-中序遍历
+## Middle Order Traversal
 
 中序则可以看成是遍历递增数组，当前值必须小于前一个值
 
@@ -75,9 +77,7 @@ class Solution:
 
 ```
 
-
-
-后序遍历
+## Backward Order Traversal
 
 后序则需要把范围往上传来判断root是否合法
 

@@ -704,10 +704,15 @@ print('法3 {0} 和 {1}'.format('Google', 'Runoob')) #
 
 ### Deep Copy and Shallow Copy
 
-```python
-c=copy.copy(a)#对象拷贝，浅拷贝
-d=copy.deepcopy(a)#对象拷贝，深拷贝
-```
+所以python的传值和传址是根据传入参数的类型来选择的
+
+传值的参数类型：数字，字符串，元组
+
+传址的参数类型：列表，字典
+
+- `copy.copy()` 浅拷贝，可以拷贝单层数组（constructs a new compound object and then inserts *references* into it to the objects found in the original.）
+
+- `copy.deepcopy()` 深拷贝，可以拷贝数组里的数组（constructs a new compound object and then recursively, inserts *copies* into it of the objects found in the original.）
 
 Sample
 
@@ -773,3 +778,5 @@ def dfs(i,j):
 5. [What does * represent in function argument list in python?, StackOverflow](https://stackoverflow.com/questions/57667742/what-does-represent-in-function-argument-list-in-python)
 6. [Python Lambda, W3C](https://www.w3schools.com/python/python_lambda.asp)
 7. [分享｜从集合论到位运算，常见位运算技巧分类总结！——灵神](https://leetcode.cn/circle/discuss/CaOJ45/)
+8. [copy — Shallow and deep copy operations](https://docs.python.org/3/library/copy.html)
+9. [Python Value Reference](https://www.cnblogs.com/CheeseZH/p/5165283.html)
