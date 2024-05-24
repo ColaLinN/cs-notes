@@ -8,9 +8,7 @@ tags: [leetcode]
 
 【删除链表重复节点【基础算法精讲 08】】 https://www.bilibili.com/video/BV1VP4y1Q71e/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70
 
-
-
-01 [237. Delete Node in a Linked List](https://leetcode.cn/problems/delete-node-in-a-linked-list/)
+## [237. Delete Node in a Linked List](https://leetcode.cn/problems/delete-node-in-a-linked-list/)
 
 ```
 /**
@@ -35,41 +33,29 @@ func deleteNode(node *ListNode) {
 }
 ```
 
+## [19. Remove Nth Node From End of List](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/)
 
-
-02 https://leetcode.cn/problems/remove-nth-node-from-end-of-list/
-
-```
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
-func removeNthFromEnd(head *ListNode, n int) *ListNode {
-    dummy := &ListNode{
-        Val: 0,
-        Next: head,
-    }
-    fast := dummy
-    for i := 0; i < n; i++ {
-        fast = fast.Next
-    }
-
-    slow := dummy
-    for fast.Next != nil {
-        fast = fast.Next
-        slow = slow.Next
-    }
-    slow.Next = slow.Next.Next
-    return dummy.Next
-}
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        dummy = ListNode(next=head)
+        slow = dummy
+        fast = dummy
+        for i in range(n):
+            fast = fast.next
+        while fast.next:
+            slow = slow.next
+            fast = fast.next
+        slow.next = slow.next.next
+        return dummy.next
 ```
 
-
-
-03 [83. Remove Duplicates from Sorted List](https://leetcode.cn/problems/remove-duplicates-from-sorted-list/)
+## [83. Remove Duplicates from Sorted List](https://leetcode.cn/problems/remove-duplicates-from-sorted-list/)
 
 ```
 # Definition for singly-linked list.
@@ -89,9 +75,7 @@ class Solution:
         return head
 ```
 
-
-
-04 [82. Remove Duplicates from Sorted List II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/)
+## [82. Remove Duplicates from Sorted List II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/)
 
 ```
 # Definition for singly-linked list.
@@ -112,13 +96,3 @@ class Solution:
                 cur = cur.next
         return dummy.next
 ```
-
-
-
-
-
-
-
-ENG
-
-1. singly-linked list 单链表头

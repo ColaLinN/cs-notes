@@ -4,149 +4,161 @@ title: Opposite Double Pointer
 tags: [leetcode]
 ---
 
+# Template - 3Sum
 
+![image-20240525031800443](./240224-opposite-double-pointer.assets/image-20240525031800443.png)
 
-https://www.bilibili.com/video/BV1bP411c7oJ/?vd_source=66a0b89065d7f04805223fd7f2d613a6
-
-数组是排好序的
-
-1. 如果是暴力的话，相当于用O(1)的时间只能获得O(1)的信息
-2. 如果是双向指针的画，相当于用O(1)的时间知道了O(n)的信息，排除掉了O(n)的可能。
-
-## 01 [167. 两数之和 II - 输入有序数组](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/)
-
-```golang
-func twoSum(numbers []int, target int) []int {
-    var i int = 0
-    var j = len(numbers) - 1
-    var res = make([]int, 0)
-    for i < j {
-        var curSum int = numbers[i] + numbers[j]
-        if curSum < target {
-            i +=1
-        } else if curSum > target {
-            j -=1
-        } else {
-            res = []int{i + 1, j +1}
-            break
-        }
-    }
-    return res
-}
-```
-
-https://leetcode.cn/problems/two-sum/description/
-
-### 两数之和，哈希
-
-```golang
-func twoSum(nums []int, target int) []int {
-    var numMap = make(map[int]int)
-    for i, value := range nums {
-        numMap[value] = i
-    }
-
-    res := make([]int, 0)
-    for i, value := range nums {
-        if idx, ok := numMap[target - value]; ok {
-            if idx == i {
+```python
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        nums = sorted(nums)
+        res = []
+        for i in range(len(nums) - 2):
+            # optimize 1, skip repeat nums[i]
+            if i > 0 and nums[i - 1] == nums[i]:
                 continue
-            } else {
-                res = []int{i, idx}
+            # optimize 2, skip impossible number
+            if nums[i] + nums[i + 1] + nums[i + 2] > 0:
                 break
-            }
-        }
-    }
-    return res
-}
+            # optimize 2, skip impossible number
+            if nums[i] + nums[len(nums) - 1] + nums[len(nums) - 2] < 0:
+                continue
+
+            j = i + 1
+            k = len(nums) - 1
+            while j < k:
+                curSum = nums[i] + nums[j] + nums[k]
+                if curSum < 0:
+                    j += 1
+                if curSum > 0:
+                    k -= 1
+                if curSum == 0:
+                    res.append([nums[i], nums[j], nums[k]])
+
+                    # optimize 3, skip same number[j], number[k]
+                    j += 1
+                    while j < k and nums[j - 1] == nums[j]:
+                        j += 1
+                    k -= 1
+                    while j < k and nums[k] == nums[k + 1]:
+                        k -= 1
+        return res
 ```
 
-## 02 [15. 三数之和](https://leetcode.cn/problems/3sum/submissions/505014360/)
+## Key Points
 
-```golang
-func threeSum(nums []int) [][]int {
-    var n int = len(nums)
-    sort.Ints(nums)
-    var res = make([][]int, 0)
-    for i := 0 ; i < n - 2 ; i++ {
-        if nums[i] + nums[n-2] + nums[n-1] < 0 { //optimize 1
-            continue
-        }
-        if nums[i] + nums[i+1] + nums[i+2] > 0 { //optimize 2
-            break
-        }
+May need to sort the array in ascending order
 
-        var target int = - nums[i]
-        var j int = i + 1
-        var k int = n - 1
-        for j < k {
-            var curSum int = nums[j] + nums[k]
-            if curSum < target {
-                j +=1
-            } else if curSum > target {
-                k -=1
-            } else {
-                res = append(res, []int{nums[i], nums[j], nums[k]})
-                for j++; j < k && nums[j-1] == nums[j]; j++ {} //skip repeated number
-                for k--; k > j && nums[k] == nums[k+1]; k-- {} //skip repeated number
-            }
-        }
-        for i < n -2 && nums[i] == nums[i+1] { //skip repeated number
-            i += 1
-        }
-    }
-    return res
-}
+1. Brute Force Solution can only get O(1) info by O(1) Time
+2. Double Pointer uses O(1) time to konw O(n) info, remove the rest O(n) possibility
+
+## [167. Two Sum II - Input Array Is Sorted](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/)
+
+```python
+class Solution:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        i = 0
+        j = len(numbers) - 1
+        while i < j:
+            s = numbers[i] + numbers[j]
+            if s < target:
+                i += 1
+            elif s > target:
+                j -= 1
+            else:
+                return [i + 1, j + 1]
+        return None
 ```
 
-## 03 [16. 最近的三数之和](https://leetcode.cn/problems/3sum-closest/description/)
+## [15. 3Sum](https://leetcode.cn/problems/3sum/)
 
-```
-func threeSumClosest(nums []int, target int) int {
-    sort.Ints(nums)
+```python
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        nums = sorted(nums)
+        res = []
+        for i in range(len(nums) - 2):
+            # optimize 1, skip repeat nums[i]
+            if i > 0 and nums[i - 1] == nums[i]:
+                continue
+            # optimize 2, skip impossible number
+            if nums[i] + nums[i + 1] + nums[i + 2] > 0:
+                break
+            # optimize 2, skip impossible number
+            if nums[i] + nums[len(nums) - 1] + nums[len(nums) - 2] < 0:
+                continue
 
-    var n int = len(nums)
-    var res = 0
-    var minAbs int = 0x0FFFF //学习灵神的最大值
-    for i := 0 ; i < n - 2 ; i++ {
-        // if nums[i] + nums[n-2] + nums[n-1] - target < 0 { //optimize 1
-        //     continue
-        // }
-        // if nums[i] + nums[i+1] + nums[i+2] > 0 { //optimize 2
-        //     break
-        // }
-        var x int = nums[i]
-        var j int = i + 1
-        var k int = n - 1
-        for j < k {
-            var sum = x + nums[j] + nums[k] 
-            var diff = sum - target
-            var abs = diff
+            j = i + 1
+            k = len(nums) - 1
+            while j < k:
+                curSum = nums[i] + nums[j] + nums[k]
+                if curSum < 0:
+                    j += 1
+                if curSum > 0:
+                    k -= 1
+                if curSum == 0:
+                    res.append([nums[i], nums[j], nums[k]])
 
-            if diff <= 0 {
-                abs = -diff
-                j++
-                // for j++; j < k && nums[j-1] == nums[j]; j++ {} //skip repeated number
-            } else {
-                k--
-                // for k--; k > j && nums[k] == nums[k+1]; k-- {} //skip repeated number
-            }
-            if abs < minAbs {
-                res = sum
-                minAbs = abs
-            }
-        }
-        // for i < n -2 && nums[i] == nums[i+1] { //skip repeated number
-        //     i += 1
-        // }
-    }
-    return res
-}
+                    # optimize 3, skip same number[j], number[k]
+                    j += 1
+                    while j < k and nums[j - 1] == nums[j]:
+                        j += 1
+                    k -= 1
+                    while j < k and nums[k] == nums[k + 1]:
+                        k -= 1
+        return res
 ```
 
-## 05 [2824. Count Pairs Whose Sum is Less than Target](https://leetcode.cn/problems/count-pairs-whose-sum-is-less-than-target/)
+## [16. 3Sum Closest](https://leetcode.cn/problems/3sum-closest/)
 
-### 可以暴力，暴力反而是最快的😅
+```python
+class Solution:
+    def threeSumClosest(self, nums: List[int], target: int) -> int:
+        nums.sort()
+        n = len(nums)
+        min_diff = inf
+        for i in range(n - 2):
+            x = nums[i]
+            if i and x == nums[i - 1]:
+                continue  # 优化三
+
+            # 优化一
+            s = x + nums[i + 1] + nums[i + 2]
+            if s > target:  # 后面无论怎么选，选出的三个数的和不会比 s 还小
+                if s - target < min_diff:
+                    ans = s  # 由于下一行直接 break，这里无需更新 min_diff
+                break
+
+            # 优化二
+            s = x + nums[-2] + nums[-1]
+            if s < target:  # x 加上后面任意两个数都不超过 s，所以下面的双指针就不需要跑了
+                if target - s < min_diff:
+                    min_diff = target - s
+                    ans = s
+                continue
+
+            # 双指针
+            j, k = i + 1, n - 1
+            while j < k:
+                s = x + nums[j] + nums[k]
+                if s == target:
+                    return s
+                if s > target:
+                    if s - target < min_diff:  # s 与 target 更近
+                        min_diff = s - target
+                        ans = s
+                    k -= 1
+                else:  # s < target
+                    if target - s < min_diff:  # s 与 target 更近
+                        min_diff = target - s
+                        ans = s
+                    j += 1
+        return ans
+```
+
+## [2824. Count Pairs Whose Sum is Less than Target](https://leetcode.cn/problems/count-pairs-whose-sum-is-less-than-target/)
+
+Brute Force Solution
 
 ```
 func countPairs(nums []int, target int) int {
@@ -162,37 +174,26 @@ func countPairs(nums []int, target int) int {
 }
 ```
 
-### 双向双指针
+Opposite Double Pointer
 
-```
-func countPairs(nums []int, target int) int {
-    sort.Ints(nums)
-
-    var cnt int = 0
-    for i := 0; i < len(nums) - 1; i++ {
-        // if i > 0 && nums[i-1] == nums[i] {
-        //     continue
-        // }
-
-        var k int = len(nums) - 1
-        for i < k {
-            if nums[i] + nums[k] >= target {
-                k--
-            } else {
-                cnt += k -i
-                break
-            }
-        }
-    }
-    return cnt
-}
+```python
+class Solution:
+    def countPairs(self, nums: List[int], target: int) -> int:
+        nums = sorted(nums)
+        
+        ans = 0
+        for i in range(len(nums)):
+            j = len(nums) - 1
+            while i < j:
+                if nums[i] + nums[j] < target:
+                    ans += j - i
+                    break
+                else:
+                    j -= 1
+        return ans
 ```
 
-
-
-# 06 [611. Valid Triangle Number](https://leetcode.cn/problems/valid-triangle-number/)
-
-主要的思想也没有比暴力好多少
+## [611. Valid Triangle Number](https://leetcode.cn/problems/valid-triangle-number/)
 
 ```
 func triangleNumber(nums []int) int {
@@ -221,35 +222,28 @@ func triangleNumber(nums []int) int {
 }
 ```
 
+## [11. Container With Most Water](https://leetcode.cn/problems/container-with-most-water/)
 
-
-## 双指针02，前缀和的思想
-
-### 01 [11. Container With Most Water](https://leetcode.cn/problems/container-with-most-water/)
-
-```
-func maxArea(height []int) int {
-    res := 0
-    left := 0
-    right := len(height) - 1
-    for left < right {
-        curAmount := 0
-        if height[left] <= height[right] {
-            curAmount = height[left] * (right-left)
-            left++
-        } else {
-            curAmount = height[right] * (right-left)
-            right--
-        }
-        if res < curAmount {
-            res = curAmount
-        }
-    }
-    return res
-}
+```python
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        left = 0
+        right = len(height)-1
+        res = 0
+        while left < right:
+            res = max(res, (right-left)*min(height[right], height[left]))
+            if height[left] < height[right]:
+                left+=1
+            else:
+                right-=1
+        return res
 ```
 
-## 02 [42. Trapping Rain Water](https://leetcode.cn/problems/trapping-rain-water/)
+## Prefix Sum
+
+## [42. Trapping Rain Water](https://leetcode.cn/problems/trapping-rain-water/)
+
+![image-20240525030835025](./240224-opposite-double-pointer.assets/image-20240525030835025.png)
 
 ```
 func trap(height []int) int {
@@ -278,3 +272,6 @@ func trap(height []int) int {
 }
 ```
 
+## Reference
+
+1. [灵神视频](https://www.bilibili.com/video/BV1bP411c7oJ/?vd_source=66a0b89065d7f04805223fd7f2d613a6)

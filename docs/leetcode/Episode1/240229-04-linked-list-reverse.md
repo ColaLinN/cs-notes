@@ -272,41 +272,6 @@ class Solution:
 
 
 
-
-
-Python取商取余
-
-```
-result = 7 % 3
-print(result)  # 输出 1
-result = 7 // 3
-print(result)  # 输出 2
-```
-
-Golang
-
-```
-package main
-
-import "fmt"
-
-func main() {
-    dividend := 7
-    divisor := 3
-    quotient := dividend / divisor
-    remainder := dividend % divisor
-    fmt.Println("Quotient:", quotient)   // 输出 Quotient: 2
-    fmt.Println("Remainder:", remainder) // 输出 Remainder: 1
-}
-
-```
-
-
-
-
-
-
-
 ENG
 
 1. `k` is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of `k` then left-out nodes, in the end, should remain as it is.

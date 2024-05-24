@@ -8,7 +8,7 @@ tags: [leetcode]
 
 
 
-## 01 [876. Middle of the Linked List](https://leetcode.cn/problems/middle-of-the-linked-list/)
+## [876. Middle of the Linked List](https://leetcode.cn/problems/middle-of-the-linked-list/)
 
 ```python
 # Definition for singly-linked list.
@@ -45,9 +45,7 @@ func middleNode(head *ListNode) *ListNode {
 }
 ```
 
-
-
-## 02 [141. Linked List Cycle](https://leetcode.cn/problems/linked-list-cycle/)
+## [141. Linked List Cycle](https://leetcode.cn/problems/linked-list-cycle/)
 
 ```
 /**
@@ -71,9 +69,7 @@ func hasCycle(head *ListNode) bool {
 }
 ```
 
-
-
-## 03 [142. Linked List Cycle II](https://leetcode.cn/problems/linked-list-cycle-ii/) Find the entry point of Cycle
+## [142. Linked List Cycle II](https://leetcode.cn/problems/linked-list-cycle-ii/) Find the entry point of Cycle
 
 问题
 
