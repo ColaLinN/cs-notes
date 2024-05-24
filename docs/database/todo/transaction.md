@@ -24,3 +24,13 @@ BEGIN and BEGIN WORK are supported as aliases of START TRANSACTION for initiatin
 
 
 You can change the isolation level or access mode for transactions with the [`SET TRANSACTION`](https://dev.mysql.com/doc/refman/8.0/en/set-transaction.html) statement. See [Section 15.3.7, “SET TRANSACTION Statement”](https://dev.mysql.com/doc/refman/8.0/en/set-transaction.html).
+
+
+
+
+
+[Transaction over multiple tables](https://coderanch.com/t/299832/databases/Transaction-multiple-tables)
+
+[Multiple database and transactions](https://stackoverflow.com/questions/2239810/multiple-database-and-transactions)
+
+[15.3.1 START TRANSACTION, COMMIT, and ROLLBACK Statements](https://dev.mysql.com/doc/refman/8.0/en/commit.html)

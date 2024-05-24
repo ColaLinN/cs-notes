@@ -22,3 +22,21 @@ tags: [leetcode]
 9. map := make(map[int]bool)
 10. `if x, found := res["strID"]; found {
 ```
+
+取商取余
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    dividend := 7
+    divisor := 3
+    quotient := dividend / divisor
+    remainder := dividend % divisor
+    fmt.Println("Quotient:", quotient)   // 输出 Quotient: 2
+    fmt.Println("Remainder:", remainder) // 输出 Remainder: 1
+}
+```
+

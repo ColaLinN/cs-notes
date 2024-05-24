@@ -1,6 +1,6 @@
 ---
 sidebar_position: 20
-title: Nearest Ancestor of Binary Tree
+title: Binary Tree Level Order Traversal
 tags: [leetcode]
 ---
 
