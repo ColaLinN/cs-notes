@@ -21,3 +21,5 @@ High Level
    1. Good Direction
    2. Just Split the notes while it matures
    3. 大佬：https://www.linkedin.com/in/liuzhenglai/
+9. [为什么这么设计系列文章](https://draveness.me/whys-the-design/)
+10. [代码沉思录](https://draveness.me/whys-the-design/)
