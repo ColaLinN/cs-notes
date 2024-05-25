@@ -4,7 +4,14 @@ title: Opposite Double Pointer
 tags: [leetcode]
 ---
 
-# Template - 3Sum
+## Idea
+
+May need to sort the array in ascending order
+
+1. Brute Force Solution only get O(1) info in O(1) time
+2. Double Pointer Solution takes O(1) time to konw O(n) info, without checking the rest O(n)
+
+## Template - 3Sum
 
 ![image-20240525031800443](./240224-opposite-double-pointer.assets/image-20240525031800443.png)
 
@@ -44,13 +51,6 @@ class Solution:
                         k -= 1
         return res
 ```
-
-## Key Points
-
-May need to sort the array in ascending order
-
-1. Brute Force Solution can only get O(1) info by O(1) Time
-2. Double Pointer uses O(1) time to konw O(n) info, remove the rest O(n) possibility
 
 ## [167. Two Sum II - Input Array Is Sorted](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/)
 

@@ -4,9 +4,9 @@
 
 # Interval DP
 
-【区间 DP：最长回文子序列】 https://www.bilibili.com/video/BV1Gs4y1E7EU/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70
-
 ## [516. Longest Palindromic Subsequence](https://leetcode.cn/problems/longest-palindromic-subsequence/)
+
+> Palindromic 回文
 
 ### 递归
 
@@ -86,7 +86,7 @@ class Solution:
         return dp[0][(n - 1) % 2]
 ```
 
-## 空间优化，一个数组
+### 空间优化，一个数组
 
 因为当前 `f[i][j]` 计算需要的  `f[i+1][j-1]` 和  `f[i][j-1]` 都属于前一列`f` 值，而  `f[i+1][j]` 属于当前列 `f` 值。
 
@@ -112,3 +112,6 @@ class Solution:
         return dp[0]
 ```
 
+## Reference
+
+1. [区间 DP：最长回文子序列](https://www.bilibili.com/video/BV1Gs4y1E7EU/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70)

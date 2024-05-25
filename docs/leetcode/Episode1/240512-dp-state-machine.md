@@ -1,20 +1,10 @@
 # State Machine DP
 
-
-
-# State Machine Dynamic Planning
-
-【买卖股票的最佳时机【基础算法精讲 21】】 https://www.bilibili.com/video/BV1ho4y1W7QK/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70
-
-- 122 买卖股票的最佳时机 II https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/solution/shi-pin-jiao-ni-yi-bu-bu-si-kao-dong-tai-o3y4/ 
-- 309 最佳买卖股票时机含冷冻期 https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-cooldown/solution/shi-pin-jiao-ni-yi-bu-bu-si-kao-dong-tai-0k0l/ 
-- 188 买卖股票的最佳时机 IV https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/solution/shi-pin-jiao-ni-yi-bu-bu-si-kao-dong-tai-kksg/
-
-## [122. Best Time to Buy and Sell Stock II](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/)
-
-状态机
+## Idea
 
 ![image-20240512221510697](./240512-dp-state-machine.assets/image-20240512221510697.png)
+
+## [122. Best Time to Buy and Sell Stock II](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/)
 
 ```python
 class Solution:
@@ -28,17 +18,7 @@ class Solution:
         return f0
 ```
 
-## 冷冻期
-
-[309. Best Time to Buy and Sell Stock with Cooldown](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-cooldown/)
-
-## 手续费
-
-[714. Best Time to Buy and Sell Stock with Transaction Fee](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
-
-## 至多交易2次
-
-https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iii/
+## [123. Best Time to Buy and Sell Stock III](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iii/) => At most two transactions
 
 ```python
 class Solution:
@@ -53,9 +33,7 @@ class Solution:
         return dp[len(prices)-1][2][0]
 ```
 
-## 至多交易k次
-
-[188. Best Time to Buy and Sell Stock IV](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/)
+## [188. Best Time to Buy and Sell Stock IV](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/) => At most k transactions
 
 ```markdown
 Input: k = 2, prices = [3,2,6,5,0,3]
@@ -135,15 +113,18 @@ class Solution:
         return f[-1][-1][0]
 ```
 
-### f 样例
+### f sample
 
 ![image-20240513011111890](./240512-dp-state-machine.assets/image-20240513011111890.png)
 
 ## 至少交易k次
 
-
-
 ## 正好交易k次
 
+## [309. Best Time to Buy and Sell Stock with Cooldown](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-cooldown/)
 
+## [714. Best Time to Buy and Sell Stock with Transaction Fee](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
 
+## Reference
+
+1. [买卖股票的最佳时机【基础算法精讲 21】](https://www.bilibili.com/video/BV1ho4y1W7QK/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70)

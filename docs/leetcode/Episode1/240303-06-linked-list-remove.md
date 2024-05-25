@@ -4,36 +4,42 @@ title: Linked List Delete Series
 tags: [leetcode]
 ---
 
+## Idea
 
+- Find the node to be removed
+- `cur.next = cur.next.next`
 
-【删除链表重复节点【基础算法精讲 08】】 https://www.bilibili.com/video/BV1VP4y1Q71e/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70
+![image-20240525164812276](./240303-06-linked-list-remove.assets/image-20240525164812276.png)
 
 ## [237. Delete Node in a Linked List](https://leetcode.cn/problems/delete-node-in-a-linked-list/)
 
-```
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
-func deleteNode(node *ListNode) {
-    cur := node
-    nextVal := 0
-    for cur != nil && cur.Next != nil {
-        nextVal = cur.Next.Val
-        cur.Val = nextVal
-        if cur.Next.Next == nil {
-            cur.Next = nil
-            break
-        }
-        cur = cur.Next
-    }
-}
+![image-20240525165519592](./240303-06-linked-list-remove.assets/image-20240525165519592.png)
+
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def deleteNode(self, node):
+        """
+        :type node: ListNode
+        :rtype: void Do not return anything, modify node in-place instead.
+        """
+        cur = node
+        while cur and cur.next:
+            cur.val = cur.next.val
+            if cur.next.next == None:
+                cur.next = None
+            else:
+                cur = cur.next
 ```
 
 ## [19. Remove Nth Node From End of List](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/)
+
+![image-20240525165957910](./240303-06-linked-list-remove.assets/image-20240525165957910.png)
 
 ```python
 # Definition for singly-linked list.
@@ -57,7 +63,7 @@ class Solution:
 
 ## [83. Remove Duplicates from Sorted List](https://leetcode.cn/problems/remove-duplicates-from-sorted-list/)
 
-```
+```python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -77,7 +83,9 @@ class Solution:
 
 ## [82. Remove Duplicates from Sorted List II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/)
 
-```
+![image-20240525170442098](./240303-06-linked-list-remove.assets/image-20240525170442098.png)
+
+```python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -96,3 +104,7 @@ class Solution:
                 cur = cur.next
         return dummy.next
 ```
+
+## Reference
+
+1. [灵神视频，删除链表重复节点 基础算法精讲 08](https://www.bilibili.com/video/BV1VP4y1Q71e/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70)

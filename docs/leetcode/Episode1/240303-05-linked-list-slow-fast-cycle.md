@@ -4,9 +4,42 @@ title: Linked List Fast Slow Series
 tags: [leetcode]
 ---
 
-灵神视频 https://www.bilibili.com/video/BV1KG4y1G7cu/?vd_source=66a0b89065d7f04805223fd7f2d613a6
+## Idea
 
+### Middle of linked list
 
+![image-20240525144605638](./240303-05-linked-list-slow-fast-cycle.assets/image-20240525144605638.png)
+
+### Check cycle in linked list
+
+There is cycle?
+
+- YES. `SLOW` and `FAST` must meet because `FAST` is one step faster than `SLOW`.
+- NO. There is end. `FAST` can not move forward forever.
+
+![image-20240525145600438](./240303-05-linked-list-slow-fast-cycle.assets/image-20240525145600438.png)
+
+### Find entry point of cycle
+
+![image-20240525151406348](./240303-05-linked-list-slow-fast-cycle.assets/image-20240525151406348.png)
+
+## Template - Find Entry Point
+
+```python
+class Solution:
+    def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        fast = head
+        slow = head
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+            if fast == slow:
+                while head != slow:
+                    slow = slow.next
+                    head = head.next
+                return head
+        return None
+```
 
 ## [876. Middle of the Linked List](https://leetcode.cn/problems/middle-of-the-linked-list/)
 
@@ -69,22 +102,9 @@ func hasCycle(head *ListNode) bool {
 }
 ```
 
-## [142. Linked List Cycle II](https://leetcode.cn/problems/linked-list-cycle-ii/) Find the entry point of Cycle
+## [142. Linked List Cycle II](https://leetcode.cn/problems/linked-list-cycle-ii/) Find entry point of Cycle
 
-问题
-
-1. 如何检查有环？
-2. 如何找到环的入口？
-
-### 如何检查有环？
-
-用快慢指针，因为快指针和慢指针的相对速度是 1，如果有环，则快慢指针必定在环内相遇。
-
-### 如何找到环的入口？
-
-- 如果检查有环且慢指针
-
-### Python
+Python
 
 ```python
 class Solution:
@@ -102,7 +122,7 @@ class Solution:
         return None
 ```
 
-### Go
+Go
 
 ```go
 /**
@@ -133,5 +153,6 @@ func detectCycle(head *ListNode) *ListNode {
 }
 ```
 
+## Reference
 
-
+1. [灵神视频](https://www.bilibili.com/video/BV1KG4y1G7cu/?vd_source=66a0b89065d7f04805223fd7f2d613a6)

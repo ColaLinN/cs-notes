@@ -5,11 +5,9 @@ tags: [leetcode]
 ---
 
 
-[二叉树与递归 - 最近公共祖先](https://www.bilibili.com/video/BV1W44y1Z7AR/)
+## [236. Lowest Common Ancestor of a Binary Tree](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/)
 
-01 [236. Lowest Common Ancestor of a Binary Tree](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/)
-
-```
+```python
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
@@ -33,16 +31,11 @@ class Solution:
                 return left
             else:
                 return root
-
-
-        
 ```
 
+## [235. Lowest Common Ancestor of a Binary Search Tree](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/)
 
-
-02 [235. Lowest Common Ancestor of a Binary Search Tree](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/)
-
-```
+```python
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
@@ -60,6 +53,8 @@ class Solution:
         if root.val < minV:
             return self.lowestCommonAncestor(root.right, p, q)
         return self.lowestCommonAncestor(root.left, p, q)
-        
 ```
 
+## Reference
+
+1. [二叉树与递归 - 最近公共祖先](https://www.bilibili.com/video/BV1W44y1Z7AR/)

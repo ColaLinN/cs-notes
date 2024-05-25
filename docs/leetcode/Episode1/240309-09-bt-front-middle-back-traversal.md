@@ -4,69 +4,115 @@ title: Binary Tree Front, Middle, and Post Order Traversal
 tags: [leetcode]
 ---
 
+## Idea
 
+### Front, Middle, and Post Order Traversal
 
-## Traversal
+![image-20240525180800174](./240309-09-bt-front-middle-back-traversal.assets/image-20240525180800174.png)
 
-1.   Front Order Traversal: `root, left, right`
-2.   Middle Order Traversal: `left, root, right`
-3.   Post Order Traversal: `left, right, root`
+### Traversal Recursion Template
 
-## Traversal Recursion Template
+Middle-order traversal
 
 ```python
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
 res = []
 def dfs(node):
-  	if node == None: return None
-    if node.left: dfs(node.left)
+    if node == None: 
+        return None
+
+    # Front-order traversal
     res.append(node.val)
-    if node.right: dfs(node.right)
-   	return None
+
+    if node.left: 
+        dfs(node.left)
+
+    # Middle-order traversal
+    # res.append(node.val)
+
+    if node.right: 
+        dfs(node.right)
+ 
+    # Post-order traversal
+    # res.append(node.val)
+
+    return None
+
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+dfs(root)
+print(res)
+# front: [1, 2, 3]
+# middle: [2, 1, 3]
+# post: [2, 3, 1]
 ```
 
-## Traversal Iteration Template
+### Traversal Iteration Template
 
-在递归方法的函数调用栈中，
+在递归中，节点的访问关系是存在函数调用栈中的。
 
-模版，下面代码为中序遍历，在 root 节点上压入 null 节点来辨别 root 节点。
+如果我们想用迭代的方法来实现树的前中后序访问，我们需要一个栈，以及记录节点被访问与否。
+
+- Approach 1，在 root 节点上压入 null 节点来辨别 root 节点。
+- Approach 2，用一个 visited map 来记录已经 加入结果集/被访问 的节点。
+
+下面代码为中序遍历，在 root 节点上压入 null 节点来辨别 root 节点。
 
 ```python
-class Solution {
-public:
-    vector<int> inorderTraversal(TreeNode* root) {
-        vector<int> result;
-        stack<TreeNode*> st;
-        if (root != NULL) st.push(root);
-        while (!st.empty()) {
-            TreeNode* node = st.top();
-            if (node != NULL) {
-                st.pop(); // 将该节点弹出，避免重复操作，下面再将右中左节点添加到栈中
-                if (node->right) st.push(node->right);  // 添加右节点（空节点不入栈）
+def iterateTree(node):
+    res = []
+    stack = []
+    if node != None:
+        stack.append(node)
+    while len(stack) > 0:
+        # Check if the top of the stack is None
+        cur = stack[-1]
+        if cur != None:
+            cur = stack.pop()
 
-              	// =======  只要改变这两行“push root 节点”的代码，就可以实现 Front Order Traversal 和 Post Order Traversal
-                st.push(node);                          // 添加中节点
-                st.push(NULL); // 中节点访问过，但是还没有处理，加入空节点做为标记。
+            # # Post-order traversal
+            # stack.append(cur)
+            # stack.append(None)
 
-                if (node->left) st.push(node->left);    // 添加左节点（空节点不入栈）
-            } else { // 只有遇到空节点的时候，才将下一个节点放进结果集
-                st.pop();           // 将空节点弹出
-                node = st.top();    // 重新取出栈中元素
-                st.pop();
-                result.push_back(node->val); // 加入到结果集
-            }
-        }
-        return result;
-    }
-};
+            if cur.right != None:
+                stack.append(cur.right)
+            
+            # # Middle-order traversal
+            # stack.append(cur)
+            # stack.append(None) # The middle node is visited but not yet processed, use a Null Node to mark it
+
+            if cur.left != None:
+                stack.append(cur.left)
+
+            # Front-order traversal
+            stack.append(cur)
+            stack.append(None)
+
+        else:
+            # If the top of the stack is None, it means we append the node to the result list
+            stack.pop()
+            cur = stack.pop()
+            res.append(cur.val)
+    return res
+
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+print(iterateTree(root))
 ```
-
-
 
 ## [98. Validate Binary Search Tree](https://leetcode.cn/problems/validate-binary-search-tree/)
 
-### My Original Recursion Solution
+### My Recursion Solution
 
-```
+```python
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -86,9 +132,11 @@ class Solution:
 
 ### Front Order Traversal
 
-由于是前序，只能把范围往下传
+We can pass the root's value to subnodes
 
-```
+![image-20240525183040277](./240309-09-bt-front-middle-back-traversal.assets/image-20240525183040277.png)
+
+```python
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -104,9 +152,14 @@ class Solution:
 
 ### Middle Order Traversal
 
-中序则可以看成是遍历递增数组，当前值必须小于前一个值
+It is like iterating through a monotonically increasing array 
 
-```
+- The current node's value must be smaller than previous node's value
+- The initial previous node's value is `-inf` to ensure the first node's value is valid
+
+![image-20240525183101194](./240309-09-bt-front-middle-back-traversal.assets/image-20240525183101194.png)
+
+```python
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -126,14 +179,15 @@ class Solution:
         if self.isValidBST(root.right) == False:
             return False
         return True
-
 ```
 
 ### Post Order Traversal
 
-后序则需要把范围往上传来判断root是否合法
+Needs to return the valid values range for checking
 
-```
+![image-20240525183415930](./240309-09-bt-front-middle-back-traversal.assets/image-20240525183415930.png)
+
+```python
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -142,10 +196,9 @@ class Solution:
 #         self.right = right
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        # 后序遍历
         def check(p):
             if p == None:
-                return inf, -inf #保证后序遍历中和root节点的值判断不会出错
+                return inf, -inf # Ensure the validation of Node with Empty subNode
             lmin, lmax = check(p.left)
             rmin, rmax = check(p.right)
             if not (lmax < p.val < rmin):
@@ -158,4 +211,4 @@ class Solution:
 ## Reference
 
 1. [二叉树：前中后序迭代方式统一写法](https://zhuanlan.zhihu.com/p/260497281)
-2. 
+1. [二叉搜索树判断](https://www.bilibili.com/video/BV14G411P7C1/?spm_id_from=333.788&vd_source=66a0b89065d7f04805223fd7f2d613a6)

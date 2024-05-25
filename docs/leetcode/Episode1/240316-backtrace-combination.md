@@ -4,9 +4,9 @@ title: Backtrace Combination
 tags: [leetcode]
 ---
 
-组合型（选哪个）
+## 组合型（选哪个）
 
-## 01 [77. Combinations](https://leetcode.cn/problems/combinations/)
+## [77. Combinations](https://leetcode.cn/problems/combinations/)
 
 ```python
 class Solution:
@@ -26,7 +26,7 @@ class Solution:
         return ans
 ```
 
-## 02 [216. Combination Sum III](https://leetcode.cn/problems/combination-sum-iii/)
+## [216. Combination Sum III](https://leetcode.cn/problems/combination-sum-iii/)
 
 ```python
 class Solution:
@@ -48,7 +48,7 @@ class Solution:
         return ans
 ```
 
-## 03 [22. Generate Parentheses](https://leetcode.cn/problems/generate-parentheses/)
+## [22. Generate Parentheses](https://leetcode.cn/problems/generate-parentheses/)
 
 ```python
 class Solution:
@@ -69,3 +69,6 @@ class Solution:
         return ans
 ```
 
+## Reference
+
+1. [组合型回溯，剪枝](https://www.bilibili.com/video/BV1xG4y1F7nC/?spm_id_from=333.788&vd_source=66a0b89065d7f04805223fd7f2d613a6)

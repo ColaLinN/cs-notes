@@ -4,14 +4,11 @@ title: Linked List Reverse Series
 tags: [leetcode]
 ---
 
+## Idea
 
-01 [206. Reverse Linked List](https://leetcode.cn/problems/reverse-linked-list/)
+### Reverse linked list
 
-prev = pre
-
-next = nxt
-
-```
+```python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -30,11 +27,82 @@ class Solution:
         return prev
 ```
 
+![image-20240525152652093](./240229-04-linked-list-reverse.assets/image-20240525152652093.png)
 
+### Reverse Nodes in K-Group
 
-02 [92. Reverse Linked List II](https://leetcode.cn/problems/reverse-linked-list-ii/)
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+        dummy = ListNode(0, head)
+        pre = dummy
+        cur = head
+        
+        # 1. Calc the length of linked list
+        n = 0
+        while cur:
+            cur = cur.next
+            n += 1
+        
+        cur = head
+        for i in range(n//k):
+            # init the p0
+            p0 = pre
+            for j in range(k):
+                nxt = cur.next
+                cur.next = pre
+                pre = cur
+                cur = nxt
+            # After reversing, `cur` is point to next start point, 
+            # `pre` is the original previous node of `cur``
 
+            # connect the end of reversing linked list to the start point of next list
+            p0.next.next = cur
+
+            # cache the end of reversing linked list
+            nxtP0 = p0.next
+
+            # connecting the start of reversing linked list to the previous list
+            p0.next = pre
+            pre = nxtP0
+        return dummy.next
 ```
+
+![image-20240525162951593](./240229-04-linked-list-reverse.assets/image-20240525162951593.png)
+
+## [206. Reverse Linked List](https://leetcode.cn/problems/reverse-linked-list/)
+
+prev = pre
+
+next = nxt
+
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        # dummy = ListNode(0, head)
+        cur = head
+        prev = None
+        while cur:
+            next = cur.next
+            cur.next = prev
+            prev = cur
+            cur = next
+        return prev
+```
+
+## [92. Reverse Linked List II](https://leetcode.cn/problems/reverse-linked-list-ii/)
+
+```python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -48,24 +116,22 @@ class Solution:
         for i in range(left-1):
             pre = cur
             cur = cur.next
+
         p0 = pre # p0 is the node before the reversed starting node
         # leftNext = cur # p0.next
         for i in range(right-left+1):
             nxt = cur.next
-            cur.next = pre
+            cur.next = pre 
             pre = cur
             cur = nxt
         p0.next.next = cur
         p0.next = pre
         return dummy.next
-
 ```
 
+## [25. Reverse Nodes in k-Group](https://leetcode.cn/problems/reverse-nodes-in-k-group/)
 
-
-03 [25. Reverse Nodes in k-Group](https://leetcode.cn/problems/reverse-nodes-in-k-group/)
-
-```
+```python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -74,35 +140,42 @@ class Solution:
 class Solution:
     def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
         dummy = ListNode(0, head)
-        cur = head
         pre = dummy
-
+        cur = head
+        
+        # 1. Calc the length of linked list
         n = 0
         while cur:
             cur = cur.next
-            n+=1
+            n += 1
         
         cur = head
         for i in range(n//k):
+            # init the p0
             p0 = pre
             for j in range(k):
-                next = cur.next
+                nxt = cur.next
                 cur.next = pre
-                
                 pre = cur
-                cur = next
+                cur = nxt
+            # After reversing, `cur` is point to next start point, 
+            # `pre` is the original previous node of `cur``
+
+            # connect the end of reversing linked list to the start point of next list
             p0.next.next = cur
-            preTmp = p0.next
+
+            # cache the end of reversing linked list
+            nxtP0 = p0.next
+
+            # connecting the start of reversing linked list to the previous list
             p0.next = pre
-            pre = preTmp
+            pre = nxtP0
         return dummy.next
 ```
 
+## [24. Swap Nodes in Pairs](https://leetcode.cn/problems/swap-nodes-in-pairs/)
 
-
-04 [24. Swap Nodes in Pairs](https://leetcode.cn/problems/swap-nodes-in-pairs/)
-
-```
+```python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -130,11 +203,9 @@ class Solution:
         return dummy.next
 ```
 
+## [2816. Double a Number Represented as a Linked List](https://leetcode.cn/problems/double-a-number-represented-as-a-linked-list/)
 
-
-05 [2816. Double a Number Represented as a Linked List](https://leetcode.cn/problems/double-a-number-represented-as-a-linked-list/)
-
-```
+```python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -170,16 +241,11 @@ class Solution:
         rHead = reverseList(head)
         dHead = addTwoLists(rHead, rHead)
         return reverseList(dHead)
-                
-        
-
 ```
 
+## [445. Add Two Numbers II](https://leetcode.cn/problems/add-two-numbers-ii/)
 
-
-06 [445. Add Two Numbers II](https://leetcode.cn/problems/add-two-numbers-ii/)
-
-```
+```python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -223,11 +289,9 @@ class Solution:
         return ral1
 ```
 
+## [2. Add Two Numbers](https://leetcode.cn/problems/add-two-numbers/)
 
-
-07 [2. Add Two Numbers](https://leetcode.cn/problems/add-two-numbers/)
-
-```
+```python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -268,13 +332,12 @@ class Solution:
         return al1
 ```
 
-
-
-
-
 ENG
 
 1. `k` is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of `k` then left-out nodes, in the end, should remain as it is.
    1. the number of nodes is not a multiple of `k` then left-out nodes
    2. should remain as it is.
-2. 
+
+## Reference
+
+1. [灵神视频，反转链表](https://www.bilibili.com/video/BV1sd4y1x7KN/?spm_id_from=333.788&vd_source=66a0b89065d7f04805223fd7f2d613a6)

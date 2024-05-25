@@ -4,15 +4,13 @@ title: Same Direction Pointer/Sliding Window
 tags: [leetcode]
 ---
 
-## Ideas
+## Idea
 
 Same Direction Pointer is a changable sliding window
 
 The most important thing is to find the monotonicity, i.e. finding the subarray/element with same conditions at once.
 
-同向双指针是一种可变的滑动窗口，只不过零把固定的叫做滑动窗口罢了
-
-最重要的就是要发现单调性，发现可以通过一次比较来发现多个相同条件的子数组/元素
+> 同向双指针是一种可变的滑动窗口，固定的叫做滑动窗口。最重要的就是要发现单调性，发现可以通过一次比较来发现多个相同条件的子数组/元素
 
 ## Sliding Window Cheat Sheet
 
@@ -172,3 +170,4 @@ class Solution:
 
 1. [Sliding Window Template](https://leetcode.cn/problems/max-consecutive-ones-iii/solutions/609055/fen-xiang-hua-dong-chuang-kou-mo-ban-mia-f76z/)
 2. [C++ Maximum Sliding Window Cheatsheet Template!](https://leetcode.com/problems/frequency-of-the-most-frequent-element/solutions/1175088/C++-Maximum-Sliding-Window-Cheatsheet-Template!/)
+3. [C++ O(N) Time Sliding Window + "At Most to Equal" trick](https://leetcode.com/problems/count-vowel-substrings-of-a-string/solutions/1563765/c-on-time-sliding-window/comments/1141941/)

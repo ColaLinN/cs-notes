@@ -8,8 +8,6 @@ tags: [leetcode]
 
 
 
-
-
 ## 一、最长公共子序列
 
 ### 最长公共子序列
@@ -96,10 +94,6 @@ class Solution:
                 preFij = tmp
         return f[len(word2)]
 ```
-
-
-
-
 
 ## 二、最长递增子序列 Longest Increasing Subqequence
 
