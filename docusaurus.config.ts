@@ -94,15 +94,27 @@ const config: Config = {
          },
          {
           type: 'doc',
+          docId: 'system-design/from-zero-to-millions',
+          position: 'right',
+          label: 'System Design',
+         },
+         {
+          type: 'doc',
+          docId: 'operating-systems/overview',
+          position: 'right',
+          label: 'Operating Systems',
+         },
+         {
+          type: 'doc',
           docId: 'database/essential-knowledge',
           position: 'right',
           label: 'Database',
          },
          {
           type: 'doc',
-          docId: 'system-design/from-zero-to-millions',
+          docId: 'computer-networks/overview',
           position: 'right',
-          label: 'System Design',
+          label: 'Computer Networks',
          },
          {
           label: "Others",
@@ -146,11 +158,7 @@ const config: Config = {
             {
               label: 'Leetcode',
               to: '/docs/leetcode/240201-why',
-            },
-            {
-              label: 'Database',
-              to: '/docs/database/essential-knowledge',
-            },           
+            },       
             {
               label: 'System Design',
               to: '/docs/system-design/from-zero-to-millions',
@@ -158,6 +166,14 @@ const config: Config = {
             {
               label: 'Operating Systems',
               to: '/docs/operating-systems/overview',
+            },
+            {
+              label: 'Database',
+              to: '/docs/database/essential-knowledge',
+            },    
+            {
+              label: 'Computer Networks',
+              to: '/docs/computer-networks/overview',
             },
           ],
         },
