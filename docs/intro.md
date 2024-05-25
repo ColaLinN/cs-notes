@@ -2,10 +2,6 @@
 sidebar_position: 1
 ---
 
-
-
-
-
 # TODO List
 
 High Level
