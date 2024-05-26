@@ -24,7 +24,7 @@ Dsitributed System has been used broadly in real life. It is necessary for the c
 
 ![image-20240510014526705](./01-intro.assets/image-20240510014526705.png)
 
-## The Challenges/Capabilities of distributed systems
+## The Challenges/Capabilities of Distributed Systems
 
 1. Failure Tolerance
 2. Managing Distributed State
@@ -33,13 +33,13 @@ Dsitributed System has been used broadly in real life. It is necessary for the c
 
 ## Thought Experiement: Two General's Problem
 
-> In the experiment, two generals are only able to communicate with one another by sending a messenger through enemy territory. The experiment asks how they might reach an agreement on the time to launch an attack, while knowing that any messenger they send could be captured.
+> In the experiment, two generals are only able to communicate with one another by sending a messenger through enemy territory. The experiment asks how they might reach an agreement on the time to launch an attack while knowing that any messenger they send could be captured.
 
 From this thought experiement, we know that It is impossible to reach a final agreement with unstable communication channel.
 
-But we can solve it in engineering ways by bypassing some assumptions and allow trade-offs. There are lots of solutions published, for example, the Consensus Algorithmn.
+But we can solve it in engineering ways by bypassing some assumptions and allowing trade-offs. There are lots of solutions published, for example, the Consensus Algorithm.
 
-## A qucik tour of Distributed System [Video]
+## A quick tour of Distributed System [Video]
 
 [『Made in Heaven』分布式系统要开始加速了，43秒带你速通 ！ 分布式系统概念 第01期](https://www.bilibili.com/video/BV1ap42127rE)
 

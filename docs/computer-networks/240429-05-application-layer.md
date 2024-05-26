@@ -1,4 +1,8 @@
-
+---
+sidebar_position: 6
+title: 5 Application Layer
+tags: [Networks]
+---
 
 
 
@@ -23,7 +27,7 @@ For your case with `doc.fenglyulin.com`, as you mentioned earlier, you have corr
 
 
 
-Some commands/website to check the data
+Some commands/websites to check the data
 
 - dig to iteratively find the next mapping domain one by one
 
@@ -48,7 +52,7 @@ nslookup fenglyu-docs-site-v1.vercel.app
 
 Problem record
 
-![image-20240429220817851](./2024.04.29-0x-应用层.assets/image-20240429220817851.png)
+![image-20240429220817851](./240429-05-application-layer.assets/image-20240429220817851.png)
 
 
 

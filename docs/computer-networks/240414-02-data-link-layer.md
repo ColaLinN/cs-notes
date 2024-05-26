@@ -1,10 +1,12 @@
-
+---
+sidebar_position: 3
+title: 2 Data Link Layer
+tags: [Networks]
+---
 
 
 
 # The Data Link Layer
-
-
 
 ## 基本问题
 
@@ -14,7 +16,7 @@
 
 Taking the packets from the network layer and breaks them into smaller pieces called frames.
 
-![image-20240415003050172](./2024.04.14-02-数据链路层.assets/image-20240415003050172.png)
+![image-20240415003050172](./240414-02-data-link-layer.assets/image-20240415003050172.png)
 
 ### 2. 透明传输
 
@@ -24,7 +26,7 @@ Taking the packets from the network layer and breaks them into smaller pieces ca
 
 It's like the user send a sepcial character such as `EOT`, asumming it marks the end of a frame. In order to prevent affecting the segmenting of frame, this layer uses the escape character `\` (backslash) to escape the special character.
 
-![image-20240415003054903](./2024.04.14-02-数据链路层.assets/image-20240415003054903.png)
+![image-20240415003054903](./240414-02-data-link-layer.assets/image-20240415003054903.png)
 
 ### 3. 差错传输
 
@@ -74,7 +76,7 @@ CSMA/CD 表示载波监听多点接入 / 碰撞检测。
 
 当发生碰撞时，站点要停止发送，等待一段时间再发送。这个时间采用**截断二进制指数退避算法**来确定。从离散的整数集合 `{0, 1, .., (2<sup>k</sup>-1)}` 中随机取出一个数，记作 r，然后取 r 倍的争用期作为重传等待时间。
 
-![image-20240415003822496](./2024.04.14-02-数据链路层.assets/image-20240415003822496.png)
+![image-20240415003822496](./240414-02-data-link-layer.assets/image-20240415003822496.png)
 
 ### 2. 点对点通信
 
@@ -88,7 +90,7 @@ CSMA/CD 表示载波监听多点接入 / 碰撞检测。
 
 PPP帧中的FCS字段是使用CRC的检验序列。
 
-![image-20240415003828302](./2024.04.14-02-数据链路层.assets/image-20240415003828302.png)
+![image-20240415003828302](./240414-02-data-link-layer.assets/image-20240415003828302.png)
 
 > ISP是Internet Server Provider英文缩写，是指互联网接入服务商。ISP所管辖的网络就叫骨干网，骨干网的服务商就叫ISP。中国的电信、网通、移动、联通、铁通等—— [中国十大ISP网络服务提供商列表](https://xinshouzhanzhang.com/isp.html)
 
@@ -108,7 +110,7 @@ MAC (Media Access Control Address) 地址是链路层地址，长度为 6 字节
 
 可以按照网络拓扑结构对局域网进行分类：
 
-![image-20240415004709997](./2024.04.14-02-数据链路层.assets/image-20240415004709997.png)
+![image-20240415004709997](./240414-02-data-link-layer.assets/image-20240415004709997.png)
 
 ### 以太网 **Ethernet**
 
@@ -134,7 +136,7 @@ MAC (Media Access Control Address) 地址是链路层地址，长度为 6 字节
 2. 由于没有B的接口地址，交换机广播数据帧。CD丢弃，B处理。
 3. B向A回应数据帧，交换机记录B的接口地址2，且从记录表中找到A的接口1并转发数据帧。
 
-![image-20240415005313519](./2024.04.14-02-数据链路层.assets/image-20240415005313519.png)
+![image-20240415005313519](./240414-02-data-link-layer.assets/image-20240415005313519.png)
 
 ## 虚拟局域网 Virtual Local Area Network， VLAN
 
@@ -144,7 +146,7 @@ MAC (Media Access Control Address) 地址是链路层地址，长度为 6 字节
 
 使用 VLAN 干线连接来建立虚拟局域网，每台交换机上的一个特殊接口被设置为干线接口，以互连 VLAN 交换机。IEEE 定义了一种扩展的以太网帧格式 802.1Q，它在标准以太网帧上加进了 4 字节首部 VLAN 标签，用于表示该帧属于哪一个虚拟局域网。
 
-![image-20240415005710123](./2024.04.14-02-数据链路层.assets/image-20240415005710123.png)
+![image-20240415005710123](./240414-02-data-link-layer.assets/image-20240415005710123.png)
 
 
 

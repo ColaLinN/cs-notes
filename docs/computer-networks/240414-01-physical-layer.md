@@ -1,4 +1,8 @@
-
+---
+sidebar_position: 2
+title: 1 Physical Layer
+tags: [Networks]
+---
 
 
 
@@ -18,7 +22,7 @@
 
 模拟信号是连续的信号，数字信号是离散的信号。
 
-![image-20240414232752325](./2024.04.14-01-物理层.assets/image-20240414232752325.png)
+![image-20240414232752325](./240414-01-physical-layer.assets/image-20240414232752325.png)
 
 
 

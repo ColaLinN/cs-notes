@@ -6,7 +6,7 @@
 
 Proxy handles the requests from clients and forwards the requests to servers.
 
-![image-20240503150523576](240503 Proxy vs Reverse Proxy.assets/image-20240503150523576.png)
+![image-20240503150523576](./240503-proxy-vs-reverse-proxy.assets/image-20240503150523576.png)
 
 Benefits:
 
@@ -22,7 +22,7 @@ Benefits:
 
 The difference between proxy and reverse proxy is subtle. The forward proxy is located in front of a client and ensures that no server directly communicates with the clients. While the reverse proxy ensures the server does not interact with other clients directly.
 
-![image-20240503145539738](240503 Proxy vs Reverse Proxy.assets/image-20240503145539738.png)
+![image-20240503145539738](./240503-proxy-vs-reverse-proxy.assets/image-20240503145539738.png)
 
 Below are some benefits of reverse proxy:
 

@@ -6,12 +6,5 @@ tags:
 sidebar_position: 5
 ---
 
+![image-20240527005022686](./05-consensus-protocol.assets/image-20240527005022686.png)
 
-
-
-
-TODO:
-
-- [ ] primary and backup
-- [ ] paxos
-- [ ] Raft
