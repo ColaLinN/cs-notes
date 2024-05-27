@@ -117,6 +117,12 @@ const config: Config = {
           label: 'Computer Networks',
          },
          {
+          type: 'doc',
+          docId: 'intro',
+          position: 'right',
+          label: "Intro",
+        },
+         {
           label: "Others",
           position: "right",
           items: [
