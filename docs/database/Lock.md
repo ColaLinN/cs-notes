@@ -91,8 +91,6 @@ Suppose that an index includes `10, 11, 13 and 20`. The possible next-key locks 
 (20, positive infinity)
 ```
 
-![image-20240527221417522](./lock.assets/image-20240527221417522.png)
-
 ## Problem happened in production
 
 ```sql
@@ -129,7 +127,7 @@ INSERT INTO user_tab (user_id) VALUES (20);
 
 ## Solution
 
-### 1) Select first then Insert
+### 1. Select first then Insert
 
 https://medium.com/@tanishiking/avoid-deadlock-caused-by-a-conflict-of-transactions-that-accidentally-acquire-gap-lock-in-innodb-a114e975fd72
 
@@ -153,7 +151,7 @@ SELECT * FROM `blog` WHERE id = ... FOR UPDATE;
 INSERT INTO `blog` (id, title, content) VALUES (...);
 ```
 
-### 2) Use Redis-based distributed lock
+### 2. Use Redis-based distributed lock
 
 Use Redis based distributed lock to prevent this situation
 
