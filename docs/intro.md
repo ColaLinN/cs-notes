@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Why did I create this Doc Site?
+title: 脚踏实地，仰望星空
 ---
 
 ## 缘起，遗忘的痛苦
@@ -59,6 +59,7 @@ title: Why did I create this Doc Site?
 2. 后续的反复迭代同样重要，要不然写了很多天书，以后回头看，也看不懂了。
 3. 形式不重要。其实文档网站只是一个形式，随着了解的大佬越来越多，我发现分享并不需要局促于自己搭建的文档网站这一种平台。这个平台可以是微信公众号、知乎、twitter、blog（按 tag 分类）、甚至是 [notion](https://lzl124631x.notion.site/System-Design-3632e6e8941d42089f7e87c9e4e6bb55)、甚至是 [基于 github issue 的 blog](https://dylanninin.com/blog/2023/05/08/github-issue-as-a-blog.html)，形式之多，让我感叹人类的创造力。但形式真的不重要，重要的是内容。当然，网站的排版也是很重要的，从这一点看，文档网站优势就很明显了。
 4. 学技术要以需求为导向，动手实践。一味地学习没有意义、枯燥、且无法真正理解。如果有明确的需求，学习实践起来就会有动力。学框架最快的方式是看已有的模版项目，参考前人经验，而不是自己看教程手搓。
+5. 写的再多，也不如实际做过的项目更有说服力。
 
 ## 更多
 
