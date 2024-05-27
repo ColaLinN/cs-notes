@@ -488,10 +488,18 @@ NOT
 
 XOR
 
+任何数异或 0 都等于它自己
+
+任何数异或自己都等于 0
+
 ```python
 from operator import xor
 xor(bool(a), bool(b))  # Note: converting to bools is essential
+```
 
+操作符  `^`
+
+```
 xor = bool(a) ^ bool(b)
 ```
 

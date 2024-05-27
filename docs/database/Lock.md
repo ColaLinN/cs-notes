@@ -91,7 +91,7 @@ Suppose that an index includes 10, 11, 13 and 20. The possible next-key locks fo
 (20, positive infinity)
 ```
 
-![image-20221009175809802](./Lock.assets/image-20221009175809802.png)
+![image-20240527155332990](./lock.assets/image-20240527155332990.png)
 
 ## The Problem happened in production
 
@@ -129,11 +129,33 @@ INSERT INTO user_tab (user_id) VALUES (20);
 
 ## Solution
 
+### 1 Select first then Insert
+
+https://medium.com/@tanishiking/avoid-deadlock-caused-by-a-conflict-of-transactions-that-accidentally-acquire-gap-lock-in-innodb-a114e975fd72
+
+The database schema is something like this
+
+```sql
+CREATE TABLE `blog` (
+    `id` BIGINT UNSIGNED NOT NULL,
+    `title` VARCHAR(512) NOT NULL,
+    `content` TEXT NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+```
+
+The following problematic case that will occur deadlocking
+
+```sql
+SELECT * FROM `blog` WHERE id = ... FOR UPDATE;
+-- the following query will executed only when
+-- the row was not found in the first query.
+INSERT INTO `blog` (id, title, content) VALUES (...);
+```
+
+### 2 Use redis-based distributed lock
+
 Use redis base distributed lock to prevent this situation
-
-
-
-
 
 ## reference
 
