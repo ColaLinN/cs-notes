@@ -22,14 +22,14 @@ SELECT ... FOR UPDATE -> X Lock
 
 ## Intention Lock
 
-Table-level Intention locks indicate which type of  lock (shared or exclusive) a transaction requires later for a row in table.
+Table-level Intention locks indicate which type of lock (shared or exclusive) a transaction requires later for a row in table.
 
-Table level locks include: S Lock, X Lock and two intention Locks.
+Table level locks include: `S` Lock, `X` Lock and two intention Locks.
 
 There are two types of intention locks:
 
--   **Intention Shared Lock (IS)**: a transaction intend to set a S Lock on an individual row in a table.
--   **Intention Exclusive Lock (IX)**: a transaction intend to set a X Lock on an individual row in a table.
+-   **Intention Shared Lock (IS)**: a transaction intend to set a `S` Lock on an individual row in a table.
+-   **Intention Exclusive Lock (IX)**: a transaction intend to set a `X` Lock on an individual row in a table.
 
 The basic locks(S and IX) are stricter than intention locks(IS and IX).
 
@@ -75,13 +75,13 @@ Used in the Scenarios:
 
 -   If a record is unique index, index-record lock will be used instead of gap lock.
 
-Gap lock can co-exist(conflicting locks are allowed). A can hold a S Gap Lock on a gap while B holds a X Gap Lock on the same gap. There is no difference between S Gap Lock and X Gap Lock.
+Gap lock can co-exist(conflicting locks are allowed). A can hold a `S` Gap Lock on a gap while B holds a `X` Gap Lock on the same gap. There is no difference between S Gap Lock and X Gap Lock.
 
 ## Next-key Lock
 
 A next-key locks in a combination of record lock and gap lock on the gap before the index record.
 
-Suppose that an index includes 10, 11, 13 and 20. The possible next-key locks for this 
+Suppose that an index includes `10, 11, 13 and 20`. The possible next-key locks for this 
 
 ```
 (negative infinity, 10]
@@ -91,9 +91,9 @@ Suppose that an index includes 10, 11, 13 and 20. The possible next-key locks fo
 (20, positive infinity)
 ```
 
-![image-20240527155332990](./lock.assets/image-20240527155332990.png)
+![image-20240527221417522](./lock.assets/image-20240527221417522.png)
 
-## The Problem happened in production
+## Problem happened in production
 
 ```sql
 CREATE TABLE user_tab (
@@ -111,13 +111,13 @@ INSERT INTO user_tab (user_id) VALUES (20);
 ## Situation
 
 1. Txn1 and Txn2 start
-2. Transaction 1 try to get the next-key lock (13, 14]. But it finally get a gap lock (13, 20) instead because 14 doesn't exist.
+2. Transaction 1 tries to get the next-key lock (13, 14]. But it finally get a gap lock (13, 20) instead because 14 doesn't exist.
 
-2. Same as step 2, Transaction 2 get the gap lock (13, 20). (Because conflicting gap lock is permittable)
+2. Same as step 2, Transaction 2 gets the gap lock (13, 20). (Because conflicting gap lock is permittable)
 
-3. Transaction 1 wait for transaction 2 to release the gap lock because it want to get the insert intention lock.
+3. Transaction 1 waits for transaction 2 to release the gap lock because it want to get the insert intention lock.
 
-4. Transaction 2 wait for transaction 1 to release the gap lock because it want to get the insert intention lock. Therefore, deadlock occurs here. Transaction 
+4. Transaction 2 waits for transaction 1 to release the gap lock because it want to get the insert intention lock. Therefore, deadlock occurs here. Transaction 
 
 | \    | Transaction 1                                   | Transaction 2                                   |
 | :--- | :---------------------------------------------- | ----------------------------------------------- |
@@ -129,7 +129,7 @@ INSERT INTO user_tab (user_id) VALUES (20);
 
 ## Solution
 
-### 1 Select first then Insert
+### 1) Select first then Insert
 
 https://medium.com/@tanishiking/avoid-deadlock-caused-by-a-conflict-of-transactions-that-accidentally-acquire-gap-lock-in-innodb-a114e975fd72
 
@@ -144,7 +144,7 @@ CREATE TABLE `blog` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ```
 
-The following problematic case that will occur deadlocking
+The following problematic case will occur deadlocking
 
 ```sql
 SELECT * FROM `blog` WHERE id = ... FOR UPDATE;
@@ -153,9 +153,9 @@ SELECT * FROM `blog` WHERE id = ... FOR UPDATE;
 INSERT INTO `blog` (id, title, content) VALUES (...);
 ```
 
-### 2 Use redis-based distributed lock
+### 2) Use Redis-based distributed lock
 
-Use redis base distributed lock to prevent this situation
+Use Redis based distributed lock to prevent this situation
 
 ## reference
 
