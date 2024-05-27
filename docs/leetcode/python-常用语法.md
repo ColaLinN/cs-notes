@@ -484,6 +484,7 @@ print(m == 0b10011) # True
 NOT
 
 ```python
+not
 ```
 
 XOR
@@ -683,9 +684,127 @@ class Solution:
         return s==s[::-1]
 ```
 
+## ACM/OJ Mode
+
+[牛客网：OJ在线编程常见输入输出练习场](https://ac.nowcoder.com/acm/contest/5657#question)
+
+### Input()
+
+Python输入数据主要通过`input()`函数实现，`input()`会读取控制台一行的输入，如果输入有多行的话，需要多次使用`input()`。
+
+```python
+# 输入为: 1 2 3 4 5
+a = input() 
+# '1 2 3 4 5'
+print(a)
+```
+
+接受的数据返回为`string`，如果一行中有多个数据的话，则需要使用`split()`进行切割成一个列表。
+
+```python
+# 输入为： 1 2 3 4 5
+a = input().split() # split()默认以空字符为分隔符，包括空格、换行(\n)、制表符(\t)等
+# a = ['1', '2', '3', '4', '5']
+	  
+# 输入为：1,2,3,4,5
+b = input().split(',') # 以逗号为分隔符
+# b = ['1', '2', '3', '4', '5']
+```
+
+如果输入数据是数字则需要进行类型转换
+
+```python
+# 输入为： 1 
+a = int(input()) # 单个转换
+
+# Input is: 1 2 3 4 5
+b = input().split() # b = ['1', '2', '3', '4', '5']
+c = [int(i) for i in b] # 使用列表进行批量转换 c = [1, 2, 3, 4, 5]
+d = [int(i) for i in input().split()] # 一步倒位 d = [1, 2, 3, 4, 5]
+```
+
+### Three Input Conditions
+
+Multiple lines input without specifying the number of cases
+
+[nowcoder case 1](https://ac.nowcoder.com/acm/contest/5657/A)
+
+```python
+# case1
+# case2
+# casen
+while True:
+    try:
+        a, b = [int(i) for i in input().split()]
+        print(a+b)
+    except:
+        break
+```
+
+Multiple lines input with specifying the number of cases
+
+[nowcoder case 2](https://ac.nowcoder.com/acm/contest/5657/B)
+
+```python
+# n
+# case1
+# case2
+# casen
+n = int(input())
+for i in range(n):
+    a, b = [int(i) for i in input().split()]
+    print(a+b)
+```
+
+Multiple lines with specifying exit condition
+
+[nowcoder case 3](https://ac.nowcoder.com/acm/contest/5657/C)
+
+```python
+while True:
+    a, b = [int(i) for i in input().split()]
+    if a == 0 and b == 0: # break() condition
+        break
+    print(a+b) 
+```
+
+### Output
+
+输出单个数字
+
+```python
+print(a)
+```
+
+输出多个数字，要求以分隔符隔开: `sep=','`
+
+```python
+# 输出 a=1, b=2, c=3
+print(a, b, c) # 默认以空格为分隔符
+# output：1 2 3
+print(a, b, c, sep=',') # 以逗号为分隔符
+# output：1,2,3
+```
+
+No line breaks, ouput one line: `end=''`
+
+```python
+res = [1, 2, 3]
+for i in range(len(res)):
+    print(res[i], end=' ') # avoid default break `\n`
+```
+
+Join the string list into a string: `join`
+
+```python
+res = ['a', 'b', 'c']
+print("".join(res)) # abc
+print("*".join(res)) # a*b*c
+```
+
 ## Others
 
-### Input and Ouput
+### Input and Output
 
 ```python
 #输入
@@ -788,3 +907,5 @@ def dfs(i,j):
 7. [分享｜从集合论到位运算，常见位运算技巧分类总结！——灵神](https://leetcode.cn/circle/discuss/CaOJ45/)
 8. [copy — Shallow and deep copy operations](https://docs.python.org/3/library/copy.html)
 9. [Python Value Reference](https://www.cnblogs.com/CheeseZH/p/5165283.html)
+10. [Python ACM 模式下的输入输出](https://www.cnblogs.com/jfchen/p/python-acm-input-and-output.html)
+11. [NowCoder Input and Output](https://ac.nowcoder.com/acm/contest/5657/A)
