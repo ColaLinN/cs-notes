@@ -287,11 +287,15 @@ Ballots Number: (leader, seqnum) pairs, so different server has different priori
 
 ## Raft
 
-Published in 2014. Goal: understandability
+Published in 2014. 
 
-https://raft.github.io/
+Goal: understandability
 
-https://thesecretlivesofdata.com/raft/
+[Raft Community](https://raft.github.io/)
+
+[Animation](https://thesecretlivesofdata.com/raft/)
+
+![image-20240528125555859](./05-consensus-protocol.assets/image-20240528125555859.png)
 
 ## Implementation
 
@@ -323,6 +327,8 @@ Divide time into terms
 
 ### log diverge
 
+![image-20240528125532878](./05-consensus-protocol.assets/image-20240528125532878.png)
+
 How to re-establish log consistency?
 
 Leader forces follower to duplicate its log
@@ -331,15 +337,11 @@ Leader overwrites follower’s conflicting entries
 
 Procedure
 
-- When receives AppendEntries, follower deletes any conflicting entry (and all 
-
-entries follow it), and rejects AppendEntries
+- When receives AppendEntries, follower deletes any conflicting entry (and all entries follow it), and rejects AppendEntries
 
 - Leader retries AppendEntries with a lower index
 
-- Eventually all conflicting entries are removed, and leader’s entries are 
-
-installed
+- Eventually all conflicting entries are removed, and leader’s entries are installed
 
 ### Industry Cases
 
