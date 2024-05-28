@@ -1,4 +1,4 @@
-# Lab 1: Client-Server (Exactly-Once)
+# Lab 1: Exactly-Once
 
 > We are not allowed to share codes online. 
 >
