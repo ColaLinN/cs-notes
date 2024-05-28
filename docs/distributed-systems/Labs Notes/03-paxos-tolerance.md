@@ -1,8 +1,8 @@
-
+# Lab3 Paxos Fault Tolerance
 
 > We are not allowed to share codes online. 
 >
-> For more details, Pls refer to the Lab's Repo: https://github.com/nus-sys/cs5223-labs 
+> For more details, Pls refer to NUS CS5223 Lab's Repo: https://github.com/nus-sys/cs5223-labs/tree/main/labs/lab3-paxos
 
 
 

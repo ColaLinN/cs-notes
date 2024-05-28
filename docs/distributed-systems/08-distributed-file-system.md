@@ -38,7 +38,7 @@
    2. GFS eventually replcied with a n
 ```
 
-
+![image-20240528123134068](./08-distributed-file-system.assets/image-20240528123134068.png)
 
 ## Question 1, GFS’s record duplicates?
 

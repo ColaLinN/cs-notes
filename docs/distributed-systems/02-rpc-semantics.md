@@ -98,6 +98,8 @@ The Exactly Once Semantics in Kafka
 
 Chauhan, A. (2024, March 5). *Demystifying Kafka Exactly Once Semantics (EOS) - HelloTech*. Medium. https://engineering.hellofresh.com/demystifying-kafka-exactly-once-semantics-eos-390ae1c32bba
 
+[Kafka 是如何实现精确一次（exactly once）语义的？](https://www.lixueduan.com/posts/kafka/10-exactly-once-impl/)
+
 ## Reference
 
 1. NUS CS5223 Distributed System Course
