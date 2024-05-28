@@ -6,6 +6,8 @@ tags:
 sidebar_position: 4
 ---
 
+![image-20240518210219532](./04-state-consistency.assets/image-20240518210219532.png)
+
 ## Why Distributed State?
 
 > One way of characterizing computation is as a set of operations applied to an initial state in order to produce some (presumably more interesting) fifinal state. In this interpretation, programming is the act of invoking and organizing state transitions. 
