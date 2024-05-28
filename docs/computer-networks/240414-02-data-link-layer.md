@@ -36,8 +36,6 @@ CRC(Circle Redundency Check)
 
 A **cyclic redundancy check** (**CRC**) is an error-detecting code commonly used in digital networks and storage devices to detect accidental changes to digital data.
 
-
-
 ## 信道分类 Communication channel
 
 ### 1. 广播信道 **broadcast channel**
@@ -94,8 +92,6 @@ PPP帧中的FCS字段是使用CRC的检验序列。
 
 > ISP是Internet Server Provider英文缩写，是指互联网接入服务商。ISP所管辖的网络就叫骨干网，骨干网的服务商就叫ISP。中国的电信、网通、移动、联通、铁通等—— [中国十大ISP网络服务提供商列表](https://xinshouzhanzhang.com/isp.html)
 
-
-
 ## Mac 地址
 
 MAC (Media Access Control Address) 地址是链路层地址，长度为 6 字节（48 位），用于唯一标识网络适配器（网卡）。
@@ -150,7 +146,7 @@ MAC (Media Access Control Address) 地址是链路层地址，长度为 6 字节
 
 
 
-Reference:
+## Reference
 
 1. Cyc2018 
 2. Wiki Cyclic redundancy check https://en.wikipedia.org/wiki/Cyclic_redundancy_check
