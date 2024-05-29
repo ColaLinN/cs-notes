@@ -14,7 +14,7 @@
 - For each element in `charMaxLen`, go to find the corresponding `top-3` result in `lenMap`
   - If `lenMap["a"][charMaxLen] >= 3`, it is the length of the longest special substring of `s` which occurs at least thrice.
 
-![image-20240530005136516](./20240529 - 2981 - Medium - Sliding Window.assets/image-20240530005136516.png)
+![image-20240530005136516](./20240529 2981 - Medium - Sliding Window.assets/image-20240530005136516.png)
 
 ```python
 class Solution:
@@ -54,7 +54,7 @@ class Solution:
 - Time, `O(n)`  Should be more than because it takes more time to complete than solution2 `O(nlogn)`
 - Space, `O(n)`
 
-![image-20240530011259499](./20240529 - 2981 - Medium - Sliding Window.assets/image-20240530011259499.png)
+![image-20240530011259499](./20240529 2981 - Medium - Sliding Window.assets/image-20240530011259499.png)
 
 ## Solution 2 from 0x3f
 
@@ -65,7 +65,7 @@ https://leetcode.cn/problems/find-longest-special-substring-that-occurs-thrice-i
 - for each element in the dict
   - get the result by `max(a[0]-2, a[0]-1, a[1], a[2])`
 
-![image-20240530003207662](./20240529 - 2981 - Medium - Sliding Window.assets/image-20240530003207662.png)
+![image-20240530003207662](./20240529 2981 - Medium - Sliding Window.assets/image-20240530003207662.png)
 
 ```python
 class Solution:
@@ -92,4 +92,4 @@ class Solution:
 - Time, `O(nlogn)`
 - Space, `O(n)`
 
-![image-20240530011304196](./20240529 - 2981 - Medium - Sliding Window.assets/image-20240530011304196.png)
+![image-20240530011304196](./20240529 2981 - Medium - Sliding Window.assets/image-20240530011304196.png)
