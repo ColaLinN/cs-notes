@@ -51,10 +51,78 @@ class Solution:
 
 ### Complexity
 
-- Time, `O(n)`  Should be more than because it takes more time to complete than solution2 `O(nlogn)`
+- Time, `O(n^2)`  
+  - Should be more than because it takes more time to complete than solution2 `O(nlogn)`
+  - It is because we need to add the cLenArray in cLenArray from 0 to cnt.
+
 - Space, `O(n)`
 
 ![image-20240530011259499](./20240529 2981 - Medium - Sliding Window.assets/image-20240530011259499.png)
+
+## Solution 1.1 optimize the summarizing process of count
+
+Through Solution 2 below, we know that the count of a substring consists of same characters relies on the top-3 counts, so we only need to update the top-3 count every time
+
+```python
+                tmp = 3
+                for k in range(cnt-1, -1, -1):
+                    # Add up the count of k len substring in current contiguous substring
+                    cLenArray[k+1] += cnt - k
+                    tmp -= 1
+                    if tmp < 0:
+                        break
+                cnt = 0
+```
+
+Codes
+
+```python
+class Solution:
+    def maximumLength(self, s: str) -> int:
+        lenArrayMap = dict()
+        charMaxLen = dict()
+        
+        for i in range(26):
+            lenArrayMap[chr(ord("a")+i)] = [0 for _ in range(len(s)+1)]
+        cnt = 0
+        for i, c in enumerate(s):
+            cnt += 1
+            if i+1 == len(s) or c != s[i+1]:
+                if c not in charMaxLen or charMaxLen[c] <= cnt:
+                    charMaxLen[c] = cnt
+                # print(i, c)
+                cLenArray = lenArrayMap[c]
+
+                tmp = 3
+                for k in range(cnt-1, -1, -1):
+                    # Add up the count of k len substring in current contiguous substring
+                    cLenArray[k+1] += cnt - k
+                    tmp -= 1
+                    if tmp < 0:
+                        break
+                cnt = 0
+        
+        res = -1
+        for c in charMaxLen:
+            maxLen = charMaxLen[c]
+            lenArray = lenArrayMap[c]
+            # print(c, maxLen, lenArray)
+            for i in range(maxLen, 0, -1):
+                if lenArray[i] >= 3:
+                    if i > res:
+                        res = i
+                    break
+        return res
+```
+
+## Complexity
+
+- Time: `O(n)`
+- Space: `O(n)`
+
+Solution1.1 is indeed faster than the solution1
+
+![image-20240530025316179](./20240529 2981 - Medium - Sliding Window.assets/image-20240530025316179.png)
 
 ## Solution 2 from 0x3f
 
@@ -93,3 +161,19 @@ class Solution:
 - Space, `O(n)`
 
 ![image-20240530011304196](./20240529 2981 - Medium - Sliding Window.assets/image-20240530011304196.png)
+
+## Conclusion [TBC]
+
+Although the complexity of the previous solution1.1 is 
+
+- Time: O(n)
+- Space: O(n)
+
+And the solution2 is
+
+- Time: O(nlog⁡n)
+- Space: O(nlogn)
+
+But during actual execution, the previous solution1.1 takes more time in memory allocation and cache expiration.
+
+The soution2 is faster because of the simplicity and less memory usage.
