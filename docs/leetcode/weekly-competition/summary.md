@@ -1,5 +1,17 @@
 
 
+## 400
+
+https://leetcode.cn/contest/weekly-contest-400
+
+这周周赛第四题非常简单，用 dp 会在 804 / 813 会 TLE 超时。其实一次遍历加 set 就搞定了。 整了好久没有开窍
+
+第四题曾经出现过，所以灵神只给了 2200 分
+
+对应的模版叫 `logTrick`，可以用于 “子序列 AND, OR, GCD, LCM”
+
+参考 127 双周赛灵神题解 【子数组OR 子序列DP【力扣双周赛 127】】 https://www.bilibili.com/video/BV19t421g7Pd/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70
+
 ## 131 Biweekly
 
 https://leetcode.cn/contest/biweekly-contest-131
