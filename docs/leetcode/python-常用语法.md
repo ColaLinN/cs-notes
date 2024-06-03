@@ -293,6 +293,26 @@ for item in dictA.values():
 
 ### Heap
 
+-   heapq.**heapify**(*x*)
+
+    Transform list *x* into a heap, in-place, in linear time.
+
+-   heapq.**heappush**(*heap*, *item*)
+
+    Push the value *item* onto the *heap*, maintaining the heap invariant.
+
+-   heapq.**heapreplace**(*heap*, *item*)
+
+    Pop and return the smallest item from the *heap*, and also push the new *item*. The heap size doesn’t change. If the heap is empty, [`IndexError`](https://docs.python.org/3/library/exceptions.html#IndexError) is raised. 
+
+-   heapq.**heappop**(*heap*)
+
+    Pop and return the smallest item from the *heap*, maintaining the heap invariant. If the heap is empty, [`IndexError`](https://docs.python.org/3/library/exceptions.html#IndexError) is raised. To access the smallest item without popping it, use `heap[0]`.
+
+-   heapq.**heappushpop**(*heap*, *item*)
+
+    Push *item* on the heap, then pop and return the smallest item from the *heap*. The combined action runs more efficiently than [`heappush()`](https://docs.python.org/3/library/heapq.html#heapq.heappush) followed by a separate call to [`heappop()`](https://docs.python.org/3/library/heapq.html#heapq.heappop).
+
 ```python
 class Solution:
     def mincostToHireWorkers(self, quality: List[int], wage: List[int], k: int) -> float:
@@ -325,6 +345,10 @@ print(q)   #print(self.items)
 
 ```python
 import collections
+a = [1, 2, 3, 4, 5, 6]
+b = collections.deque(a)
+# deque([1, 2, 3, 4, 5, 6])
+
 d = collections.deque()
 d.append(1)
 print(len(d))
