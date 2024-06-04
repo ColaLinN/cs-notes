@@ -187,3 +187,5 @@ RPO针对的是数据丢失，而RTO针对的是服务丢失，二者没有必�
 # Reference
 
 1. https://www.cnblogs.com/wade-luffy/p/6306396.html
+2. [架构之高可用：容灾备份,故障转移](https://pdai.tech/md/arch/arch-y-backup.html)
+3. 
