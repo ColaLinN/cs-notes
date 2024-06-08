@@ -49,7 +49,9 @@ title: 脚踏实地，仰望星空
 
 8. [凤凰架构](https://icyfenix.cn/distribution/consensus/)
 9. [DDIA 翻译](http://ddia.vonng.com/#/ch1)
-10. etc
+10. [MRCODE-BOOK](https://zq99299.github.io/note-book/)
+11. [Java 全栈知识体系](https://pdai.tech/)
+12. etc
 
 ## 思考
 
