@@ -1,6 +1,33 @@
+## 402
 
+- [x] 1
+- [x] 2
+- [x] 3
+- [ ] 4
+
+`3/4`
+
+昨天早上做周赛的时候，第四题虽然看出来是树状数组，但是还是三题早退了，无他，不熟悉罢了。 这周目标加两个，把树状数组和线段树搞明白！
+
+## 401
+
+`2/3`
+
+- [x] 1
+- [x] 2
+- [ ] 3
+- [ ] 4
+
+第三题和第四题是连着的，但是写的 DP 在第三题和第四题总是在最后几个 case 超时。。
 
 ## 400
+
+`3/4`
+
+- [x] 1
+- [x] 2
+- [x] 3
+- [ ] 4
 
 https://leetcode.cn/contest/weekly-contest-400
 
@@ -13,6 +40,13 @@ https://leetcode.cn/contest/weekly-contest-400
 参考 127 双周赛灵神题解 【子数组OR 子序列DP【力扣双周赛 127】】 https://www.bilibili.com/video/BV19t421g7Pd/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70
 
 ## 131 Biweekly
+
+`3/4`
+
+- [x] 1
+- [x] 2
+- [x] 3
+- [ ] 4
 
 https://leetcode.cn/contest/biweekly-contest-131
 
@@ -47,6 +81,13 @@ https://leetcode.cn/contest/biweekly-contest-131
 以及需要估算 tle 和 mle 的能力
 
 ## 398
+
+`3/4`
+
+- [x] 1
+- [x] 2
+- [x] 3
+- [ ] 4
 
 做出来了三题
 
