@@ -71,3 +71,27 @@ class Solution:
         return ans
 ```
 
+
+
+
+
+## [392. Is Subsequence](https://leetcode.cn/problems/is-subsequence/)
+
+```python
+class Solution:
+    def isSubsequence(self, s: str, t: str) -> bool:
+        def isSub(s, t):
+            si = 0
+            for c in t:
+                if si < len(s) and c == s[si]:
+                    si += 1
+                if si == len(s):
+                    return True
+            if si == len(s):
+                return True
+            return False
+        return isSub(s, t)
+```
+
+
+
