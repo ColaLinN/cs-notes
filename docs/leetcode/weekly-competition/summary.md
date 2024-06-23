@@ -25,9 +25,10 @@ Abstract
 
 4. Array Traversal, Enumerate all possibilities
    1. around 1 hour 10 mins
-   2. TODO: Better solution
-
-
+   2. TODO: 
+      1. Better solution
+      2. 贴瓷砖 https://leetcode.cn/problems/tiling-a-rectangle-with-the-fewest-squares/description/
+      3. 蒙德里安的梦想
 
 ## 402
 
