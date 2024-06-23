@@ -1,3 +1,34 @@
+## 403
+
+- [x] 1
+- [x] 2
+- [x] 3
+- [x] 4 (Late Submission, AC after competition finished)
+
+`4/4`
+
+今天11点才开始周赛，半小时ak前三题，然后花了一小时多才AC第四题， mark 第一次 ac 第四题
+
+![Image](./summary.assets/GQu39GIbYAEMZBt.jpeg)
+
+Abstract
+
+1. Solution:  Array Traversal
+   1. around 10 mins，属实不应该
+   2. TODO:  python 数组删除元素不熟悉？应该不是，就是手搓太慢了而已
+2. Array Traversal
+   1. around 10 mins
+
+3. Status DP
+   1. around 10 mins
+   2. TODO: 状态压缩是什么，为什么叫状态压缩
+
+4. Array Traversal, Enumerate all possibilities
+   1. around 1 hour 10 mins
+   2. TODO: Better solution
+
+
+
 ## 402
 
 - [x] 1
