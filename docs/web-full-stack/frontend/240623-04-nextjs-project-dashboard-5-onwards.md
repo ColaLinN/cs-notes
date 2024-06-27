@@ -2,7 +2,7 @@
 
 
 
-## [Navigating Between Pages](https://nextjs.org/learn/dashboard-app/navigating-between-pages)
+## [5) Navigating Between Pages](https://nextjs.org/learn/dashboard-app/navigating-between-pages)
 
 1. How to use the `next/link` component.
 2. How to show an active link with the `usePathname()` hook.
@@ -65,7 +65,7 @@ Splitting code by routes means that pages become isolated. If a certain page thr
 
 By the time the user clicks the link, the code for the destination page will already be loaded in the background, and this is what makes the page transition near-instant!
 
-### Pattern: Showing active links
+### Pattern: Showing active tab on Nav
 
 Next.js provides a hook called [`usePathname()`](https://nextjs.org/docs/app/api-reference/functions/use-pathname) that you can use to check the path and implement this pattern.
 
@@ -188,7 +188,7 @@ SELECT invoices.amount, customers.nameFROM invoicesJOIN customers ON invoices.cu
 - What network waterfalls are.
 - How to implement parallel data fetching using a JavaScript Pattern.
 
-### API layer: Route Handlers
+### ⭐️  API layer: Route Handlers
 
 APIs are an intermediary layer between your application code and database. There are a few cases where you might use an API:
 
@@ -196,6 +196,15 @@ APIs are an intermediary layer between your application code and database. There
 - If you're fetching data from the client, you want to have an API layer that runs on the server to avoid exposing your database secrets to the client.
 
 In Next.js, you can create API endpoints using [Route Handlers](https://nextjs.org/docs/app/building-your-application/routing/route-handlers).
+
+![image-20240625231004013](./240623-04-nextjs-project-dashboard-5-onwards.assets/image-20240625231004013.png)
+
+Route Handlers are defined in a [`route.js|ts` file](https://nextjs.org/docs/app/api-reference/file-conventions/route) inside the `app` directory:
+
+```react
+export const dynamic = 'force-dynamic' // defaults to auto
+export async function GET(request: Request) {}
+```
 
 ### Database queries
 
@@ -206,7 +215,7 @@ There are a few cases where you have to write database queries:
 - When creating your API endpoints, you need to write logic to interact with your database.
 - If you are using React Server Components (fetching data on the server), you can skip the API layer, and query your database directly without risking exposing your database secrets to the client.
 
-### Using Server Components to fetch data
+### ⭐️  Using Server Components to fetch data
 
 By default, Next.js applications use **React Server Components**. Fetching data with Server Components is a relatively new approach and there are a few benefits of using them:
 
@@ -262,7 +271,7 @@ By default, Next.js applications use **React Server Components**. Fetching data 
 >
 > 这样，你可以避免在客户端处理异步逻辑，从而简化了代码。
 
-### Using SQL
+### ⭐️  Using SQL
 
 For your dashboard project, you'll write database queries using the [Vercel Postgres SDK](https://vercel.com/docs/storage/vercel-postgres/sdk) and SQL. There are a few reasons why we'll be using SQL:
 
@@ -465,7 +474,7 @@ const {
 
 However, this behavior can also be unintentional and impact performance.
 
-### ⭐️ Parallel data fetching (TODO?)
+### ⭐️ Parallel data fetching
 
 A common way to avoid waterfalls is to initiate all data requests at the same time - in parallel.
 
@@ -527,7 +536,7 @@ With dynamic rendering, content is rendered on the server for each user at **req
 - **User-Specific Content** - It's easier to serve personalized content, such as dashboards or user profiles, and update the data based on user interaction.
 - **Request Time Information** - Dynamic rendering allows you to access information that can only be known at request time, such as cookies or the URL search parameters.
 
-### Making the dashboard dynamic
+### ⭐️  Making the dashboard dynamic: disable cache
 
 You can use a Next.js API called `unstable_noStore` inside your Server Components or data fetching functions to opt out of static rendering. Let's add this.
 
@@ -547,7 +556,7 @@ export async function fetchRevenue() {
 //etc
 ```
 
-### Simulating a Slow Data Fetch
+### Simulating a Slow Data Fetch(add latency)
 
 What happens if one data request is slower than all the others?
 
@@ -655,7 +664,7 @@ Now, the `loading.tsx` file will only apply to your dashboard overview page.
 
 Route groups allow you to organize files into logical groups without affecting the URL path structure. When you create a new folder using parentheses `()`, the name won't be included in the URL path. So `/dashboard/(overview)/page.tsx` becomes `/dashboard`.
 
-### 2) `Streaming a component`: component level streaming
+### ⭐️  2) `Streaming a component`: component level streaming
 
 So far, you're streaming a whole page. But you can also be more granular and stream specific components using React Suspense.
 
@@ -696,7 +705,7 @@ Now it's your turn! Practice what you've just learned by streaming the `<LatestI
 
 Move `fetchLatestInvoices()` down from the page to the `<LatestInvoices>` component. Wrap the component in a `<Suspense>` boundary with a fallback called `<LatestInvoicesSkeleton>`.
 
-### 3) `Grouping components1: Make multiple small components load at the same time
+### ⭐️  3) `Grouping components1`: Make multiple small components load at the same time
 
 Great! You're almost there, now you need to wrap the `<Card>` components in Suspense. You can fetch data for each individual card, but this could lead to a *popping* effect as the cards load in, this can be visually jarring for the user.
 

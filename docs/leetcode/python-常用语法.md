@@ -920,6 +920,15 @@ def dfs(i,j):
   return max(dfs(i+1, j), dfs(i, j+1)) + grid[i][j]
 ```
 
+### nonlocal
+
+```python
+cnt = 0
+def backtrace():
+	nonlocal cnt
+	cnt += 1
+```
+
 ## Reference
 
 1. [Built-in Types, Python Doc](https://docs.python.org/3/library/stdtypes.html#)
