@@ -14,7 +14,7 @@
 ## 403
 
 - [x] 1
-- [x] 2
+- [x] 2g
 - [x] 3
 - [x] 4 (Late Submission, AC after competition finished)
 
