@@ -238,6 +238,15 @@ const config: Config = {
         },
       ],
     },
+    plugins: [
+      [
+        'vercel-analytics',
+        {
+          debug: true,
+          mode: 'auto',
+        },
+      ],
+    ],
   } satisfies Preset.ThemeConfig,
 };
 
