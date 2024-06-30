@@ -239,21 +239,14 @@ const config: Config = {
       ],
     },
     plugins: [
-      // [
-      //   'vercel-analytics',
-      //   {
-      //     debug: true,
-      //     mode: 'auto',
-      //   },
-      // ],      
-      // [
-      //   'docusaurus-plugin-vercel-analytics',
-      //   {
-      //     debug: true,
-      //     mode: 'auto',
-      //   },
-      // ],
-      ["@gracefullight/docusaurus-plugin-vercel-analytics"]
+      ["@gracefullight/docusaurus-plugin-vercel-analytics"],
+      [
+        'vercel-analytics',
+        {
+          debug: true,
+          mode: 'auto',
+        },
+      ],
     ],
   } satisfies Preset.ThemeConfig,
 };
