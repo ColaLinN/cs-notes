@@ -7,6 +7,7 @@ import Hero from '@site/src/components/Hero';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
+import { Analytics } from "@vercel/analytics/react"
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -36,6 +37,7 @@ export default function Home(): JSX.Element {
       // title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <Hero />
+      <Analytics/>
       <br></br>
       <br></br>
       <br></br>
