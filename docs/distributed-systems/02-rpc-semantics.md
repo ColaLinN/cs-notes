@@ -81,7 +81,7 @@ Option 3:
 
 launch a missile, need to ensure the command is sent exactly once so that the boom will not be triggered twice
 
-### Impossiblility
+### Impossibility
 
 It is Impossible because the server can crash, either
 
