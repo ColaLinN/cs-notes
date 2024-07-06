@@ -1,4 +1,4 @@
-## 402
+## 405
 
 国服 870
 
@@ -13,7 +13,7 @@ https://leetcode.cn/contest/weekly-contest-405
 
 前三题用时 27 分钟无 WA，第四题 TLE，没有想出来
 
-## 402
+## 404
 
 `3/4`
 
