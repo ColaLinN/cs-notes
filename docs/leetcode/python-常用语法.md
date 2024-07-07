@@ -929,6 +929,50 @@ def backtrace():
 	cnt += 1
 ```
 
+### Typing
+
+> leetcode 有用 `from typing import *`，在 Python 中，使用大写的 `List`、`Dict` 等类型提示是通过 `typing` 模块提供的，而小写的 `list`、`dict` 等类型提示是从 Python 3.9 开始直接支持的。
+>
+> LeetCode 的许多示例和题目可能是为了兼容更多的 Python 版本，包括那些低于 3.9 的版本，因此使用了 `typing` 模块中的 `List` 等类型。这样可以确保代码在 Python 3.9 之前的版本中也能正常运行。
+
+基本类型
+
+- **整数**: `int`
+- **浮点数**: `float`
+- **字符串**: `str`
+- **布尔值**: `bool`
+
+集合类型
+
+- **列表**: `list[元素类型]`
+- **元组**: `tuple[元素类型, ...]`
+- **字典**: `dict[键类型, 值类型]`
+- **集合**: `set[元素类型]`
+
+特殊类型
+
+- **可选类型**: `Optional[类型]` 或 `类型 | None`
+- **任意类型**: `Any`
+- **联合类型**: `Union[类型1, 类型2, ...]`
+- **可调用对象**: `Callable[[参数类型, ...], 返回类型]`
+
+sample
+
+```python
+def get_user_name(user_id: int) -> str | None:
+    user_names = {1: "Alice", 2: "Bob"}
+    return user_names.get(user_id)
+
+def flatten_list(nested_list: list[list[int]]) -> list[int]:
+    return [item for sublist in nested_list for item in sublist]
+
+def count_words(words: list[str]) -> dict[str, int]:
+    return {word: words.count(word) for word in set(words)}
+
+def apply_function(x: int, func: Callable[[int], int]) -> int:
+    return func(x)
+```
+
 ## Reference
 
 1. [Built-in Types, Python Doc](https://docs.python.org/3/library/stdtypes.html#)
