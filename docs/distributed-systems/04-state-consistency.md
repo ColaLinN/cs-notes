@@ -17,7 +17,7 @@ sidebar_position: 4
 Take distributed file system as an example, we may need to cache file conent for performance and reducing the overhead.
 
 - Client cache the file content locally
-- Server cache the file content in memory, so that it doesn't need to read them from disk which taks lots of time. 
+- Server cache the file content in memory, so that it doesn't need to read them from disk which takes lots of time. 
 
 ![image-20240518202804098](./04-state-consistency.assets/image-20240518202804098.png)
 
@@ -115,7 +115,7 @@ How to ensure/maintain the consistency of distributed state. Take the caching fi
 
 Why do we need formal Definition of consistency?
 
-1. We need to define what's the latest data, whether we can see the stale data. Whether we relaly need to read the latest data. 
+1. We need to define what's the latest data, whether we can see the stale data. Whether we really need to read the latest data. 
 2. If there are multiple clients write or read simultaneously, what is the consistency, which one should client read? 
 
 ### Serializability Consistency

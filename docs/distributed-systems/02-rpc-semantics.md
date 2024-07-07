@@ -48,7 +48,7 @@ Client keep retrying until receiving the response.
 
 ## At-most-once
 
-Procedure is either executed once or not executed at al
+Procedure is either executed once or not executed at all
 
 ### Implementation
 

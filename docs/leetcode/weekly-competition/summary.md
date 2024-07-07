@@ -1,11 +1,26 @@
 ## 402
 
+国服 870
+
+https://leetcode.cn/contest/weekly-contest-405
+
+`3/4`
+
+- [x] 1, Array
+- [x] 2, Backtrace
+- [x] 3, DP
+- [ ] 4
+
+前三题用时 27 分钟无 WA，第四题 TLE，没有想出来
+
+## 402
+
+`3/4`
+
 - [x] 1
 - [x] 2
 - [ ] 3
 - [x] 4 (Late Submission, AC after competition finished)
-
-`3/4`
 
 今天11点才开始周赛，半小时ak前两题，自己花了点时间做出来第四题（想不出一个条件看灵神视频讲解发现了）
 
@@ -138,3 +153,14 @@ https://leetcode.cn/contest/biweekly-contest-131
 
 - 第二题、第三题错误了很多次，应该提高自己的构造样例、找到反例、找到特殊样例的能力
 - 第四题是有思路的，很明显的状态 dp
+
+## 396
+
+国服 872
+
+`3/4`
+
+- [x] 1
+- [x] 2
+- [x] 3
+- [ ] 4
