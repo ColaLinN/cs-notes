@@ -7,6 +7,23 @@ tags: [intro]
 
 
 
+## 作品集 Portfolio
+
+- 我用一周时间开发了一个 🇸🇬 新加坡 pr 申请查询的应用 https://sgpass.info/
+  - 小红书宣传帖子： [link](http://xhslink.com/0p7H7Q)
+  - 自己一个人 solo 的项目
+    1. 基于 Nextjs 搭建前后端
+    2. 集成 Clerk 的用户鉴权
+    3. 使用 Supabase 的 Postgres 数据库，目前还是免费版本
+    4. 部署在 Vercel 上，自带简易的服务监控，开了会员 30 美刀一个月
+    5. 在 Domaincheap 买域名，3美刀一年
+    6. 使用 Chatgpt API 分析 500 条记录，6美刀
+  - 持续更新中
+
+
+
+
+
 ## 分布式系统 Distributed Systems
 
 - 062 [【Slide】我在组内做了一次技术分享：分布式系统，I did a Distributed Systems Sharing in our Team](https://docs.google.com/presentation/d/1WhaGyZQZUH905QXI5QKHfKzojU1wFxcuWiNiF2pq994)
