@@ -4,17 +4,13 @@ title: The Evolution of Web Service Architecture
 tags: [System Design]
 ---
 
+# The Evolution of Web Service Architecture
+
 凤凰架构
 
 > A server should be like a phoenix, regularly rising from the ashes.[[1\]](https://martinfowler.com/bliki/PhoenixServer.html#footnote-etymology)
 >
 > [Martin Fowler ](https://martinfowler.com/)  https://martinfowler.com/bliki/PhoenixServer.html
-
-
-
-当你将程序用于正式部署时，一般不应部署开发阶段的程序，而是要进行产品化（Production）与精简化（Minification），你可以通过以下命令，由 node.js 驱动 webpack 来自动完成：
-
-
 
 # 架构的演进
 

@@ -1,6 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
+id: intro
 title: 脚踏实地，仰望星空
+tags: [intro]
 ---
 
 ## 缘起，遗忘的痛苦

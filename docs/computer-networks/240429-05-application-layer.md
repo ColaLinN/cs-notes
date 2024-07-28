@@ -1,12 +1,12 @@
 ---
 sidebar_position: 6
-title: 5 Application Layer
+title: The Application Layer
 tags: [Networks]
 ---
 
 
 
-# Application Layer
+# The Application Layer
 
 DNS
 

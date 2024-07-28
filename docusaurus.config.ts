@@ -82,6 +82,12 @@ const config: Config = {
         // },
         {
           type: 'doc',
+          docId: 'practise-coding-record',
+          position: 'right',
+          label: "纳米飞刃精炼录",
+        },
+        {
+          type: 'doc',
           docId: 'distributed-systems/intro',
           position: 'right',
           label: 'Distributed Systems', // the name
@@ -116,12 +122,6 @@ const config: Config = {
           position: 'right',
           label: 'Computer Networks',
          },
-         {
-          type: 'doc',
-          docId: 'intro',
-          position: 'right',
-          label: "Intro",
-        },
          {
           label: "Others",
           position: "right",

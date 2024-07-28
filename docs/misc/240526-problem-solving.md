@@ -1,3 +1,10 @@
+---
+sidebar_position: 1000
+id: problem-solving
+title: 解决问题的能力
+tags: [intro]
+---
+
 ## 人生的底层逻辑
 
 模型训练三元组

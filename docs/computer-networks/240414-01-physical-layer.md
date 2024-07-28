@@ -1,10 +1,8 @@
 ---
 sidebar_position: 2
-title: 1 Physical Layer
+title: The Physical Layer
 tags: [Networks]
 ---
-
-
 
 # The Physical Layer
 

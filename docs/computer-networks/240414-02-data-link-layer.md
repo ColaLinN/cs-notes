@@ -1,10 +1,8 @@
 ---
 sidebar_position: 3
-title: 2 Data Link Layer
+title: The Data Link Layer
 tags: [Networks]
 ---
-
-
 
 # The Data Link Layer
 

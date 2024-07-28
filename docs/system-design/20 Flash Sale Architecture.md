@@ -4,9 +4,11 @@ title: Flash Sale Architecture
 tags: [System Design]
 ---
 
+# Flash Sale Architecture
+
 2024.03.08
 
-
+秒杀架构 https://juejin.cn/post/7044032901662375949
 
 主要提及要点：
 
@@ -92,9 +94,3 @@ tags: [System Design]
    1. 借助消息队列（比如mq）的延时队列
 
 7. end
-
-
-
-reference:
-
-1. 秒杀架构 https://juejin.cn/post/7044032901662375949
