@@ -454,6 +454,20 @@ else:
   print("i is no longer less than 6")
 ```
 
+## Pairwise Iteration
+
+Consecutive pairs *[(x0, x1), (x1, x2), ..., (xn-2, xn-1)]*, are called *pairwise combinations*. See an example in the [itertools docs](https://docs.python.org/3/library/itertools.html#itertools.pairwise). Once you have this function in your toolset, you can write:
+
+```py
+for x, y in pairwise(xs):
+    print(y - x)
+#a = [5, 66, 7, 8, 9, ...]
+#a[1] - a[0]
+#a[2] - a[1]
+#a[3] - a[2]
+#a[4] - a[3]
+```
+
 ### Switch
 
 
