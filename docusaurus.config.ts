@@ -84,7 +84,7 @@ const config: Config = {
           type: 'doc',
           docId: 'practise-coding-record',
           position: 'right',
-          label: "纳米飞刃技术集/Feiren Tech Summary",
+          label: "纳米飞刃技术集",
         },
         {
           type: 'doc',
