@@ -5,6 +5,8 @@ title: 纳米飞刃技术集/Feiren Tech Summary
 tags: [intro]
 ---
 
+> 本文主要总结本人所输出的技术文章。
+
 ## 作品集 Portfolio
 
 - 我用一周时间开发了一个 🇸🇬 新加坡 pr 申请查询的应用 https://sgpass.info/
@@ -20,12 +22,11 @@ tags: [intro]
 
 ## 全部文章 All Articles
 
-> 参考 [为什么这么设计系列文章](https://draveness.me/whys-the-design/)，总结本人输出的文章
-
 - ...
-- 062 [【Slide】我在组内做了一次技术分享：分布式系统，I did a Distributed Systems Sharing in our Team](https://docs.google.com/presentation/d/1WhaGyZQZUH905QXI5QKHfKzojU1wFxcuWiNiF2pq994)
-- 061 [我在 NUS 的分布式系统课结课满分，I got 100 in NUS CS5223](https://doc.fenglyulin.com/docs/distributed-systems/milestone)
-- 060 [【视频】43秒带你速通分布式系统概念 [Video] A quick tour of Distributed System](https://doc.fenglyulin.com/docs/distributed-systems/overview) 
+- 063 [【Slide】我在组内做了一次技术分享：分布式系统，I did a Distributed Systems Sharing in our Team](https://docs.google.com/presentation/d/1WhaGyZQZUH905QXI5QKHfKzojU1wFxcuWiNiF2pq994)
+- 062 [我在 NUS 的分布式系统课结课满分，I got 100 in NUS CS5223](https://doc.fenglyulin.com/docs/distributed-systems/milestone)
+- 061 [【视频】43秒带你速通分布式系统概念 [Video] A quick tour of Distributed System](https://doc.fenglyulin.com/docs/distributed-systems/overview) 
+- 060 [训练机器学习模型预测赢家，在 Kaggle 准确度最高 Game Winner Prediction, best 76.9% w EDA&Finetune](https://www.kaggle.com/code/kirklin/game-winner-prediction-best-76-9-w-eda-finetune)
 - 059 [代理与反向代理 Proxy VS Reverse Proxy](https://doc.fenglyulin.com/docs/computer-networks/proxy-vs-reverse-proxy)
 - 058 [应用层 Application Layer](https://doc.fenglyulin.com/docs/computer-networks/240429-05-application-layer)
 - 057 [传输层 The Transfer Layer](https://doc.fenglyulin.com/docs/computer-networks/240428-240527-04-transport-layer)
@@ -172,3 +173,6 @@ tags: [intro]
 - 054 [物理层 The Physical Layer](https://doc.fenglyulin.com/docs/computer-networks/240414-01-physical-layer)
 - 053 [计算机网络 7 层模型概览 OSI Network 7 layers Model](https://doc.fenglyulin.com/docs/computer-networks/overview)
 
+
+
+> 参考 [为什么这么设计系列文章](https://draveness.me/whys-the-design/)，总结本人输出的文章
