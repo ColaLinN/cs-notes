@@ -539,3 +539,9 @@ https://www.zhihu.com/question/595298808/answer/3047369015
 4. 参数量化
 5. 模型压缩
 6. 神经元稀疏激活现象
+
+
+
+
+
+![image-20240822014009128](./check.assets/image-20240822014009128.png)
