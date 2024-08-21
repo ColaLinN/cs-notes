@@ -1,6 +1,6 @@
 
 
-
+# Nextjs Hands-on Dashboard Web App 0
 
 ## [10) Partial Prerendering](https://nextjs.org/learn/dashboard-app/partial-prerendering)
 

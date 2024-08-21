@@ -1,3 +1,25 @@
+## 410
+
+https://leetcode.cn/contest/weekly-contest-410/ranking/
+
+`2/4`
+
+- [x] 1，Array
+- [ ] 2，Tree iteration, got problem while understanding the problem description
+- [x] 3，DP
+- [ ] 4, DP, mine is TLE
+
+## 409
+
+感觉从这几周的周赛难度变大了，估计是为了防 chatgpt 吧
+
+`1/4`
+
+- [x] 1，Array
+- [ ] 2，
+- [ ] 3，
+- [ ] 4
+
 ## 408
 
 `2/4`
