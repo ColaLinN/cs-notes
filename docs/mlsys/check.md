@@ -13,15 +13,13 @@
 
 分布式系统 Distributed System
 
-- MIT6.824 非必须？真的非必须吗？
+- MIT6.824 
 
 ML System
 
-- CMU DL System [课程主页](https://link.zhihu.com/?target=https%3A//dlsyscourse.org/)  **陈天奇**老师的课,涉及nn库实现,自动微分,GPU加速,模型部署和部分AI编译内容,内容除了分布式训练涉及的不够,基础的MLsys还是非常全面的.
+- CMU DL System [课程主页](https://link.zhihu.com/?target=https%3A//dlsyscourse.org/)  **陈天奇**老师的课,涉及nn库实现,自动微分,GPU加速,模型部署和部分AI编译内容,内容除了分布式训练涉及的不够,基础的MLsys还是非常全面的
 - Mini torch [课程主页](https://link.zhihu.com/?target=https%3A//minitorch.github.io/) 完全用python实现的简单torch版本,涉及自动微分,张量,GPU加速.适合新手入门
-
 - Tiny ML [课程主页](https://link.zhihu.com/?target=https%3A//efficientml.ai/) **MIT 韩松**，移动设备和嵌入式系统相关
-- 
 - 工具书
 - 机器学习系统:设计和实现 [主页](https://link.zhihu.com/?target=https%3A//openmlsys.github.io/%23) 华为Mindspore团队。中文的，涉及到方方面面
 - System for AI [主页](https://link.zhihu.com/?target=https%3A//github.com/microsoft/AI-System)  **微软**发起的,目前还在快速迭代更新的工具书,舍和补全基础
@@ -498,16 +496,12 @@ https://www.zhihu.com/question/595298808/answer/3047369015
       LLM大模型推理部署优化技术综述 - 上天界医神的文章 - 知乎
       https://zhuanlan.zhihu.com/p/655557420
 
-
-
 优化大方向
 
 1. 分布式ML
 2. DL模型压缩、加速
 3. DL框架
 4. 用ML优化传统的system问题
-
-
 
 其中有关优化细分为
 
@@ -544,4 +538,10 @@ https://www.zhihu.com/question/595298808/answer/3047369015
 
 
 
+
+
+
+
 ![image-20240822014009128](./check.assets/image-20240822014009128.png)
+
+# 
