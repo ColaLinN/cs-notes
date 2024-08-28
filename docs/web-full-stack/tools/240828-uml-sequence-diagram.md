@@ -40,6 +40,13 @@ FE -> BE : <font color=red>test_red_text</font>
 @enduml
 ```
 
-![image-20240828114136356](uml.assets/image-20240828114136356.png)
+![image-20240828114136356](240828-uml-sequence-diagram.assets/image-20240828114136356.png)
 
-## 其他
+## TODO
+
+-   [ ] ifelse
+-   [ ] notion
+-   [ ] Divider 分隔线
+-   [ ] group
+-   [ ] participant
+-   [ ] Arrow limitation
