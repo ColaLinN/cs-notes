@@ -1,8 +1,6 @@
 
 
-
-
-## Distributed Training Approaches
+# Distributed Training Approaches
 
 ## 概述
 
