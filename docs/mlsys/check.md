@@ -7,26 +7,53 @@
 
 ## 学习大纲
 
-### week1
+### week1 入门
 
 不要探究太多底层，把机器学习系统的基础、框架和分布式训练看一下，以点到面。你现在的问题是什么都想学，什么都看了，但什么都不精通。
 
 还有一个问题是，没有章法，看了好多帖子，各有各的出发点，没有自己的思路。
 
-- [《机器学习系统：设计和实现》](https://openmlsys.github.io/#)
-  - 华为Mindspore团队。中文的，涉及到方方面面
-- [CMU DL System](https://dlsyscourse.org/)
-  - 陈天奇老师的课。涉及nn库实现、自动微分、GPU加速、模型部署和部分AI编译内容。分布式训练涉及的不够，基础的MLsys还是非常全面的。
-  - Data Parallel 数据并行
-  - Distributed Data Parallel 分布式数据并行
-  - Tensor Parallel 张量并行
-  - Pipeline Parallel 流水线并行
-  - Auto Parallel 自动并行
-  - Sequence Parallel 序列并行
-  - Asynchronous Distributed Dataflow 异步数据流
-  - Distributed Scheduling 分布式调度
-- [TinyML 6.5940](https://hanlab.mit.edu/courses/2024-fall-65940) Chapter III: Efficient Training 
-- [人工智能系统](https://github.com/microsoft/AI-System?tab=readme-ov-file) by 微软
+- 梳理一下大模型分布式训练方法
+
+  - [《机器学习系统：设计和实现》](https://openmlsys.github.io/#)
+    - 华为Mindspore团队。中文的，涉及到方方面面
+    - 分布式训练基础
+    - 分布式推理优化
+    - 分布式通信
+    - 分布式训练常见库
+  - [人工智能系统](https://github.com/microsoft/AI-System?tab=readme-ov-file) by 微软
+  - [CMU DL System](https://dlsyscourse.org/) 陈天奇老师的课。涉及nn库实现、自动微分、GPU加速、模型部署和部分AI编译内容。分布式训练涉及的不够，基础的MLsys还是非常全面的。
+      - Data Parallel 数据并行
+      - Distributed Data Parallel 分布式数据并行
+      - Tensor Parallel 张量并行
+      - Pipeline Parallel 流水线并行
+      - Auto Parallel 自动并行
+      - Sequence Parallel 序列并行
+      - Asynchronous Distributed Dataflow 异步数据流
+      - Distributed Scheduling 分布式调度
+  
+
+  - [TinyML 6.5940](https://hanlab.mit.edu/courses/2024-fall-65940) Chapter III: Efficient Training 
+
+
+- 从啥也不会到DeepSpeed————一篇大模型分布式训练的学习过程总结 - elihe的文章 - 知乎
+  https://zhuanlan.zhihu.com/p/688873027
+- Colossalai 流水线并行框架开发
+
+  - https://kirigaya.cn/1
+
+- 对这些有基本的了解
+
+  - CUDA 算子
+  - pytorch 原理
+  - GPGPU 体系结构
+  - 模型压缩、加速
+
+- 基本机器学习要懂，然后去看高性能计算相关的教材，然后学习基本的DP，PP，MP的原理等。
+- CPP
+- AGX Orin 嵌入式开发板上部署 Qwen2.0 大模型
+- 深度学习框架最重要的是什么？自动求导系统，因为目前的损失函数的优化方法全都基于一阶梯度信息进行梯度下降
+- 如何实现梯度的计算？计算图，ptorch 的 tensor 和 numpy 最大的区别在于当你使用 tensor 进行加减乘除运算时，torch 后台会自动帮你构建出计算图。
 
 ### week 2
 
@@ -34,7 +61,7 @@
 
 想学的
 
-1. 分布式训练的基础知识
+1. 分布式训练的基础
 2. 分布式推理优化
 3. 分布式通信
 4. 分布式训练常见库
@@ -58,8 +85,8 @@
 ### 优化大方向
 
 1. 分布式ML
-2. DL模型压缩、加速
-3. DL框架
+2. DL 模型压缩、加速
+3. DL 框架
 4. 用ML优化传统的system问题
 
 ### 有关优化细分
