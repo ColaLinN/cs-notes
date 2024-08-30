@@ -22,7 +22,8 @@ tags: [intro]
 
 ## 全部文章 All Articles
 
--   077 ...
+-   ...
+-   077 [Unix Log CLI](https://doc.fenglyulin.com/docs/web-full-stack/tools/unix-log-cli)
 -   076 [MLSys Distributed Traning Param Server](https://doc.fenglyulin.com/docs/mlsys/distributed-training-05)
 -   075 [MLSys Distributed Training Collective Communication](https://doc.fenglyulin.com/docs/mlsys/distributed-training-04)
 -   074 [MLSys Distributed Training Cluster Architecure](https://doc.fenglyulin.com/docs/mlsys/distributed-training-03)
@@ -195,6 +196,7 @@ tags: [intro]
 
 ## Web 全栈 Web Fullstack
 
+-   077 [Unix Log CLI](https://doc.fenglyulin.com/docs/web-full-stack/tools/unix-log-cli)
 -   071 [压力测试工具 Stress Testing Tool](https://doc.fenglyulin.com/docs/web-full-stack/tools/stress-testing-tool)
 -   070 [UML 序列图要点 UML Sequence Diagram](https://doc.fenglyulin.com/docs/web-full-stack/tools/uml-sequence-diagram)
 -   069 [CSS Notes](https://doc.fenglyulin.com/docs/web-full-stack/frontend/css-01)

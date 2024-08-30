@@ -1,4 +1,4 @@
-# Log Checking CLI Cheatsheet
+# Unix Log CLI
 
 check log
 
