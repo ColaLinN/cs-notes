@@ -34,7 +34,7 @@ tags: [intro]
 - 068 [Nextjs Project Dashboard 03](https://doc.fenglyulin.com/docs/web-full-stack/frontend/240625-05-nextjs-project-dashboard-03)
 - 067 [Nextjs Project Dashboard 02](https://doc.fenglyulin.com/docs/web-full-stack/frontend/240623-04-nextjs-project-dashboard-02)
 - 066 [Nextjs Project Dashboard 01](https://doc.fenglyulin.com/docs/web-full-stack/frontend/240622-03-nextjs-project-dashboard-01)
-- 065 [React Nextjs Foudation](https://doc.fenglyulin.com/docs/web-full-stack/frontend/240622-02-react-nextjs-foundation)
+- 065 [React Nextjs Foundation](https://doc.fenglyulin.com/docs/web-full-stack/frontend/240622-02-react-nextjs-foundation)
 - 064 [React 入门项目五子棋 React Prject Tic-Tac-Toe](https://doc.fenglyulin.com/docs/web-full-stack/frontend/240622-01-react-project-tic-tac-toe)
 - 063 [【Slide】我在组内做了一次技术分享：分布式系统，I did a Distributed Systems Sharing in our Team](https://docs.google.com/presentation/d/1WhaGyZQZUH905QXI5QKHfKzojU1wFxcuWiNiF2pq994)
 - 062 [我在 NUS 的分布式系统课结课满分，I got 100 in NUS CS5223](https://doc.fenglyulin.com/docs/distributed-systems/milestone)
