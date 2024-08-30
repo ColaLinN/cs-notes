@@ -95,13 +95,13 @@ tags: [intro]
 - 009 [同向双指针、滑动窗口算法 Same Direction Pointer/Sliding Window](https://doc.fenglyulin.com/docs/leetcode/Episode1/same-dire-double-pointer-slide-window)
 - 008 [双指针算法 Opposite Double Pointer](https://doc.fenglyulin.com/docs/leetcode/Episode1/opposite-double-pointer)
 - 007 [分布式思考 Distributed Thinking](https://doc.fenglyulin.com/docs/distributed-systems/distributed-thinking)
-- 006 [为什么需要分布式事务？ Distributed Transaction](https://doc.fenglyulin.com/docs/distributed-systems/distirbuted-transaction)
-- 005 [什么是拜占庭容错？Byzantine Fault Tolerance](https://doc.fenglyulin.com/docs/distributed-systems/byzantine-fault-tolerance)
-- 004 [为什么需要共识协议？Distributed Consensus, State Machine Replication](https://doc.fenglyulin.com/docs/distributed-systems/consensus-protocol)
-- 003 [为什么需要分布式状态？如何定义一致性？Distributed State and Consistency](https://doc.fenglyulin.com/docs/distributed-systems/state-consistency)
-- 002 [为什么需要物理时钟，Lamport 时钟与 Vector 时钟 Physical Clock, Lamport Logical Clock, and Vector Clock](https://doc.fenglyulin.com/docs/distributed-systems/logical-lock)
-- 001 [什么是分布式系统 RPC 请求语义？Request Semantics](https://doc.fenglyulin.com/docs/distributed-systems/rpc-semantics)
-- 000 [为什么需要分布式系统？Why Distributed Systems? Overview](https://doc.fenglyulin.com/docs/distributed-systems/overview)
+-   006 [分布式事务 Distributed Transaction](https://doc.fenglyulin.com/docs/distributed-systems/distirbuted-transaction)
+-   005 [拜占庭容错 Byzantine Fault Tolerance](https://doc.fenglyulin.com/docs/distributed-systems/byzantine-fault-tolerance)
+-   004 [共识协议 Distributed Consensus, State Machine Replication](https://doc.fenglyulin.com/docs/distributed-systems/consensus-protocol)
+-   003 [分布式状态，如何定义一致性？Distributed State and Consistency](https://doc.fenglyulin.com/docs/distributed-systems/state-consistency)
+-   002 [物理时钟，Lamport 时钟与 Vector 时钟 Physical Clock, Lamport Logical Clock, and Vector Clock](https://doc.fenglyulin.com/docs/distributed-systems/logical-lock)
+-   001 [分布式系统 RPC 请求语义 Request Semantics](https://doc.fenglyulin.com/docs/distributed-systems/rpc-semantics)
+-   000 [为什么需要分布式系统？ Why Distributed Systems? Overview](https://doc.fenglyulin.com/docs/distributed-systems/overview)
 
 
 
@@ -111,13 +111,13 @@ tags: [intro]
 - 061 [在 NUS 分布式系统课中获得满分 Got 100 in NUS CS5223](https://doc.fenglyulin.com/docs/distributed-systems/milestone)
 - 060 [【视频】43秒带你速通分布式系统概念 [Video] A quick tour of Distributed System](https://doc.fenglyulin.com/docs/distributed-systems/overview) 
 - 007 [分布式思考 Distributed Thinking](https://doc.fenglyulin.com/docs/distributed-systems/distributed-thinking)
-- 006 [为什么需要分布式事务？ Distributed Transaction](https://doc.fenglyulin.com/docs/distributed-systems/distirbuted-transaction)
-- 005 [什么是拜占庭容错？Byzantine Fault Tolerance](https://doc.fenglyulin.com/docs/distributed-systems/byzantine-fault-tolerance)
-- 004 [为什么需要共识协议？Distributed Consensus, State Machine Replication](https://doc.fenglyulin.com/docs/distributed-systems/consensus-protocol)
-- 003 [为什么需要分布式状态？如何定义一致性？Distributed State and Consistency](https://doc.fenglyulin.com/docs/distributed-systems/state-consistency)
-- 002 [为什么需要物理时钟，Lamport 时钟与 Vector 时钟 Physical Clock, Lamport Logical Clock, and Vector Clock](https://doc.fenglyulin.com/docs/distributed-systems/logical-lock)
-- 001 [什么是分布式系统 RPC 请求语义？Request Semantics](https://doc.fenglyulin.com/docs/distributed-systems/rpc-semantics)
-- 000 [为什么需要分布式系统？Why Distributed Systems? Overview](https://doc.fenglyulin.com/docs/distributed-systems/overview)
+- 006 [分布式事务 Distributed Transaction](https://doc.fenglyulin.com/docs/distributed-systems/distirbuted-transaction)
+- 005 [拜占庭容错 Byzantine Fault Tolerance](https://doc.fenglyulin.com/docs/distributed-systems/byzantine-fault-tolerance)
+- 004 [共识协议 Distributed Consensus, State Machine Replication](https://doc.fenglyulin.com/docs/distributed-systems/consensus-protocol)
+- 003 [分布式状态，如何定义一致性？Distributed State and Consistency](https://doc.fenglyulin.com/docs/distributed-systems/state-consistency)
+- 002 [物理时钟，Lamport 时钟与 Vector 时钟 Physical Clock, Lamport Logical Clock, and Vector Clock](https://doc.fenglyulin.com/docs/distributed-systems/logical-lock)
+- 001 [分布式系统 RPC 请求语义 Request Semantics](https://doc.fenglyulin.com/docs/distributed-systems/rpc-semantics)
+- 000 [为什么需要分布式系统？ Why Distributed Systems? Overview](https://doc.fenglyulin.com/docs/distributed-systems/overview)
 
 ## 机器学习系统 MLSys
 
