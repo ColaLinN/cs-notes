@@ -1,6 +1,6 @@
 
 
-# Nextjs Hands-on Dashboard Web App 0
+# Nextjs Project Dashboard 03
 
 ## [10) Partial Prerendering](https://nextjs.org/learn/dashboard-app/partial-prerendering)
 
@@ -12,7 +12,7 @@ In this chapter, let's learn how to combine static rendering, dynamic rendering,
 
 For most web apps built today, you either choose between static and dynamic rendering for your **entire application**, or for a **specific route**. And in Next.js, if you call a [dynamic function](https://nextjs.org/docs/app/building-your-application/routing/route-handlers#dynamic-functions) in a route (like querying your database), the *entire* route becomes dynamic.
 
-![image-20240625224214510](./240625-05-nextjs-project-dashboard-6-onwards.assets/image-20240625224214510.png)
+![image-20240625224214510](240625-05-nextjs-project-dashboard-03.assets/image-20240625224214510.png)
 
 ### What is Partial Prerendering?
 
@@ -419,7 +419,7 @@ Navigate to the `<Form>` component, and you'll see that the form:
 
 On http://localhost:3000/dashboard/invoices/create, you should see the following UI:
 
-![image-20240626011455359](./240625-05-nextjs-project-dashboard-6-onwards.assets/image-20240626011455359.png)
+![image-20240626011455359](240625-05-nextjs-project-dashboard-03.assets/image-20240626011455359.png)
 
 #### 2) Create a Server Action
 
@@ -549,7 +549,7 @@ export async function createInvoice(formData: FormData) {
 }
 ```
 
-![image-20240626013917864](./240625-05-nextjs-project-dashboard-6-onwards.assets/image-20240626013917864.png)
+![image-20240626013917864](240625-05-nextjs-project-dashboard-03.assets/image-20240626013917864.png)
 
 ### Updating an invoice
 
@@ -569,7 +569,7 @@ Next.js allows you to create [Dynamic Route Segments](https://nextjs.org/docs/ap
 
 In your `/invoices` folder, create a new dynamic route called `[id]`, then a new route called `edit` with a `page.tsx` file. Your file structure should look like this:
 
-![image-20240626014119297](./240625-05-nextjs-project-dashboard-6-onwards.assets/image-20240626014119297.png)
+![image-20240626014119297](240625-05-nextjs-project-dashboard-03.assets/image-20240626014119297.png)
 
 In your `<Table>` component, notice there's a `<UpdateInvoice />` button that receives the invoice's `id` from the table records.
 
@@ -631,7 +631,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 }
 ```
 
-![image-20240626014638910](./240625-05-nextjs-project-dashboard-6-onwards.assets/image-20240626014638910.png)
+![image-20240626014638910](240625-05-nextjs-project-dashboard-03.assets/image-20240626014638910.png)
 
 The URL should also be updated with an `id` as follows: `http://localhost:3000/dashboard/invoice/uuid/edit`
 
@@ -751,7 +751,7 @@ If you know how to do this, spend a few minutes updating your Server Actions, or
 
 what happens when an error is thrown in your Server Action
 
-![image-20240626021813234](./240625-05-nextjs-project-dashboard-6-onwards.assets/image-20240626021813234.png)
+![image-20240626021813234](240625-05-nextjs-project-dashboard-03.assets/image-20240626021813234.png)
 
 ### Handling all errors with `error.tsx`
 
@@ -804,7 +804,7 @@ There are a few things you'll notice about the code above:
 
 When you try to delete an invoice again, you should see the following UI:
 
-![image-20240626022016611](./240625-05-nextjs-project-dashboard-6-onwards.assets/image-20240626022016611.png)
+![image-20240626022016611](240625-05-nextjs-project-dashboard-03.assets/image-20240626022016611.png)
 
 ### Handling 404 errors with the `notFound` func and `not-found.tsx`
 
@@ -830,7 +830,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 
 Perfect! `<Page>` will now throw an error if a specific invoice is not found. To show an error UI to the user. Create a `not-found.tsx` file inside the `/edit` folder.
 
-![image-20240626022345193](./240625-05-nextjs-project-dashboard-6-onwards.assets/image-20240626022345193.png)
+![image-20240626022345193](240625-05-nextjs-project-dashboard-03.assets/image-20240626022345193.png)
 
 Then, inside the `not-found.tsx` file, paste the following the code:
 
@@ -857,13 +857,13 @@ export default function NotFound() {
 
 That's something to keep in mind, `notFound` will take precedence over `error.tsx`, so you can reach out for it when you want to handle more specific errors!
 
-![image-20240626022539790](./240625-05-nextjs-project-dashboard-6-onwards.assets/image-20240626022539790.png)
+![image-20240626022539790](240625-05-nextjs-project-dashboard-03.assets/image-20240626022539790.png)
 
 visit this: http://localhost:3000/dashboard/invoices/2e94d1ed-d220-449f-9f11-f0bbceed9645/edit
 
 will see 404 not found page
 
-![image-20240626023133958](./240625-05-nextjs-project-dashboard-6-onwards.assets/image-20240626023133958.png)
+![image-20240626023133958](240625-05-nextjs-project-dashboard-03.assets/image-20240626023133958.png)
 
 To learn more about error handling in Next.js, check out the following documentation:
 
@@ -932,7 +932,7 @@ There are a couple of ways you can validate forms on the client. The simplest wo
 />
 ```
 
-![image-20240626024653369](./240625-05-nextjs-project-dashboard-6-onwards.assets/image-20240626024653369.png)
+![image-20240626024653369](240625-05-nextjs-project-dashboard-03.assets/image-20240626024653369.png)
 
 ### Server-Side validation [TODO]
 

@@ -14,11 +14,11 @@
 | **BlazeMeter** | 云端平台，兼容JMeter和Gatling          | 支持大规模分布式测试，与JMeter兼容  | 大规模测试可能需要付费            |
 | **Tsung**      | 分布式负载测试工具，多协议支持         | 高性能，支持大规模测试              | 配置复杂，文档较少                |
 
-## Wrk
+## Wrk - CLI HTTP Testing
 
 https://github.com/wg/wrk
 
-Wrk 是现代的压力测试工具，可以在单机上运行并能够生成大量的请求。
+Wrk 是现代的 HTTP 压力测试命令行工具，可以在单机上运行并能够生成大量的请求。
 
 -   它结合了多线程设计和可扩展的事件通知系统（比如 epoll 和 kqueue）。
 -   可以使用 `LuaJIT` 脚本来生成 HTTP 请求，响应处理和自定义的报告。官方样例可见 [link](https://github.com/wg/wrk/tree/master/scripts)
@@ -45,6 +45,8 @@ Requests/sec:   1953.92
 Transfer/sec:      4.13MB
 ```
 
+详解（可跳过）
+
 -   第一二行标明基本的参数，运行时间、线程数和连接数
 -   随后展示了以线程为单位，请求的延时（Latency）和每秒请求数（Req/Sec）的数据统计
     -   平均值（Avg），标准差（Stdev），最大值（Max），标准差范围内的百分比（+/- Stdev）
@@ -56,13 +58,13 @@ Transfer/sec:      4.13MB
     -   每秒请求数
         -   平均每秒请求数为 217.35，表示每个线程平均每秒处理217.35个请求。
             -   所以总请求数为（`217.35 x 12 x 30`）
-    
+
         -   标准差为 105.66
         -   最大请求延时为 515
         -   标准差百分比为 65.71%
-    
+
     -   在 30 秒内总共有 58791 个请求，在测试期间，从服务器读取的数据总量为 124.30MB。
-    
+
 -   `Socket errors`：在测试过程中发生的 Socket 连接相关的错误统计。
     -   connect 155：在尝试建立连接时发生了155次错误。这可能是由于服务器负载过高，导致无法建立新的连接。
     -   read 299：在读取数据时发生了299次错误，可能是由于网络问题或服务器在发送数据时出现了异常。
@@ -427,3 +429,37 @@ done = function(summary, latency, requests)
     -   使用像 `JMeter` 配合 `WebDriver Sampler` 或 `Gatling` 这种支持JS的工具，可以在测试时运行页面中的JavaScript。
 
 这些方法可以帮助你在进行负载测试时，也触发 `vercel analytics` 或其他基于JavaScript的统计工具。
+
+## JMeter - GUI, Report, Powerful
+
+https://github.com/apache/jmeter
+
+完全由 Java 编写，可以对静态或动态的服务器进行压测。
+
+支持
+
+-   Command Line 命令行模式
+-   GUI 模式
+
+![JMeter screen](https://raw.githubusercontent.com/apache/jmeter/master/xdocs/images/screenshots/jmeter_screen.png)
+
+### 支持主流通信协议
+
+-   Web - HTTP, HTTPS (Java, NodeJS, PHP, ASP.NET,...)
+-   SOAP / REST Webservices
+-   FTP
+-   Database via JDBC
+-   LDAP
+-   Message-oriented Middleware (MOM) via JMS
+-   Mail - SMTP(S), POP3(S) and IMAP(S)
+-   Native commands or shell scripts
+-   TCP
+-   Java Objects
+
+### 生成测试报表
+
+-   生成报表
+-   实时 Grafana 报表
+-   支持提取成不同的格式 HTML, JSON, XML or any textual format
+
+![Dashboard screenshot](https://raw.githubusercontent.com/apache/jmeter/master/xdocs/images/screenshots/dashboard/response_time_percentiles_over_time.png)
