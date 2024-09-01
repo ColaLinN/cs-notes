@@ -41,19 +41,30 @@
 - Colossalai 流水线并行框架开发
 
   - https://kirigaya.cn/1
-
 - 对这些有基本的了解
 
   - CUDA 算子
   - pytorch 原理
   - GPGPU 体系结构
   - 模型压缩、加速
-
 - 基本机器学习要懂，然后去看高性能计算相关的教材，然后学习基本的DP，PP，MP的原理等。
-- CPP
 - AGX Orin 嵌入式开发板上部署 Qwen2.0 大模型
+- 
+- 实际上下面的这些在 OPEN MLSYS 里都有
 - 深度学习框架最重要的是什么？自动求导系统，因为目前的损失函数的优化方法全都基于一阶梯度信息进行梯度下降
 - 如何实现梯度的计算？计算图，ptorch 的 tensor 和 numpy 最大的区别在于当你使用 tensor 进行加减乘除运算时，torch 后台会自动帮你构建出计算图。
+
+  - 纯Python实现原理级深度学习框架（一）计算图的原理，节点类的实现和计算图的可视化 - 锦恢的文章 - 知乎
+    https://zhuanlan.zhihu.com/p/351961835
+
+- 其他的
+
+  - Hugging Face高效训练技术一：单 GPU 高效训练（Gradient Accumulation、Gradient Checkpointing、混合精度训练、优化其选择）https://blog.csdn.net/qq_56591814/article/details/134177555?spm=1001.2014.3001.5502
+  - Hugging Face高效训练技术二：大模型分布式训练策略——ZeRO、FSDP https://blog.csdn.net/qq_56591814/article/details/133189752?spm=1001.2014.3001.5502
+  - Hugging Face高效训练技术三：huggingface DeepSpeed文档 https://blog.csdn.net/qq_56591814/article/details/133221357?spm=1001.2014.3001.5502
+  - Hugging Face高效训练技术四：多GPU分布式训练（DP、PP、TP 、ZeRO） https://blog.csdn.net/qq_56591814/article/details/134099476
+  - Hugging Face高性能技术五：Transformer高效推断（bitsandbytes、FlashAttention、 BetterTransformer） https://blog.csdn.net/qq_56591814/article/details/134237584?spm=1001.2014.3001.5502
+
 
 ### week 2
 
