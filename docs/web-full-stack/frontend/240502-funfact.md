@@ -1,6 +1,6 @@
 
 
-De
+# Funfact
 
 为什么homepage的第一段话都叫hero？class="superhero-contrast"
 
@@ -12,6 +12,4 @@ De
 >
 > by ChatGPT 4
 
-
-
-![image-20240502175334563](funfact.assets/image-20240502175334563.png)
+![image-20240502175334563](240502-funfact.assets/image-20240502175334563.png)

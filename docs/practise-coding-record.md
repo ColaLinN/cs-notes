@@ -22,7 +22,22 @@ tags: [intro]
 
 ## 全部文章 All Articles
 
-- 064 
+-   ...
+-   077 [Unix Log CLI](https://doc.fenglyulin.com/docs/web-full-stack/tools/unix-log-cli)
+-   076 [MLSys Distributed Traning Param Server](https://doc.fenglyulin.com/docs/mlsys/distributed-training-05)
+-   075 [MLSys Distributed Training Collective Communication](https://doc.fenglyulin.com/docs/mlsys/distributed-training-04)
+-   074 [MLSys Distributed Training Cluster Architecure](https://doc.fenglyulin.com/docs/mlsys/distributed-training-03)
+-   073 [MLSys Distributed Training Approaches](https://doc.fenglyulin.com/docs/mlsys/distributed-training-02)
+-   072 [MLSys Distributed Training Abstract](https://doc.fenglyulin.com/docs/mlsys/distributed-training-01)
+
+- 071 [压力测试工具 Stress Testing Tool](https://doc.fenglyulin.com/docs/web-full-stack/tools/stress-testing-tool)
+- 070 [UML 序列图要点 UML Sequence Diagram](https://doc.fenglyulin.com/docs/web-full-stack/tools/uml-sequence-diagram)
+- 069 [CSS Notes](https://doc.fenglyulin.com/docs/web-full-stack/frontend/css-01)
+- 068 [Nextjs Project Dashboard 03](https://doc.fenglyulin.com/docs/web-full-stack/frontend/240625-05-nextjs-project-dashboard-03)
+- 067 [Nextjs Project Dashboard 02](https://doc.fenglyulin.com/docs/web-full-stack/frontend/240623-04-nextjs-project-dashboard-02)
+- 066 [Nextjs Project Dashboard 01](https://doc.fenglyulin.com/docs/web-full-stack/frontend/240622-03-nextjs-project-dashboard-01)
+- 065 [React Nextjs Foundation](https://doc.fenglyulin.com/docs/web-full-stack/frontend/240622-02-react-nextjs-foundation)
+- 064 [React 入门项目五子棋 React Prject Tic-Tac-Toe](https://doc.fenglyulin.com/docs/web-full-stack/frontend/240622-01-react-project-tic-tac-toe)
 - 063 [【Slide】我在组内做了一次技术分享：分布式系统，I did a Distributed Systems Sharing in our Team](https://docs.google.com/presentation/d/1WhaGyZQZUH905QXI5QKHfKzojU1wFxcuWiNiF2pq994)
 - 062 [我在 NUS 的分布式系统课结课满分，I got 100 in NUS CS5223](https://doc.fenglyulin.com/docs/distributed-systems/milestone)
 - 061 [【视频】43秒带你速通分布式系统概念 [Video] A quick tour of Distributed System](https://doc.fenglyulin.com/docs/distributed-systems/overview) 
@@ -80,15 +95,13 @@ tags: [intro]
 - 009 [同向双指针、滑动窗口算法 Same Direction Pointer/Sliding Window](https://doc.fenglyulin.com/docs/leetcode/Episode1/same-dire-double-pointer-slide-window)
 - 008 [双指针算法 Opposite Double Pointer](https://doc.fenglyulin.com/docs/leetcode/Episode1/opposite-double-pointer)
 - 007 [分布式思考 Distributed Thinking](https://doc.fenglyulin.com/docs/distributed-systems/distributed-thinking)
-- 006 [为什么需要分布式事务？ Distributed Transaction](https://doc.fenglyulin.com/docs/distributed-systems/distirbuted-transaction)
-- 005 [什么是拜占庭容错？Byzantine Fault Tolerance](https://doc.fenglyulin.com/docs/distributed-systems/byzantine-fault-tolerance)
-- 004 [为什么需要共识协议？Distributed Consensus, State Machine Replication](https://doc.fenglyulin.com/docs/distributed-systems/consensus-protocol)
-- 003 [为什么需要分布式状态？如何定义一致性？Distributed State and Consistency](https://doc.fenglyulin.com/docs/distributed-systems/state-consistency)
-- 002 [为什么需要物理时钟，Lamport 时钟与 Vector 时钟 Physical Clock, Lamport Logical Clock, and Vector Clock](https://doc.fenglyulin.com/docs/distributed-systems/logical-lock)
-- 001 [什么是分布式系统 RPC 请求语义？Request Semantics](https://doc.fenglyulin.com/docs/distributed-systems/rpc-semantics)
-- 000 [为什么需要分布式系统？Why Distributed Systems? Overview](https://doc.fenglyulin.com/docs/distributed-systems/overview)
-
-
+-   006 [分布式事务 Distributed Transaction](https://doc.fenglyulin.com/docs/distributed-systems/distirbuted-transaction)
+-   005 [拜占庭容错 Byzantine Fault Tolerance](https://doc.fenglyulin.com/docs/distributed-systems/byzantine-fault-tolerance)
+-   004 [共识协议 Distributed Consensus, State Machine Replication](https://doc.fenglyulin.com/docs/distributed-systems/consensus-protocol)
+-   003 [分布式状态，如何定义一致性？Distributed State and Consistency](https://doc.fenglyulin.com/docs/distributed-systems/state-consistency)
+-   002 [物理时钟，Lamport 时钟与 Vector 时钟 Physical Clock, Lamport Logical Clock, and Vector Clock](https://doc.fenglyulin.com/docs/distributed-systems/logical-lock)
+-   001 [分布式系统 RPC 请求语义 Request Semantics](https://doc.fenglyulin.com/docs/distributed-systems/rpc-semantics)
+-   000 [为什么需要分布式系统？ Why Distributed Systems? Overview](https://doc.fenglyulin.com/docs/distributed-systems/overview)
 
 
 
@@ -98,13 +111,21 @@ tags: [intro]
 - 061 [在 NUS 分布式系统课中获得满分 Got 100 in NUS CS5223](https://doc.fenglyulin.com/docs/distributed-systems/milestone)
 - 060 [【视频】43秒带你速通分布式系统概念 [Video] A quick tour of Distributed System](https://doc.fenglyulin.com/docs/distributed-systems/overview) 
 - 007 [分布式思考 Distributed Thinking](https://doc.fenglyulin.com/docs/distributed-systems/distributed-thinking)
-- 006 [为什么需要分布式事务？ Distributed Transaction](https://doc.fenglyulin.com/docs/distributed-systems/distirbuted-transaction)
-- 005 [什么是拜占庭容错？Byzantine Fault Tolerance](https://doc.fenglyulin.com/docs/distributed-systems/byzantine-fault-tolerance)
-- 004 [为什么需要共识协议？Distributed Consensus, State Machine Replication](https://doc.fenglyulin.com/docs/distributed-systems/consensus-protocol)
-- 003 [为什么需要分布式状态？如何定义一致性？Distributed State and Consistency](https://doc.fenglyulin.com/docs/distributed-systems/state-consistency)
-- 002 [为什么需要物理时钟，Lamport 时钟与 Vector 时钟 Physical Clock, Lamport Logical Clock, and Vector Clock](https://doc.fenglyulin.com/docs/distributed-systems/logical-lock)
-- 001 [什么是分布式系统 RPC 请求语义？Request Semantics](https://doc.fenglyulin.com/docs/distributed-systems/rpc-semantics)
-- 000 [为什么需要分布式系统？Why Distributed Systems? Overview](https://doc.fenglyulin.com/docs/distributed-systems/overview)
+- 006 [分布式事务 Distributed Transaction](https://doc.fenglyulin.com/docs/distributed-systems/distirbuted-transaction)
+- 005 [拜占庭容错 Byzantine Fault Tolerance](https://doc.fenglyulin.com/docs/distributed-systems/byzantine-fault-tolerance)
+- 004 [共识协议 Distributed Consensus, State Machine Replication](https://doc.fenglyulin.com/docs/distributed-systems/consensus-protocol)
+- 003 [分布式状态，如何定义一致性？Distributed State and Consistency](https://doc.fenglyulin.com/docs/distributed-systems/state-consistency)
+- 002 [物理时钟，Lamport 时钟与 Vector 时钟 Physical Clock, Lamport Logical Clock, and Vector Clock](https://doc.fenglyulin.com/docs/distributed-systems/logical-lock)
+- 001 [分布式系统 RPC 请求语义 Request Semantics](https://doc.fenglyulin.com/docs/distributed-systems/rpc-semantics)
+- 000 [为什么需要分布式系统？ Why Distributed Systems? Overview](https://doc.fenglyulin.com/docs/distributed-systems/overview)
+
+## 机器学习系统 MLSys
+
+-   076 [MLSys Distributed Traning Param Server](https://doc.fenglyulin.com/docs/mlsys/distributed-training-05)
+-   075 [MLSys Distributed Training Collective Communication](https://doc.fenglyulin.com/docs/mlsys/distributed-training-04)
+-   074 [MLSys Distributed Training Cluster Architecure](https://doc.fenglyulin.com/docs/mlsys/distributed-training-03)
+-   073 [MLSys Distributed Training Approaches](https://doc.fenglyulin.com/docs/mlsys/distributed-training-02)
+-   072 [MLSys Distributed Training Abstract](https://doc.fenglyulin.com/docs/mlsys/distributed-training-01)
 
 ## 算法 Algorithm
 
@@ -173,6 +194,18 @@ tags: [intro]
 - 054 [物理层 The Physical Layer](https://doc.fenglyulin.com/docs/computer-networks/240414-01-physical-layer)
 - 053 [计算机网络 7 层模型概览 OSI Network 7 layers Model](https://doc.fenglyulin.com/docs/computer-networks/overview)
 
+## Web 全栈 Web Fullstack
+
+-   077 [Unix Log CLI](https://doc.fenglyulin.com/docs/web-full-stack/tools/unix-log-cli)
+-   071 [压力测试工具 Stress Testing Tool](https://doc.fenglyulin.com/docs/web-full-stack/tools/stress-testing-tool)
+-   070 [UML 序列图要点 UML Sequence Diagram](https://doc.fenglyulin.com/docs/web-full-stack/tools/uml-sequence-diagram)
+-   069 [CSS Notes](https://doc.fenglyulin.com/docs/web-full-stack/frontend/css-01)
+-   068 [Nextjs Project Dashboard 03](https://doc.fenglyulin.com/docs/web-full-stack/frontend/240625-05-nextjs-project-dashboard-03)
+-   067 [Nextjs Project Dashboard 02](https://doc.fenglyulin.com/docs/web-full-stack/frontend/240623-04-nextjs-project-dashboard-02)
+-   066 [Nextjs Project Dashboard 01](https://doc.fenglyulin.com/docs/web-full-stack/frontend/240622-03-nextjs-project-dashboard-01)
+-   065 [React Nextjs Foudation](https://doc.fenglyulin.com/docs/web-full-stack/frontend/240622-02-react-nextjs-foundation)
+-   064 [React 入门项目五子棋 React Prject Tic-Tac-Toe](https://doc.fenglyulin.com/docs/web-full-stack/frontend/240622-01-react-project-tic-tac-toe)
 
 
-> 参考 [为什么这么设计系列文章](https://draveness.me/whys-the-design/)，总结本人输出的文章
+
+> 排版参考 [为什么这么设计系列文章](https://draveness.me/whys-the-design/)

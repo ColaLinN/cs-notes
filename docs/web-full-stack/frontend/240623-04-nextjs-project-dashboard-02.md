@@ -1,6 +1,6 @@
 
 
-# Nextjs Hands-on Dashboard Web App 05
+# Nextjs Project Dashboard 02
 
 ## [5) Navigating Between Pages](https://nextjs.org/learn/dashboard-app/navigating-between-pages)
 
@@ -146,7 +146,7 @@ export default function NavLinks() {
 
 Navigate to your code editor and rename the `.env.example` file to **`.env`**. Paste in the copied contents from Vercel.
 
-![image-20240624022547144](./240623-04-nextjs-project-dashboard-5-onwards.assets/image-20240624022547144.png)
+![image-20240624022547144](240623-04-nextjs-project-dashboard-02.assets/image-20240624022547144.png)
 
 ### Seed your database
 
@@ -169,7 +169,7 @@ Now, run `pnpm seed`. You should see some `console.log` messages in your termina
 
 ### Exploring your database
 
-![image-20240624023235396](./240623-04-nextjs-project-dashboard-5-onwards.assets/image-20240624023235396.png)
+![image-20240624023235396](240623-04-nextjs-project-dashboard-02.assets/image-20240624023235396.png)
 
 ### Executing queries
 
@@ -197,7 +197,7 @@ APIs are an intermediary layer between your application code and database. There
 
 In Next.js, you can create API endpoints using [Route Handlers](https://nextjs.org/docs/app/building-your-application/routing/route-handlers).
 
-![image-20240625231004013](./240623-04-nextjs-project-dashboard-5-onwards.assets/image-20240625231004013.png)
+![image-20240625231004013](240623-04-nextjs-project-dashboard-02.assets/image-20240625231004013.png)
 
 Route Handlers are defined in a [`route.js|ts` file](https://nextjs.org/docs/app/api-reference/file-conventions/route) inside the `app` directory:
 
@@ -349,7 +349,7 @@ export default async function Page() {
 
 Then, uncomment the `<RevenueChart/>` component, navigate to the component file (`/app/ui/dashboard/revenue-chart.tsx`) and uncomment the code inside it. Check your localhost, you should be able to see a chart that uses `revenue` data.
 
-![image-20240624025842792](./240623-04-nextjs-project-dashboard-5-onwards.assets/image-20240624025842792.png)
+![image-20240624025842792](240623-04-nextjs-project-dashboard-02.assets/image-20240624025842792.png)
 
 ### Fetching data for `<LatestInvoices/>`
 
@@ -371,7 +371,7 @@ Then, uncomment the `<LatestInvoices />` component. You will also need to uncomm
 
 If you visit your localhost, you should see that only the last 5 invoices are returned from the database. Hopefully, you're beginning to see the advantages of querying your database directly!
 
-![image-20240624030030454](./240623-04-nextjs-project-dashboard-5-onwards.assets/image-20240624030030454.png)
+![image-20240624030030454](240623-04-nextjs-project-dashboard-02.assets/image-20240624030030454.png)
 
 ### Practice: Fetch data for the `<Card>` components
 
@@ -457,7 +457,7 @@ Let's discuss number 1 in this chapter, then look into detail at number 2 in the
 
 A "waterfall" refers to a sequence of network requests that depend on the completion of previous requests. In the case of data fetching, each request can only begin once the previous request has returned data.
 
-![image-20240624031218865](./240623-04-nextjs-project-dashboard-5-onwards.assets/image-20240624031218865.png)
+![image-20240624031218865](240623-04-nextjs-project-dashboard-02.assets/image-20240624031218865.png)
 
 For example, we need to wait for `fetchRevenue()` to execute before `fetchLatestInvoices()` can start running, and so on.
 
@@ -562,7 +562,7 @@ What happens if one data request is slower than all the others?
 
 Let's simulate a slow data fetch. In your `data.ts` file, uncomment the `console.log` and `setTimeout` inside `fetchRevenue()`:
 
-![image-20240624032539230](./240623-04-nextjs-project-dashboard-5-onwards.assets/image-20240624032539230.png)
+![image-20240624032539230](240623-04-nextjs-project-dashboard-02.assets/image-20240624032539230.png)
 
 ```react
 export async function fetchRevenue() {
@@ -601,13 +601,13 @@ We also discussed how slow data fetches can impact the performance of your appli
 
 Streaming is a data transfer technique that allows you to break down a route into smaller "chunks" and progressively stream them from the server to the client as they become ready.
 
-![image-20240625103231384](./240623-04-nextjs-project-dashboard-5-onwards.assets/image-20240625103231384.png)
+![image-20240625103231384](240623-04-nextjs-project-dashboard-02.assets/image-20240625103231384.png)
 
 By streaming, you can prevent slow data requests from blocking your whole page. 
 
 - This allows the user to see and interact with parts of the page without waiting for all the data to load before any UI can be shown to the user.
 
-![image-20240625103427891](./240623-04-nextjs-project-dashboard-5-onwards.assets/image-20240625103427891.png)
+![image-20240625103427891](240623-04-nextjs-project-dashboard-02.assets/image-20240625103427891.png)
 
 There are two ways you implement streaming in Next.js:
 
@@ -626,7 +626,7 @@ export default function Loading() {
 
 Refresh http://localhost:3000/dashboard, and you should now see:
 
-![image-20240625103710722](./240623-04-nextjs-project-dashboard-5-onwards.assets/image-20240625103710722.png)
+![image-20240625103710722](240623-04-nextjs-project-dashboard-02.assets/image-20240625103710722.png)
 
 A few things are happening here:
 
@@ -648,7 +648,7 @@ export default function Loading() {
 }
 ```
 
-![image-20240625104614341](./240623-04-nextjs-project-dashboard-5-onwards.assets/image-20240625104614341.png)
+![image-20240625104614341](240623-04-nextjs-project-dashboard-02.assets/image-20240625104614341.png)
 
 ### Route groups: Fixing the loading skeleton bug with route groups
 
@@ -658,7 +658,7 @@ Since `loading.tsx` is a level higher than `/invoices/page.tsx` and `/customers/
 
 We can change this with [Route Groups](https://nextjs.org/docs/app/building-your-application/routing/route-groups). Create a new folder called `/(overview)` inside the dashboard folder. Then, move your `loading.tsx` and `page.tsx` files inside the folder:
 
-![image-20240625104657285](./240623-04-nextjs-project-dashboard-5-onwards.assets/image-20240625104657285.png)
+![image-20240625104657285](240623-04-nextjs-project-dashboard-02.assets/image-20240625104657285.png)
 
 Now, the `loading.tsx` file will only apply to your dashboard overview page.
 
@@ -697,7 +697,7 @@ export default async function RevenueChart() { // Make component async, remove t
 
 Now refresh the page, you should see the dashboard information almost immediately, while a fallback skeleton is shown for `<RevenueChart>`:
 
-![image-20240625105709917](./240623-04-nextjs-project-dashboard-5-onwards.assets/image-20240625105709917.png)
+![image-20240625105709917](240623-04-nextjs-project-dashboard-02.assets/image-20240625105709917.png)
 
 ### Practice: Streaming `<LatestInvoices>`
 

@@ -1,6 +1,6 @@
 
 
-# Nextjs Hands on Dashboard Web App 01-04
+# Nextjs Project Dashboard 01
 
 https://nextjs.org/learn/dashboard-app
 
@@ -35,7 +35,7 @@ This command uses [`create-next-app`](https://nextjs.org/docs/app/api-reference/
 
 folder structure
 
-![image-20240623014900052](./240622-03-nextjs-project-dashboard.assets/image-20240623014900052.png)
+![image-20240623014900052](240622-03-nextjs-project-dashboard-01.assets/image-20240623014900052.png)
 
 - **`/app`**: Contains all the routes, components, and logic for your application, this is where you'll be mostly working from.
 - **`/app/lib`**: Contains functions used in your application, such as reusable utility functions and data fetching functions.
@@ -209,7 +209,7 @@ Fonts play a significant role in the design of a website, but using custom fonts
 
 [Cumulative Layout Shift](https://web.dev/cls/) is a metric used by Google to evaluate the performance and user experience of a website.
 
-![image-20240623220428408](./240622-03-nextjs-project-dashboard.assets/image-20240623220428408.png)
+![image-20240623220428408](240622-03-nextjs-project-dashboard-01.assets/image-20240623220428408.png)
 
 Next.js automatically optimizes fonts in the application when you use the `next/font` module. It downloads font files at build time and hosts them with your other static assets. This means when a user visits your application, there are no additional network requests for fonts which would impact performance.
 
@@ -309,7 +309,7 @@ Here, you're setting the `width` to `1000` and `height` to `760` pixels. It's go
 
 You'll also notice the class `hidden` to remove the image from the DOM on mobile screens, and `md:block` to show the image on desktop screens.
 
-![image-20240623224933719](./240622-03-nextjs-project-dashboard.assets/image-20240623224933719.png)
+![image-20240623224933719](240622-03-nextjs-project-dashboard-01.assets/image-20240623224933719.png)
 
 ### Practice: Adding the mobile hero image
 
@@ -355,7 +355,7 @@ Under the image you've just added, add another `<Image>` component for `hero-mob
 
 Next.js uses file-system routing where **folders** are used to create nested routes. Each folder represents a **route segment** that maps to a **URL segment**.
 
-![image-20240623231600705](./240622-03-nextjs-project-dashboard.assets/image-20240623231600705.png)
+![image-20240623231600705](240622-03-nextjs-project-dashboard-01.assets/image-20240623231600705.png)
 
 You can create separate UIs for each route using `layout.tsx` and `page.tsx` files.
 
@@ -365,7 +365,7 @@ You can create separate UIs for each route using `layout.tsx` and `page.tsx` fil
 
 To create a nested route, you can nest folders inside each other and add `page.tsx` files inside them. For example:
 
-![image-20240623231705524](./240622-03-nextjs-project-dashboard.assets/image-20240623231705524.png)
+![image-20240623231705524](240622-03-nextjs-project-dashboard-01.assets/image-20240623231705524.png)
 
 ### Creating the dashboard page
 
@@ -388,7 +388,7 @@ Colocate: 也就是允许把 UI 组件，css，测试文件同时放在 app 底�
 1. **Customers Page**: The page should be accessible on http://localhost:3000/dashboard/customers. For now, it should return a `<p>Customers Page</p>` element.
 2. **Invoices Page**: The invoices page should be accessible on http://localhost:3000/dashboard/invoices. For now, also return a `<p>Invoices Page</p>` element.
 
-![image-20240623232212712](./240622-03-nextjs-project-dashboard.assets/image-20240623232212712.png)
+![image-20240623232212712](240622-03-nextjs-project-dashboard-01.assets/image-20240623232212712.png)
 
 ### Creating the dashboard layout
 
@@ -415,11 +415,11 @@ First, you're importing the `<SideNav />` component into your layout. Any compon
 
 The `<Layout />` component receives a `children` prop. This child can either be a page or another layout. In your case, the pages inside `/dashboard` will automatically be nested inside a `<Layout />` like so:
 
-![image-20240623232901701](./240622-03-nextjs-project-dashboard.assets/image-20240623232901701.png)
+![image-20240623232901701](240622-03-nextjs-project-dashboard-01.assets/image-20240623232901701.png)
 
 One benefit of using layouts in Next.js is that on navigation, only the page components update while the layout won't re-render. This is called [partial rendering](https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#3-partial-rendering):
 
-![image-20240623232935890](./240622-03-nextjs-project-dashboard.assets/image-20240623232935890.png)
+![image-20240623232935890](240622-03-nextjs-project-dashboard-01.assets/image-20240623232935890.png)
 
 ### Root layout
 
