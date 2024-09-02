@@ -1,8 +1,4 @@
-
-
-
-
-## Distributed Training Collective Communication
+# Distributed Training Collective Communication
 
 ## 集合通信
 

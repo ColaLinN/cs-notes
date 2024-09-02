@@ -1,8 +1,6 @@
 
 
-
-
-
+# Distributed Training Overview
 
 > If a failure occurs, `torchrun` will terminate all the processes and restart them. Each process entry point first loads and initializes the last saved snapshot, and continues training from there. So at any failure, you only lose the training progress from the last saved snapshot.
 >
