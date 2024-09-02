@@ -1,6 +1,4 @@
-
-
-## Todolist
+# PLAN
 
 1. 李沐重返母校上海交大，从LLM聊到个人生涯，这里是演讲全文 [link](https://mp.weixin.qq.com/s/FctMj2SXotdn8MlL9oSfAg)
 2. MLSys 分布式训练的的技术要素和优化难点，把大纲列一列
