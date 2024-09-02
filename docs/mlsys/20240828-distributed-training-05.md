@@ -1,6 +1,4 @@
-
-
-
+# Distributed Training Parameters Server
 
 ## 参数服务器
 
@@ -60,8 +58,6 @@
 - 通常系统设计者需要在可用性（Availability）和一致性（Consistency）之间做出取舍。
   - 强一致性可能导致训练服务器的推送请求失败，即参数服务器不可用。
   - 弱一致性可能导致副本间存储的参数不一致。
-
-
 
 > 数据热点+network ordering！水论文就是这么水的
 >
