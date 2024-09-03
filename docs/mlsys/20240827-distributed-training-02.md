@@ -20,16 +20,17 @@
 
 在模型训练任务中，根据数据和程序的切分（Parttion），从而完成并行加速。
 
-- 数据并行（Data Parallelism）：对数据进行分区，讲一个程序复制到多个设备上并执行。
-- 模型并行（Model Parallelism）：对程序进行分区（模型中的算子会被分发给多个设备分别完成）
-- 混合并行（Hybrid Parallelism）：训练超大型智能模型时，开发人员往往要同时对数据和程序进行切分，从而实现最高程度的并行
+- 数据并行（Data Parallelism，DP）：对数据进行分区，讲一个程序复制到多个设备上并执行。
+- 模型并行（Model Parallelism，MP）：对程序进行分区（模型中的算子会被分发给多个设备分别完成）
+- 混合并行（Hybrid Parallelism，HP）：训练超大型智能模型时，开发人员往往要同时对数据和程序进行切分，从而实现最高程度的并行
+- 流水线并行（Pipeline Parallelism, PP）：通过流水线减少模型并行气泡（Model Parallelism Bubble），提高模型使用率。
 
 | 分类   | 单数据                 | 多数据                 |
 | ------ | ---------------------- | ---------------------- |
 | 单程序 | 单程序单数据: 单点执行 | 单程序多数据: 数据并行 |
 | 多程序 | 多程序单数据: 模型并行 | 多程序多数据: 混合并行 |
 
-## 数据并行
+## 数据并行 DP
 
 数据并行（Data Parallel）常用于解决单点算力不足的问题。
 
@@ -46,7 +47,7 @@
 
 ![image-20240827005204823](./20240827-distributed-training-02.assets/image-20240827005204823.png)
 
-## 模型并行（算子内、算子间并行）
+## 模型并行 MP
 
 模型并行（Model Parrallelism）常用于解决单点内存不足的问题。让每个设备负责更少的计算量，能够在内存容量的限制下完成前向计算和反向计算。
 
@@ -67,7 +68,7 @@
 
 ![image-20240827012259716](./20240827-distributed-training-02.assets/image-20240827012259716.png)
 
-## 混合并行
+## 混合并行 HP
 
 在训练大型模型时，常常会遇到内存和算力都不足的情况，此时需要做混合并行（数据并行+模型并行）。
 
@@ -81,13 +82,13 @@
 
 ![image-20240827014417429](./20240827-distributed-training-02.assets/image-20240827014417429.png)
 
-## 流水线并行
+## 流水线并行 PP
 
 除了数据并行和模型并行以外，流水线并行是另一种常用的实现分布式训练的方法。
 
 在大型模型并行系统中。这种系统通过算子内并行和算子间并行解决单设备内存不足的问题。
 
-Problem: **模型并行气泡（Model Parallelism Bubble）**。
+Problem: 模型并行气泡（Model Parallelism Bubble）。
 
 - 并行系统的运行中，计算图中的下游设备（Downstream Device）需要长期持续处于空闲状态，等待上游设备（Upstream Device）的计算完成，才可以开始计算，这极大降低了设备的平均使用率。这种现象称为模型并行气泡（Model Parallelism Bubble）。
 
@@ -119,3 +120,8 @@ Solution 为了减少气泡，通常可以在训练系统中构建流水线。
 
 
 
+## DDP?
+
+https://pytorch.org/tutorials/beginner/ddp_series_theory.html
+
+![image-20240903023031958](./20240827-distributed-training-02.assets/image-20240903023031958.png)
