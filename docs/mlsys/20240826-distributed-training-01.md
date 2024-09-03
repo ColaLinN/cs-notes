@@ -1,6 +1,6 @@
 
 
-# Distributed Training System Abstract
+# Distributed Training System Overview
 
 ## 1 动机：解决单机性能瓶颈
 

@@ -3,36 +3,155 @@
 1. 李沐重返母校上海交大，从LLM聊到个人生涯，这里是演讲全文 [link](https://mp.weixin.qq.com/s/FctMj2SXotdn8MlL9oSfAg)
 2. MLSys 分布式训练的的技术要素和优化难点，把大纲列一列
 
-## 学习大纲
+## MLSys 学习大纲
 
-### week1 入门
+- 分布式训练
+  - 动机、整体集群架构、经典并行训练方法
+- 编程模型
+- 计算图
+- 模型部署
+  - 推理优化
+  - 模型压缩蒸馏
 
-不要探究太多底层，把机器学习系统的基础、框架和分布式训练看一下，以点到面。你现在的问题是什么都想学，什么都看了，但什么都不精通。
+- 机器学习
+  - 机器学习经典模型
+  - 深度学习模型的常见应用与原理
+  - LLM：NLP、BERT、Transformer
 
-还有一个问题是，没有章法，看了好多帖子，各有各的出发点，没有自己的思路。
+参考
 
-- 梳理一下大模型分布式训练方法
+1. [《OPEN MLSYS 机器学习系统：设计和实现》](https://openmlsys.github.io/#)
+2. 统计学习方法
+3. limu 动手学习深度学习
+4. Standford cs231n 
+5. 大模型LLM领域，有哪些可以作为学术研究方向？ - zibuyu9的回答 - 知乎
+   https://www.zhihu.com/question/595298808/answer/3047369015
+6. 大语言模型推理性能优化综述 - Young的文章 - 知乎
+   https://zhuanlan.zhihu.com/p/656485997
+7. LLM大模型推理部署优化技术综述 - 上天界医神的文章 - 知乎
+   https://zhuanlan.zhihu.com/p/655557420
 
-  - [《机器学习系统：设计和实现》](https://openmlsys.github.io/#)
-    - 华为Mindspore团队。中文的，涉及到方方面面
-    - 分布式训练基础
-    - 分布式推理优化
-    - 分布式通信
-    - 分布式训练常见库
-  - [人工智能系统](https://github.com/microsoft/AI-System?tab=readme-ov-file) by 微软
-  - [CMU DL System](https://dlsyscourse.org/) 陈天奇老师的课。涉及nn库实现、自动微分、GPU加速、模型部署和部分AI编译内容。分布式训练涉及的不够，基础的MLsys还是非常全面的。
-      - Data Parallel 数据并行
-      - Distributed Data Parallel 分布式数据并行
-      - Tensor Parallel 张量并行
-      - Pipeline Parallel 流水线并行
-      - Auto Parallel 自动并行
-      - Sequence Parallel 序列并行
-      - Asynchronous Distributed Dataflow 异步数据流
-      - Distributed Scheduling 分布式调度
-  
+### Week1
 
-  - [TinyML 6.5940](https://hanlab.mit.edu/courses/2024-fall-65940) Chapter III: Efficient Training 
+大概了解了机器学习系统的一些研究方向，和大模型分布式训练系统
 
+- 主要参考 [《OPEN MLSYS 机器学习系统：设计和实现》](https://openmlsys.github.io/#)
+  - 分布式训练
+    - 概览
+    - 常见分布式并行训练方法
+      - DP、MP、HP、PP
+    - 分布式训练机器学习集群架构
+    - 集合通信 Collective Communication
+    - 参数服务器 Parameters Server
+  - 分布式训练常见库
+
+
+- 李沐创业一年随想；上海交大演讲。里面提到了一些目前训练 LLM
+
+### Week 2
+
+复习机器学习相关知识，了解机器学习框架的编程模型、计算图原理
+
+- 编程模型
+- 计算图
+- 机器学习
+  - 机器学习经典模型
+  - 深度学习模型的常见应用与原理
+  - LLM：NLP、BERT、Transformer
+
+### Week 3
+
+
+
+## ================
+
+## 机器学习算法
+
+机器学习
+
+- 机器学习算法
+  - 概论
+    - 有监督学习和无监督学习
+    - 模型评估与模型选择
+      - 训练测试误差
+      - 过拟合与模型选择
+      - 正则化与交叉验证
+    - 标注问题
+    - 泛化能力
+  - 分类
+  - 聚类
+    - K-means
+    - Hierarchical Clustering and Transformations
+    - Density-Based Clustering
+    - Cluster Quality
+  - 关联规则 Association Rule
+  - 回归
+  - 经典模型
+    - 线性回归，逻辑回归
+    - 感知机
+    - KNN
+    - 朴素贝叶斯
+    - 决策树
+    - 支持向量机 SVM
+    - 提升方法 AdaBoost 算法
+    - 隐马尔可夫模型
+- 深度学习
+  - 大分类
+    - 计算机视觉
+      -   人脸识别
+      -   体态识别
+      -   无人驾驶
+      -   图片合成
+      -   超分辨率
+      -   医学图片
+    - 自然语言处理
+      -   文本分类
+      -   文本合成
+      -   文本摘要
+      -   实体命名识别
+    - 图神经网络
+    - 时序数据
+    - 强化学习
+    - 音频
+    - 推荐系统
+    - 多模态
+    - LLM
+      - AIGC
+      - 代码生成
+  - 特征工程
+  - 多层感知机 MLP
+  - 卷积神经网络 CNN
+  - 现代卷积神经网络 AlexNet GoogleLeNet etc
+  - 循环神经网络 RNN 序列模型、语言模型
+  - 现代循环神经网络
+    - 门控循环单元 GRU
+    - 长短期记忆网络 LSTM
+    - 深度循环神经网络
+    - 双向循环神经网络
+    - 编码器与解码器
+    - 序列到序列学习
+  - 注意力
+    - 注意力机制 Attention
+    - 使用注意力机制的Seq2Seq
+    - 自注意力和位置编码
+    - BERT
+
+## Other Links
+
+- [人工智能系统](https://github.com/microsoft/AI-System?tab=readme-ov-file) by 微软
+- [CMU DL System](https://dlsyscourse.org/) 陈天奇老师的课。涉及nn库实现、自动微分、GPU加速、模型部署和部分AI编译内容。分布式训练涉及的不够，基础的MLsys还是非常全面的。
+  - Data Parallel 数据并行
+  - Distributed Data Parallel 分布式数据并行
+  - Tensor Parallel 张量并行
+  - Pipeline Parallel 流水线并行
+  - Auto Parallel 自动并行
+  - Sequence Parallel 序列并行
+  - Asynchronous Distributed Dataflow 异步数据流
+  - Distributed Scheduling 分布式调度
+
+
+- [TinyML 6.5940](https://hanlab.mit.edu/courses/2024-fall-65940) Chapter III: Efficient Training 
+- 
 
 - 从啥也不会到DeepSpeed————一篇大模型分布式训练的学习过程总结 - elihe的文章 - 知乎
   https://zhuanlan.zhihu.com/p/688873027
@@ -42,19 +161,17 @@
 - 对这些有基本的了解
 
   - CUDA 算子
-  - pytorch 原理
+  - PyTorch 原理
   - GPGPU 体系结构
   - 模型压缩、加速
 - 基本机器学习要懂，然后去看高性能计算相关的教材，然后学习基本的DP，PP，MP的原理等。
 - AGX Orin 嵌入式开发板上部署 Qwen2.0 大模型
-- 
 - 实际上下面的这些在 OPEN MLSYS 里都有
 - 深度学习框架最重要的是什么？自动求导系统，因为目前的损失函数的优化方法全都基于一阶梯度信息进行梯度下降
 - 如何实现梯度的计算？计算图，ptorch 的 tensor 和 numpy 最大的区别在于当你使用 tensor 进行加减乘除运算时，torch 后台会自动帮你构建出计算图。
 
   - 纯Python实现原理级深度学习框架（一）计算图的原理，节点类的实现和计算图的可视化 - 锦恢的文章 - 知乎
     https://zhuanlan.zhihu.com/p/351961835
-
 - 其他的
 
   - Hugging Face高效训练技术一：单 GPU 高效训练（Gradient Accumulation、Gradient Checkpointing、混合精度训练、优化其选择）https://blog.csdn.net/qq_56591814/article/details/134177555?spm=1001.2014.3001.5502
@@ -63,33 +180,16 @@
   - Hugging Face高效训练技术四：多GPU分布式训练（DP、PP、TP 、ZeRO） https://blog.csdn.net/qq_56591814/article/details/134099476
   - Hugging Face高性能技术五：Transformer高效推断（bitsandbytes、FlashAttention、 BetterTransformer） https://blog.csdn.net/qq_56591814/article/details/134237584?spm=1001.2014.3001.5502
 
-
-### week 2
-
-### week 3
-
-想学的
-
-1. 分布式训练的基础
-2. 分布式推理优化
-3. 分布式通信
-4. 分布式训练常见库
-
 ## MLsys 的性能优化
 
 ### 性能需求
 
-1. 训练时间、训练速度
+1. 训练时间速度
 
 2. 模型大小
 
 3. 推理效率
 
-   1. 大语言模型推理性能优化综述 - Young的文章 - 知乎
-      https://zhuanlan.zhihu.com/p/656485997
-
-      LLM大模型推理部署优化技术综述 - 上天界医神的文章 - 知乎
-      https://zhuanlan.zhihu.com/p/655557420
 
 ### 优化大方向
 
@@ -98,12 +198,12 @@
 3. DL 框架
 4. 用ML优化传统的system问题
 
-### 有关优化细分
+### 优化细分
 
 1. GEMM显存相关优化：
    1. CUDA上GEMM优化的资料整理 - Liu六六六的文章 - 知乎
       https://zhuanlan.zhihu.com/p/666664399
-2. 计算：
+2. 计算
    1. 算子融合，算子高性能算子
    2. 模型并行
       1. 常见的并行计算框架，例如MPI/OpenMP/CUDA
@@ -113,7 +213,6 @@
    6. 重计算方法
    7. 混合精度训练
 3. 服务相关优化（深度学习框架）
-   1. ML framework的底层原理，扒源码
 4. 分布式相关优化（分布式机器学习）
 5. 低比特量化（加速）
 6. 其他新技术（加速）
@@ -127,82 +226,21 @@
 5. 模型压缩
 6. 神经元稀疏激活现象
 
-## 相关领域知识：操作系统等
-
-### 操作系统
-
-- mit6.S081
-
-### 并行计算 
-
-Parallel computing
-
-- CMU 15418 [课程主页](https://link.zhihu.com/?target=http%3A//15418.courses.cs.cmu.edu/spring2016/)
-- UCB cs267 [课程主页](https://link.zhihu.com/?target=https%3A//sites.google.com/lbl.gov/cs267-spr2022%3Fpli%3D1) **HPC祖师爷 Jim Demmel**x 22 spring最新版本
-
-### 分布式系统
-
-- MIT6.824 
-
-### MLSys
-
-- CMU DL System [课程主页](https://link.zhihu.com/?target=https%3A//dlsyscourse.org/)  **陈天奇**老师的课,涉及nn库实现,自动微分,GPU加速,模型部署和部分AI编译内容,内容除了分布式训练涉及的不够,基础的MLsys还是非常全面的
-- Mini torch [课程主页](https://link.zhihu.com/?target=https%3A//minitorch.github.io/) 完全用python实现的简单torch版本,涉及自动微分,张量,GPU加速.适合新手入门
-- Tiny ML [课程主页](https://link.zhihu.com/?target=https%3A//efficientml.ai/) **MIT 韩松**，移动设备和嵌入式系统相关
-- 工具书
-- 机器学习系统:设计和实现 [主页](https://link.zhihu.com/?target=https%3A//openmlsys.github.io/%23) 华为Mindspore团队。中文的，涉及到方方面面
-- System for AI [主页](https://link.zhihu.com/?target=https%3A//github.com/microsoft/AI-System)  **微软**发起的,目前还在快速迭代更新的工具书,舍和补全基础
-
-### AI 编译器
-
-- Machine Learning Compliation 陈天奇 
-
-### LLM
-
-- 作者建议关注模型架构，大的范式变化即可，李沐博客 [paper-reading github 主页](https://link.zhihu.com/?target=https%3A//github.com/mli/paper-reading)
-
-### 编程语言
-
-C++
-
-- CMake https://www.hahack.com/codes/cmake/
-- 现代C++ https://changkun.de/modern-cpp/zh-cn/00-preface/
-
-Python
-
-- 做 MLsys 比较需要掌握用python调用C,比如Cpython,pybind,以及一些python高级特性,比如hook,装饰器
-
-CUDA
-
-- 参考比较多，可以用NVIDIA官方的文档 https://docs.nvidia.com/cuda/cuda-c-programming-guide/  seriously（？）
-
-OpenCL
-
-- 对于非NVIDIA的芯片，比如手机的移动端芯片，则需要OpenCL来进行异构加速 [OpenCL异构计算](https://link.zhihu.com/?target=https%3A//www.bookstack.cn/read/Heterogeneous-Computing-with-OpenCL-2.0/README.md)
-
-### 分布式通信 Distributed Communication 
-
-- MPI(the Message Passing Interface) 在nccl之前MPI是分布式通讯的主要方式 [MPI Tutorials](https://link.zhihu.com/?target=https%3A//mpitutorial.com/tutorials/)
-
 ## LLM 推理性能优化
 
 大语言模型推理服务性能优化综述 - Young的文章 - 知乎
 
 https://zhuanlan.zhihu.com/p/656485997
 
-LLM 推理服务重点关注两个指标：吞吐量和时延：
+LLM 推理服务重点关注两个指标：吞吐量和时延
 
-吞吐量：主要从系统的角度来看，即系统在单位时间内能处理的 tokens 数量。
+- 吞吐量：主要从系统的角度来看，即系统在单位时间内能处理的 tokens 数量。
 
-时延：主要从用户的视角来看，即用户平均收到每个 token 所需位时间。
+- 时延：主要从用户的视角来看，即用户平均收到每个 token 所需位时间。
 
-![img](./check.assets/v2-0f1af7fc08fa6ef9046b88cc3bde6b87_b.jpg)
+![img](./20240815-mlsys-learning-plan.assets/v2-0f1af7fc08fa6ef9046b88cc3bde6b87_b.jpg)
 
-
-
-### GEMM (GEneral Matrix-Matrix multiply) 
-
-### 显存相关优化
+### 显存优化
 
 1. KV Cache，空间换时间
    1. 预填充阶段
@@ -213,7 +251,7 @@ LLM 推理服务重点关注两个指标：吞吐量和时延：
    3. 具体来讲，Paged Attention 将每个序列的 KV Cache 分成若干块，每个块包含固定数量token 的键和值。
    4. 在实际推理过程中，维护一个逻辑块到物理块的映射表，多个逻辑块可以对应一个物理块，通过引用计数来表示物理块被引用的次数。
 
-### 计算相关优化
+### 计算优化
 
 1. 算子融合
    1. 算子融合是深度学习模型推理的一种典型优化技术，旨在通过减少计算过程中的访存次数和 Kernel 启动耗时达到提升模型推理性能的目的，该方法同样适用于 LLM 推理。
@@ -227,7 +265,7 @@ LLM 推理服务重点关注两个指标：吞吐量和时延：
    1. 针对 LLM 推理运行热点函数编写高性能算子，也可以降低推理时延。
       1. GEMM 操作相关优化：在 LLM 推理的预填充阶段，Self-Attention 和 MLP 层均存在多个 GEMM 操作，耗时占据了推理时延的 80% 以上。GEMM 的 GPU 优化是一个相对古老的问题，在此不详细展开描述算法细节。英伟达就该问题已推出 cuBLAS、CUDA、CUTLASS 等不同层级的优化方案。例如，FasterTransformer 框架中存在大量基于 CUTLASS 编写的 GEMM [内核函数](https://www.zhihu.com/search?q=内核函数&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"article"%2C"sourceId"%3A"656485997"})。另外，Self-Attention 中存在 GEMM+Softmax+GEMM 结构，因此会结合算子融合联合优化。
       2. GEMV 操作相关优化：在 LLM 推理的解码阶段，运行热点函数由 GEMM 变为 GEMV。相比 GEMM，[GEMV](https://www.zhihu.com/search?q=GEMV&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"article"%2C"sourceId"%3A"656485997"}) 的计算强度更低，因此优化点主要围绕降低访存开销开展。
-      3. 高性能算子的实现同样对 GPU 编程能力有较高要求，且算法实现中的若干超参数与特定问题规模相关。**因此，编译器相关的技术如自动调优也是业界研究的重点。**
+      3. 高性能算子的实现同样对 GPU 编程能力有较高要求，且算法实现中的若干超参数与特定问题规模相关。因此，编译器相关的技术如自动调优也是业界研究的重点。
 3. 服务相关优化
    1. 服务相关优化主要包括 Continuous Batching、Dynamic Batching 和 异步 Tokenize / Detokenize。
    2. 如上两个 batching 相关的优化技术可有效提升推理吞吐量，目前已在 HuggingFace Text-Generation-Interface (TGI)、vLLM、OpenPPL-LLM 等多个框架中实现。
@@ -245,20 +283,16 @@ LLM 推理服务重点关注两个指标：吞吐量和时延：
    2. 投机采样（Speculative decoding）针对 LLM 推理串行解码特点，通过引入一个近似模型来执行串行解码
    3. 美杜莎头（Medusa head）则是对投机采样的进一步改进，其摒弃了近似模型，在原始模型结构上新增了若干解码头，每个解码头可并行预测多个后续 tokens，然后使用基于树状注意力机制并行处理，最后使用典型接收方案筛选出合理的后续 tokens。
 
-给ChatGPT API推理成本算笔帐 - 方佳瑞的文章 - 知乎
-
-https://zhuanlan.zhihu.com/p/651933140
-
-## 大模型LLM领域，有哪些可以作为学术研究方向？
+## LLM 研究方向
 
 大模型LLM领域，有哪些可以作为学术研究方向？ - zibuyu9的回答 - 知乎
 https://www.zhihu.com/question/595298808/answer/3047369015
 
-### 03 效率
+### 效率
 
-高效
+高效、高性能计算 （HPC） 
 
-1. 训练 高性能计算 （HPC） 
+1. 训练 
    1. 需要建设更加高效的分布式训练算法体系，这方面很多高性能计算学者已经做了大量探索，例如，通过模型并行、流水线并行、ZeRO-3 等模型并行策略将大模型参数分散到多张 GPU 中，通过张量卸载、优化器卸载等技术将 GPU 的负担分摊到更廉价的 CPU 和内存上，通过重计算方法降低计算图的显存开销，通过混合精度训练利用 Tensor Core 提速模型训练，基于自动调优算法选择分布式算子策略等 。
    2. 模型并行
    3. 流水线并行
@@ -266,20 +300,19 @@ https://www.zhihu.com/question/595298808/answer/3047369015
    5. 优化器卸载
    6. 重计算方法
    7. 混合精度训练
-
-2. 模型加速领域
-   1. 模型加速领域已经建立了很多有影响力的开源工具，国际上比较有名的有微软DeepSpeed、英伟达Megatron-LM，国内比较有名的是OneFlow、ColossalAI等。而在这方面我们OpenBMB社区推出了BMTrain，能够将GPT-3规模大模型训练成本降低90%以上。
-
-3. 推理
+   8. 模型加速领域
+      1. 模型加速领域已经建立了很多有影响力的开源工具，国际上比较有名的有微软DeepSpeed、英伟达Megatron-LM，国内比较有名的是OneFlow、ColossalAI等。而在这方面我们OpenBMB社区推出了BMTrain，能够将GPT-3规模大模型训练成本降低90%以上。
+   
+2. 推理
    1. 推理效率
-4. 应用
+3. 应用
    1. 模型剪枝
    2. 知识蒸馏
    3. 参数量化
    4. 模型压缩
    5. 神经元稀疏激活现象
 
-### 04 高效适配问题
+### 高效适配
 
 对齐（alignment）
 
@@ -287,7 +320,7 @@ https://www.zhihu.com/question/595298808/answer/3047369015
 
 - 参数高效微调 **参数高效微调**（Parameter-effcient Tuning 或Delta Tuning）基本思想是保持绝大部分的参数不变，只调整大模型里非常小的一组参数，这能够极大节约大模型适配的存储和计算成本
 
-### 05 可控生成问题
+### 可控生成
 
 ChatGPT在可控生成方面取得了长足进步，现在可控生成有了相对成熟的做法：（1）通过指令微调（Instruction Tuning）[1, 2, 3] 提升大模型意图理解能力，使其可以准确理解人类输入并进行反馈；（2）通过提示工程编写合适的提示来激发模型输出。这种采用纯自然语言控制生成的做法取得了非常好的效果，对于一些复杂任务，我们还可以通过思维链（Chain-of-thought）[4] 等技术来控制模型的生成。
 
@@ -297,7 +330,7 @@ ChatGPT在可控生成方面取得了长足进步，现在可控生成有了相�
 
 https://github.com/thunlp/UltraChat
 
-### 06 安全伦理问题
+### 安全伦理问题
 
 大量实验表明大模型对传统的对抗攻击、OOD样本攻击等展现出不错的鲁棒性[1]，但在实际应用中还是会容易出现大模型被攻击的情况。
 
@@ -309,7 +342,7 @@ https://github.com/thunlp/UltraChat
 
 此前研究表明模型越大会变得越有偏见[5]，ChatGPT后兴起的RLHF、RLAIF等对齐算法可以很好地缓解这一问题，让大模型更符合人类偏好，生成质量更高。
 
-### 07 认知学习问题
+### 认知学习
 
 “君子性非异也，善假于物也”。
 
@@ -325,7 +358,7 @@ https://github.com/thunlp/UltraChat
 
 目前，构建多模型交互环境尚无成熟解决方案，为此我们开发了开源框架AgentVerse [6]，支持研究者通过简单的配置文件和几行代码搭建多模型交互环境。
 
-### 08 创新应用问题
+### 创新应用
 
 这方面一个耳熟能详的工作就是AlphaFold，对整个蛋白质结构预测产生了天翻地覆的影响。
 
@@ -333,7 +366,7 @@ https://github.com/thunlp/UltraChat
 
 我们已经在法律智能、生物医学展开了一些探索。例如，早在2021年与幂律智能联合推出了首个中文法律智能预训练模型 [Lawformer](https://link.zhihu.com/?target=https%3A//www.sciencedirect.com/science/article/pii/S2666651021000176)，能够更好地处理法律领域的长篇文书；我们也提出了能够同时建模化学表达式和自然语言的统一预训练模型KV-PLM，在特定生物医学任务上能够超过人类专家，相关成果曾发表在《自然-通讯》（Nature Communications）上并入选编辑推荐专栏（Editor's Highlights）。
 
-### 09 数据和评估问题
+### 数据和评估
 
 纵观深度学习和大模型的发展历程，持续验证了**“更多数据带来更多智能”（More Data, More Intelligence）**原则的普适性。
 
@@ -351,7 +384,7 @@ https://github.com/thunlp/UltraChat
 - **模型评价法**：也有研究者提出使用更加强大的大模型来做裁判[6]。这种方式会存在一些问题，譬如效果受限于裁判模型的能力，裁判模型会偏向于给某个位置的模型打高分等，但优势在于能够自动执行，不需要评测人员
 - **人工评价法**：人工评测是目前来看更加可信的方法，然而因为生成内容的多样性，如何设计合理的评价体系、对齐不同知识水平的标注人员的认知也成为了新的问题。是否可以从不同的维度给出打分？如何从网络众测员中选出相对比较靠谱的答案？（人工的打算也是有置信度的，所以openAI团队真的很厉害。。）
 
-### 10 易用性问题
+### 易用性
 
 受到计算机发展史上成功实现标准化的数据库系统和大数据分析系统的启发，我们应当将复杂的高效算法封装在系统层，而为系统用户提供易懂而强大的接口。
 
@@ -362,18 +395,76 @@ https://github.com/thunlp/UltraChat
 - user simplicity
 - application - generality
 
-## 各方向相关的库
+## 其他
 
-### 推理
+### 相关学科、资源推荐
+
+**操作系统**
+
+- mit6.S081
+
+**并行计算** 
+
+- Parallel computing
+
+  - CMU 15418 [课程主页](https://link.zhihu.com/?target=http%3A//15418.courses.cs.cmu.edu/spring2016/)
+
+  - UCB cs267 [课程主页](https://link.zhihu.com/?target=https%3A//sites.google.com/lbl.gov/cs267-spr2022%3Fpli%3D1) **HPC祖师爷 Jim Demmel**x 22 spring最新版本
+
+**分布式系统**
+
+- MIT6.824 
+
+**MLSys**
+
+- CMU DL System [课程主页](https://link.zhihu.com/?target=https%3A//dlsyscourse.org/)  **陈天奇**老师的课,涉及nn库实现,自动微分,GPU加速,模型部署和部分AI编译内容,内容除了分布式训练涉及的不够,基础的MLsys还是非常全面的
+- Mini torch [课程主页](https://link.zhihu.com/?target=https%3A//minitorch.github.io/) 完全用python实现的简单torch版本,涉及自动微分,张量,GPU加速.适合新手入门
+- Tiny ML [课程主页](https://link.zhihu.com/?target=https%3A//efficientml.ai/) **MIT 韩松**，移动设备和嵌入式系统相关
+- 工具书
+- 机器学习系统:设计和实现 [主页](https://link.zhihu.com/?target=https%3A//openmlsys.github.io/%23) 华为Mindspore团队。中文的，涉及到方方面面
+- System for AI [主页](https://link.zhihu.com/?target=https%3A//github.com/microsoft/AI-System)  **微软**发起的,目前还在快速迭代更新的工具书,舍和补全基础
+
+**AI 编译器**
+
+- Machine Learning Compliation 陈天奇 
+
+**LLM**
+
+- 作者建议关注模型架构，大的范式变化即可，李沐博客 [paper-reading github 主页](https://link.zhihu.com/?target=https%3A//github.com/mli/paper-reading)
+
+**编程语言**
+
+- C++
+
+  - CMake https://www.hahack.com/codes/cmake/
+
+  - 现代C++ https://changkun.de/modern-cpp/zh-cn/00-preface/
+
+- Python
+  - 做 MLsys 比较需要掌握用python调用C,比如Cpython,pybind,以及一些python高级特性,比如hook,装饰器
+
+- CUDA
+  - 参考比较多，可以用NVIDIA官方的文档 https://docs.nvidia.com/cuda/cuda-c-programming-guide/  seriously（？）
+
+- OpenCL
+  - 对于非NVIDIA的芯片，比如手机的移动端芯片，则需要OpenCL来进行异构加速 [OpenCL异构计算](https://link.zhihu.com/?target=https%3A//www.bookstack.cn/read/Heterogeneous-Computing-with-OpenCL-2.0/README.md)
+
+### 给ChatGPT API推理成本算笔帐 - 方佳瑞的文章 - 知乎
+
+https://zhuanlan.zhihu.com/p/651933140
+
+### 各方向相关的库
+
+**推理**
 
 - TensorRT [github](https://link.zhihu.com/?target=https%3A//github.com/NVIDIA/TensorRT) 英伟达的推理方案, 目前整体上在英伟达GPU上做的最好的推理框架,比较是自己的卡
 - AI Template [github](https://link.zhihu.com/?target=https%3A//github.com/facebookincubator/AITemplate) FaceBook刚搞的一个推理库，在很多硬件上速度性能都超过TensorRT，还比较新的框架
 
-### 推理服务器
+**推理服务器**
 
 - triton-inference-server [github](https://link.zhihu.com/?target=https%3A//github.com/triton-inference-server/server)  英伟达的ML serving框架,比较成熟
 
-### 移动端推理
+**移动端推理**
 
 - Mindsporelite [gitee](https://link.zhihu.com/?target=https%3A//gitee.com/mindspore/mindspore) 我有幸参与写过的推理引擎,对于全流程在mindspore上做的体验还是不错的.
 
@@ -382,7 +473,7 @@ https://github.com/thunlp/UltraChat
 - TensorFlowlite [github](https://link.zhihu.com/?target=https%3A//github.com/tensorflow/tensorflow/tree/master/tensorflow/lite) 集成在Tensorflow的移动端推引擎,国际上应该是最早做的移动端推理.没错,TFlite的大哥就是那个从谷歌跑路重回斯坦福读博的皮特·沃登,他写了TinyML这本书 
 - NCNN [github](https://link.zhihu.com/?target=https%3A//github.com/Tencent/ncnn) 国内做的最早的端侧推理引擎,腾讯搞的,不得不说,很多东西还是需求驱动, 靠各种移动APP为主要产品的中国互联网公司,移动推理引擎做的都不错
 
-### 深度学习框架 Tensorflow 等
+**深度学习框架 Tensorflow 等**
 
 - [Torch](https://link.zhihu.com/?target=https%3A//github.com/pytorch/pytorch)
 - [TensorFlow](https://link.zhihu.com/?target=https%3A//github.com/tensorflow/tensorflow)
@@ -392,13 +483,13 @@ https://github.com/thunlp/UltraChat
 - [paddle](https://link.zhihu.com/?target=https%3A//github.com/PaddlePaddle/Paddle)
 - [ivy](https://link.zhihu.com/?target=https%3A//github.com/unifyai/ivy)
 
-### AI 编译器
+**AI 编译器**
 
 - TVM [github](https://link.zhihu.com/?target=https%3A//github.com/apache/tvm)
 - BladeDISC [github](https://link.zhihu.com/?target=https%3A//github.com/alibaba/BladeDISC)
 - MLIR [项目主页](https://link.zhihu.com/?target=https%3A//mlir.llvm.org/)
 
-### 分布式训练
+**分布式训练**
 
 - Colossal-AI [github](https://link.zhihu.com/?target=https%3A//github.com/hpcaitech/ColossalAI) 在torch生态下支持各种并行和显存优化策略
 - Megatron-LM [Github](https://link.zhihu.com/?target=https%3A//github.com/NVIDIA/Megatron-LM) NVIDIA做的模型并行库,也是最早开源的模型并行,**但对缺乏分布式训练背景的人使用不太友好(really?)**
@@ -407,13 +498,11 @@ https://github.com/thunlp/UltraChat
 - Bagua [github](https://link.zhihu.com/?target=https%3A//github.com/BaguaSys/bagua) Bagua在多机通讯上做了非常多的工作,对allreduce等分布式通讯做了不少优化
 - Lighting [github](https://link.zhihu.com/?target=https%3A//github.com/Lightning-AI/lightning) lightning集成了各种分布式后端,可以很方便的启动各种分布式策略,lightning本身是一套更好的MLflow,设计理念是算法和工程分开,提供了大量自定义hook,对于大型AI项目而言,是个不错的选择,但是学习门槛不低
 
-## 其他
-
 ### 算法岗平时不需要自己写 CUDA，知道一些原理就好。写 CUDA 的岗位很少的
 
 
 
-![image-20240822014009128](./check.assets/image-20240822014009128.png)
+![image-20240822014009128](./20240815-mlsys-learning-plan.assets/image-20240822014009128.png)
 
 ### 高性能计算与分布式数据库方向怎么选? 
 
