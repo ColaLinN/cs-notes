@@ -75,35 +75,35 @@
 
 1.   算法模型
      1.   分类器
-          1.   KNN K-Nearest Neighbor
+          1.   KNN `K-Nearest Neighbor`
      2.   线性分类器（线性神经网络）
           1.   线性回归 Linear Regression
-               1.   y = xw +b
+               1.   `y = xw +b`
                2.   输出实数，自然区间。
                3.   有显示解，单层神经网络的基础
                4.   一根线是怎么分类的呢？
           2.   Softmax回归
-               1.   Softmax是一个操作子 = exp(xi)/sum(exp(x))
+               1.   Softmax是一个操作子 = `exp(xi)/sum(exp(x))`
                2.   是多类分类模型
                3.   输出概率
                4.   用Cross Entropy 交叉熵损失
      3.   SVM support vector machine 支持向量机
-          1.   f(x) = wx+b (x为n，w可以为n*m，生成m个score，然后依score分类)
-          2.   Loss = 1/nΣΣmax(0, xi - xj + 1)+λΣΣ
-          3.   输入一x[], 输出各类别的值，s1，s2，s3
+          1.   `f(x) = wx+b (x为n，w可以为n*m，生成m个score，然后依score分类)`
+          2.   `Loss = 1/nΣΣmax(0, xi - xj + 1)+λΣΣ`
+          3.   输入一`x[]`, 输出各类别的值，s1，s2，s3
      4.   感知机 Perceptron Learning Algorithm(PLA)，是一个二分类模型。神经元，只输出1、-1
-          1.   o =σ(<w, x>) +b) = σ(X)
-               -   1 if X in σ > 0
-               -   -1 otherwise
-          2.   损失函数为：max(0, -yX)
-               1.   所以正确为0，错误>0
+          1.   `o =σ(<w, x>) +b) = σ(X)`
+               -   `1 if X in σ > 0`
+               -   `-1 otherwise`
+          2.   损失函数为：`max(0, -yX)`
+               1.   `所以正确为0，错误>0`
           3.   收敛定理。
           4.   不能拟合XOR函数 -> 第一次AI寒冬
      5.   多层感知机
           1.   非线性激活函数，即单层感知机的σ，使得多层感知机不再线性。
-               1.   sigmoid(x) = 1 / (1 + exp(-x))
-               2.   tanh(x) = (1 - exp(-2x)) / (1 + exp(-2x))
-               3.   rectified linear unit ReLU(x) = max(x, 0)  不用做指数运算，快
+               1.   `sigmoid(x) = 1 / (1 + exp(-x))`
+               2.   `tanh(x) = (1 - exp(-2x)) / (1 + exp(-2x))`
+               3.   `rectified linear unit ReLU(x) = max(x, 0)`  不用做指数运算，快
 2.   一些概念
      1.   预处理
           1.   正则化 regulation
@@ -136,13 +136,13 @@
                2.   填充
                3.   输出通道是卷积层的超参数
      4.   其他的概念
-          1.   链式法则求导的计算图 in Tensor/Torch/
+          1.   链式法则求导的计算图 in `Tensor/Torch/`
           2.   反向求导 Backpropagation
           3.   One Hot Encoding 一位有效编码，均方损失
-          4.   概率论：均值、方差 、正态分布、似然估计、y_hat?
+          4.   概率论：均值、方差 、正态分布、似然估计、`y_hat`?
           5.   MLP好调，如果调出来效果不好可以继续用更好的进阶模型比如CNN，RNN，LSTM，Transformer。
                1.   SVM可能效果好，但是
-          6.   xi是数，yi是类
+          6.   `xi`是数，`yi`是类
           7.   梯度裁剪：防止梯度爆炸或梯度消失，减少一个批次的训练对模型参数的影响，赋予模型一定程度的稳定性
 
 ## 参考
