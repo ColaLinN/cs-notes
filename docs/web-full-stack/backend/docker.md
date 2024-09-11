@@ -36,7 +36,7 @@ docker stats
 docker images
 ```
 
-Run Image as a container
+Run the Image as a container
 
 ```shell
 docker run -it image /bin/bash
