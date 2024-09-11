@@ -136,57 +136,42 @@ SpotServe是首个面向Spot Instance场景的LLM Serving System。最近有蛮�
 - 功耗墙，限制 cpu 频率
 - 内存墙 memory wall
 
-## Todolist
+## Ideas
 
-- [ ] 是骡子是马，跑一下即可
-
-  - [ ] 搞出来本地 3060ti 能跑大模型
-- [ ] 看看 survey？
-
-  - [ ] Efficient Training of Large Language Models on Distributed Infrastructures: A Survey https://arxiv.org/abs/2407.20018 by https://jf-d.github.io/
-  - [ ] Deep Learning Workload Scheduling in GPU Datacenters: A Survey https://dl.acm.org/doi/full/10.1145/3638757
-  - [ ] Beyond efficiency: A systematic survey of resource-efficient large language models https://scholar.google.com/scholar?cites=6684929392857370268&as_sdt=2005&sciodt=0,5&hl=en
-  - [ ] Deep Learning Workload Scheduling in GPU Datacenters: Taxonomy, Challenges and Vision https://arxiv.org/abs/2205.11913
-- [ ] ideas
-
-  - [ ] 由于没有太多资源，可以做分布式大模型推理中的成本优化和集群容错
+- [ ] 由于没有太多资源，可以做分布式大模型推理中的成本优化和集群容错
     - [ ] 没卡没资源怎么研究？
-  - [ ] 要提出几级可行方案，最少也要完成最少的
-  - [ ] 推理服务调度器
-  - [ ] 关注内存消耗？
-  - [ ] MP、PP、TP 的 分析
-  - [ ] 最低的要求：survey
-  - [ ] fault tolerance 的数据集，展现形式
-  - [ ] LLM 的 部署、推理
+- [ ] 要提出几级可行方案，最少也要完成最少的
+- [ ] 推理服务调度器
+- [ ] 关注内存消耗？
+- [ ] MP、PP、TP 的 分析
+- [ ] 最低的要求：survey
+- [ ] fault tolerance 的数据集，展现形式
+- [ ] LLM 的 部署、推理
 
     - [ ] 如何多机多卡分布式部署LLM然后进行推理? `=>` 系统成本、容错
 
-      - [ ] 现成的需求：我现在资源有限，量化后的GPTQ模型仍然超显存，有没有什么方法可以解决这个问题呢？我翻了一下午都是多机多卡训练的，没找到多机多卡部署推理的，刚开始学习这些，请大佬们帮帮 https://www.zhihu.com/question/636571157
-      - [ ] 多个 LLM 的 serving 已经成为了一个重要且成本高的需求，Multiple LLM serving has emerged as a crucial and costly demand. Want to co-serve multiple LLMs with better utilization?
-      - [ ] 由于分割推理与实际应用（如智能手机应用、物联网设备等）紧密相关，您的研究成果可能更容易转化为实际的应用案例，这对于发表论文和获得实习经验都是有益的。
-      - [ ] 吐槽一下megatron - ChenShawn的文章 - 知乎
-        https://zhuanlan.zhihu.com/p/692015516
-      - [ ] 中低端 llm 框架产能过剩
-      - [ ] 目前 NVIDIA 都需要根据客户反馈迭代优化大集群基建（卖给客户前 NVIDIA 自己都没有跑过），找到一个可以在多规模集群（GPU），训练都是大公司做，推理相对好一点
-      - [ ] fine tune Llama 2 7B: Training a LLM with multiple computers: I’ve been trying to use h2o llm studio for training, and that’s worked ok until I updated my dataset, and now I get OOM errors. 
-        - [ ] Links
-          - [ ] https://www.reddit.com/r/LocalLLaMA/comments/1bm43yo/comment/kwa9wts/?share_id=OwsDq2zyN8m6cRGinOgxT&utm_content=2&utm_medium=android_app&utm_name=androidcss&utm_source=share&utm_term=1
-          - [ ] https://www.reddit.com/r/LocalLLaMA/comments/1bvd5z1/training_a_llm_with_multiple_computers/
-      
-        - [ ] 关键词：training, multiple computers, OOM errors while update dataset
-        - [ ] Low-cost 4-way GTX 1080 with 35GB of VRAM inference PC https://www.reddit.com/r/LocalLLaMA/comments/1fb5sty/lowcost_4way_gtx_1080_with_35gb_of_vram_inference/
-        - [ ] problem: how to stably running?
-        - [ ] 个人用户，多台小型机器：
-          - [ ] colab, kaggle
-          - [ ] personal computer
-          - [ ] 
-          - [ ] 
-      
-      - [ ] 实际推理过程中，虽然可以返回token，但是也一直在报内存不够的错误。 https://www.53ai.com/news/qianyanjishu/2024070296570.html 苹果自己的MLX框架也推出了distributed的分布式部署方案，还有叫做exolabs的初创团队也披露了基于苹果设备的分布式推理方案（可以同时使用mac，ipad，iphone，甚至watch）
-      
-    - [ ] idea: 结合 spotServer, colab, kaggle, mac, android, windows 来做推理
-      - [ ] 网络带宽：上有比万兆网口更快的thunderbolt4（雷电4）口
-      - [ ] 
+        - [ ] 现成的需求：我现在资源有限，量化后的GPTQ模型仍然超显存，有没有什么方法可以解决这个问题呢？我翻了一下午都是多机多卡训练的，没找到多机多卡部署推理的，刚开始学习这些，请大佬们帮帮 https://www.zhihu.com/question/636571157
+        - [ ] 多个 LLM 的 serving 已经成为了一个重要且成本高的需求，Multiple LLM serving has emerged as a crucial and costly demand. Want to co-serve multiple LLMs with better utilization?
+        - [ ] 由于分割推理与实际应用（如智能手机应用、物联网设备等）紧密相关，您的研究成果可能更容易转化为实际的应用案例，这对于发表论文和获得实习经验都是有益的。
+        - [ ] 吐槽一下megatron - ChenShawn的文章 - 知乎
+            https://zhuanlan.zhihu.com/p/692015516
+        - [ ] 中低端 llm 框架产能过剩
+        - [ ] 目前 NVIDIA 都需要根据客户反馈迭代优化大集群基建（卖给客户前 NVIDIA 自己都没有跑过），找到一个可以在多规模集群（GPU），训练都是大公司做，推理相对好一点
+        - [ ] fine tune Llama 2 7B: Training a LLM with multiple computers: I’ve been trying to use h2o llm studio for training, and that’s worked ok until I updated my dataset, and now I get OOM errors. 
+            - [ ] Links
+                - [ ] https://www.reddit.com/r/LocalLLaMA/comments/1bm43yo/comment/kwa9wts/?share_id=OwsDq2zyN8m6cRGinOgxT&utm_content=2&utm_medium=android_app&utm_name=androidcss&utm_source=share&utm_term=1
+                - [ ] https://www.reddit.com/r/LocalLLaMA/comments/1bvd5z1/training_a_llm_with_multiple_computers/
+            - [ ] 关键词：training, multiple computers, OOM errors while update dataset
+            - [ ] Low-cost 4-way GTX 1080 with 35GB of VRAM inference PC https://www.reddit.com/r/LocalLLaMA/comments/1fb5sty/lowcost_4way_gtx_1080_with_35gb_of_vram_inference/
+            - [ ] problem: how to stably running?
+            - [ ] 个人用户，多台小型机器：
+                - [ ] colab, kaggle
+                - [ ] personal computer
+        - [ ] 实际推理过程中，虽然可以返回token，但是也一直在报内存不够的错误。 https://www.53ai.com/news/qianyanjishu/2024070296570.html 苹果自己的MLX框架也推出了distributed的分布式部署方案，还有叫做exolabs的初创团队也披露了基于苹果设备的分布式推理方案（可以同时使用mac，ipad，iphone，甚至watch）
+    - [ ] 结合 spotServer, colab, kaggle, mac, android, windows 来做推理
+        - [ ] 网络带宽：上有比万兆网口更快的thunderbolt4（雷电4）口
+
+
 
 
 
@@ -223,6 +208,7 @@ SpotServe是首个面向Spot Instance场景的LLM Serving System。最近有蛮�
    4. Beyond efficiency: A systematic survey of resource-efficient large language models https://scholar.google.com/scholar?cites=6684929392857370268&as_sdt=2005&sciodt=0,5&hl=en
    5. Deep Learning Workload Scheduling in GPU Datacenters: Taxonomy, Challenges and Vision https://arxiv.org/abs/2205.11913
    6. ml-systems-papers https://github.com/byungsoo-oh/ml-systems-papers
+   7. Efficient Training of Large Language Models on Distributed Infrastructures: A Survey https://arxiv.org/abs/2407.20018 by https://jf-d.github.io/
 3. Existing Works
    1. Fault-tolerant Distributed Training with torch run https://pytorch.org/tutorials/beginner/ddp_series_fault_tolerance.html#further-reading A machine with multiple GPUs 
    2. Parcae: Spot Instance(Fault Tolerance)
