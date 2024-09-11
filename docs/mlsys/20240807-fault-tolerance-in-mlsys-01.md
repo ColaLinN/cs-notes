@@ -12,10 +12,6 @@ MLSys 有下面几点优化方向，本文主要关注第三点
 
 ## 训练中的稳定性、成本优化、集群容错、弹性计算
 
-
-
-![image-20240907201633730](./20240807-fault-tolerance-in-mlsys-01.assets/image-20240907201633730.png)
-
 相关工作	
 
 - [x] Varuna EroSys22 Best Paper
@@ -25,6 +21,7 @@ MLSys 有下面几点优化方向，本文主要关注第三点
 - [ ] Oobleck SOSP23
 - [ ] TRANSOM: An Efficient Fault-Tolerant System for Training LLMs
 - [x] Parcae NSDI24
+- [ ] MegaScale NSDI24
 
 ### Varuna EroSys'22 Best Paper
 
@@ -111,6 +108,7 @@ https://colossalai.org/zh-Hans/
 -   [ ] MuxServe: Flexible Spatial-Temporal Multiplexing for Multiple LLM Serving https://arxiv.org/abs/2404.02015
 -   [ ] DéjàVu  2024, KV-cache Streaming for Fast, Fault-tolerant Generative LLM Serving
 -   [ ] 推理服务调度器 https://zhuanlan.zhihu.com/p/713712371
+-   [ ] 
 
 2023 年底 SpotServer 是首个面向可抢占集群的 LLM 推理系统
 
@@ -122,25 +120,10 @@ SpotServeR: Serving generative large language models on preemptible instances
 
 SpotServe是首个面向Spot Instance场景的LLM Serving System。最近有蛮多工作考虑使用廉价的弹性计算资源来降低AI Infra的成本，尤其是中小企业和个人用户，但主要都是面向大模型训练场景。对于LLM推理，使用Spot Instance的主要挑战就是处理Preemption所导致的Latency过长的问题。SpotServe借助于Re-parallelization和Live Context Migration （包括Params和KV-Cache）技术可以高效应对Preemption，可以实现在平均推理延迟几乎无影响的情况下，降低一半的云计算资源开销。
 
-## Terms
-
-- 相关会议？
-  - EuroSys
-  - 
-
-- Megatron 系统？
-- TP 张量并行是什么？是模型并行 MP（算子间并行、算子内并行）吗？
-- DGX ？（Nvidia 的大规模 AI 开发计算平台）
-- Liveput
-- preemption-aware
-- 功耗墙，限制 cpu 频率
-- 内存墙 memory wall
-
 ## Ideas
 
 - [ ] 由于没有太多资源，可以做分布式大模型推理中的成本优化和集群容错
     - [ ] 没卡没资源怎么研究？
-- [ ] 要提出几级可行方案，最少也要完成最少的
 - [ ] 推理服务调度器
 - [ ] 关注内存消耗？
 - [ ] MP、PP、TP 的 分析
@@ -170,12 +153,24 @@ SpotServe是首个面向Spot Instance场景的LLM Serving System。最近有蛮�
         - [ ] 实际推理过程中，虽然可以返回token，但是也一直在报内存不够的错误。 https://www.53ai.com/news/qianyanjishu/2024070296570.html 苹果自己的MLX框架也推出了distributed的分布式部署方案，还有叫做exolabs的初创团队也披露了基于苹果设备的分布式推理方案（可以同时使用mac，ipad，iphone，甚至watch）
     - [ ] 结合 spotServer, colab, kaggle, mac, android, windows 来做推理
         - [ ] 网络带宽：上有比万兆网口更快的thunderbolt4（雷电4）口
+- [ ] 训练
+    - [ ] 不同模型+流水线并行分布式训练，梯度压缩
 
 
 
 
 
 ![image-20240908045906858](./20240807-fault-tolerance-in-mlsys-01.assets/image-20240908045906858.png)
+
+## Terms
+
+- Megatron 系统
+- TP 张量并行是什么？是模型并行 MP（算子间并行、算子内并行）吗？
+- DGX ？（Nvidia 的大规模 AI 开发计算平台）
+- Liveput
+- preemption-aware
+- 功耗墙，限制 cpu 频率
+- 内存墙 memory wall
 
 ## Reference
 
