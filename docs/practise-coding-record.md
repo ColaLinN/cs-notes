@@ -23,6 +23,7 @@ tags: [intro]
 ## 全部文章 All Articles
 
 -   ...
+-   079 [Authentication, Authorization, Token and JWT](https://doc.fenglyulin.com/docs/web-full-stack/backend/authentication-01)
 -   078 [Machine/Deep Learning Overview](https://doc.fenglyulin.com/docs/mlsys/deep-learning-overview)
 -   077 [Unix Log CLI](https://doc.fenglyulin.com/docs/web-full-stack/linux/unix-log-cli)
 -   076 [MLSys Distributed Traning Param Server](https://doc.fenglyulin.com/docs/mlsys/distributed-training-05)
@@ -30,7 +31,6 @@ tags: [intro]
 -   074 [MLSys Distributed Training Cluster Architecure](https://doc.fenglyulin.com/docs/mlsys/distributed-training-03)
 -   073 [MLSys Distributed Training Approaches](https://doc.fenglyulin.com/docs/mlsys/distributed-training-02)
 -   072 [MLSys Distributed Training Overview](https://doc.fenglyulin.com/docs/mlsys/distributed-training-01)
-
 - 071 [压力测试工具 Stress Testing Tool](https://doc.fenglyulin.com/docs/web-full-stack/tools/stress-testing-tool)
 - 070 [UML 序列图要点 UML Sequence Diagram](https://doc.fenglyulin.com/docs/web-full-stack/tools/uml-sequence-diagram)
 - 069 [CSS Notes](https://doc.fenglyulin.com/docs/web-full-stack/frontend/css-01)
@@ -198,6 +198,7 @@ tags: [intro]
 
 ## Web 全栈 Web Fullstack
 
+-   079 [Authentication, Authorization, Token and JWT](https://doc.fenglyulin.com/docs/web-full-stack/backend/authentication-01)
 -   077 [Unix Log CLI](https://doc.fenglyulin.com/docs/web-full-stack/linux/unix-log-cli)
 -   071 [压力测试工具 Stress Testing Tool](https://doc.fenglyulin.com/docs/web-full-stack/tools/stress-testing-tool)
 -   070 [UML 序列图要点 UML Sequence Diagram](https://doc.fenglyulin.com/docs/web-full-stack/tools/uml-sequence-diagram)
