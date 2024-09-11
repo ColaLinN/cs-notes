@@ -205,7 +205,7 @@ SpotServe是首个面向Spot Instance场景的LLM Serving System。最近有蛮�
       https://www.zhihu.com/question/629886104/answer/3487721731
    5. 北大团队自研AI框架“河图”提出稀疏大模型训练新架构 - Hsword的文章 - 知乎
       https://zhuanlan.zhihu.com/p/435089498
-   6. 系统论文速读系列 <EuroSys 23> Varuna: scalable, low-cost training of massive deep learning models - USTC-NHPCC的文章 - 知乎
+   6. 系统论文速读系列 `<EuroSys 23>` Varuna: scalable, low-cost training of massive deep learning models - USTC-NHPCC的文章 - 知乎
       https://zhuanlan.zhihu.com/p/649126947
    7. 机器学习系统MLSys中有哪些比较有前途的研究方向？ - 微调的回答 - 知乎
       https://www.zhihu.com/question/494190733/answer/2247649541
