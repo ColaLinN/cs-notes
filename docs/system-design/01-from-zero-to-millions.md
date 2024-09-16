@@ -35,7 +35,7 @@ Choices:
 Usually select Relational Database, but NoSQL databases might be the right choice if:
 
 - application requires super-low latency
-- data are unstructed, don't have any relational data
+- data are unstructured, don't have any relational data
 - only need to serialize and unserialize data(JSON, XML, YAML, etc)
 - need to store a massive amount of data
 
