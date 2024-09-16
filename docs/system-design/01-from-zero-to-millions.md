@@ -181,8 +181,6 @@ Both Producers and Consumers can be scaled independently.
 
 
 
-
-
 ## Logging, Metrics, Automation
 
 When working with a small number of users, logging, metrics, and automation are good practise but not a necessity.
@@ -203,6 +201,8 @@ Automation: When system gets big and complex, automation tool is key to improve 
 
 - Continuous Integration and Continuous Deployment
 - Automated build, test, deploy process, etc.
+
+
 
 ## Database Scaling
 
@@ -243,5 +243,6 @@ The improvements involved in this chapter is:
 
 
 
-Reference
+## Reference
+
 1. System Design Interview by Alex Xu

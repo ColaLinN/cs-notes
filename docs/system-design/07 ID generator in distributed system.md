@@ -4,9 +4,140 @@ title: ID Generator in Distributed System
 tags: [System Design]
 ---
 
+# Unique ID Generator
 
-## UIUD
+## 需求
 
-## Snowflake
+1. 生成的 ID 是唯一的
+2. ID 是 64-bit 的数字
+3. ID 要随日期变大
+4. 每秒能够生成 10k 个 IDs
 
-TODO
+## 方法
+
+1. 单 DB 自增主键
+2. 多 DB 自增分区主键
+3. 通用唯一识别码 UUID (**U**niversally **U**nique **ID**entifier)
+4. "雪花" Snowflake ID
+
+### 1) 单 DB 自增主键
+
+使用 DB 的 `auto_increment` 主键
+
+优点
+
+1. 简单
+
+缺点
+
+1. 单点失误，容错问题
+2. 无法扩展（scale），性能差
+3. 数量有限，最大数量为 `2^64-1`
+
+### 2) 多 DB 分区自增主键
+
+多个 DB 实例，实例 k 的主键自增 k，所以每个实例生成的 ID 都是唯一的。
+
+优点
+
+1. 简单
+
+缺点
+
+1. 不同实例生成的 ID 大小不代表生成日期大小（ID 不随时间变大）
+2. 难以扩展（scale），无法新增实例
+3. 数量有限，最大数量为 `2^64-1`
+4. 需要解决负载均衡
+
+### 3) 通用唯一识别码 UUID
+
+UUID (**U**niversally **U**nique **ID**entifier) 是一个 128 bits 的数字，重复的概率接近于 0，可以忽略不计。
+
+UUID 的 16 个 8 位字节表示为 32 个十六进制数字，由连字符 '-' 分隔成五组顯示，形式為「8-4-4-4-12」总共 36 个字符（32 个十六进制数字和 4 个连字符）
+
+- `xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx`
+- `低位 32 bits 时间+中间位 16 bits 时间+最高有效位中的 4 bits“版本”+最高有效位为 1-3 bits“变体”+48 bits 节点 ID`
+- 例子
+  - `123e4567-e89b-12d3-a456-426655440000`
+
+优点
+
+1. 简单
+2. 不用担心产生冲突
+3. 容易 scale，每个服务器都可以自己生成 ID
+
+缺点
+
+1. 需求是 64 bits，UIUD 是 128 bits
+2. ID 不随时间变大
+3. ID 不是纯数字的
+
+### 4) "雪花 ID" Snowflake ID
+
+Snowflake ID 是由 Twitter 团队设计的一种 ID 生成方法（不是叫 Snowflake 的数据存储分析公司）
+
+其 64 bits 组成如下
+
+1. 0, 1bit
+2. Timestamp, 41 bits （毫秒级别，起始时间可以自己设置，snowflake 默认起始时间是 2010 年 11 月 4 日。允许最大 `2^41-1` 毫秒，即 69 年，69 年已经是一个很长的时间了，后期重构即可，比如改变 Machine ID 中的一位。）
+3. Machine ID, 10 bits （可以自由设计）
+4. Machine Sequence Number, 12 bits（每毫秒重置为 0 且在此毫秒自增 1，所以每毫秒可以生成 `2^12=4096` 个 不同的 IDs）
+
+优点
+
+1. 生成的 ID 是唯一的
+2. ID 是 64-bit 的数字
+3. ID 能够随日期变大
+4. 每秒能够生成 10k 个 IDs（每毫秒可以生成 `2^12=4096` 个 不同的 IDs，所以每秒是 `4096*1000~=4M` 个不同的 IDs）
+5. ID 生成器可以是分布式的
+
+缺点
+
+1. 组成复杂，需要有经验的工程师理解并应用到实际场景上
+
+## 架构
+
+1. 单点 ID 生成
+2. 分布式的 ID 生成
+
+### 1) 单点 ID 生成，独立的 ID 生成服务器 Ticket Server
+
+把 ID 生成器独立成一个服务，所有其他服务器都可以请求这个服务来生成 ID
+
+常见方法
+
+1. 单 DB 自增主键
+2. 其他
+
+优点
+
+1. 简单，适用于中等规模的服务
+
+缺点
+
+1. 容错问题，单点错误
+2. 性能问题，无法 scale
+
+### 2) 分布式的 ID 生成
+
+分布式的 ID 生成允许每个服务器可以自行生成 ID，而不依赖于单点的 ID 生成服务器。也可以封装成单点的 ID 生成，但没有必要。
+
+常见方法
+
+1. Snowflake ID
+2. UIUD
+3. 多 DB 分区自增主键（有些相似，但需要解决负载均衡）
+
+优点
+
+1. 性能强，易于扩展
+2. 可容错，解决了单点故障
+
+缺点
+
+1. 组成复杂，需要有经验的工程师理解并应用到实际场景上
+
+## Reference
+
+1. [Universally unique identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier)
+2. System Design Interview by Alex
