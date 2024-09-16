@@ -92,6 +92,7 @@ API 设计
 3. 使用
    1. 由于生成的哈希值可能会超过 7 位，我们需要截断前 7 位哈希值
    2. 引入碰撞检测：由于前 7 位可能会碰撞，我们可以加上预先定好的 string 或数字，重新生成哈希
+   3. 由于碰撞检测要查 DB 是否存在值，我们可以引入布隆过滤器（Bloom Filter）来提高检测的性能。
 
 > TODO：流程图
 
@@ -158,4 +159,8 @@ base62 编码
 ## Reference
 
 1. System Design Interview by Alex
-1. wiki
+1. Bloom Filter
+1. Hash Function
+1. base62
+1. base64
+1. Unique ID Generator
