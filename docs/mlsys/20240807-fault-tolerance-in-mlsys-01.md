@@ -162,7 +162,7 @@ SpotServe是首个面向Spot Instance场景的LLM Serving System。最近有蛮�
 
 ![image-20240908045906858](./20240807-fault-tolerance-in-mlsys-01.assets/image-20240908045906858.png)
 
-## Terms
+##  Terms
 
 - Megatron 系统
 - TP 张量并行是什么？是模型并行 MP（算子间并行、算子内并行）吗？
