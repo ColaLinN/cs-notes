@@ -1,4 +1,6 @@
-## 大模型时代下做科研的四个思路
+# How to do research in the era of LLM
+
+大模型时代下做科研的四个思路
 
 【大模型时代下做科研的四个思路【论文精读·52】】 https://www.bilibili.com/video/BV1oX4y1d7X6/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70
 
