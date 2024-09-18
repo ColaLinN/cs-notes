@@ -14,3 +14,5 @@
         - [ ]  注意力机制：核回归，注意力评分函数，Bahdanau 注意力，自注意力和位置编码，Transformer
     - [ ]  搜广推
         - [ ]  kaggle 上面的 otto 如果想要上分就要花很多时间去加特征、改共现矩阵这些听上去就没有技术含量的事情上 ⇒ 这就是搜广推能涨点的工作 https://www.kaggle.com/competitions/otto-recommender-system/code 可以去问问xhs求职前辈呢
+    - [ ]  pytorch   新手如何入门pytorch？ - 知乎 - sunshinelala的文章 - 知乎
+        https://zhuanlan.zhihu.com/p/678130904
