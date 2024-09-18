@@ -103,8 +103,6 @@
 - 统计网络层数时会忽略输入层，所以这个神经网络是 1 层
 - 这是一个全连接层（fully-connected layer）或称为稠密层（dense layer），即每个输入与每个输出相连
 
-
-
 ## Reference
 
 1. [动手学习深度学习 by limu](https://zh-v2.d2l.ai/chapter_linear-networks/linear-regression.html#id4)
