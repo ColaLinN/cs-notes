@@ -37,6 +37,8 @@
 > TODO
 
 - HMAC（AK/SK）认证
-
 - HTTPS SSH 认证
+- SSL 证书，letsencrypt get free certificate https://letsencrypt.org/ and auto-refresh tools
+- SSH vs SSL？
+- SSL 证书之于 HTTPS
 
