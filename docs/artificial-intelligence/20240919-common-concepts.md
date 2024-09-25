@@ -50,7 +50,13 @@
 - 统计网络层数时会忽略输入层，所以这个神经网络是 1 层
 - 这是一个全连接层（fully-connected layer）或称为稠密层（dense layer），即每个输入与每个输出相连
 
-## 数学术语
+### 数学术语
 
 1. 极值点（arguments of the maxima/minima，分别缩写为arg max/arg min或argmax/argmin）是使函数输出值取得极值的输入点。
 2. 
+
+### 特征工程
+
+-   特征描述子：SIFT，SURF
+-   视觉词袋（类）
+-   最后用SVM

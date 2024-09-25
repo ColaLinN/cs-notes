@@ -185,3 +185,31 @@ for epoch in range(5):
 查询与键权重关系图，可以看到，加入可学习的参数后， 曲线在注意力权重较大的区域变得更不平滑。
 
 ![image-20240922195228057](./20240922-self-attention.assets/image-20240922195228057.png)
+
+## Bahdanau 注意力
+
+query是输出，key和value都是之前encoding的每个时间步的输出h状态
+
+![image-20240924011318391](./20240922-self-attention.assets/image-20240924011318391.png)
+
+## 多头注意力（todo）
+
+## 自注意力和位置编码 Self-Attention
+
+self attention 意思是key，query，value都是X输入自己本身，但是经过不同的Wq, Wk, Wv后的Q, K, V的元素值已经不同了
+
+![image-20240924011441321](./20240922-self-attention.assets/image-20240924011441321.png)
+
+## Transformer
+
+### 模型结构
+
+Transformer
+
+- 编码器和解码器是基于自注意力的模块叠加而成的
+
+- 源（输入）序列和目标（输出）序列的嵌入（embedding）表示将加上位置编码（positional encoding），再分别输入到编码器和解码器中。
+
+![image-20240924011748915](./20240922-self-attention.assets/image-20240924011748915.png)
+
+### 
