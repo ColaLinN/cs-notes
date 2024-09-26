@@ -96,7 +96,6 @@
 > TODO
 
 - HMAC（AK/SK）认证
-<<<<<<< HEAD
 
 - HMAC SHA256 签名验证
 =======
@@ -104,8 +103,6 @@
 - SSL 证书，letsencrypt get free certificate https://letsencrypt.org/ and auto-refresh tools
 - SSH vs SSL？
 - SSL 证书之于 HTTPS
->>>>>>> 8e581563593bcbbffcda9a9a7945345ee1eba1e1
-
 - Https SSH 认证
 
 - Let's encrypt is using sha256WithRSAEncryption
