@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
@@ -58,10 +58,10 @@ const config: Config = {
     image: 'img/docusaurus-social-card.jpg',
     // image: 'img/fenglyu-v1.jpg',
     // announcementBar: {
-      // id: "feature_release", // Any value that will identify this message.
-      // content: `更新<a href='/docs/videos/browser/js-web-animations-api'>《与 CSS Keyframes 媲美的原生 JS 高性能动画 API 教程》配套文本</a>`,
-      // backgroundColor: "#fafbfc", // Defaults to `#fff`.
-      // textColor: "#091E42", // Defaults to `#000`.
+    // id: "feature_release", // Any value that will identify this message.
+    // content: `更新<a href='/docs/videos/browser/js-web-animations-api'>《与 CSS Keyframes 媲美的原生 JS 高性能动画 API 教程》配套文本</a>`,
+    // backgroundColor: "#fafbfc", // Defaults to `#fff`.
+    // textColor: "#091E42", // Defaults to `#000`.
     // },
     // hideableSidebar: true,
     navbar: {
@@ -72,7 +72,7 @@ const config: Config = {
         // src: 'img/logo.svg',
         src: 'img/fenglyu-v1.jpg',
       },
-      
+
       items: [
         // {
         //   type: 'docSidebar',
@@ -91,48 +91,54 @@ const config: Config = {
           docId: 'distributed-systems/intro',
           position: 'right',
           label: 'Distributed Systems', // the name
-         },
+        },
         {
           type: 'doc',
           docId: 'leetcode/240201-why',
           position: 'right',
           label: 'Leetcode',
-         },
-         {
+        },
+        {
           type: 'doc',
           docId: 'system-design/from-zero-to-millions',
           position: 'right',
           label: 'System Design',
-         },
-         {
+        },
+        {
           type: 'doc',
           docId: 'operating-systems/overview',
           position: 'right',
           label: 'Operating Systems',
-         },
-         {
+        },
+        {
           type: 'doc',
-          docId: 'database/essential-knowledge',
+          docId: 'artificial-intelligence/overview',
           position: 'right',
-          label: 'Database',
-         },
-         {
+          label: 'AI/ML',
+        },
+        {
           type: 'doc',
-          docId: 'computer-networks/overview',
+          docId: 'mlsys/overview',
           position: 'right',
-          label: 'Computer Networks',
-         },
-         {
-          label: "Others",
+          label: 'MLSys',
+        },
+        {
+          type: 'doc',
+          docId: 'web-full-stack/overview',
+          position: 'right',
+          label: 'Web Full Stack',
+        },
+        {
+          label: "More",
           position: "right",
           items: [
             {
-              label: "Tech Videos",
-              to: "/videos",
+              label: "Database",
+              to: "docs/database/essential-knowledge",
             },
             {
-              label: "CS Stack",
-              to: "/cs-stack", 
+              label: "Computer Networks",
+              to: "computer-networks/overview",
             },
             {
               label: "All",
@@ -143,7 +149,8 @@ const config: Config = {
         {
           // to: '/blog', 
           href: 'https://fenglyulin.com/',
-          label: 'Fenglyu\'Log', position: 'right'},
+          label: 'Fenglyu\'Log', position: 'right'
+        },
         {
           href: 'https://github.com/ColaLinN/fenglyu-docs-site-v1',
           label: 'GitHub',
@@ -164,7 +171,7 @@ const config: Config = {
             {
               label: 'Leetcode',
               to: '/docs/leetcode/240201-why',
-            },       
+            },
             {
               label: 'System Design',
               to: '/docs/system-design/from-zero-to-millions',
@@ -176,10 +183,22 @@ const config: Config = {
             {
               label: 'Database',
               to: '/docs/database/essential-knowledge',
-            },    
+            },
             {
               label: 'Computer Networks',
               to: '/docs/computer-networks/overview',
+            },
+            {
+              label: 'Web Full Stack',
+              to: '/docs/web-full-stack/overview',
+            },
+            {
+              label: 'AI/ML',
+              to: '/docs/artificial-intelligence/overview',
+            },
+            {
+              label: 'MLSys',
+              to: '/docs/mlsys/overview',
             },
           ],
         },
@@ -230,7 +249,7 @@ const config: Config = {
         {
           className: 'theme-code-block-highlighted-line',
           line: 'highlight-next-line',
-          block: {start: 'highlight-start', end: 'highlight-end'},
+          block: { start: 'highlight-start', end: 'highlight-end' },
         },
         {
           className: 'code-block-error-line',
