@@ -112,9 +112,21 @@ const config: Config = {
         },
         {
           type: 'doc',
-          docId: 'artificial-intelligence/overview',
+          docId: 'database/essential-knowledge',
           position: 'right',
-          label: 'AI/ML',
+          label: 'Database',
+        },
+        {
+          type: 'doc',
+          docId: 'computer-networks/overview',
+          position: 'right',
+          label: 'Computer Networks',
+        },
+        {
+          type: 'doc',
+          docId: 'web-full-stack/overview',
+          position: 'right',
+          label: 'Web Full Stack',
         },
         {
           type: 'doc',
@@ -124,21 +136,17 @@ const config: Config = {
         },
         {
           type: 'doc',
-          docId: 'web-full-stack/overview',
+          docId: 'artificial-intelligence/overview',
           position: 'right',
-          label: 'Web Full Stack',
+          label: 'AI/ML',
         },
         {
           label: "More",
           position: "right",
           items: [
             {
-              label: "Database",
-              to: "docs/database/essential-knowledge",
-            },
-            {
-              label: "Computer Networks",
-              to: "computer-networks/overview",
+              label: "Tech Videos",
+              to: "todo",
             },
             {
               label: "All",
@@ -193,12 +201,12 @@ const config: Config = {
               to: '/docs/web-full-stack/overview',
             },
             {
-              label: 'AI/ML',
-              to: '/docs/artificial-intelligence/overview',
-            },
-            {
               label: 'MLSys',
               to: '/docs/mlsys/overview',
+            },
+            {
+              label: 'AI/ML',
+              to: '/docs/artificial-intelligence/overview',
             },
           ],
         },
