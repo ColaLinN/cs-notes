@@ -72,6 +72,21 @@ encoder and decoder
 
 
 
+```python
+#@save
+class EncoderDecoder(nn.Block):
+    """编码器-解码器架构的基类"""
+    def __init__(self, encoder, decoder, **kwargs):
+        super(EncoderDecoder, self).__init__(**kwargs)
+        self.encoder = encoder
+        self.decoder = decoder
+
+    def forward(self, enc_X, dec_X, *args):
+        enc_outputs = self.encoder(enc_X, *args)
+        dec_state = self.decoder.init_state(enc_outputs, *args)
+        return self.decoder(dec_X, dec_state)
+```
+
 ## 序列到序列学习
 
 【62 序列到序列学习（seq2seq）【动手学深度学习v2】】 https://www.bilibili.com/video/BV16g411L7FG/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70
