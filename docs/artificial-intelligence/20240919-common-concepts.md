@@ -1,6 +1,4 @@
-
-
-## Common Concept
+## DL/ML Common Concept
 
 模型相关
 
