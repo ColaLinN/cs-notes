@@ -188,12 +188,16 @@ For more details, look at [cross-entropy](https://colah.github.io/posts/2015-09-
 
 ![image-20240928130817594](./20240928-transformer-calculation.assets/image-20240928130817594.png)
 
-## Todo
+### Todo
 
 - Read the [Attention Is All You Need](https://arxiv.org/abs/1706.03762) paper, the Transformer blog post ([Transformer: A Novel Neural Network Architecture for Language Understanding](https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)), and the [Tensor2Tensor announcement](https://ai.googleblog.com/2017/06/accelerating-deep-learning-research.html).
 - Watch [Łukasz Kaiser’s talk](https://www.youtube.com/watch?v=rBCqOTEfxvg) walking through the model and its details
 - Play with the [Jupyter Notebook provided as part of the Tensor2Tensor repo](https://colab.research.google.com/github/tensorflow/tensor2tensor/blob/master/tensor2tensor/notebooks/hello_t2t.ipynb)
 - Explore the [Tensor2Tensor repo](https://github.com/tensorflow/tensor2tensor).
+
+### Transformer Inference Arithmetic
+
+https://kipp.ly/transformer-inference-arithmetic/
 
 ## Reference
 
