@@ -37,49 +37,38 @@
 
 ![image-20241001113044239](20241001-transformer-inference-arithmetic.assets/image-20241001113044239.png)
 
-以上的计算还忽略了 Layer Normalization `d_model` 的参数，MLP 的偏置参数，以及位置编码的参数（在 GPT2 和原始 Transformer 中为 `n_ctx+d_model`，在Gopher 280B 模型中，有 21.5B 个参数用于相对位置编码）
+以上的计算还忽略了 Layer Normalization `d_model` 的参数，MLP 的偏置参数，以及位置编码的参数（在 GPT2 和原始 Transformer 中为 `n_ctx+d_model`，在Gopher 280B 模型中，有 21.5B 个参数用于相对位置编码），但在 Kipply 作者的表述中，这些参数量都可以忽略不计（zero）。
 
 ## LLM Parameter Counting by ChatGPT
 
 在一个深度学习模型中，特别是像GPT这样的变压器模型，每个“块”通常包含以下组件。每个块（或层）通常包括一个自注意力层和一个前馈神经网络层。以下是每个块中的主要权重和参数：
 
-### 1. 自注意力层（Self-Attention Layer）
+1. 自注意力层（Self-Attention Layer）
 
 - **查询权重（Query Weights）**：用于生成查询向量的权重矩阵。
 - **键权重（Key Weights）**：用于生成键向量的权重矩阵。
 - **值权重（Value Weights）**：用于生成值向量的权重矩阵。
 - **输出权重（Output Weights）**：用于将注意力机制的输出映射回原始维度的权重矩阵。
-
-### 2. 前馈神经网络层（Feedforward Layer）
-
-- **第一层权重（Feedforward Layer 1 Weights）**：用于第一个线性变换的权重矩阵。
-- **第一层偏置（Feedforward Layer 1 Biases）**：用于第一个线性变换的偏置向量。
-- **第二层权重（Feedforward Layer 2 Weights）**：用于第二个线性变换的权重矩阵。
-- **第二层偏置（Feedforward Layer 2 Biases）**：用于第二个线性变换的偏置向量。
-
-### 3. 层归一化（Layer Normalization）
-
-- **归一化权重（Layer Norm Weights）**：用于层归一化的缩放参数。
-- **归一化偏置（Layer Norm Biases）**：用于层归一化的偏移参数。
-
-### 具体参数和维度
-
-#### 自注意力层
-
 - \( W_Q \)：查询权重矩阵，尺寸为 \((d_{\text{model}}, d_k)\)。
 - \( W_K \)：键权重矩阵，尺寸为 \((d_{\text{model}}, d_k)\)。
 - \( W_V \)：值权重矩阵，尺寸为 \((d_{\text{model}}, d_v)\)。
 - \( W_O \)：输出权重矩阵，尺寸为 \((d_v, d_{\text{model}})\)。
 
-#### 前馈神经网络层
+2. 前馈神经网络层（Feedforward Layer）
 
+- **第一层权重（Feedforward Layer 1 Weights）**：用于第一个线性变换的权重矩阵。
+- **第一层偏置（Feedforward Layer 1 Biases）**：用于第一个线性变换的偏置向量。
+- **第二层权重（Feedforward Layer 2 Weights）**：用于第二个线性变换的权重矩阵。
+- **第二层偏置（Feedforward Layer 2 Biases）**：用于第二个线性变换的偏置向量。
 - \( W_1 \)：第一层权重矩阵，尺寸为 \((d_{\text{model}}, d_{\text{ff}})\)。
 - \( b_1 \)：第一层偏置向量，尺寸为 \((d_{\text{ff}})\)。
 - \( W_2 \)：第二层权重矩阵，尺寸为 \((d_{\text{ff}}, d_{\text{model}})\)。
 - \( b_2 \)：第二层偏置向量，尺寸为 \((d_{\text{model}})\)。
 
-#### 层归一化
+3. 层归一化（Layer Normalization）
 
+- **归一化权重（Layer Norm Weights）**：用于层归一化的缩放参数。
+- **归一化偏置（Layer Norm Biases）**：用于层归一化的偏移参数。
 - \( \gamma \)：归一化权重，尺寸为 \((d_{\text{model}})\)。
 - \( \beta \)：归一化偏置，尺寸为 \((d_{\text{model}})\)。
 
@@ -92,15 +81,33 @@
 -   KV Cache 解释了缓存 Self-attention 向量带来的性能提升，带来的权衡（tradeoffs）和成本。
 -   Capacity 介绍了 KV Cache 的存储成本，把它与模型权重存储联系起来，讨论 capacity 对性能的影响
 -   Model Parallelism 介绍了张量并行以及通信成本
--   Latency
+-   Latency Calculations 推理延时的计算 reate equations that serve as floorlines for inference speed
+-   batch size 介绍 batch size 对性能的影响，以及最佳的 batch size
+-   flops counitng 讲解了在 transformer 模型中每个块的 flops 计算速度，可以看出哪个块是计算密集型
+-   Intermediate memory costs 介绍了激活层需要额外的内存，以及在真实的基准（beachmarks）上内存带宽消耗是多少
+-   comparing against real beachmarks 和 Nvidia 的 FasterTransformer benchmarks report 作比较，明确差异在哪里
 
-## KV Cache
+## KV 缓存 KV Cache
 
 
 
+## KV 缓存 Capacity
 
+## 模型并行 Model Parallelism
 
+## 延时的计算 Latency Calculations
 
+## 批次大小 Batch Size
+
+## flops 计算
+
+## 中间的内存成本 Intermediate memory costs
+
+## 与真实的基准报告作比较 comparing against real beachmarks
+
+## 
+
+一些练习
 
 ## Reference
 
