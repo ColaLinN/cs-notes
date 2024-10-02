@@ -89,7 +89,59 @@
 
 ## KV 缓存 KV Cache
 
+Transformer 推理主要包括两个步骤：首先并行处理提供的提示/上下文，然后逐个生成新的 token（这就是自回归性质的体现）。
 
+如下所示，在推理过程中，每个 token 都需要获取历史序列中每个 token 的键值对（kv）向量来计算自注意力，无论这些 token 是来自初始的提示/上下文，还是生成的 token。这些键值对会存储在一个被称为 kv 缓存（或称为过去缓存）的矩阵中。
+
+![image-20241003005424490](./20241001-transformer-inference-arithmetic.assets/image-20241003005424490.png)
+
+这个缓存矩阵的形状通常为 [batch, 2, num_heads, seq_len, features]。
+
+- batch 是批次大小
+-  `2` 表示的是 `key`（键）和 `value`（值）两个矩阵，每个 token 都有一个 `key` 和一个 `value`
+- num_heads 是多头注意力数量
+- seq_len 是输入的序列长度
+- features 是 token 的大小
+
+![image-20241003005813311](./20241001-transformer-inference-arithmetic.assets/image-20241003005813311.png)
+
+KV cache 的目的是避免对一个 token 的重复计算，因为参数是固定的，一个 token sampling 得到的 KV 向量也是固定的。我们可以把 KV 向量缓存起来，以空间换时间。其中，对于每个 token，我们需要的存储空间的大小如下（单位为 bytes）
+
+![image-20241003010126543](./20241001-transformer-inference-arithmetic.assets/image-20241003010126543.png)
+
+- 第一个 2 代表 K，V 两个向量
+- 第二个 2 是存储单位的大小，此文中我们使用 float16，有 2 个 bytes
+- 接下来是 n_layers x n_heads x d_head，分别是解码器堆叠数 n_layer，n_heads 注意力头数，d_head 每个头的输出大小
+
+需要的计算 Flops 如下所示
+
+![image-20241003010659715](./20241001-transformer-inference-arithmetic.assets/image-20241003010659715.png)
+
+- 第一个 2 代表 K，V 两个向量
+- 第二个 2 和 d_model^2  是矩阵乘带来的
+- n_layers 是解码器的堆叠数
+
+> 在一个矩阵乘（matmuls，matrix multiplication）中有多少浮点计算次数 flops（Floating-point operations per second）？
+>
+> 在 w(m, n) 与 x(n, 1) 的矩阵乘 wx(m, 1) 中，有 2mn 次运算。其中第一个 2 是因为矩阵乘 matmuls 需要计算（1）乘法（2）加法，即乘法后的累加。
+>
+> 在 w(m, n) 与 x(n, p) 的矩阵乘 wx(m, p) 中，有 2mnp 次运算
+
+通过上述 Flops 计算公式可得，在 52B 参数的模型中（以 [Anthropic's](https://arxiv.org/pdf/2112.00861.pdf) 为例 d_model 为 2^13=8192，n_layers 为 64），总 flops 如下
+
+![image-20241003012159648](./20241001-transformer-inference-arithmetic.assets/image-20241003012159648.png)
+
+假如我们有 A100 GPU（每秒可以执行 312e12 次 flops 操作，每秒 1.5e12 bytes 的内存带宽），下面是需要的存储和计算量
+
+![image-20241003012430501](./20241001-transformer-inference-arithmetic.assets/image-20241003012430501.png)
+
+> 浮点运算与内存限制 Flops vs Memory Boundedness
+>
+> 如果要计算权重我们需要从内存中加载数据，理想状况下我们假设权重加载后就可以立即计算。那么（1）flops bound 是指当前的内存已经没有再传数据了（2）memory bound 意味着当前没有 flops 计算
+
+下图展示了 compute bound 与 memory bound 的关系，可以看到，batch size 越大，compute 时间越大，而 memory 的时间基本不变。
+
+![image-20241003013425214](./20241001-transformer-inference-arithmetic.assets/image-20241003013425214.png)
 
 ## KV 缓存 Capacity
 
@@ -105,7 +157,13 @@
 
 ## 与真实的基准报告作比较 comparing against real beachmarks
 
-## 
+## 其他
+
+1. 代码实现拆解
+2. 计算密集的 self-attention 计算量如何？如何优化？
+3. 存储密集的 FNN 存储量如何？通过增大 batch 优化？
+4. 为什么 transformer 为了计算性能去掉了 cross-attention？有何好处？
+5. 
 
 一些练习
 

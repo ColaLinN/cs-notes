@@ -140,6 +140,8 @@ k=`1, 4, 16, 64` 的预测数据如下图，随着预测时间 k 值的增加，
 - corpus 语料库
 - vocabs token index
 
+![image-20241002224714430](./20240924-rnn-recurrent-neural-network.assets/image-20241002224714430.png)
+
 ## RNN 循环神经网络
 
 ![image-20240924003456850](./20240924-rnn-recurrent-neural-network.assets/image-20240924003456850.png)

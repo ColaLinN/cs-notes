@@ -47,14 +47,6 @@
 
 把输入 word 向量 X 通过与参数 W 乘积 `XW`，编码成 query，key 和 value。此处 word 为 512 长，query, key 和 value 长度为 64。这个大小是多头注意力常见的配置。
 
-- X1 (1, 512)
-- WQ (512, 64)
-  - `64*8=`
-- Q1 (1, 64) = `XW` = ``
-- K (1, 64) * 8 = 512 `float16` * 2 =>   1024 bytes * n(seq_len)
-- V (1, 64)
-- Z
-
 ![image-20240928104049409](./20240928-transformer-calculation.assets/image-20240928104049409.png)
 
 第二步需要计算单词与句子中其他单词的自注意力分数
@@ -90,13 +82,6 @@ Query，Key 和 Value 的矩阵计算如下图所示，为 `(WQ, WK, WV)`
 - 开方 dk（dimension of Key vector），由于 key 长度一般为 64，所以开方 dk 为 8
 - 下面 Q 是要计算自注意力的 word，而 K，V 为输入序列每个 word 的
 - **KV 是历史，Q 是当前的查询**
-- seq(t1, t2, t3)
-- number of flops/number of weights bytes
-- FNN => 加大 batch
-- self-attention => 序列计算关系，不太能并行。
-  - FlashAttention tailling, preload, 量化, 减少 head 的数量
-  - Orca (https://www.usenix.org/conference/osdi22/presentation/yu) inference 开山之作，把 FFN 并行起来
-  - Lora
 
 
 ![image-20240928110947946](./20240928-transformer-calculation.assets/image-20240928110947946.png)
@@ -165,18 +150,6 @@ Query，Key 和 Value 的矩阵计算如下图所示，为 `(WQ, WK, WV)`
 
 两个的编码器解码器堆叠的可视化架构如下
 
-Todo
-
-- Cross Attention 层
-- **现在是纯 decoder 的结构，decoder only。为了计算效率的平衡，gpt 目前的架构，更好 scale up，for pipeline，etc**
-- **FFN 的大小是多少？**
-- `(m*4m + 4m*m)` = `8m^2`
-- (1, 512)
-  - WK (512, 64) * 8 * 3 = `3m^2`
-  - WZ (512, 512) = `m^2`
-  - Softmax 也算运算
-  - ``
-
 ![image-20240928124132927](./20240928-transformer-calculation.assets/image-20240928124132927.png)
 
 ### 解码器
@@ -227,6 +200,33 @@ For more details, look at [cross-entropy](https://colah.github.io/posts/2015-09-
 - Watch [Łukasz Kaiser’s talk](https://www.youtube.com/watch?v=rBCqOTEfxvg) walking through the model and its details
 - Play with the [Jupyter Notebook provided as part of the Tensor2Tensor repo](https://colab.research.google.com/github/tensorflow/tensor2tensor/blob/master/tensor2tensor/notebooks/hello_t2t.ipynb)
 - Explore the [Tensor2Tensor repo](https://github.com/tensorflow/tensor2tensor).
+
+## 计算
+
+Todo
+
+- Cross Attention 层
+- **现在是纯 decoder 的结构，decoder only。为了计算效率的平衡，gpt 目前的架构，更好 scale up，for pipeline，etc**
+- **FFN 的大小是多少？**
+- `(m*4m + 4m*m)` = `8m^2`
+- (1, 512)
+  - WK (512, 64) * 8 * 3 = `3m^2`
+  - WZ (512, 512) = `m^2`
+  - Softmax 也算运算
+- seq(t1, t2, t3)
+- 衡量指标：number of flops/number of weights bytes
+- 加速 FNN 层 => 加大 batch
+- 加速 self-attention 层 => 序列计算关系，不太能并行
+  - FlashAttention tailling, preload, 量化, 减少 head 的数量
+  - Orca (https://www.usenix.org/conference/osdi22/presentation/yu) inference 开山之作，把 FFN 并行起来
+  - Lora
+- X1 (1, 512)
+- WQ (512, 64)
+  - `64*8=`
+- Q1 (1, 64) = `XW` = ``
+- K (1, 64) * 8 = 512 `float16` * 2 =>   1024 bytes * n(seq_len)
+- V (1, 64)
+- Z
 
 ### Transformer Inference Arithmetic
 
