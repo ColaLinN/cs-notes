@@ -46,33 +46,48 @@
 1. 自注意力层（Self-Attention Layer）
 
 - **查询权重（Query Weights）**：用于生成查询向量的权重矩阵。
+
 - **键权重（Key Weights）**：用于生成键向量的权重矩阵。
+
 - **值权重（Value Weights）**：用于生成值向量的权重矩阵。
+
 - **输出权重（Output Weights）**：用于将注意力机制的输出映射回原始维度的权重矩阵。
-- \( W_Q \)：查询权重矩阵，尺寸为 \((d_{\text{model}}, d_k)\)。
-- \( W_K \)：键权重矩阵，尺寸为 \((d_{\text{model}}, d_k)\)。
-- \( W_V \)：值权重矩阵，尺寸为 \((d_{\text{model}}, d_v)\)。
-- \( W_O \)：输出权重矩阵，尺寸为 \((d_v, d_{\text{model}})\)。
+
+- ```
+    - \( W_Q \)：查询权重矩阵，尺寸为 \((d_{\text{model}}, d_k)\)。
+    - \( W_K \)：键权重矩阵，尺寸为 \((d_{\text{model}}, d_k)\)。
+    - \( W_V \)：值权重矩阵，尺寸为 \((d_{\text{model}}, d_v)\)。
+    - \( W_O \)：输出权重矩阵，尺寸为 \((d_v, d_{\text{model}})\)。
+    ```
 
 2. 前馈神经网络层（Feedforward Layer）
 
 - **第一层权重（Feedforward Layer 1 Weights）**：用于第一个线性变换的权重矩阵。
+
 - **第一层偏置（Feedforward Layer 1 Biases）**：用于第一个线性变换的偏置向量。
+
 - **第二层权重（Feedforward Layer 2 Weights）**：用于第二个线性变换的权重矩阵。
+
 - **第二层偏置（Feedforward Layer 2 Biases）**：用于第二个线性变换的偏置向量。
-- \( W_1 \)：第一层权重矩阵，尺寸为 \((d_{\text{model}}, d_{\text{ff}})\)。
-- \( b_1 \)：第一层偏置向量，尺寸为 \((d_{\text{ff}})\)。
-- \( W_2 \)：第二层权重矩阵，尺寸为 \((d_{\text{ff}}, d_{\text{model}})\)。
-- \( b_2 \)：第二层偏置向量，尺寸为 \((d_{\text{model}})\)。
+
+- ```
+    - \( W_1 \)：第一层权重矩阵，尺寸为 \((d_{\text{model}}, d_{\text{ff}})\)。
+    - \( b_1 \)：第一层偏置向量，尺寸为 \((d_{\text{ff}})\)。
+    - \( W_2 \)：第二层权重矩阵，尺寸为 \((d_{\text{ff}}, d_{\text{model}})\)。
+    - \( b_2 \)：第二层偏置向量，尺寸为 \((d_{\text{model}})\)。
+    ```
 
 3. 层归一化（Layer Normalization）
 
 - **归一化权重（Layer Norm Weights）**：用于层归一化的缩放参数。
-- **归一化偏置（Layer Norm Biases）**：用于层归一化的偏移参数。
-- \( \gamma \)：归一化权重，尺寸为 \((d_{\text{model}})\)。
-- \( \beta \)：归一化偏置，尺寸为 \((d_{\text{model}})\)。
 
-其中，\( d_{\text{model}} \) 是模型的隐藏层维度，\( d_k \) 是查询和键的维度，\( d_v \) 是值的维度，\( d_{\text{ff}} \) 是前馈神经网络的隐藏层维度。
+- **归一化偏置（Layer Norm Biases）**：用于层归一化的偏移参数。
+
+- ```
+    - \( \gamma \)：归一化权重，尺寸为 \((d_{\text{model}})\)。
+    - \( \beta \)：归一化偏置，尺寸为 \((d_{\text{model}})\)。
+    其中，\( d_{\text{model}} \) 是模型的隐藏层维度，\( d_k \) 是查询和键的维度，\( d_v \) 是值的维度，\( d_{\text{ff}} \) 是前馈神经网络的隐藏层维度。
+    ```
 
 这些权重和参数在训练过程中通过反向传播算法进行调整，以最小化损失函数，从而使模型能够有效地执行其任务。
 
@@ -95,7 +110,7 @@ Transformer 推理主要包括两个步骤：首先并行处理提供的提示/�
 
 ![image-20241003005424490](./20241001-transformer-inference-arithmetic.assets/image-20241003005424490.png)
 
-这个缓存矩阵的形状通常为 [batch, 2, num_heads, seq_len, features]。
+这个缓存矩阵的形状通常为 `[batch, 2, num_heads, seq_len, features]`。
 
 - batch 是批次大小
 -  `2` 表示的是 `key`（键）和 `value`（值）两个矩阵，每个 token 都有一个 `key` 和一个 `value`
