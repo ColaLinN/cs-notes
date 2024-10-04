@@ -208,15 +208,25 @@ A100 每秒可以执行 312e12 次 flops 操作，内存带宽为每秒 1.5e12 b
 
 ## 模型并行 Model Parallelism
 
-流水线并行中，容易遇到 memory bound，因为
+下面描述一个模型并行的模型，以便对齐进行性能评估以及计算通信损失。
 
-流水线并行唯一比模型并行好的是每次通信所花的开销不同，流水线并行的通信开销会更小。
+模型并行会带来一个问题，即内存加载权重的成本与计算量 flops 都会被拆分到每个GPU中。每个GPU都会使用其部分权重计算，并且在需要同步时通信。一个常见的做法是流水线并行，每个 GPU 都会分配到一部分的权重。
+
+-   在训练时，GPU可以一个接一个处理多个 batch 的数据，但在推理时，请求量小的情况下GPU会闲置下来。
+-   在流水线并行中，常常会遇到 flops bound，内存带宽并不会用满。
+-   唯一比模型并行好的是通信开销不同，流水线并行的通信开销为 d_model，而模型并行的通信开销是 N*d_model，此处的 N 是 GPU 的数量。
+
+A100 的通信带宽是 300GB/s（但此文中会用 600GB/s）
+
+-   TODO: The doc marks it as 600GB/s because Nvidia is adding up 300GB/s into each chip and 300GB/s out simultaneously rather than using a **bidirectional** number (which will be more intuitive for our calculations). => bidirectional 是什么意思？
 
 ![image-20241004040213934](./20241001-transformer-inference-arithmetic.assets/image-20241004040213934.png)
 
 上图中 N 代表着
 
 ## 延时的计算 Latency Calculations
+
+
 
 ## 批次大小 Batch Size
 
@@ -238,7 +248,6 @@ A100 每秒可以执行 312e12 次 flops 操作，内存带宽为每秒 1.5e12 b
 2. 计算密集的 self-attention 计算量如何？如何优化？
 3. 存储密集的 FNN 存储量如何？通过增大 batch 优化？
 4. 为什么 transformer 为了计算性能去掉了 cross-attention？有何好处？
-5. 
 
 一些练习
 
@@ -249,9 +258,12 @@ A100 每秒可以执行 312e12 次 flops 操作，内存带宽为每秒 1.5e12 b
 3. 是否考虑到 flops bound 和 memory bound，最佳的推理上下文长度是 208（flops/bytes）？=> reddit 有人回答，optimal context length  = （显存大小GPU VRAM - KV Cache）/ batch_size
 4. 这里的 2x12 是什么意思？
 5. ![image-20241004010757202](./20241001-transformer-inference-arithmetic.assets/image-20241004010757202.png)
-6. d
+6. **KV 是历史，Q 是当前的查询**
 
 ## Reference
 
 1.   [Transformer Inference Arithmetic by kipply 2022](https://kipp.ly/transformer-inference-arithmetic/)
 2.   [LLM Parameter Counting by kipply 2022](https://kipp.ly/transformer-inference-arithmetic/)
+3.   [KV Cache Quantization by Hugging Face](https://zhuanlan.zhihu.com/p/703000832)
+4.   [Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism](https://arxiv.org/pdf/1909.08053)
+5.   
