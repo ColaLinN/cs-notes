@@ -214,6 +214,8 @@ A100 每秒可以执行 312e12 次 flops 操作，内存带宽为每秒 1.5e12 b
 
 ![image-20241004040213934](./20241001-transformer-inference-arithmetic.assets/image-20241004040213934.png)
 
+上图中 N 代表着
+
 ## 延时的计算 Latency Calculations
 
 ## 批次大小 Batch Size
