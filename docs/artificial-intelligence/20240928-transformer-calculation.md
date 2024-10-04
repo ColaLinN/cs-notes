@@ -80,6 +80,7 @@ Query，Key 和 Value 的矩阵计算如下图所示，为 `(WQ, WK, WV)`
 - 开方 dk（dimension of Key vector），由于 key 长度一般为 64，所以开方 dk 为 8
 - 下面 Q 是要计算自注意力的 word，而 K，V 为输入序列每个 word 的
 - **KV 是历史，Q 是当前的查询**
+- 此处为QxK为矩阵乘，Softmax()与V为点积
 
 
 ![image-20240928110947946](./20240928-transformer-calculation.assets/image-20240928110947946.png)
@@ -99,10 +100,10 @@ Query，Key 和 Value 的矩阵计算如下图所示，为 `(WQ, WK, WV)`
 
 而这会带来一个新问题，自注意力层输出了 8 个 Z 向量，但是 FFNN 前馈层之前只处理一个 Z 向量，怎么解决呢？可以通过
 
-- 把 8 个 Z 拼接起来
-- 乘以 W 权重
-- 得到一个 Z**（输出也是 512）**
-  - token 输入是 512
+- 把 8 个 Z 拼接起来得到一个 Z**（输出也是 512）**
+    - token 输入是 512
+
+- 乘以 W 权重，得到的 Z 也是 512
 
 
 ![image-20240928114125405](./20240928-transformer-calculation.assets/image-20240928114125405.png)
