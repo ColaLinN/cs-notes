@@ -1,6 +1,4 @@
-
-
-## The Illustrated Transformer
+# The Illustrated Transformer (Notes)
 
 - 注意力机制
 - 适合并行
