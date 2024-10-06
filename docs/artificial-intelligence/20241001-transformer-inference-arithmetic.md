@@ -183,7 +183,7 @@ A100 每秒可以执行 312e12 次 flops 操作，内存带宽为每秒 1.5e12 b
 1. flops 312e12
 
 2. 内存带宽 1.5e12 bytes
-3. flops/内存带宽= 312/1.5=208
+3. flops/内存带宽= 312/1.5= 208，对于其他GPU不一样
 4. 显存大小 40GB
 
 3. 通信带宽 300GB/s
@@ -199,6 +199,7 @@ A100 每秒可以执行 312e12 次 flops 操作，内存带宽为每秒 1.5e12 b
 52B 模型的参数存储空间如下所示，乘以2是因为 float16 有 2bytes
 
 - Todo: 为什么 52B 的参数是 52e12？不是 52e9 吗？
+- 写错了
 
 ![image-20241004024854938](./20241001-transformer-inference-arithmetic.assets/image-20241004024854938.png)
 
@@ -212,7 +213,7 @@ A100 每秒可以执行 312e12 次 flops 操作，内存带宽为每秒 1.5e12 b
 
 ![image-20241004024941777](./20241001-transformer-inference-arithmetic.assets/image-20241004024941777.png)
 
-所以上面剩下的 16GB 只能装下  16/0.002≈8000 tokens，可以设置大小为 4 的 batch size，每个 batch request 可以处理最多 2049 个 tokens。
+所以上面剩下的 16GB 只能装下  16/0.002≈8000 tokens，可以设置大小为 4 的 batch size，每个 batch request 可以处理最多 2048 个 tokens。
 
 ### batch size 与 memory bound
 
@@ -221,6 +222,7 @@ A100 每秒可以执行 312e12 次 flops 操作，内存带宽为每秒 1.5e12 b
 如果 batch size 太小的话，我们会陷入 memory bound，即内存带宽没有跑满，计算量并不饱和，可以考虑舍弃 KV Cache，直接进行计算。可以考虑新增一个 GPU，组成 4 个 GPU 增大显存总额，有更多空间做 KV Cache，从而能够增大 batch size。
 
 - todo： 为什么这里不是 4 个 batch，2000 个 tokens？=> GPT：选择 2048 而不是 2000，主要是因为 2048 是 2 的幂次方，而计算机系统（尤其是 GPU）在处理二进制数据时，对于这些特定的数字往往更高效。
+- 不用非常严谨
 
 在中间的计算步骤中也有一些存储的需求，但他们可以忽略不计。
 
@@ -338,13 +340,13 @@ A100 的通信带宽是 300GB/s
 
 对于大batch（以512为例）有如下计算，从 comms 可得通信吞吐量为 18/512=25us，每个token的计算延时为52ms
 
-- todo：所以每 62ms都有 512 个token 被生成？是因为考虑到512个batch同时在运行吗？为什么是62ms不是53ms？会不会是comms的 18/2=9，9+53=62?
+- todo：所以每 62ms都有 512 个 token 被生成？是因为考虑到512个batch同时在运行吗？为什么是62ms不是53ms？会不会是comms的 18/2=9，9+53=62?
 
 ![image-20241005042809108](./20241001-transformer-inference-arithmetic.assets/image-20241005042809108.png)
 
 ### 结论
 
-在 comms 和 compute 两个延时中，我们选择最高的值，因为假设他们并行的（todo：不是串行的嘛？）。实际上不能保证所有系统都是并行的，且不能做到完美并行。
+在 comms 和 compute 两个延时中，我们选择最高的值，因为假设他们并行的（todo：不是串行的嘛？=> 是否有数据依赖关系（不同层，qkv，从算子有小粒度并行空间，从算法layer上依赖）；硬件是否支持）。实际上不能保证所有系统都是并行的，且不能做到完美并行。
 
 - 因此需要避免 comms 大于 compute。
 - 我们不可能通过无限量地添加 GPU 增加计算能力来从而延时降到最低，comms 会随着 GPU 变多而增大。
@@ -372,14 +374,16 @@ batch size 是指在一次推理中同时处理的请求数量。比如，batch 
 在一个编码器层中，总共有四次通信，中间穿插着计算，我们希望每步通信中flops延时时间到长于comms时间。这里用一个奇怪的比值，每bytes通信触发的flops（flops per bytes of comms）来作比较。下表展示了 flops/byte 的估计值
 
 - 在 A100 中，flops/comms = 312e12/300e9 =1040，所以我们要尽可能让表中最后行flops/byte的值大于1040以追求flops bound，由于每步通信的flops/byte都不同（d_model, 3d_model, 4d_model），如果d_model大小是1024，那每步通信前后都能做到flops bound，如果
-- TODO: flops 3B(d_model^2是如何计算出来的？)
+- TODO: flops 3B(d_model^2是如何计算出来的？) => ok
 
 ![image-20241005114754992](./20241001-transformer-inference-arithmetic.assets/image-20241005114754992.png)
 
 ### 一些结论
 
-1. 在API请求少时，batch size会很小，可以把kv cache去掉，来更多地利用flops，因为flops比内存加载更快（？todo）
+1. 在API请求少时，batch size会很小，可以把kv cache去掉，来更多地利用flops，因为flops比内存加载更快（？todo => ）
 2. 如果API请求的批量很大，可能最好还是使用允许flops bound的临界值的批量大小，因为这样子可以优化per-request-latency（todo）
+   1. 如果是 comput bound，应该用KV Cache减少 compute。如果是 memory bound，应该尽可能使用 compute
+
 3. 对于像 AlphaCode 这样的推理任务，我们可能希望插入尽可能多的gpu，所以可以尽可能增大batch size。
 
 ## flops 计算
@@ -465,11 +469,13 @@ We'll start with a 512 context length, batch size 1 and 10 tokens outputted. For
 ## Question
 
 1. memory 的计算似乎有错，写成 flops 的了 https://www.reddit.com/r/LocalLLaMA/comments/17q91ep/transformer_inference_arithmetic/
+   1. 是错了
+
 2. 在KV Cache 中的 208 是从何得来的？
 3. 是否考虑到 flops bound 和 memory bound，最佳的推理上下文长度是 208（flops/bytes）？=> reddit 有人回答，optimal context length  = （显存大小GPU VRAM - KV Cache）/ batch_size
 4. 这里的 2x12 是什么意思？
 5. ![image-20241004010757202](./20241001-transformer-inference-arithmetic.assets/image-20241004010757202.png)
-6. **KV 是历史，Q 是当前的查询**
+6. others
 
 ## Reference
 

@@ -14,7 +14,7 @@
    2. 例子：ICLR23 Unsupervised Semantic Segmentation with self-supervised object-centric representations
       1. 借助预训练模型来给无监督的数据集识别目标标记mask、并聚簇分类（自监督），由此训练 Object-Centric 模型
       2. 最终效果超过 sota，且能够学习到新的类别。
-3. 易用性 Plug-and-Play 
+3. 易用性 Plug-and-Play
    1. 尽量做一些即插即用的模块
    2. 可以是模型上的模块，也可以是一个目标函数，新的函数或新的 data augmentation 的方法。简单的东西，能够应用到各种任务上。
    3. 不需要刷榜，选多个 baseilnes，在能够承受的 setting 之下做实验，足以说明有效性，不需要在大数据集上实验。

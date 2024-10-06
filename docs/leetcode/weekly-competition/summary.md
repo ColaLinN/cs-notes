@@ -1,8 +1,42 @@
+## 417
+
+https://leetcode.cn/contest/weekly-contest-417
+
+rank 289
+
+![image-20241006191902256](./summary.assets/image-20241006191902256.png)
+
+`4/4`
+
+- [x] 1，dfs
+
+- [x] 2，滑窗
+
+- [x] 3，第二题的升级版，滑窗加优化
+
+- [x] 4，第一题的升级版，dfs
+
+## 414
+
+https://leetcode.cn/contest/weekly-contest-414/
+
+rank 2263
+
+`1/4`
+
+- [x] 1，模拟
+
+- [ ] 2 WA
+
+- [ ] 3 TLE
+
+- [ ] 4
+
 ## 412
 
 这周的 3, 4 题分别是第一第二题的数据范围升级， hard，7 分。
 
-今天身体不舒服，11.06 开始打， 大概自己 ac 了 1, 2, 4 题。但第四题是比赛后 ac 的，排名 1137 / 2681，掉了分。但这周打比赛的人怎么比上周少了一千。。
+11.06 开始打， 大概自己 ac 了 1, 2, 4 题。但第四题是比赛后 ac 的，排名 1137 / 2681，掉了分。但这周打比赛的人怎么比上周少了一千。。
 
 看起来要是准时开始打，这次还是能排名 500 到 600 左右能上分的。
 
@@ -39,8 +73,8 @@ https://leetcode.cn/contest/weekly-contest-411/ranking/
 
 - [x] 1
 - [x] 2
-- [ ] 3
-- [ ] 4
+- [ ] 3 hasn't been run yet
+- [ ] 4 MLE
 
 current rate: 1757
 
@@ -53,7 +87,7 @@ https://leetcode.cn/contest/weekly-contest-410/ranking/
 - [x] 1，Array
 - [ ] 2，Tree iteration, got problem while understanding the problem description
 - [x] 3，DP
-- [ ] 4, DP, mine is TLE
+- [ ] 4，DP,  TLE
 
 ## 409
 
