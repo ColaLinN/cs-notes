@@ -1,12 +1,14 @@
 
 
-## Connect
+# MysQL SQL CheatSheet
+
+## 连接MySQL
 
 ```sql
 mysql -h <host> -P <port> -p<pass_word> -u<user_name> -D<db_name>
 ```
 
-## Create Table
+## 创建表
 
 ```sql
 CREATE TABLE [IF NOT EXISTS] table_name (
@@ -43,19 +45,7 @@ CREATE TABLE IF NOT EXISTS `test_db`.`order_tab_00000000` (
 
 uftmb8 means to use the character of utf maximum bytes 8
 
-Viewing Comments
-
-```
-SHOW TABLE STATUS WHERE Name = 'employees';
-```
-
-Table comment
-
-```
-SHOW FULL COLUMNS FROM employees;
-```
-
-## Check the info about dbs, tables.
+## 查 DB、表的信息
 
 ```sql
 show databases;
@@ -64,9 +54,15 @@ show tables;
 
 show indexes from xxx_tab;
 DESC xxx_tab;
+
+# Viewing Comments
+SHOW TABLE STATUS WHERE Name = 'employees';
+
+# Table comment
+SHOW FULL COLUMNS FROM employees;
 ```
 
-## CRUD
+## 增删查改 CRUD
 
 ### select
 
@@ -123,9 +119,9 @@ UPDATE tenpay_withdrawal_sync_segment_tab set end_time = 1709222400 where mercha
 DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
 ```
 
-## Aggregation
+## 聚合函数 aggregation
 
-### **Distinct**
+### Distinct
 
 ```sql
 SELECT DISTINCT Country FROM Customers;
@@ -159,7 +155,7 @@ FROM table_name
 ORDER BY column1, column2, ... ASC|DESC;
 ```
 
-### **Aggregation func**
+### count(), max(), min(), sum(), avg()
 
 1. Count(), returns the number of rows that matches a specified criterion.
 2. MAX()
@@ -169,7 +165,7 @@ ORDER BY column1, column2, ... ASC|DESC;
 
 ## SWITCH CASE
 
-syntax
+语法
 
 ```
 CASE
@@ -180,7 +176,7 @@ CASE
 END;
 ```
 
-sample 1
+实例1，在 select输出中使用
 
 ```
 SELECT OrderID, Quantity,
@@ -192,7 +188,7 @@ END AS QuantityText
 FROM OrderDetails;
 ```
 
-sample 2
+实例2，在order by中使用
 
 ```
 SELECT CustomerName, City, Country
@@ -204,14 +200,14 @@ ORDER BY
 END);
 ```
 
-## Join
+## join
 
 Here are the different types of the JOINs in SQL:
 
 - `(INNER) JOIN` 返回两表都有的内容
 - `LEFT (OUTER) JOIN` 返回左表所有的内容，以及右表中匹配的内容
 - `RIGHT (OUTER) JOIN` 返回右表所有的内容，以及左表中匹配的内容
-- `FULL (OUTER) JOIN` 返回 Returns all records when there is a match in either left or right table（当左表或右表有匹配的数据时返回所有元素）
+- `FULL (OUTER) JOIN` 结合了 `LEFT JOIN` 和 `RIGHT JOIN` 的特性。它返回两个表中的所有记录，并将它们根据连接条件进行匹配。如果在连接条件中找不到匹配项，则结果集中仍然包含来自左表或右表的记录，但这些记录的另一侧将包含 `NULL` 值。
 
 ### Inner|left|right|full join
 
@@ -223,33 +219,100 @@ INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
 
 ### cross join unnest
 
-`CROSS JOIN UNNEST` 是 SQL 中的一个操作，用于将数组类型的列 "unnest" 或 "展开" 成多行。每个数组元素都会生成新的一行，其他的列值会复制到新的行中。
-
-`CROSS JOIN UNNEST (service_fee_info_list) AS T (service_fee_info)` 这段代码的意思是将 `service_fee_info_list` 这个数组展开成多行，每一行对应数组中的一个元素，并将这个元素赋值给新的列 `service_fee_info`。
-
-sample
+-   `UNNEST(items)` 将数组 `items` 展开为单独的行。
+-   `CROSS JOIN` 将每个订单与其展开的每个项目进行连接。
 
 ```
-WITH item_service_fee_info AS (
-SELECT orderid, service_fee_info
-FROM item_service_fee_info_list
-CROSS JOIN UNNEST (service_fee_info_list) AS T (service_fee_info)
-)
+SELECT order_id, item
+FROM orders
+CROSS JOIN UNNEST(items) AS item;
 ```
 
-### Self join
+orders表为
 
-A self join is a regular join, but the table is joined with itself.
+| order_id | items               |
+| -------- | ------------------- |
+| 1        | ['apple', 'banana'] |
+| 2        | ['orange', 'peach'] |
+
+结果集为
+
+| order_id | item   |
+| -------- | ------ |
+| 1        | apple  |
+| 1        | banana |
+| 2        | orange |
+| 2        | peach  |
+
+### self join
+
+`SELF JOIN` 是指同一个表的连接，用于在同一个表中查找相关数据。通常用于需要比较同一表中不同行的数据的情况。
+
+输入
+
+| employee_id | name  | manager_id |
+| ----------- | ----- | ---------- |
+| 1           | Alice | NULL       |
+| 2           | Bob   | 1          |
+| 3           | Carol | 1          |
+| 4           | Dave  | 2          |
 
 ```
-SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City
-FROM Customers A, Customers B
-WHERE A.CustomerID <> B.CustomerID
-AND A.City = B.City
-ORDER BY A.City;
+SELECT e1.name AS employee, e2.name AS manager
+FROM employees e1
+LEFT JOIN employees e2 ON e1.manager_id = e2.employee_id;
 ```
 
-### Union
+输出
+
+| employee | manager |
+| -------- | ------- |
+| Alice    | NULL    |
+| Bob      | Alice   |
+| Carol    | Alice   |
+| Dave     | Bob     |
+
+## union
+
+`UNION` 操作符用于组合两个或多个 `SELECT` 语句的结果集。它会移除结果集中所有的重复值，仅保留唯一的记录。
+
+需要是
+
+1.  相同的列数：每个 `SELECT` 语句必须返回相同数量的列。
+2.  相似的数据类型：对应列的数据类型必须相似或兼容。
+3.  相同的列顺序：每个 `SELECT` 语句中的列顺序必须相同。
+
+输入
+
+表 `table1`:
+
+| id   | name  |
+| ---- | ----- |
+| 1    | Alice |
+| 2    | Bob   |
+
+表 `table2`:
+
+| id   | name  |
+| ---- | ----- |
+| 2    | Bob   |
+| 3    | Carol |
+
+Union sql
+
+```
+SELECT id, name FROM table1
+UNION
+SELECT id, name FROM table2;
+```
+
+输出
+
+| id   | name  |
+| ---- | ----- |
+| 1    | Alice |
+| 2    | Bob   |
+| 3    | Carol |
 
 The `UNION` operator is used to combine the result-set of two or more `SELECT` statements.
 
@@ -263,19 +326,28 @@ UNION
 SELECT column_name(s) FROM table2;
 ```
 
-UNION ALL
+### union all
 
-The `UNION` operator selects only distinct values by default. To allow duplicate values, use `UNION ALL`:
+`UNION ALL` 操作符也用于组合两个或多个 `SELECT` 语句的结果集，但它不会移除重复值。所有记录，包括重复的记录，都会包含在结果集中。
 
 ```
-SELECT column_name(s) FROM table1
+SELECT id, name FROM table1
 UNION ALL
-SELECT column_name(s) FROM table2;
+SELECT id, name FROM table2;
 ```
 
-## Convert
+结果如下，与union不同，不会去除重复的记录 Bob
 
-### **time convert**
+| id   | name  |
+| ---- | ----- |
+| 1    | Alice |
+| 2    | Bob   |
+| 2    | Bob   |
+| 3    | Carol |
+
+## 格式化
+
+### time convert
 
 ```sql
 from_unixtime(create_time, "%Y%M%D%H") as timestamp
@@ -285,7 +357,7 @@ to_unixtime(timestamp '2024-03-10 00:00:00 UTC+8')
 to_unixtime(date_trunc('day', current_timestamp AT TIME ZONE 'Asia/Singapore' - interval '7' day)) AS start_time
 ```
 
-### **Json extract**
+### json extract
 
 1. simple extraction
 2. nested JSON objects
@@ -302,7 +374,7 @@ to_unixtime(date_trunc('day', current_timestamp AT TIME ZONE 'Asia/Singapore' - 
 }
 ```
 
-=>
+usage =>
 
 ```sql
 SELECT JSON_EXTRACT(json_column, '$.key1.key2')
@@ -324,7 +396,7 @@ if the JSON string in the `json_column` is structured like this:
 }
 ```
 
-=>
+usage =>
 
 ```sql
 JSON_EXTRACT(json_column, '$.key1.key2.key3')
@@ -345,7 +417,7 @@ JSON_EXTRACT(json_column, '$.key1.key2.key3')
 }
 ```
 
-=>
+usage =>
 
 The `[*]` syntax is to extract all values in the array, rather than just a specific index.
 
@@ -363,7 +435,7 @@ cast(
 ) as service_fee_info_list
 ```
 
-### Cast
+### cast
 
 1. `BIGINT`
 2. `Array<JSON>`
@@ -380,7 +452,7 @@ cast(
 CAST(service_fee AS double)
 ```
 
-## Format
+### format
 
 ```sql
 FORMAT(value, format_pattern, culture)
@@ -399,22 +471,9 @@ SELECT FORMAT (@d, 'd', 'en-US') AS 'US English Result',
        FORMAT (@d, 'd', 'zu') AS 'Zulu Result';
 ```
 
-## Aliases
-
-An alias only exists for the duration of that query.
-
-An alias is created with the `AS` keyword.
-
-```sql
-SELECT column_name AS alias_name
-FROM table_name;
-```
-
-## Operators
+## 算数操作
 
 https://www.w3schools.com/sql/sql_operators.asp
-
-### Arthmetics operators
 
 - +
 - -
@@ -438,7 +497,7 @@ Compound
 
 Logical Operators
 
-## Variable
+## 变量
 
 > from chatgpt
 
@@ -476,9 +535,9 @@ SELECT COUNT(*) INTO @rowCount FROM myTable;
 
 请注意，MySQL 中的变量作用范围是会话级别的，也就是说，在同一个会话中，变量可以在多个查询之间保持持久性。然而，当会话结束时，变量的值将被清除。
 
-## Common Table Expression (CTE) `WITH`
+## 公用表表达式 `WITH`
 
-WITH语句也被称为公共表表达式（Common Table Expression，CTE），它可以用来定义一个临时的结果集，这个结果集可以在随后的SELECT、INSERT、UPDATE或DELETE语句中使用。
+`WITH` 子句也称为公用表表达式（CTE），在 SQL 中用于定义一个临时结果集，该结果集可以在后续的 `SELECT`、`INSERT`、`UPDATE` 或 `DELETE` 语句中引用。`WITH` 子句在定义后立即与后面的主查询连接在一起。它的作用范围仅限于紧接其后的一个 SQL 语句。
 
 下面介绍两个 case
 
@@ -668,7 +727,36 @@ WHERE returns.refund_amount_adjustable
   OR faulty_orders.initial_fee_amount * ((returns.max_refundable_amount - returns.refund_amount)/ 100000) / returns.max_refundable_amount * 100000 >= faulty_orders.updated_fee_amount + 100000)
 ```
 
-## 3
+## 3 Order by year
+
+```
+WITH status_map AS (
+    SELECT 1 AS status_int, 'Active' AS status
+    UNION ALL
+    SELECT 2 AS status_int, 'Inactive' AS status
+    UNION ALL
+    SELECT 3 AS status_int, 'Pending' AS status
+)
+SELECT 
+    t.region,
+    YEAR(t.timestamp) AS year,
+    t.status_int,
+    s.status,
+    COUNT(*) AS count
+FROM 
+    my_table t
+JOIN 
+    status_map s ON t.status_int = s.status_int
+GROUP BY 
+    t.region, 
+    YEAR(t.timestamp),
+    t.status_int,
+    s.status
+ORDER BY
+    t.region, 
+    YEAR(t.timestamp),
+    t.status_int;
+```
 
 ## Reference
 
