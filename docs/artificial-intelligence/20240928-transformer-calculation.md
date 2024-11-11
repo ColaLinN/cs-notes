@@ -80,7 +80,7 @@ Query，Key 和 Value 的矩阵计算如下图所示，为 `(WQ, WK, WV)`
 - 开方 dk（dimension of Key vector），由于 key 长度一般为 64，所以开方 dk 为 8
 - 下面 Q 是要计算自注意力的 word，而 K，V 为输入序列每个 word 的
 - **KV 是历史，Q 是当前的查询**
-- 此处为QxK为矩阵乘，Softmax()与V为点积
+- 此处为QxK为点积，Softmax()与V为点积
 
 
 ![image-20240928110947946](./20240928-transformer-calculation.assets/image-20240928110947946.png)

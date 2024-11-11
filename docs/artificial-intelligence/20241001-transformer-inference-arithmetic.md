@@ -138,7 +138,7 @@ KV cache 的目的是避免对一个 token 的重复计算，因为参数是固�
 
 ### flops bound VS memory bound
 
-A100 每秒可以执行 312e12 次 flops 操作，内存带宽为每秒 1.5e12 bytes， `312/1.5=208`，所需的存储和计算时间如下
+A100 每秒可以执行 312e12 次 flops 操作（312TFLOPS），内存带宽为每秒 1.5e12 bytes， `312/1.5=208`，所需的存储和计算时间如下
 
 - memory 的计算似乎写错了，作者写成 flops 的了？ https://www.reddit.com/r/LocalLLaMA/comments/17q91ep/transformer_inference_arithmetic/
 
