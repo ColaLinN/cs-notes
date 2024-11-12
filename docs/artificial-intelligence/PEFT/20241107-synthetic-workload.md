@@ -33,6 +33,36 @@
 
 
 
+Req queue 参数
+
+1. batch_max_tokens，一个batch中最大的的tokens数量，默认为none，必须大于一个req的最大token数量。（看起来是input tokens的限制）
+   1. 取max(int(1 / 6 * args.max_total_token_num), args.max_req_total_len)
+   2. 当前args.max_total_token_num为6000，args.max_req_total_len配置为4096，所以batch_size最大为4096
+2. max_total_token_num，GPU可以支持的总tokens数量，max_batch * (input_len + output_len)，默认为6000。一个req的input+ouput tokens数量不得多于这个max_total_token_num
+3. running_max_req_size，最多的forward的req数量，默认为1000
+4. max_req_total_len，一个req最大的tokens数量。一个新的req的总tokens数量（input_len+output_len）不能够大于max_req_total_len
+5. max_req_input_len，一个req最大的input_len。一个req的prompt长度不能够大于max_req_input_len
+6. 
+
+
+
+req_queue的一些规则
+
+1. generate_batch 
+   1. 每次都会根据当前的running_batch来生成cache_len_list
+   2. 会根据 new_batch_total_tokens + req.input_len <= self.batch_max_tokens 来生成batch
+   3. 其中会调用_can_add_new_req()来判断加入这个req后，cache_len_list的长度会不会超过running_max_req_size，需要的tokens数量是否不超过max_total_tokens
+
+在这个情况下，长尾的req的假设
+
+1. 如果同时输入input_len几乎等于batch_max_tokens，此时另一个短req就会等待
+2. 会不会在prefilling的时候，一个短input_len的req和一个长input_len的req同时被batch，此时短req会需要等待长req处理完？
+3. 会不会在decoding的时候，一个短ouput_len的req和一个长output_len的req同时被batch，此时短req会需要等待长req处理完？
+
+
+
+
+
 ## 模型请求测试
 
 ```
