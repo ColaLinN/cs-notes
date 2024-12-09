@@ -47,9 +47,9 @@
 
 ![image-20240928104049409](./20240928-transformer-calculation.assets/image-20240928104049409.png)
 
-第二步需要计算单词与句子中其他单词的自注意力分数
+第二步需要计算单词与句子中其他单词的自注意力分数（点积）
 
-如下图中，Thinking 与 Thinking 的自注意力为 `q1*k1`，与 `Machines` 的自注意力为 `q1*k2`
+如下图中，Thinking 与 Thinking 的自注意力为 `q1*k1`，与 Machines 的自注意力为 `q1*k2`
 
 ![image-20240928104519252](./20240928-transformer-calculation.assets/image-20240928104519252.png)
 
@@ -61,7 +61,7 @@
 
 
 
-第五步： 各个单词的 Value 乘以 Softmax 输出得到加权的 Value，可知注意力权重越大，Value 保留的值也越多。
+第五步： 各个单词的 Value 矩阵乘Softmax的输出得到加权的 Value，可知注意力权重越大，Value 保留的值也越多。
 
 第六步：把这些分数加起来，所以 Thinking 的总分是 `v1*Softmax(q1k1)+v2*Softmax(q1k2)`
 
@@ -80,7 +80,9 @@ Query，Key 和 Value 的矩阵计算如下图所示，为 `(WQ, WK, WV)`
 - 开方 dk（dimension of Key vector），由于 key 长度一般为 64，所以开方 dk 为 8
 - 下面 Q 是要计算自注意力的 word，而 K，V 为输入序列每个 word 的
 - **KV 是历史，Q 是当前的查询**
-- 此处为QxK为点积，Softmax()与V为点积
+- 此处为QxK为点积，Softmax()@V为矩阵乘
+  - 这里Q长度为
+
 
 
 ![image-20240928110947946](./20240928-transformer-calculation.assets/image-20240928110947946.png)

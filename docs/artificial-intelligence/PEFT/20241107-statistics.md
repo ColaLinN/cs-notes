@@ -8,9 +8,19 @@
 
 1. 均值 Mean。`sum(gi)/n`，表示所有人分数的平均值
 2. 众数 Mode。数据中最常出现的值。
-3. 平均差 Mean Absolute Deviation。`sum(gi-mean)/n`，表示了所有人分数离均值的平均差距
-4. 方差 Variance。`sum(gi-mean)^2/n`，表示了所有人分数离均值距离的平方的平均，比平均差对偏差更敏感。数据分布广时，方差大。
-5. 标准差 Standard Deviation。`(sum(gi-mean)^2/n)^1/2`，表示数据的离散程度，与实际数据单位一致，更便于进行比较。
+3. 中位数 Median。代表着？
+4. 平均差 Mean Absolute Deviation。`sum(gi-mean)/n`，表示了所有人分数离均值的平均差距。
+5. 方差 Variance。`sum(gi-mean)^2/n`，表示了所有人分数离均值距离的平方的平均，比平均差对偏差更敏感。数据分布广时，方差大。
+6. 标准差 Standard Deviation。`(sum(gi-mean)^2/n)^1/2`，表示数据的离散程度，与实际数据单位一致，更便于进行比较。
+
+## LLM stat
+
+- avg tokens(prompt+generate) throughput, tokens/s
+  - self.all_tokens/(now-self.last_log_time) 
+- Avg prompt tokens throughput, tokens/s
+  - self.prompt_tokens/(now-self.last_log_time)
+- Avg generate tokens throughput, tokens/s
+  - self.output_tokens/(now-self.last_log_time)
 
 ## 概率密度分布图vs频数分布图
 
