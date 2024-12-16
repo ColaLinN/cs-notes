@@ -1,8 +1,16 @@
-## WIFI Port Redirect public requests to my laptop
+# WIFI Port Redirect public requests to my laptop
 
 需求
 
 - 带公网IP的宽带：Broadband with public IP
+
+## 获取公网IP
+
+新加坡的宽带基本都能够分配一个公网IP，而国内则是需要另申请。
+
+如何找到这个公网IP呢？可以在
+
+## 端口转发
 
 一般来说家用路由器局域网IP地址为196.168.xxx.xxx，每个连上路由器WIFI的设备都会被分配一个IP地址。
 
@@ -53,15 +61,13 @@ if __name__ == "__main__":
 
 ![image-20241216010907297](./20241216-wifi-port-redirection.assets/image-20241216010907297.png)
 
-配置完后我们即可在公网IP访问我们的服务了，由于没有配置https，所以需要使用http协议访问
+配置完后我们即可在公网IP访问我们的服务了，由于没有配置https，所以需要使用http协议访问 http://public_ip:8080 
 
-http://116.88.237.167:8080
+![image-20241216011247564](./20241216-wifi-port-redirection.assets/image-20241216011247564.png)
 
-成功
-
-![image-20241216011018182](./20241216-wifi-port-redirection.assets/image-20241216011018182.png)
-
-
+- [ ] (TODO) 配置域名
+- [ ] (TODO) 配置域名，不带port访问，nginx 反向代理把特定域名链接请求导向某个port
+- [ ] (TODO) 配置HTTPS
 
 
 
