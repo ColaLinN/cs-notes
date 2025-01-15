@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 id: practise-coding-record
-title: 纳米飞刃技术集/Feiren Tech Summary
+title: Docs Summary
 tags: [intro]
 ---
 

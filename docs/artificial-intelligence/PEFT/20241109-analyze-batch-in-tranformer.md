@@ -67,15 +67,7 @@ https://zhuanlan.zhihu.com/p/718715866
 
 
 
-
-
-
-
-
-
-
-
-## Pytorch自动将张量的第一维视为batch_size
+## Pytorch将张量的第一维视为batch_size
 
 PyTorch 会自动将张量的第一维视为 `batch_size`，即批次大小。默认情况下，PyTorch 的大多数神经网络模块（如 `nn.Linear`、`nn.Conv2d` 等）和操作（如 `torch.mean`、`torch.sum` 等）会沿着第一维进行并行计算，通过批次维度同时传入模型。，从而让整个批次的样本同时通过模型。
 
