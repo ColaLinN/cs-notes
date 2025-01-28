@@ -23,6 +23,7 @@ tags: [intro]
 ## 全部文章 All Articles
 
 -   ...
+-   081 [数据库索引 Database Index](https://doc.fenglyulin.com/docs/database/mysql-index)
 -   080 [Shell Script All in One](https://doc.fenglyulin.com/docs/web-full-stack/linux/shell)
 -   079 [Authentication, Authorization, Token and JWT](https://doc.fenglyulin.com/docs/web-full-stack/backend/authentication-01)
 -   078 [Machine/Deep Learning Overview](https://doc.fenglyulin.com/docs/mlsys/deep-learning-overview)
