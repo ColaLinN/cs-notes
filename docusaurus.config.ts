@@ -112,7 +112,7 @@ const config: Config = {
         },
         {
           type: 'doc',
-          docId: 'database/essential-knowledge',
+          docId: 'database/overview',
           position: 'right',
           label: 'Database',
         },
