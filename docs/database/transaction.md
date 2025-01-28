@@ -1,4 +1,4 @@
-## Transaction
+## MySQL Transaction
 
 事务必须要遵守 4 个特性，分别如下：
 

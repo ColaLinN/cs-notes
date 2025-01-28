@@ -4,7 +4,7 @@ title: MySQL Lock Types
 tags: [MySQL, Database]
 ---
 
-# Lock types
+# MySQL Lock
 
 ## Shared and Exclusive Lock
 
