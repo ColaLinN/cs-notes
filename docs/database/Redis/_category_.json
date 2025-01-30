@@ -1,6 +1,6 @@
 {
-  "label": "Todo",
-  "position": 12,
+  "label": "Redis",
+  "position": 11,
   "link": {
     "type": "generated-index"
   }
