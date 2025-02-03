@@ -85,7 +85,7 @@ API 设计
 1. 哈希函数（带碰撞检测）
 1. base62 编码
 
-哈希函数
+**哈希函数**
 
 1. 组成：`[0-9,a-z,A-Z]` 总共 62 位，所以只需要生成 7 位，就可以支持 `62^7~= 3.5Trillion` 个哈希值，超过需求的 `365B` 个不同短链
 2. 生成方法：crc32, md5, sha-1 等
@@ -96,7 +96,7 @@ API 设计
 
 > TODO：流程图
 
-base62 编码
+**base62 编码**
 
 1. 组成：`[0-9,a-z,A-Z]` 总共 62 位
 2. 生成方法：不断模除 62，每次的余数都映射成 `[0-9,a-z,A-Z]` ，直到余数为 0
@@ -112,7 +112,7 @@ base62 编码
 
 > TODO: 流程图
 
-哈希函数和 base 62 的对比
+**哈希函数和 base 62 的对比**
 
 | 方法                   | 哈希（碰撞检测） | base62 编码    |
 | ---------------------- | ---------------- | -------------- |
@@ -133,8 +133,8 @@ base62 编码
 1. id, primary key, bigint
 2. short_url, string
 3. long_url, string
-4. c_time, bigint (if need)
-5. m_time, bigint (if need)
+4. c_time, bigint (if needed)
+5. m_time, bigint (if needed)
 
 其中 id 是否是自增（auto_increment），取决于
 

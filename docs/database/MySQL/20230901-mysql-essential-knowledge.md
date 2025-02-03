@@ -1,10 +1,10 @@
 ---
 sidebar_position: 1
-title: Essential Knowledge of MySQL Database
+title: Essential Knowledge of MySQL
 tags: [MySQL, Database]
 ---
 
-# Essential Knowledge of MySQL Database
+# Essential Knowledge of MySQL
 
 ## How is a query processed?
 
@@ -131,7 +131,7 @@ Index: used to expedite the query process
 
 Hash Table, Array, Binary Balance Tree, B+ Tree
 
-## Hash Table
+### Hash Table
 
 1. Pros: Easy to query and add Key-Value Data
    1. Use Linked List to solve hash coalition problem

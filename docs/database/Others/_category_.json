@@ -1,6 +1,6 @@
 {
-  "label": "Database",
-  "position": 12,
+  "label": "Others",
+  "position": 1000,
   "link": {
     "type": "generated-index"
   }
