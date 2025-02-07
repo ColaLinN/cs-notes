@@ -787,3 +787,4 @@ ORDER BY
 1. w3school https://www.w3schools.com/sql/sql_groupby.asp
 2. SQL JSON_EXTRACT Walkthrough With Examples https://www.beekeeperstudio.io/blog/sql-json-extract
 3. json extract real case: https://stackoverflow.com/questions/15701579/how-to-retrieve-json-data-from-mysql
+4. BEGIN...END vs START TRANSACTION...COMMIT https://stackoverflow.com/questions/62614788/begin-end-vs-start-transaction-commit
