@@ -105,7 +105,7 @@ const config: Config = {
         },
         {
           type: 'doc',
-          docId: 'system-design/from-zero-to-millions',
+          docId: 'system-design/overview',
           position: 'right',
           label: 'System Design',
         },

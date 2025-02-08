@@ -1,10 +1,10 @@
 ---
 sidebar_position: 5
-title: Consistent Hashing
+
 tags: [System Design]
 ---
 
-# 一致性哈希
+# 一致性哈希 Consistent Hashing
 
 一致性哈希主要是用来解决哈希不均的问题
 

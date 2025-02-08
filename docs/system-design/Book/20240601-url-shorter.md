@@ -1,10 +1,9 @@
 ---
 sidebar_position: 8
-title: URL Shortener
 tags: [System Design]
 ---
 
-# Distributed URL Shortener
+# 短链生成系统 URL Shortener System
 
 分布式、高性能短链生成服务
 
@@ -141,7 +140,7 @@ API 设计
 - 是否使用 base62 这类需要唯一 ID 生成的哈希方法
 - 是否对可扩展、高性能、单点容错有需求
 
-![image-20240916195258206](./08 URL shortener.assets/image-20240916195258206.png)
+![image-20240916195258206](./20240601-url-shorter.assets/image-20240916195258206.png)
 
 ## 性能需求
 

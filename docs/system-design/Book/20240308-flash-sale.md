@@ -1,10 +1,9 @@
 ---
 sidebar_position: 20
-title: Flash Sale Architecture
 tags: [System Design]
 ---
 
-# Flash Sale System Desgin
+# 闪购系统 Flash Sale System
 
 秒杀设计
 
@@ -20,7 +19,7 @@ tags: [System Design]
 
 
 
-![image-20240913174533680](240308 20 Flash Sale Architecture.assets/image-20240913174533680.png)
+![image-20240913174533680](./20240308-flash-sale.assets/image-20240913174533680.png)
 
 ## 如何限流
 

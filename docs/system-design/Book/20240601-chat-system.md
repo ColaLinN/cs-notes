@@ -1,10 +1,9 @@
 ---
 sidebar_position: 12
-title: Chat System
 tags: [System Design]
 ---
 
-## How to design a WeChat?
+# 即时通信系统 Chat System
 
 In this article, we will explore the design of chat system including the following points.
 
@@ -15,7 +14,7 @@ In this article, we will explore the design of chat system including the followi
 - Key-value stores for chat history
 - Push notification services for sending push notification.
 
-![image-20240511123108871](./12-chat-system.assets/image-20240511123108871.png)
+![image-20240511123108871](./20240601-chat-system.assets/image-20240511123108871.png)
 
 ## The questions about the scope
 
@@ -40,7 +39,7 @@ Client initiates HTTP connection to server and send msg to others through server
 
 The keep-alive is efficient as it reduces the number of handshakes.
 
-![image-20240511123214492](./12-chat-system.assets/image-20240511123214492.png)
+![image-20240511123214492](./20240601-chat-system.assets/image-20240511123214492.png)
 
 ## Server-initiated connection techniques
 
@@ -50,7 +49,7 @@ The keep-alive is efficient as it reduces the number of handshakes.
 
 ### Polling
 
-![image-20240511123238160](./12-chat-system.assets/image-20240511123238160.png)
+![image-20240511123238160](./20240601-chat-system.assets/image-20240511123238160.png)
 
 Polling is client periodically request servers for the newest messages.
 
@@ -64,7 +63,7 @@ Cons:
 
 ### Long Polling
 
-![image-20240511123248661](./12-chat-system.assets/image-20240511123248661.png)
+![image-20240511123248661](./20240601-chat-system.assets/image-20240511123248661.png)
 
 Client holds the long connection open until timeout or new messages coming.
 
@@ -81,13 +80,13 @@ Cons:
 
 ### WebSocket
 
-![image-20240511123303251](./12-chat-system.assets/image-20240511123303251.png)
+![image-20240511123303251](./20240601-chat-system.assets/image-20240511123303251.png)
 
 Websocket is initiated by client. It is bi-directional and persistent.
 
 It starts as a HTTP connection and be upgraded to websocket via some well-defined handshake.
 
-![image-20240511123322758](./12-chat-system.assets/image-20240511123322758.png)
+![image-20240511123322758](./20240601-chat-system.assets/image-20240511123322758.png)
 
 Pros:
 
@@ -109,7 +108,7 @@ We can have a high level design consists of the follwing entities.
 - Load Balancing
 - KV store
 
-![image-20240511171358338](./12-chat-system.assets/image-20240511171358338.png)
+![image-20240511171358338](./20240601-chat-system.assets/image-20240511171358338.png)
 
 
 
@@ -137,7 +136,7 @@ Here, we choose key-value store for the following reasons:
 
 The message_id can be used to order messages. We won't use create_time because two messages can be created at the same time.
 
-![image-20240511181051571](./12-chat-system.assets/image-20240511181051571.png)
+![image-20240511181051571](./20240601-chat-system.assets/image-20240511181051571.png)
 
 **Message table for group chat**
 
@@ -147,7 +146,7 @@ channel_id is the group id, so we can know this message should be sent to which 
 
 user_id is the sender.
 
-![image-20240511181123970](./12-chat-system.assets/image-20240511181123970.png)
+![image-20240511181123970](./20240601-chat-system.assets/image-20240511181123970.png)
 
 **How to generate message_id?**
 
@@ -175,7 +174,7 @@ The service discovery will pick up the best services for clients based on predef
 
 > What's the diff between this and load balancer?
 
-![image-20240511182703749](./12-chat-system.assets/image-20240511182703749.png)
+![image-20240511182703749](./20240601-chat-system.assets/image-20240511182703749.png)
 
 ### Message Flow
 
@@ -183,12 +182,12 @@ The service discovery will pick up the best services for clients based on predef
 
 - Message sync queue
 
-![image-20240511182717946](./12-chat-system.assets/image-20240511182717946.png)
+![image-20240511182717946](./20240601-chat-system.assets/image-20240511182717946.png)
 
 - Message synchronization across multiple devices
   - The max_read_index on app of devices
 
-![image-20240511182747157](./12-chat-system.assets/image-20240511182747157.png)
+![image-20240511182747157](./20240601-chat-system.assets/image-20240511182747157.png)
 
 **small group chat flow**
 
@@ -209,13 +208,13 @@ disconnect
 - Heartbeat
 - Set status as offline while timeout
 
-![image-20240511183824732](./12-chat-system.assets/image-20240511183824732.png)
+![image-20240511183824732](./20240601-chat-system.assets/image-20240511183824732.png)
 
 Online status fanout
 
 - publish-subscribe channel
 
-![image-20240511183812976](./12-chat-system.assets/image-20240511183812976.png)
+![image-20240511183812976](./20240601-chat-system.assets/image-20240511183812976.png)
 
 ## Wrap Up
 

@@ -1,12 +1,12 @@
 
 
-# Scale Nginx when encountering performance bottlenecks
+# Nginx高可用
 
 我们用nginx做流量反向代理负载均衡，那如果nginx也成为单点瓶颈呢？怎么拆分？
 
 
 
-![image-20240913173319911](240912-nginx-scale.assets/image-20240913173319911.png)
+![image-20240913173319911](./20240912-nginx-scale.assets/image-20240913173319911.png)
 
 ```plantuml
 @startuml

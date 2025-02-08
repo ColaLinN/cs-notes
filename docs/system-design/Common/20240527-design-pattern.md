@@ -1,4 +1,4 @@
-# Design Pattern
+# 设计模式 Design Pattern
 
 ## 简述设计模式七大原则
 
@@ -42,11 +42,11 @@
 
 ### 饿汉式实现
 
-![image-20240527013740783](./240527-26-design-pattern.assets/image-20240527013740783.png)
+![image-20240527013740783](./20240527-design-pattern.assets/image-20240527013740783.png)
 
 ### 懒汉式实现
 
-![image-20240527013733970](./240527-26-design-pattern.assets/image-20240527013733970.png)
+![image-20240527013733970](./20240527-design-pattern.assets/image-20240527013733970.png)
 
 ## 简述代理模式
 

@@ -1,10 +1,9 @@
 ---
 sidebar_position: 21
-title: The Evolution of Web Service Architecture
 tags: [System Design]
 ---
 
-# The Evolution of Web Service Architecture
+# 网络架构的演变 The Evolution of Web Service Architecture
 
 凤凰架构
 
@@ -50,7 +49,7 @@ UNIX 的分布式设计哲学
 
 >   两个披萨原则
 
-![image-20230207202319654](./21 网络架构的演变.assets/image-20230207202319654.png)
+![image-20230207202319654](./20231001-web-architecture.assets/image-20230207202319654.png)
 
 单体架构的问题：
 
@@ -83,13 +82,13 @@ UNIX 的分布式设计哲学
 >
 >   将这些主数据，连同其他可能被各子系统使用到的公共服务、数据、资源集中到一块，成为一个被所有业务系统共同依赖的核心（Kernel，也称为 Core System）
 
-![image-20230207211758271](./21 网络架构的演变.assets/image-20230207211758271.png)
+![image-20230207211758271](./20231001-web-architecture.assets/image-20230207211758271.png)
 
 [事件驱动架构](https://en.wikipedia.org/wiki/Event-driven_architecture)（Event-Driven Architecture）
 
 >   为了能让子系统互相通信，一种可行的方案是在子系统之间建立一套**事件队列管道（Event Queues）**，来自系统外部的消息将以事件的形式发送至管道中，各个子系统从管道里获取、处理和发送事件消息
 
-![image-20230207211807905](./21 网络架构的演变.assets/image-20230207211807905.png)
+![image-20230207211807905](./20231001-web-architecture.assets/image-20230207211807905.png)
 
 2006 年情况才有所变化，由 IBM、Oracle、SAP 等公司共同成立了 OSOA 联盟（Open Service Oriented Architecture），2007 年，在[结构化资讯标准促进组织](https://en.wikipedia.org/wiki/OASIS_(organization))（Organization for the Advancement of Structured Information Standards，OASIS）的倡议与支持下，OSOA 由一个软件厂商组成的松散联盟，转变为一个制定行业标准的国际组织，联合 OASIS 共同新成立了的[Open CSA](http://www.oasis-opencsa.org/) 组织（Open Composite Services Architecture），这便是 SOA 的官方管理机构。
 
@@ -198,7 +197,7 @@ SOA 在 21 世纪最初的十年里曾经盛行一时，有 IBM 等一众行业�
 
 >   微服务 A 调用了微服务 B 的两个服务，称为 B1和 B2，假设 B1表现正常但 B2出现了持续的 500 错，那在达到一定阈值之后就应该对 B2进行熔断，以避免产生[雪崩效应](https://en.wikipedia.org/wiki/Snowball_effect)。如果仅在基础设施层面来处理，这会遇到一个两难问题，切断 A 到 B 的网络通路则会影响到 B1的正常调用，不切断的话则持续受 B2的错误影响。
 
-![image-20230207224216673](./21 网络架构的演变.assets/image-20230207224216673.png)
+![image-20230207224216673](./20231001-web-architecture.assets/image-20230207224216673.png)
 
 
 
@@ -206,7 +205,7 @@ SOA 在 21 世纪最初的十年里曾经盛行一时，有 IBM 等一众行业�
 
 为了解决这一类问题，虚拟化的基础设施很快完成了第二次进化，引入了今天被称为“[服务网格](https://en.wikipedia.org/wiki/Service_mesh)”（Service Mesh）的“边车代理模式”（Sidecar Proxy）
 
-![image-20230207224727480](./21 网络架构的演变.assets/image-20230207224727480.png)
+![image-20230207224727480](./20231001-web-architecture.assets/image-20230207224727480.png)
 
 这个场景里指的具体含义是由系统自动在服务容器（通常是指 Kubernetes 的 Pod）中注入一个通信代理服务器，相当于那个挎斗，以类似网络安全里中间人攻击的方式进行流量劫持，在应用毫无感知的情况下，悄然接管应用所有对外通信。
 
