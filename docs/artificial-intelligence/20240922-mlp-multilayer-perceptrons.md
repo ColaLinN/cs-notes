@@ -14,7 +14,7 @@
 
 - 层数计算：输入层不涉及任何计算，输出只与隐藏层和输出层有关，所以下图 MLP 有 2 层全连接层。
 - 激活函数：使 MLP 有能力表示非线性函数
-- 隐藏层：在 MLP 中为全连接层
+- 隐藏层：在 MLP 中为全连接层（Fully Connected, FC)
 
 ![image-20240923141516218](./20240922-mlp-multilayer-perceptrons.assets/image-20240923141516218.png)
 
@@ -59,6 +59,8 @@ d2l.plot(x.detach(), y.detach(), 'x', 'relu(x)', figsize=(5, 2.5))
 ![image-20240923143219530](./20240922-mlp-multilayer-perceptrons.assets/image-20240923143219530.png)
 
 当输入为负时，ReLU函数的导数为0，而当输入为正时，ReLU函数的导数为1。当输入为 0 时，ReLU函数不可导，默认使用左边的 0。
+
+-   所以后向传播梯度下降只会更新positive的输入，negative的输入则保持不变
 
 ```python
 y.backward(torch.ones_like(x), retain_graph=True)
@@ -134,6 +136,28 @@ d2l.plot(x.detach(), x.grad, 'x', 'grad of tanh', figsize=(5, 2.5))
 
 ## MLP 其他
 
+### 例子：two-layers MLP
+
+![image-20250203192355465](20240922-mlp-multilayer-perceptrons.assets/image-20250203192355465.png)
+
+### Loss
+
+如果对每个w11,w21计算loss，会得到一个梯度图 => 凸优化
+
+![image-20250203192825106](20240922-mlp-multilayer-perceptrons.assets/image-20250203192825106.png)
+
+### 后向传播，Backpropagation
+
+-   从output开始计算loss，往前计算梯度
+-   如果传播到input，就可以用来改变数据的class
+-   后向传播也会apply到ReLU激活层
+
+### batch
+
+-   input is batch
+-   loss calculation in batch
+-   backpropagration will update the parameters at a time
+
 ### 过拟合和欠拟合。以及验证集
 
 1.   影响模型泛化的因素
@@ -147,6 +171,12 @@ d2l.plot(x.detach(), x.grad, 'x', 'grad of tanh', figsize=(5, 2.5))
      1.   不能和训练数据混在一起
      2.   K则交叉验证，k也是一个参数：`0~10` 之间
 4.   测试数据集：只能用一次
+
+### pytorch代码
+
+-   一个MLP有两个compution graph，一个前向，一个后向
+-   `requires_grad_()`会记住前向传播中所有的操作，然后在后向传播`loss.backward()`重播
+-   `deatch()`，每个minibatch都要deatch()，用以从compution graph中deatch出来，也就是从内存中卸载，避免OOM
 
 ### Dropout
 
@@ -166,6 +196,7 @@ Dropout 可以在层之间加入噪音。
 
 ## TODO
 
+1. k(ay1+ay2)是怎么梯度下降到a的？
 1. 权重衰减和暂退法是正则化技术嘛
 1. python 训练过程中如何保存中间参数值 checkpoint，有没有 SOP？
 1. 前向传播、反向传播与计算图

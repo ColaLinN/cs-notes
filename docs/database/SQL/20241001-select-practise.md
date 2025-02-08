@@ -2,8 +2,6 @@
 
 https://leetcode.cn/studyplan/sql-free-50/
 
-
-
 ## [1757. Recyclable and Low Fat Products](https://leetcode.cn/problems/recyclable-and-low-fat-products/)
 
 enum equal comparision

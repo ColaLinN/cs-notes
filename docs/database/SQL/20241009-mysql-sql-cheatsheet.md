@@ -163,9 +163,33 @@ ORDER BY column1, column2, ... ASC|DESC;
 4. SUM(), returns the total sum of a numeric column.
 5. AVG(), returns the average value of a numeric column.
 
+### 事务 Transaction
+
+```sql
+-- 开启事务
+START TRANSACTION;
+-- 执行查询或更新语句
+SELECT ...;
+UPDATE ...;
+-- 提交事务
+COMMIT;
+
+-- 场景2
+START TRANSACTION;
+SELECT ...;
+UPDATE ...;
+-- 回滚事务
+ROLLBACK;
+```
+
+**不要使用 BEGIN 开启事务，请使用 `START TRANSACTION`**。
+
+-   在存储过程（Stored Procedure）、函数（Function）、触发器（Trigger）或事件（Event）中，BEGIN ... END 仅用于声明一个复合语句块（block）。
+-   如果在 `BEGIN` 后面只是执行普通的 SQL CRUD 语句，那么其行为等同于 `START TRANSACTION`，**但并不推荐**使用这种方式。
+
 ## SWITCH CASE
 
-语法
+### 语法
 
 ```
 CASE
@@ -176,7 +200,7 @@ CASE
 END;
 ```
 
-实例1，在 select输出中使用
+### 实例1，在 select输出中使用
 
 ```
 SELECT OrderID, Quantity,
@@ -188,7 +212,7 @@ END AS QuantityText
 FROM OrderDetails;
 ```
 
-实例2，在order by中使用
+### 实例2，在order by中使用
 
 ```
 SELECT CustomerName, City, Country
@@ -763,3 +787,4 @@ ORDER BY
 1. w3school https://www.w3schools.com/sql/sql_groupby.asp
 2. SQL JSON_EXTRACT Walkthrough With Examples https://www.beekeeperstudio.io/blog/sql-json-extract
 3. json extract real case: https://stackoverflow.com/questions/15701579/how-to-retrieve-json-data-from-mysql
+4. BEGIN...END vs START TRANSACTION...COMMIT https://stackoverflow.com/questions/62614788/begin-end-vs-start-transaction-commit
