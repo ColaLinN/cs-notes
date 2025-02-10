@@ -134,9 +134,15 @@ d2l.plot(x.detach(), x.grad, 'x', 'grad of tanh', figsize=(5, 2.5))
 
 ![image-20240923145041203](./20240922-mlp-multilayer-perceptrons.assets/image-20240923145041203.png)
 
+### sigmod与tanh的局限
+
+- 会存在零梯度的问题，导致weights无法被更新
+
+- ReLU的梯度可以是1，所以大的梯度更新会被apply
+
 ## MLP 其他
 
-### 例子：two-layers MLP
+### Samples: two-layers MLP
 
 ![image-20250203192355465](20240922-mlp-multilayer-perceptrons.assets/image-20250203192355465.png)
 
@@ -146,13 +152,13 @@ d2l.plot(x.detach(), x.grad, 'x', 'grad of tanh', figsize=(5, 2.5))
 
 ![image-20250203192825106](20240922-mlp-multilayer-perceptrons.assets/image-20250203192825106.png)
 
-### 后向传播，Backpropagation
+### 后向传播， Backpropagation
 
 -   从output开始计算loss，往前计算梯度
 -   如果传播到input，就可以用来改变数据的class
 -   后向传播也会apply到ReLU激活层
 
-### batch
+### 最佳的minibatch大小是？
 
 -   input is batch
 -   loss calculation in batch
@@ -197,6 +203,7 @@ Dropout 可以在层之间加入噪音。
 ## TODO
 
 1. k(ay1+ay2)是怎么梯度下降到a的？
+1. 
 1. 权重衰减和暂退法是正则化技术嘛
 1. python 训练过程中如何保存中间参数值 checkpoint，有没有 SOP？
 1. 前向传播、反向传播与计算图
