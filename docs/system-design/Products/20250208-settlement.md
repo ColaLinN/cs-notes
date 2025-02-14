@@ -138,13 +138,17 @@
   - payout创建量波动；
   - billing_item、payout状态转移；
 
-## 事故分析
+## 事故分析、性能调优
 
 1. duplicate id due to disaster tolerance deployment
    1. the instance's INDEX is not unique across the deployment
 2. clickhouse FINAL performance problem
-3. billing_item_tab sharding by shop not even
-4. 
+3. billing_item_tab sharding by a shop not even
+4. kafka 消费慢？
+   1. 理解
+   2. 理解kafka多partition消费
+
+5. 
 
 ## 技术亮点
 
@@ -152,3 +156,4 @@
 2. 对于状态机有完整的reconcile job
 3. 使用了event driven的开发模式
 4. 使用了Clickhouse作为secondary index
+
