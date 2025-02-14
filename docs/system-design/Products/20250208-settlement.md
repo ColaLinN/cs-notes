@@ -145,10 +145,12 @@
 2. clickhouse FINAL performance problem
 3. billing_item_tab sharding by a shop not even
 4. kafka 消费慢？
-   1. 理解
-   2. 理解kafka多partition消费
+   1. 分析生产的event耗时、以及是否重复生产、是否有消费出错后重试、间隔多久重试、重试多久？
+   2. 理解kafka多partition消费、需要确保不同消息之间的隔离性，即使并发消费也有事务、锁进行隔离
+5. DB 200~300 UPDATE QPS on a user
+   1. too high?
+   2. disrtributed lock?
 
-5. 
 
 ## 技术亮点
 
