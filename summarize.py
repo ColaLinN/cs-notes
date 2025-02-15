@@ -267,7 +267,7 @@ allToc = "# 全部文章 All Articles\n\n"
 summary = sorted(summary, key=lambda x: x.ctime, reverse=False)
 for i in range(len(summary) - 1, -1, -1):
     idxNumStr = "%2d" % (i + 1)
-    allToc += f"- {idxNumStr} {getFileMarkdownLink(summary[i])}\n"
+    allToc += f"- {idxNumStr} {getFileMarkdownLink(summary[i])}"
 
 # print(allToc)
 final = summaryPrePart + allToc + domainToc + afterPart
