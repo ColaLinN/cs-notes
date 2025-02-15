@@ -43,6 +43,11 @@ def getFileMarkdownLink(file):
         return f"[{file.header}]({file.url})\n"
     # get docs/xxx/xxx/ form path
     path = file.path.split("docs/")[1]
+    paths = path.split("/")
+    paths[-1] = paths[-1].removesuffix(".md")
+    # remove the beginning number until "-"
+    paths[-1] = "-".join(paths[-1].split("-")[1:])
+    path = "/".join(paths)
     return f"[{file.header}](https://doc.fenglyulin.com/docs/{path.removesuffix('.md')})\n"
 
 
