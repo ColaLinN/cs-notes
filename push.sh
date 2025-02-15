@@ -1,17 +1,23 @@
 #! /bin/bash
-echo "Start running the script $0"
+echo "Start running the script $0, pls enter your commit message"
+read enterMsg
 
+# generate the summary of the project
 python3 summarize.py
 
+commitedMsg=""
+if [ -z "$enterMsg" ]
+then
+    commitedMsg="update @ $(date)"
+else
+    commitedMsg="$enterMsg @ $(date)"
+fi
 
-chmod +x $push.sh
-
-commitMsg="$1 $(date)"
-echo "echo push to github with message: $1"
+echo "echo push to github with message: $commitedMsg"
 
 git add .
 git status
-git commit -m "$commitMsg"
+git commit -m "$commitedMsg"
 git push 
 
 echo done
