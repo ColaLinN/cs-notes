@@ -38,10 +38,8 @@ def genAdditionalFiles(header, url, c_time, last_modified_time):
     )
 
 import re
-def process_filename(filename):
-    if re.match(r'^\d+-\d+-', filename):
-        return filename
-    return re.sub(r'^\d+-', '', filename)
+def process_filename(filename: str) -> str:
+    return re.sub(r'^(\d+)-([^\d-].*)$', r'\2', filename)
 
 def getFileMarkdownLink(file):
     if file.is_additional_file:
@@ -280,7 +278,8 @@ for domain in domainToSFiles:
 allToc = "# 全部文章 All Articles\n\n"
 summary = sorted(summary, key=lambda x: x.ctime, reverse=False)
 for i in range(len(summary) - 1, -1, -1):
-    idxNumStr = "%2d" % (i + 1)
+    # idxNumStr = "%3d" % (i + 1)
+    idxNumStr = str(i + 1).zfill(3)
     allToc += f"- {idxNumStr} {getFileMarkdownLink(summary[i])}"
 
 # print(allToc)
