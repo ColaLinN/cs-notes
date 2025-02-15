@@ -22,399 +22,607 @@ tags: [intro]
 
 # 全部文章 All Articles
 
-1. [Deep Learning Overview](https://doc.fenglyulin.com/docs/artificial-intelligence/20230601-deep-learning-overview)
-2. [Prompt Collection](https://doc.fenglyulin.com/docs/artificial-intelligence/20240116-prompt-collection)
-3. [Linear Neural Network](https://doc.fenglyulin.com/docs/artificial-intelligence/20240917-linear-neural-network)
-4. [DL/ML Common Concept](https://doc.fenglyulin.com/docs/artificial-intelligence/20240919-common-concepts)
-5. [Multilayer Perceptrons (MLP)](https://doc.fenglyulin.com/docs/artificial-intelligence/20240922-mlp-multilayer-perceptrons)
-6. [Self-Attention](https://doc.fenglyulin.com/docs/artificial-intelligence/20240922-self-attention)
-7. [Convoulutional Neural Network CNN](https://doc.fenglyulin.com/docs/artificial-intelligence/20240923-cnn-convolutional-neural-network)
-8. [Deep Learning Computation](https://doc.fenglyulin.com/docs/artificial-intelligence/20240923-deep-learning-computation)
-9. [Modern CNN](https://doc.fenglyulin.com/docs/artificial-intelligence/20240924-modern-cnn)
-10. [Modern RNN: GRU, Enconder-Deconder, Seq-Seq](https://doc.fenglyulin.com/docs/artificial-intelligence/20240924-modern-rnn)
-11. [RNN Recurrent Neural Network](https://doc.fenglyulin.com/docs/artificial-intelligence/20240924-rnn-recurrent-neural-network)
-12. [Overview](https://doc.fenglyulin.com/docs/artificial-intelligence/20240926-overview)
-13. [PEFT - LoRA](https://doc.fenglyulin.com/docs/artificial-intelligence/20240928-peft)
-14. [The Illustrated Transformer (Notes)](https://doc.fenglyulin.com/docs/artificial-intelligence/20240928-transformer-calculation)
-15. [Transformer Inference Arithmetic](https://doc.fenglyulin.com/docs/artificial-intelligence/20241001-transformer-inference-arithmetic)
-16. [S-LORA: SERVING THOUSANDS OF CONCURRENT LORA ADAPTERS](https://doc.fenglyulin.com/docs/artificial-intelligence/20241020-S-LoRA)
-17. [Statistics](https://doc.fenglyulin.com/docs/artificial-intelligence/20241107-statistics)
-18. [Generate Synthetic Workload ](https://doc.fenglyulin.com/docs/artificial-intelligence/20241107-synthetic-workload)
-19. [Prefill和Decode的分析](https://doc.fenglyulin.com/docs/artificial-intelligence/20241109-analyze-batch-in-tranformer)
-20. [Nsight System](https://doc.fenglyulin.com/docs/artificial-intelligence/20241109-nsight)
-21. [LLM Concept](https://doc.fenglyulin.com/docs/artificial-intelligence/20241110-transformer-param)
-22. [PEFT Introduction](https://doc.fenglyulin.com/docs/artificial-intelligence/20241208-pets)
-23. [OSI七层模型 OSI Network 7 layers Model](https://doc.fenglyulin.com/docs/computer-networks/240414-00-overview)
-24. [物理层 The Physical Layer](https://doc.fenglyulin.com/docs/computer-networks/240414-01-physical-layer)
-25. [数据链路层 The Data Link Layer](https://doc.fenglyulin.com/docs/computer-networks/240414-02-data-link-layer)
-26. [网络层 The Network Layer](https://doc.fenglyulin.com/docs/computer-networks/240415-03-network-layer)
-27. [传输层 The Transport Layer](https://doc.fenglyulin.com/docs/computer-networks/240428-240527-04-transport-layer)
-28. [应用层 The Application Layer](https://doc.fenglyulin.com/docs/computer-networks/240429-05-application-layer)
-29. [代理与反向代理 Proxy VS Reverse Proxy](https://doc.fenglyulin.com/docs/computer-networks/240503-proxy-vs-reverse-proxy)
-30. [Socket](https://doc.fenglyulin.com/docs/computer-networks/Socket)
-31. [一个请求的始末 The Beginning and End of a Request](https://doc.fenglyulin.com/docs/computer-networks/the-beginning-and-end-of-a-request)
-32. [MySQL概览 Overview](https://doc.fenglyulin.com/docs/database/20230901-mysql-essential-knowledge)
-33. [Storage and Retrieval](https://doc.fenglyulin.com/docs/database/20240527-db-storage-and-retrieval)
-34. [SQL 练习 Select statement](https://doc.fenglyulin.com/docs/database/20241001-select-practise)
-35. [Fulltext Index: Lucene](https://doc.fenglyulin.com/docs/database/20241004-fulltext-index-lucene)
-36. [MysQL SQL CheatSheet](https://doc.fenglyulin.com/docs/database/20241009-mysql-sql-cheatsheet)
-37. [MySQL执行流程 Execution Flow](https://doc.fenglyulin.com/docs/database/20250127-01-mysql-execution-flow)
-38. [MySQL索引 Index](https://doc.fenglyulin.com/docs/database/20250127-02-mysql-index)
-39. [MySQL事务 Transaction](https://doc.fenglyulin.com/docs/database/20250127-03-mysql-transaction)
-40. [MySQL锁 Lock](https://doc.fenglyulin.com/docs/database/20250127-04-mysql-lock)
-41. [MysQL日志 Log](https://doc.fenglyulin.com/docs/database/20250127-05-mysql-log)
-42. [Overview](https://doc.fenglyulin.com/docs/database/20250127-overview)
-43. [Kafka概述 Overview](https://doc.fenglyulin.com/docs/database/20250130-overview)
-44. [Redis介绍 Overview](https://doc.fenglyulin.com/docs/database/20250130-overview)
-45. [Redis问题清单 Redis Questions List](https://doc.fenglyulin.com/docs/database/20250211-questions)
-46. [MySQL 问题清单 MySQL Questions List](https://doc.fenglyulin.com/docs/database/questions)
-47. [Lab 1: Exactly-Once](https://doc.fenglyulin.com/docs/distributed-systems/01-exactly-once-kv-store)
-48. [image: https://i.imgur.com/mErPwqL.png](https://doc.fenglyulin.com/docs/distributed-systems/01-intro)
-49. [Lab 2: Primary-Backup Service](https://doc.fenglyulin.com/docs/distributed-systems/02-primary-backup-tolerance)
-50. [RPC 请求语义 RPC Semantics](https://doc.fenglyulin.com/docs/distributed-systems/02-rpc-semantics)
-51. [物理时钟，Lamport 时钟与 Vector 时钟 Physical Clock, Lamport Logical Clock, and Vector Clock](https://doc.fenglyulin.com/docs/distributed-systems/03-logical-lock)
-52. [Lab3 Paxos Fault Tolerance](https://doc.fenglyulin.com/docs/distributed-systems/03-paxos-tolerance)
-53. [Lab4 ShardStoreServer](https://doc.fenglyulin.com/docs/distributed-systems/04-shard-store-server)
-54. [分布式状态，如何定义一致性？ Distributed State and Consistency](https://doc.fenglyulin.com/docs/distributed-systems/04-state-consistency)
-55. [共识协议 Distributed Consensus, State Machine Replication](https://doc.fenglyulin.com/docs/distributed-systems/05-consensus-protocol)
-56. [拜占庭容错 Byzantine Fault Tolerance](https://doc.fenglyulin.com/docs/distributed-systems/06-byzantine-fault-tolerance)
-57. [分布式事务 Distributed Transaction](https://doc.fenglyulin.com/docs/distributed-systems/07-distirbuted-transaction)
-58. [分布式文件系统 Distributed File System](https://doc.fenglyulin.com/docs/distributed-systems/08-distributed-file-system)
-59. [分布式思考 Distributed Thinking](https://doc.fenglyulin.com/docs/distributed-systems/240528-distributed-thinking)
-60. [Full Score in NUS CS5223](https://doc.fenglyulin.com/docs/distributed-systems/240528-milestone)
-61. [为什么要学习 LeetCode？ Why practice Leetcode?](https://doc.fenglyulin.com/docs/leetcode/240201-why)
-62. [双指针 Opposite Double Pointer](https://doc.fenglyulin.com/docs/leetcode/240224-opposite-double-pointer)
-63. [同向指针滑窗 Same Direction Pointer/Sliding Window](https://doc.fenglyulin.com/docs/leetcode/240228-same-dire-double-pointer-slide-window)
-64. [反转链表系列 Linked List Reverse Series](https://doc.fenglyulin.com/docs/leetcode/240229-04-linked-list-reverse)
-65. [二分搜索 Binary Search ](https://doc.fenglyulin.com/docs/leetcode/240229-binary-search)
-66. [周赛 Weekly Contest 387](https://doc.fenglyulin.com/docs/leetcode/240303 387)
-67. [链表快慢指针系列 Linked List Fast Slow Series](https://doc.fenglyulin.com/docs/leetcode/240303-05-linked-list-slow-fast-cycle)
-68. [链表删除系列 Linked List Delete Series](https://doc.fenglyulin.com/docs/leetcode/240303-06-linked-list-remove)
-69. [二叉树与递归，最大深度 Binary Tree and Recursion](https://doc.fenglyulin.com/docs/leetcode/240305-07-binary-tree-and-recursion)
-70. [二叉树与递归，相似平衡 Binary Tree and Recursion v2](https://doc.fenglyulin.com/docs/leetcode/240309-08-binary-tree-and-recursion-v2)
-71. [二叉树前中后向遍历 Binary Tree Front, Middle, and Post Order Traversal](https://doc.fenglyulin.com/docs/leetcode/240309-09-bt-front-middle-back-traversal)
-72. [二叉树与递归，最近祖先 Binary Tree and Recursion, Nearest Ancestor of Binary Tree](https://doc.fenglyulin.com/docs/leetcode/240309-10-bp-nearest-ancestor)
-73. [二叉树层序遍历 Binary Tree Level Order Traversal](https://doc.fenglyulin.com/docs/leetcode/240311-bp-level-order-traversal)
-74. [Algorithm summary](https://doc.fenglyulin.com/docs/leetcode/240314-template)
-75. [回溯之子集 Backtrace-Subset](https://doc.fenglyulin.com/docs/leetcode/240315-backtrace-subset)
-76. [回溯之组合 Backtrace Combination](https://doc.fenglyulin.com/docs/leetcode/240316-backtrace-combination)
-77. [回溯之排列 Backtrace-Permutation](https://doc.fenglyulin.com/docs/leetcode/240324-backtrace-permutation)
-78. [动态规划原理 DP Principle](https://doc.fenglyulin.com/docs/leetcode/240324-dp-principle)
-79. [背包动态规划 Backup DP](https://doc.fenglyulin.com/docs/leetcode/240326-dp-backup)
-80. [线性DP Linear DP](https://doc.fenglyulin.com/docs/leetcode/240329-linear-dp)
-81. [周赛 Weekly Contest 395](https://doc.fenglyulin.com/docs/leetcode/240428-395)
-82. [周赛 Weekly Contest 396](https://doc.fenglyulin.com/docs/leetcode/240505-396)
-83. [双周赛 Weekly Contest 130](https://doc.fenglyulin.com/docs/leetcode/240512-130-biweekly)
-84. [间隔动态规划 Interval DP](https://doc.fenglyulin.com/docs/leetcode/240512-dp-interval)
-85. [状态机动态规划 State Machine DP](https://doc.fenglyulin.com/docs/leetcode/240512-dp-state-machine)
-86. [树形动态规划 Tree DP](https://doc.fenglyulin.com/docs/leetcode/240513-dp-tree)
-87. [单调栈 Monotonic Stack](https://doc.fenglyulin.com/docs/leetcode/240514-monotonic-stack)
-88. [单调队列 Monotonic Queue](https://doc.fenglyulin.com/docs/leetcode/240515-monotonic-queue)
-89. [周赛 Weekly Contest 398](https://doc.fenglyulin.com/docs/leetcode/240519-398)
-90. [排序 Sort](https://doc.fenglyulin.com/docs/leetcode/240523-sort)
-91. [图遍历 Graph Traversal, Topological Sort, Unicom Branch](https://doc.fenglyulin.com/docs/leetcode/240524-graph-v1-iteration)
-92. [图最短路径 Graph V2](https://doc.fenglyulin.com/docs/leetcode/240524-graph-v2)
-93. [堆 Heap](https://doc.fenglyulin.com/docs/leetcode/240525-heap)
-94. [LRU缓存](https://doc.fenglyulin.com/docs/leetcode/240525-lru)
-95. [周赛 Weekly Contest 131](https://doc.fenglyulin.com/docs/leetcode/240526-131-biweekly)
-96. [容斥定理 Inclusion–exclusion principle](https://doc.fenglyulin.com/docs/leetcode/240601-inclusion-exclusion-principle)
-97. [周赛 Weekly Contest 400](https://doc.fenglyulin.com/docs/leetcode/240602-400)
-98. [周赛 Weekly Contest 401](https://doc.fenglyulin.com/docs/leetcode/240609-401)
-99. [周赛 Weekly Contest 402](https://doc.fenglyulin.com/docs/leetcode/240616-402)
-100. [周赛 Weekly Contest 403](https://doc.fenglyulin.com/docs/leetcode/240623-403)
-101. [周赛 Weekly Contest 404](https://doc.fenglyulin.com/docs/leetcode/240630-404)
-102. [周赛 Weekly Contest 405](https://doc.fenglyulin.com/docs/leetcode/240707-405)
-103. [周赛 Weekly Contest 406](https://doc.fenglyulin.com/docs/leetcode/240714-406)
-104. [周赛 Weekly Contest 407](https://doc.fenglyulin.com/docs/leetcode/240721-407)
-105. [周赛 Weekly Contest 408](https://doc.fenglyulin.com/docs/leetcode/240728-408)
-106. [周赛 Weekly Contest 410](https://doc.fenglyulin.com/docs/leetcode/240811-410)
-107. [周赛 Weekly Contest 411](https://doc.fenglyulin.com/docs/leetcode/240818-411)
-108. [周赛 Weekly Contest 412](https://doc.fenglyulin.com/docs/leetcode/240825-412)
-109. [周赛 Weekly Contest 414](https://doc.fenglyulin.com/docs/leetcode/240908-414)
-110. [周赛 Weekly Contest 417](https://doc.fenglyulin.com/docs/leetcode/240928-417)
-111. [常见单词](https://doc.fenglyulin.com/docs/leetcode/eng)
-112. [Go常用语法 Golang Syntax](https://doc.fenglyulin.com/docs/leetcode/golang-常用语法)
-113. [Python 常用语法 Python Frequently Used Syntax](https://doc.fenglyulin.com/docs/leetcode/python-常用语法)
-114. [Leetcode problem rating](https://doc.fenglyulin.com/docs/leetcode/ref)
-115. [规划 Roadmap](https://doc.fenglyulin.com/docs/leetcode/roadmap)
-116. [周赛汇总](https://doc.fenglyulin.com/docs/leetcode/summary)
-117. [Math Todo](https://doc.fenglyulin.com/docs/leetcode/todo)
-118. [Topics Todolist](https://doc.fenglyulin.com/docs/leetcode/todolist)
-119. [Fault Tolerance in LLM Training/Serving Systems](https://doc.fenglyulin.com/docs/mlsys/20240807-fault-tolerance-in-mlsys-01)
-120. [MLSys Learning PLAN](https://doc.fenglyulin.com/docs/mlsys/20240815-mlsys-learning-plan)
-121. [Distributed Training System Overview](https://doc.fenglyulin.com/docs/mlsys/20240826-distributed-training-01)
-122. [Distributed Training Approaches](https://doc.fenglyulin.com/docs/mlsys/20240827-distributed-training-02)
-123. [Machine Learning Cluster Architecture](https://doc.fenglyulin.com/docs/mlsys/20240828-distributed-training-03)
-124. [Distributed Training Collective Communication](https://doc.fenglyulin.com/docs/mlsys/20240828-distributed-training-04)
-125. [Distributed Training Parameters Server](https://doc.fenglyulin.com/docs/mlsys/20240828-distributed-training-05)
-126. [Distributed Training Overview](https://doc.fenglyulin.com/docs/mlsys/20240903-distributed-training-06)
-127. [How to do research in the era of LLM](https://doc.fenglyulin.com/docs/mlsys/20240918-how-to-do-research-in-llm-era)
-128. [Machine Learning Systems Overview](https://doc.fenglyulin.com/docs/mlsys/20240926-overview)
-129. [GPU](https://doc.fenglyulin.com/docs/mlsys/20241109-gpu)
-130. [浮点数](https://doc.fenglyulin.com/docs/operating-systems/20241001-float-number)
-131. [Network](https://doc.fenglyulin.com/docs/operating-systems/20250131-network)
-132. [操作系统概览 Operating System Overview](https://doc.fenglyulin.com/docs/operating-systems/240515-overview)
-133. [操作系统设备管理 Device Management](https://doc.fenglyulin.com/docs/operating-systems/240520-device-management)
-134. [操作系统进程管理 Process Management](https://doc.fenglyulin.com/docs/operating-systems/240520-process-management)
-135. [Deadlock and Lock Types](https://doc.fenglyulin.com/docs/operating-systems/240521-deadlock)
-136. [Link](https://doc.fenglyulin.com/docs/operating-systems/240521-link)
-137. [操作系统内存管理 Memory Management](https://doc.fenglyulin.com/docs/operating-systems/240521-memory-management)
-138. [优化程序性能 HPC Optimizing program's performance](https://doc.fenglyulin.com/docs/operating-systems/CSAPP: Chapter05 Optimize Program Performance)
-139. [并行编程 Parallel Programming](https://doc.fenglyulin.com/docs/operating-systems/CSAPP: Chapter12 Concurrent Programming)
-140. [系统调用和零拷贝技术](https://doc.fenglyulin.com/docs/operating-systems/system-call-and-zero-copy)
-141. [OS Todo](https://doc.fenglyulin.com/docs/operating-systems/todo)
-142. [从零到一百万用户 Scale from zero to millions of user](https://doc.fenglyulin.com/docs/system-design/20231001-from-zero-to-millions)
-143. [网络架构的演变 The Evolution of Web Service Architecture](https://doc.fenglyulin.com/docs/system-design/20231001-web-architecture)
-144. [秒杀系统 Flash Sale System](https://doc.fenglyulin.com/docs/system-design/20240308-flash-sale)
-145. [一致性哈希 Consistent Hashing](https://doc.fenglyulin.com/docs/system-design/20240501-consistent-hashing)
-146. [ID生成器](https://doc.fenglyulin.com/docs/system-design/20240501-id-gen)
-147. [设计模式 Design Pattern](https://doc.fenglyulin.com/docs/system-design/20240527-design-pattern)
-148. [聊天系统 Chat System](https://doc.fenglyulin.com/docs/system-design/20240601-chat-system)
-149. [短链生成系统 URL Shortener System](https://doc.fenglyulin.com/docs/system-design/20240601-url-shorter)
-150. [容灾与备份 Disaster Tolerance, Backup, Failover](https://doc.fenglyulin.com/docs/system-design/20240603-disaster-recovery)
-151. [Nginx高可用](https://doc.fenglyulin.com/docs/system-design/20240912-nginx-scale)
-152. [敏捷开发、DDD与TDD](https://doc.fenglyulin.com/docs/system-design/20241001-development-mode)
-153. [[TD] Settlement 订单结算系统（简化）](https://doc.fenglyulin.com/docs/system-design/20250208-settlement)
-154. [Overview](https://doc.fenglyulin.com/docs/system-design/20250209-overview)
-155. [一个合格的后端系统](https://doc.fenglyulin.com/docs/system-design/20250215-perfect-backend)
-156. [新加坡PR申请数据 sgpass.info](https://doc.fenglyulin.com/docs/system-design/20250215-sgpassinfo)
-157. [产品系统设计Todo Products Todolist](https://doc.fenglyulin.com/docs/system-design/240913-todo)
-158. [Unix Log CLI](https://doc.fenglyulin.com/docs/web-full-stack/20240830-unix-log-cli)
-159. [Grafana](https://doc.fenglyulin.com/docs/web-full-stack/20240903-grafana)
-160. [Authentication, Authorization, Token and JWT](https://doc.fenglyulin.com/docs/web-full-stack/20240911-authentication-01)
-161. [Encryption, Signature, and Hash](https://doc.fenglyulin.com/docs/web-full-stack/20240912-encryption)
-162. [Python GIL](https://doc.fenglyulin.com/docs/web-full-stack/20240922-python-gil)
-163. [IoC (Inversion of Control) and AOP (Aspect Oriented Programming)](https://doc.fenglyulin.com/docs/web-full-stack/20240926-ioc-and-aop)
-164. [Docker Cheat Sheet](https://doc.fenglyulin.com/docs/web-full-stack/20241001-docker)
-165. [文件系统](https://doc.fenglyulin.com/docs/web-full-stack/20241014-linux)
-166. [pandas](https://doc.fenglyulin.com/docs/web-full-stack/20241123-pandas)
-167. [HTTP Q&A](https://doc.fenglyulin.com/docs/web-full-stack/20241206-http-qa)
-168. [WIFI Port Redirect public requests to my laptop](https://doc.fenglyulin.com/docs/web-full-stack/20241216-wifi-port-redirection)
-169. [Shell Script](https://doc.fenglyulin.com/docs/web-full-stack/20250122-shell)
-170. [CURD Problem](https://doc.fenglyulin.com/docs/web-full-stack/20250215-crud-problem)
-171. [Frontend Funfact](https://doc.fenglyulin.com/docs/web-full-stack/240502-funfact)
-172. [React 五子棋入门项目 Tic-Tac-Toe](https://doc.fenglyulin.com/docs/web-full-stack/240622-01-react-project-tic-tac-toe)
-173. [React Nextjs Foundation 基础](https://doc.fenglyulin.com/docs/web-full-stack/240622-02-react-nextjs-foundation)
-174. [Nextjs Project Dashboard 01](https://doc.fenglyulin.com/docs/web-full-stack/240622-03-nextjs-project-dashboard-01)
-175. [Nextjs Project Dashboard 02](https://doc.fenglyulin.com/docs/web-full-stack/240623-04-nextjs-project-dashboard-02)
-176. [Nextjs Project Dashboard 03](https://doc.fenglyulin.com/docs/web-full-stack/240625-05-nextjs-project-dashboard-03)
-177. [CSS笔记 Notes](https://doc.fenglyulin.com/docs/web-full-stack/240706-css-01)
-178. [React笔记 Notes](https://doc.fenglyulin.com/docs/web-full-stack/240710-react-01)
-179. [TypeScript](https://doc.fenglyulin.com/docs/web-full-stack/240710-typescript-01)
-180. [UML 序列图要点 UML Sequence DiagramStress Testing Tool](https://doc.fenglyulin.com/docs/web-full-stack/240828-uml-sequence-diagram)
-181. [Frontend技术栈 Tech Stack](https://doc.fenglyulin.com/docs/web-full-stack/240829-fe-tech-stack)
-182. [压力测试工具 Stress Testing Tool](https://doc.fenglyulin.com/docs/web-full-stack/240829-stress-testing-tool)
-183. [性能测试检查清单 Performance Testing Checklist](https://doc.fenglyulin.com/docs/web-full-stack/240830-stress-testing-checklist)
-184. [Crontab 使用指南](https://doc.fenglyulin.com/docs/web-full-stack/240913-crontab)
-185. [常见CMD 命令](https://doc.fenglyulin.com/docs/web-full-stack/241031-cmd)
-186. [Git Command Cheatsheet](https://doc.fenglyulin.com/docs/web-full-stack/git)
-187. [面试经验 Interview Experience](https://doc.fenglyulin.com/docs/web-full-stack/interview)
-188. [Go 语言](https://doc.fenglyulin.com/docs/web-full-stack/main)
-189. [收录 Web 全栈的知识](https://doc.fenglyulin.com/docs/web-full-stack/overview)
-## Artificial Intelligence
-1. [Deep Learning Overview](https://doc.fenglyulin.com/docs/artificial-intelligence/20230601-deep-learning-overview)
-2. [Prompt Collection](https://doc.fenglyulin.com/docs/artificial-intelligence/20240116-prompt-collection)
-3. [Linear Neural Network](https://doc.fenglyulin.com/docs/artificial-intelligence/20240917-linear-neural-network)
-4. [DL/ML Common Concept](https://doc.fenglyulin.com/docs/artificial-intelligence/20240919-common-concepts)
-5. [Multilayer Perceptrons (MLP)](https://doc.fenglyulin.com/docs/artificial-intelligence/20240922-mlp-multilayer-perceptrons)
-6. [Self-Attention](https://doc.fenglyulin.com/docs/artificial-intelligence/20240922-self-attention)
-7. [Convoulutional Neural Network CNN](https://doc.fenglyulin.com/docs/artificial-intelligence/20240923-cnn-convolutional-neural-network)
-8. [Deep Learning Computation](https://doc.fenglyulin.com/docs/artificial-intelligence/20240923-deep-learning-computation)
-9. [Modern CNN](https://doc.fenglyulin.com/docs/artificial-intelligence/20240924-modern-cnn)
-10. [Modern RNN: GRU, Enconder-Deconder, Seq-Seq](https://doc.fenglyulin.com/docs/artificial-intelligence/20240924-modern-rnn)
-11. [RNN Recurrent Neural Network](https://doc.fenglyulin.com/docs/artificial-intelligence/20240924-rnn-recurrent-neural-network)
-12. [Overview](https://doc.fenglyulin.com/docs/artificial-intelligence/20240926-overview)
-13. [PEFT - LoRA](https://doc.fenglyulin.com/docs/artificial-intelligence/20240928-peft)
-14. [The Illustrated Transformer (Notes)](https://doc.fenglyulin.com/docs/artificial-intelligence/20240928-transformer-calculation)
-15. [Transformer Inference Arithmetic](https://doc.fenglyulin.com/docs/artificial-intelligence/20241001-transformer-inference-arithmetic)
-16. [S-LORA: SERVING THOUSANDS OF CONCURRENT LORA ADAPTERS](https://doc.fenglyulin.com/docs/artificial-intelligence/20241020-S-LoRA)
-17. [Statistics](https://doc.fenglyulin.com/docs/artificial-intelligence/20241107-statistics)
-18. [Generate Synthetic Workload ](https://doc.fenglyulin.com/docs/artificial-intelligence/20241107-synthetic-workload)
-19. [Prefill和Decode的分析](https://doc.fenglyulin.com/docs/artificial-intelligence/20241109-analyze-batch-in-tranformer)
-20. [Nsight System](https://doc.fenglyulin.com/docs/artificial-intelligence/20241109-nsight)
-21. [LLM Concept](https://doc.fenglyulin.com/docs/artificial-intelligence/20241110-transformer-param)
-22. [PEFT Introduction](https://doc.fenglyulin.com/docs/artificial-intelligence/20241208-pets)
+- 193 [testing 20250215](https://doc.fenglyulin.com/docs/20250215-testing)
 
-## Computer Networks
-1. [OSI七层模型 OSI Network 7 layers Model](https://doc.fenglyulin.com/docs/computer-networks/240414-00-overview)
-2. [物理层 The Physical Layer](https://doc.fenglyulin.com/docs/computer-networks/240414-01-physical-layer)
-3. [数据链路层 The Data Link Layer](https://doc.fenglyulin.com/docs/computer-networks/240414-02-data-link-layer)
-4. [网络层 The Network Layer](https://doc.fenglyulin.com/docs/computer-networks/240415-03-network-layer)
-5. [传输层 The Transport Layer](https://doc.fenglyulin.com/docs/computer-networks/240428-240527-04-transport-layer)
-6. [应用层 The Application Layer](https://doc.fenglyulin.com/docs/computer-networks/240429-05-application-layer)
-7. [代理与反向代理 Proxy VS Reverse Proxy](https://doc.fenglyulin.com/docs/computer-networks/240503-proxy-vs-reverse-proxy)
-8. [Socket](https://doc.fenglyulin.com/docs/computer-networks/Socket)
-9. [一个请求的始末 The Beginning and End of a Request](https://doc.fenglyulin.com/docs/computer-networks/the-beginning-and-end-of-a-request)
+- 192 [一个合格的后端系统](https://doc.fenglyulin.com/docs/20250215-perfect-backend)
 
-## Database
-1. [MySQL概览 Overview](https://doc.fenglyulin.com/docs/database/20230901-mysql-essential-knowledge)
-2. [Storage and Retrieval](https://doc.fenglyulin.com/docs/database/20240527-db-storage-and-retrieval)
-3. [SQL 练习 Select statement](https://doc.fenglyulin.com/docs/database/20241001-select-practise)
-4. [Fulltext Index: Lucene](https://doc.fenglyulin.com/docs/database/20241004-fulltext-index-lucene)
-5. [MysQL SQL CheatSheet](https://doc.fenglyulin.com/docs/database/20241009-mysql-sql-cheatsheet)
-6. [MySQL执行流程 Execution Flow](https://doc.fenglyulin.com/docs/database/20250127-01-mysql-execution-flow)
-7. [MySQL索引 Index](https://doc.fenglyulin.com/docs/database/20250127-02-mysql-index)
-8. [MySQL事务 Transaction](https://doc.fenglyulin.com/docs/database/20250127-03-mysql-transaction)
-9. [MySQL锁 Lock](https://doc.fenglyulin.com/docs/database/20250127-04-mysql-lock)
-10. [MysQL日志 Log](https://doc.fenglyulin.com/docs/database/20250127-05-mysql-log)
-11. [Overview](https://doc.fenglyulin.com/docs/database/20250127-overview)
-12. [Kafka概述 Overview](https://doc.fenglyulin.com/docs/database/20250130-overview)
-13. [Redis介绍 Overview](https://doc.fenglyulin.com/docs/database/20250130-overview)
-14. [Redis问题清单 Redis Questions List](https://doc.fenglyulin.com/docs/database/20250211-questions)
-15. [MySQL 问题清单 MySQL Questions List](https://doc.fenglyulin.com/docs/database/questions)
+- 191 [新加坡PR申请数据 sgpass.info](https://doc.fenglyulin.com/docs/20250215-sgpassinfo)
 
-## Distributed Systems
-1. [Lab 1: Exactly-Once](https://doc.fenglyulin.com/docs/distributed-systems/01-exactly-once-kv-store)
-2. [image: https://i.imgur.com/mErPwqL.png](https://doc.fenglyulin.com/docs/distributed-systems/01-intro)
-3. [Lab 2: Primary-Backup Service](https://doc.fenglyulin.com/docs/distributed-systems/02-primary-backup-tolerance)
-4. [RPC 请求语义 RPC Semantics](https://doc.fenglyulin.com/docs/distributed-systems/02-rpc-semantics)
-5. [物理时钟，Lamport 时钟与 Vector 时钟 Physical Clock, Lamport Logical Clock, and Vector Clock](https://doc.fenglyulin.com/docs/distributed-systems/03-logical-lock)
-6. [Lab3 Paxos Fault Tolerance](https://doc.fenglyulin.com/docs/distributed-systems/03-paxos-tolerance)
-7. [Lab4 ShardStoreServer](https://doc.fenglyulin.com/docs/distributed-systems/04-shard-store-server)
-8. [分布式状态，如何定义一致性？ Distributed State and Consistency](https://doc.fenglyulin.com/docs/distributed-systems/04-state-consistency)
-9. [共识协议 Distributed Consensus, State Machine Replication](https://doc.fenglyulin.com/docs/distributed-systems/05-consensus-protocol)
-10. [拜占庭容错 Byzantine Fault Tolerance](https://doc.fenglyulin.com/docs/distributed-systems/06-byzantine-fault-tolerance)
-11. [分布式事务 Distributed Transaction](https://doc.fenglyulin.com/docs/distributed-systems/07-distirbuted-transaction)
-12. [分布式文件系统 Distributed File System](https://doc.fenglyulin.com/docs/distributed-systems/08-distributed-file-system)
-13. [分布式思考 Distributed Thinking](https://doc.fenglyulin.com/docs/distributed-systems/240528-distributed-thinking)
-14. [Full Score in NUS CS5223](https://doc.fenglyulin.com/docs/distributed-systems/240528-milestone)
+- 190 [CURD Problem](https://doc.fenglyulin.com/docs/20250215-crud-problem)
 
-## Leetcode
-1. [为什么要学习 LeetCode？ Why practice Leetcode?](https://doc.fenglyulin.com/docs/leetcode/240201-why)
-2. [双指针 Opposite Double Pointer](https://doc.fenglyulin.com/docs/leetcode/240224-opposite-double-pointer)
-3. [同向指针滑窗 Same Direction Pointer/Sliding Window](https://doc.fenglyulin.com/docs/leetcode/240228-same-dire-double-pointer-slide-window)
-4. [反转链表系列 Linked List Reverse Series](https://doc.fenglyulin.com/docs/leetcode/240229-04-linked-list-reverse)
-5. [二分搜索 Binary Search ](https://doc.fenglyulin.com/docs/leetcode/240229-binary-search)
-6. [周赛 Weekly Contest 387](https://doc.fenglyulin.com/docs/leetcode/240303 387)
-7. [链表快慢指针系列 Linked List Fast Slow Series](https://doc.fenglyulin.com/docs/leetcode/240303-05-linked-list-slow-fast-cycle)
-8. [链表删除系列 Linked List Delete Series](https://doc.fenglyulin.com/docs/leetcode/240303-06-linked-list-remove)
-9. [二叉树与递归，最大深度 Binary Tree and Recursion](https://doc.fenglyulin.com/docs/leetcode/240305-07-binary-tree-and-recursion)
-10. [二叉树与递归，相似平衡 Binary Tree and Recursion v2](https://doc.fenglyulin.com/docs/leetcode/240309-08-binary-tree-and-recursion-v2)
-11. [二叉树前中后向遍历 Binary Tree Front, Middle, and Post Order Traversal](https://doc.fenglyulin.com/docs/leetcode/240309-09-bt-front-middle-back-traversal)
-12. [二叉树与递归，最近祖先 Binary Tree and Recursion, Nearest Ancestor of Binary Tree](https://doc.fenglyulin.com/docs/leetcode/240309-10-bp-nearest-ancestor)
-13. [二叉树层序遍历 Binary Tree Level Order Traversal](https://doc.fenglyulin.com/docs/leetcode/240311-bp-level-order-traversal)
-14. [Algorithm summary](https://doc.fenglyulin.com/docs/leetcode/240314-template)
-15. [回溯之子集 Backtrace-Subset](https://doc.fenglyulin.com/docs/leetcode/240315-backtrace-subset)
-16. [回溯之组合 Backtrace Combination](https://doc.fenglyulin.com/docs/leetcode/240316-backtrace-combination)
-17. [回溯之排列 Backtrace-Permutation](https://doc.fenglyulin.com/docs/leetcode/240324-backtrace-permutation)
-18. [动态规划原理 DP Principle](https://doc.fenglyulin.com/docs/leetcode/240324-dp-principle)
-19. [背包动态规划 Backup DP](https://doc.fenglyulin.com/docs/leetcode/240326-dp-backup)
-20. [线性DP Linear DP](https://doc.fenglyulin.com/docs/leetcode/240329-linear-dp)
-21. [周赛 Weekly Contest 395](https://doc.fenglyulin.com/docs/leetcode/240428-395)
-22. [周赛 Weekly Contest 396](https://doc.fenglyulin.com/docs/leetcode/240505-396)
-23. [双周赛 Weekly Contest 130](https://doc.fenglyulin.com/docs/leetcode/240512-130-biweekly)
-24. [间隔动态规划 Interval DP](https://doc.fenglyulin.com/docs/leetcode/240512-dp-interval)
-25. [状态机动态规划 State Machine DP](https://doc.fenglyulin.com/docs/leetcode/240512-dp-state-machine)
-26. [树形动态规划 Tree DP](https://doc.fenglyulin.com/docs/leetcode/240513-dp-tree)
-27. [单调栈 Monotonic Stack](https://doc.fenglyulin.com/docs/leetcode/240514-monotonic-stack)
-28. [单调队列 Monotonic Queue](https://doc.fenglyulin.com/docs/leetcode/240515-monotonic-queue)
-29. [周赛 Weekly Contest 398](https://doc.fenglyulin.com/docs/leetcode/240519-398)
-30. [排序 Sort](https://doc.fenglyulin.com/docs/leetcode/240523-sort)
-31. [图遍历 Graph Traversal, Topological Sort, Unicom Branch](https://doc.fenglyulin.com/docs/leetcode/240524-graph-v1-iteration)
-32. [图最短路径 Graph V2](https://doc.fenglyulin.com/docs/leetcode/240524-graph-v2)
-33. [堆 Heap](https://doc.fenglyulin.com/docs/leetcode/240525-heap)
-34. [LRU缓存](https://doc.fenglyulin.com/docs/leetcode/240525-lru)
-35. [周赛 Weekly Contest 131](https://doc.fenglyulin.com/docs/leetcode/240526-131-biweekly)
-36. [容斥定理 Inclusion–exclusion principle](https://doc.fenglyulin.com/docs/leetcode/240601-inclusion-exclusion-principle)
-37. [周赛 Weekly Contest 400](https://doc.fenglyulin.com/docs/leetcode/240602-400)
-38. [周赛 Weekly Contest 401](https://doc.fenglyulin.com/docs/leetcode/240609-401)
-39. [周赛 Weekly Contest 402](https://doc.fenglyulin.com/docs/leetcode/240616-402)
-40. [周赛 Weekly Contest 403](https://doc.fenglyulin.com/docs/leetcode/240623-403)
-41. [周赛 Weekly Contest 404](https://doc.fenglyulin.com/docs/leetcode/240630-404)
-42. [周赛 Weekly Contest 405](https://doc.fenglyulin.com/docs/leetcode/240707-405)
-43. [周赛 Weekly Contest 406](https://doc.fenglyulin.com/docs/leetcode/240714-406)
-44. [周赛 Weekly Contest 407](https://doc.fenglyulin.com/docs/leetcode/240721-407)
-45. [周赛 Weekly Contest 408](https://doc.fenglyulin.com/docs/leetcode/240728-408)
-46. [周赛 Weekly Contest 410](https://doc.fenglyulin.com/docs/leetcode/240811-410)
-47. [周赛 Weekly Contest 411](https://doc.fenglyulin.com/docs/leetcode/240818-411)
-48. [周赛 Weekly Contest 412](https://doc.fenglyulin.com/docs/leetcode/240825-412)
-49. [周赛 Weekly Contest 414](https://doc.fenglyulin.com/docs/leetcode/240908-414)
-50. [周赛 Weekly Contest 417](https://doc.fenglyulin.com/docs/leetcode/240928-417)
-51. [常见单词](https://doc.fenglyulin.com/docs/leetcode/eng)
-52. [Go常用语法 Golang Syntax](https://doc.fenglyulin.com/docs/leetcode/golang-常用语法)
-53. [Python 常用语法 Python Frequently Used Syntax](https://doc.fenglyulin.com/docs/leetcode/python-常用语法)
-54. [Leetcode problem rating](https://doc.fenglyulin.com/docs/leetcode/ref)
-55. [规划 Roadmap](https://doc.fenglyulin.com/docs/leetcode/roadmap)
-56. [周赛汇总](https://doc.fenglyulin.com/docs/leetcode/summary)
-57. [Math Todo](https://doc.fenglyulin.com/docs/leetcode/todo)
-58. [Topics Todolist](https://doc.fenglyulin.com/docs/leetcode/todolist)
+- 189 [Redis问题清单 Redis Questions List](https://doc.fenglyulin.com/docs/20250211-questions)
 
-## Mlsys
-1. [Fault Tolerance in LLM Training/Serving Systems](https://doc.fenglyulin.com/docs/mlsys/20240807-fault-tolerance-in-mlsys-01)
-2. [MLSys Learning PLAN](https://doc.fenglyulin.com/docs/mlsys/20240815-mlsys-learning-plan)
-3. [Distributed Training System Overview](https://doc.fenglyulin.com/docs/mlsys/20240826-distributed-training-01)
-4. [Distributed Training Approaches](https://doc.fenglyulin.com/docs/mlsys/20240827-distributed-training-02)
-5. [Machine Learning Cluster Architecture](https://doc.fenglyulin.com/docs/mlsys/20240828-distributed-training-03)
-6. [Distributed Training Collective Communication](https://doc.fenglyulin.com/docs/mlsys/20240828-distributed-training-04)
-7. [Distributed Training Parameters Server](https://doc.fenglyulin.com/docs/mlsys/20240828-distributed-training-05)
-8. [Distributed Training Overview](https://doc.fenglyulin.com/docs/mlsys/20240903-distributed-training-06)
-9. [How to do research in the era of LLM](https://doc.fenglyulin.com/docs/mlsys/20240918-how-to-do-research-in-llm-era)
-10. [Machine Learning Systems Overview](https://doc.fenglyulin.com/docs/mlsys/20240926-overview)
-11. [GPU](https://doc.fenglyulin.com/docs/mlsys/20241109-gpu)
+- 188 [Overview](https://doc.fenglyulin.com/docs/20250209-overview)
 
-## Operating Systems
-1. [浮点数](https://doc.fenglyulin.com/docs/operating-systems/20241001-float-number)
-2. [Network](https://doc.fenglyulin.com/docs/operating-systems/20250131-network)
-3. [操作系统概览 Operating System Overview](https://doc.fenglyulin.com/docs/operating-systems/240515-overview)
-4. [操作系统设备管理 Device Management](https://doc.fenglyulin.com/docs/operating-systems/240520-device-management)
-5. [操作系统进程管理 Process Management](https://doc.fenglyulin.com/docs/operating-systems/240520-process-management)
-6. [Deadlock and Lock Types](https://doc.fenglyulin.com/docs/operating-systems/240521-deadlock)
-7. [Link](https://doc.fenglyulin.com/docs/operating-systems/240521-link)
-8. [操作系统内存管理 Memory Management](https://doc.fenglyulin.com/docs/operating-systems/240521-memory-management)
-9. [优化程序性能 HPC Optimizing program's performance](https://doc.fenglyulin.com/docs/operating-systems/CSAPP: Chapter05 Optimize Program Performance)
-10. [并行编程 Parallel Programming](https://doc.fenglyulin.com/docs/operating-systems/CSAPP: Chapter12 Concurrent Programming)
-11. [系统调用和零拷贝技术](https://doc.fenglyulin.com/docs/operating-systems/system-call-and-zero-copy)
-12. [OS Todo](https://doc.fenglyulin.com/docs/operating-systems/todo)
+- 187 [[TD] Settlement 订单结算系统（简化）](https://doc.fenglyulin.com/docs/20250208-settlement)
 
-## System Design
-1. [从零到一百万用户 Scale from zero to millions of user](https://doc.fenglyulin.com/docs/system-design/20231001-from-zero-to-millions)
-2. [网络架构的演变 The Evolution of Web Service Architecture](https://doc.fenglyulin.com/docs/system-design/20231001-web-architecture)
-3. [秒杀系统 Flash Sale System](https://doc.fenglyulin.com/docs/system-design/20240308-flash-sale)
-4. [一致性哈希 Consistent Hashing](https://doc.fenglyulin.com/docs/system-design/20240501-consistent-hashing)
-5. [ID生成器](https://doc.fenglyulin.com/docs/system-design/20240501-id-gen)
-6. [设计模式 Design Pattern](https://doc.fenglyulin.com/docs/system-design/20240527-design-pattern)
-7. [聊天系统 Chat System](https://doc.fenglyulin.com/docs/system-design/20240601-chat-system)
-8. [短链生成系统 URL Shortener System](https://doc.fenglyulin.com/docs/system-design/20240601-url-shorter)
-9. [容灾与备份 Disaster Tolerance, Backup, Failover](https://doc.fenglyulin.com/docs/system-design/20240603-disaster-recovery)
-10. [Nginx高可用](https://doc.fenglyulin.com/docs/system-design/20240912-nginx-scale)
-11. [敏捷开发、DDD与TDD](https://doc.fenglyulin.com/docs/system-design/20241001-development-mode)
-12. [[TD] Settlement 订单结算系统（简化）](https://doc.fenglyulin.com/docs/system-design/20250208-settlement)
-13. [Overview](https://doc.fenglyulin.com/docs/system-design/20250209-overview)
-14. [一个合格的后端系统](https://doc.fenglyulin.com/docs/system-design/20250215-perfect-backend)
-15. [新加坡PR申请数据 sgpass.info](https://doc.fenglyulin.com/docs/system-design/20250215-sgpassinfo)
-16. [产品系统设计Todo Products Todolist](https://doc.fenglyulin.com/docs/system-design/240913-todo)
+- 186 [Kafka概述 Overview](https://doc.fenglyulin.com/docs/20250130-overview)
 
-## Web Full Stack
-1. [Unix Log CLI](https://doc.fenglyulin.com/docs/web-full-stack/20240830-unix-log-cli)
-2. [Grafana](https://doc.fenglyulin.com/docs/web-full-stack/20240903-grafana)
-3. [Authentication, Authorization, Token and JWT](https://doc.fenglyulin.com/docs/web-full-stack/20240911-authentication-01)
-4. [Encryption, Signature, and Hash](https://doc.fenglyulin.com/docs/web-full-stack/20240912-encryption)
-5. [Python GIL](https://doc.fenglyulin.com/docs/web-full-stack/20240922-python-gil)
-6. [IoC (Inversion of Control) and AOP (Aspect Oriented Programming)](https://doc.fenglyulin.com/docs/web-full-stack/20240926-ioc-and-aop)
-7. [Docker Cheat Sheet](https://doc.fenglyulin.com/docs/web-full-stack/20241001-docker)
-8. [文件系统](https://doc.fenglyulin.com/docs/web-full-stack/20241014-linux)
-9. [pandas](https://doc.fenglyulin.com/docs/web-full-stack/20241123-pandas)
-10. [HTTP Q&A](https://doc.fenglyulin.com/docs/web-full-stack/20241206-http-qa)
-11. [WIFI Port Redirect public requests to my laptop](https://doc.fenglyulin.com/docs/web-full-stack/20241216-wifi-port-redirection)
-12. [Shell Script](https://doc.fenglyulin.com/docs/web-full-stack/20250122-shell)
-13. [CURD Problem](https://doc.fenglyulin.com/docs/web-full-stack/20250215-crud-problem)
-14. [Frontend Funfact](https://doc.fenglyulin.com/docs/web-full-stack/240502-funfact)
-15. [React 五子棋入门项目 Tic-Tac-Toe](https://doc.fenglyulin.com/docs/web-full-stack/240622-01-react-project-tic-tac-toe)
-16. [React Nextjs Foundation 基础](https://doc.fenglyulin.com/docs/web-full-stack/240622-02-react-nextjs-foundation)
-17. [Nextjs Project Dashboard 01](https://doc.fenglyulin.com/docs/web-full-stack/240622-03-nextjs-project-dashboard-01)
-18. [Nextjs Project Dashboard 02](https://doc.fenglyulin.com/docs/web-full-stack/240623-04-nextjs-project-dashboard-02)
-19. [Nextjs Project Dashboard 03](https://doc.fenglyulin.com/docs/web-full-stack/240625-05-nextjs-project-dashboard-03)
-20. [CSS笔记 Notes](https://doc.fenglyulin.com/docs/web-full-stack/240706-css-01)
-21. [React笔记 Notes](https://doc.fenglyulin.com/docs/web-full-stack/240710-react-01)
-22. [TypeScript](https://doc.fenglyulin.com/docs/web-full-stack/240710-typescript-01)
-23. [UML 序列图要点 UML Sequence DiagramStress Testing Tool](https://doc.fenglyulin.com/docs/web-full-stack/240828-uml-sequence-diagram)
-24. [Frontend技术栈 Tech Stack](https://doc.fenglyulin.com/docs/web-full-stack/240829-fe-tech-stack)
-25. [压力测试工具 Stress Testing Tool](https://doc.fenglyulin.com/docs/web-full-stack/240829-stress-testing-tool)
-26. [性能测试检查清单 Performance Testing Checklist](https://doc.fenglyulin.com/docs/web-full-stack/240830-stress-testing-checklist)
-27. [Crontab 使用指南](https://doc.fenglyulin.com/docs/web-full-stack/240913-crontab)
-28. [常见CMD 命令](https://doc.fenglyulin.com/docs/web-full-stack/241031-cmd)
-29. [Git Command Cheatsheet](https://doc.fenglyulin.com/docs/web-full-stack/git)
-30. [面试经验 Interview Experience](https://doc.fenglyulin.com/docs/web-full-stack/interview)
-31. [Go 语言](https://doc.fenglyulin.com/docs/web-full-stack/main)
-32. [收录 Web 全栈的知识](https://doc.fenglyulin.com/docs/web-full-stack/overview)
+- 185 [MysQL SQL CheatSheet](https://doc.fenglyulin.com/docs/20241009-mysql-sql-cheatsheet)
 
+- 184 [SQL 练习 Select statement](https://doc.fenglyulin.com/docs/20241001-select-practise)
+
+- 183 [Multilayer Perceptrons (MLP)](https://doc.fenglyulin.com/docs/20240922-mlp-multilayer-perceptrons)
+
+- 182 [Linear Neural Network](https://doc.fenglyulin.com/docs/20240917-linear-neural-network)
+
+- 181 [Network](https://doc.fenglyulin.com/docs/20250131-network)
+
+- 180 [Redis介绍 Overview](https://doc.fenglyulin.com/docs/20250130-overview)
+
+- 179 [Overview](https://doc.fenglyulin.com/docs/20250127-overview)
+
+- 178 [MySQL执行流程 Execution Flow](https://doc.fenglyulin.com/docs/20250127-01-mysql-execution-flow)
+
+- 177 [Shell脚本概述 Shell Script](https://doc.fenglyulin.com/docs/20250122-shell)
+
+- 176 [MySQL 问题清单 MySQL Questions List](https://doc.fenglyulin.com/docs/questions)
+
+- 175 [MysQL日志 Log](https://doc.fenglyulin.com/docs/20250127-05-mysql-log)
+
+- 174 [MySQL锁 Lock](https://doc.fenglyulin.com/docs/20250127-04-mysql-lock)
+
+- 173 [MySQL事务 Transaction](https://doc.fenglyulin.com/docs/20250127-03-mysql-transaction)
+
+- 172 [MySQL索引 Index](https://doc.fenglyulin.com/docs/20250127-02-mysql-index)
+
+- 171 [Prompt Collection](https://doc.fenglyulin.com/docs/20240116-prompt-collection)
+
+- 170 [HTTP Q&A](https://doc.fenglyulin.com/docs/20241206-http-qa)
+
+- 169 [WIFI Port Redirect public requests to my laptop](https://doc.fenglyulin.com/docs/20241216-wifi-port-redirection)
+
+- 168 [PEFT Introduction](https://doc.fenglyulin.com/docs/20241208-pets)
+
+- 167 [pandas](https://doc.fenglyulin.com/docs/20241123-pandas)
+
+- 166 [S-LORA: SERVING THOUSANDS OF CONCURRENT LORA ADAPTERS](https://doc.fenglyulin.com/docs/20241020-S-LoRA)
+
+- 165 [LLM Concept](https://doc.fenglyulin.com/docs/20241110-transformer-param)
+
+- 164 [Nsight System](https://doc.fenglyulin.com/docs/20241109-nsight)
+
+- 163 [GPU](https://doc.fenglyulin.com/docs/20241109-gpu)
+
+- 162 [Prefill和Decode的分析](https://doc.fenglyulin.com/docs/20241109-analyze-batch-in-tranformer)
+
+- 161 [Statistics](https://doc.fenglyulin.com/docs/20241107-statistics)
+
+- 160 [Generate Synthetic Workload ](https://doc.fenglyulin.com/docs/20241107-synthetic-workload)
+
+- 159 [常见CMD 命令](https://doc.fenglyulin.com/docs/241031-cmd)
+
+- 158 [产品系统设计Todo Products Todolist](https://doc.fenglyulin.com/docs/240913-todo)
+
+- 157 [OS Todo](https://doc.fenglyulin.com/docs/todo)
+
+- 156 [PEFT - LoRA](https://doc.fenglyulin.com/docs/20240928-peft)
+
+- 155 [收录 Web 全栈的知识](https://doc.fenglyulin.com/docs/overview)
+
+- 154 [IoC (Inversion of Control) and AOP (Aspect Oriented Programming)](https://doc.fenglyulin.com/docs/20240926-ioc-and-aop)
+
+- 153 [Python GIL](https://doc.fenglyulin.com/docs/20240922-python-gil)
+
+- 152 [Encryption, Signature, and Hash](https://doc.fenglyulin.com/docs/20240912-encryption)
+
+- 151 [Grafana](https://doc.fenglyulin.com/docs/20240903-grafana)
+
+- 150 [浮点数](https://doc.fenglyulin.com/docs/20241001-float-number)
+
+- 149 [Machine Learning Systems Overview](https://doc.fenglyulin.com/docs/20240926-overview)
+
+- 148 [How to do research in the era of LLM](https://doc.fenglyulin.com/docs/20240918-how-to-do-research-in-llm-era)
+
+- 147 [周赛汇总](https://doc.fenglyulin.com/docs/summary)
+
+- 146 [周赛 Weekly Contest 417](https://doc.fenglyulin.com/docs/240928-417)
+
+- 145 [周赛 Weekly Contest 414](https://doc.fenglyulin.com/docs/240908-414)
+
+- 144 [周赛 Weekly Contest 412](https://doc.fenglyulin.com/docs/240825-412)
+
+- 143 [周赛 Weekly Contest 411](https://doc.fenglyulin.com/docs/240818-411)
+
+- 142 [周赛 Weekly Contest 410](https://doc.fenglyulin.com/docs/240811-410)
+
+- 141 [Fulltext Index: Lucene](https://doc.fenglyulin.com/docs/20241004-fulltext-index-lucene)
+
+- 140 [Transformer Inference Arithmetic](https://doc.fenglyulin.com/docs/20241001-transformer-inference-arithmetic)
+
+- 139 [The Illustrated Transformer (Notes)](https://doc.fenglyulin.com/docs/20240928-transformer-calculation)
+
+- 138 [Overview](https://doc.fenglyulin.com/docs/20240926-overview)
+
+- 137 [RNN Recurrent Neural Network](https://doc.fenglyulin.com/docs/20240924-rnn-recurrent-neural-network)
+
+- 136 [Modern RNN: GRU, Enconder-Deconder, Seq-Seq](https://doc.fenglyulin.com/docs/20240924-modern-rnn)
+
+- 135 [Modern CNN](https://doc.fenglyulin.com/docs/20240924-modern-cnn)
+
+- 134 [Deep Learning Computation](https://doc.fenglyulin.com/docs/20240923-deep-learning-computation)
+
+- 133 [Convoulutional Neural Network CNN](https://doc.fenglyulin.com/docs/20240923-cnn-convolutional-neural-network)
+
+- 132 [Self-Attention](https://doc.fenglyulin.com/docs/20240922-self-attention)
+
+- 131 [DL/ML Common Concept](https://doc.fenglyulin.com/docs/20240919-common-concepts)
+
+- 130 [Deep Learning Overview](https://doc.fenglyulin.com/docs/20230601-deep-learning-overview)
+
+- 129 [Nginx高可用](https://doc.fenglyulin.com/docs/20240912-nginx-scale)
+
+- 128 [设计模式 Design Pattern](https://doc.fenglyulin.com/docs/20240527-design-pattern)
+
+- 127 [秒杀系统 Flash Sale System](https://doc.fenglyulin.com/docs/20240308-flash-sale)
+
+- 126 [从零到一百万用户 Scale from zero to millions of user](https://doc.fenglyulin.com/docs/20231001-from-zero-to-millions)
+
+- 125 [短链生成系统 URL Shortener System](https://doc.fenglyulin.com/docs/20240601-url-shorter)
+
+- 124 [ID生成器](https://doc.fenglyulin.com/docs/20240501-id-gen)
+
+- 123 [Crontab 使用指南](https://doc.fenglyulin.com/docs/240913-crontab)
+
+- 122 [Fault Tolerance in LLM Training/Serving Systems](https://doc.fenglyulin.com/docs/20240807-fault-tolerance-in-mlsys-01)
+
+- 121 [Authentication, Authorization, Token and JWT](https://doc.fenglyulin.com/docs/20240911-authentication-01)
+
+- 120 [面试经验 Interview Experience](https://doc.fenglyulin.com/docs/interview)
+
+- 119 [性能测试检查清单 Performance Testing Checklist](https://doc.fenglyulin.com/docs/240830-stress-testing-checklist)
+
+- 118 [压力测试工具 Stress Testing Tool](https://doc.fenglyulin.com/docs/240829-stress-testing-tool)
+
+- 117 [Frontend技术栈 Tech Stack](https://doc.fenglyulin.com/docs/240829-fe-tech-stack)
+
+- 116 [UML 序列图要点 UML Sequence DiagramStress Testing Tool](https://doc.fenglyulin.com/docs/240828-uml-sequence-diagram)
+
+- 115 [TypeScript](https://doc.fenglyulin.com/docs/240710-typescript-01)
+
+- 114 [CSS笔记 Notes](https://doc.fenglyulin.com/docs/240706-css-01)
+
+- 113 [Nextjs Project Dashboard 03](https://doc.fenglyulin.com/docs/240625-05-nextjs-project-dashboard-03)
+
+- 112 [Nextjs Project Dashboard 02](https://doc.fenglyulin.com/docs/240623-04-nextjs-project-dashboard-02)
+
+- 111 [Nextjs Project Dashboard 01](https://doc.fenglyulin.com/docs/240622-03-nextjs-project-dashboard-01)
+
+- 110 [Frontend Funfact](https://doc.fenglyulin.com/docs/240502-funfact)
+
+- 109 [Linux系统常见概念 Overview](https://doc.fenglyulin.com/docs/20241014-linux)
+
+- 108 [Unix Log CLI](https://doc.fenglyulin.com/docs/20240830-unix-log-cli)
+
+- 107 [Distributed Training Overview](https://doc.fenglyulin.com/docs/20240903-distributed-training-06)
+
+- 106 [Distributed Training Collective Communication](https://doc.fenglyulin.com/docs/20240828-distributed-training-04)
+
+- 105 [Machine Learning Cluster Architecture](https://doc.fenglyulin.com/docs/20240828-distributed-training-03)
+
+- 104 [Distributed Training Approaches](https://doc.fenglyulin.com/docs/20240827-distributed-training-02)
+
+- 103 [Distributed Training Parameters Server](https://doc.fenglyulin.com/docs/20240828-distributed-training-05)
+
+- 102 [Distributed Training System Overview](https://doc.fenglyulin.com/docs/20240826-distributed-training-01)
+
+- 101 [MLSys Learning PLAN](https://doc.fenglyulin.com/docs/20240815-mlsys-learning-plan)
+
+- 100 [周赛 Weekly Contest 387](https://doc.fenglyulin.com/docs/240303 387)
+
+- 99 [周赛 Weekly Contest 408](https://doc.fenglyulin.com/docs/240728-408)
+
+- 98 [周赛 Weekly Contest 407](https://doc.fenglyulin.com/docs/240721-407)
+
+- 97 [周赛 Weekly Contest 406](https://doc.fenglyulin.com/docs/240714-406)
+
+- 96 [React笔记 Notes](https://doc.fenglyulin.com/docs/240710-react-01)
+
+- 95 [RPC 请求语义 RPC Semantics](https://doc.fenglyulin.com/docs/02-rpc-semantics)
+
+- 94 [周赛 Weekly Contest 405](https://doc.fenglyulin.com/docs/240707-405)
+
+- 93 [我在组内做了一次技术分享：分布式系统，I did a Distributed Systems Sharing in our Team](https://doc.fenglyulin.com/docs/)
+
+- 92 [周赛 Weekly Contest 404](https://doc.fenglyulin.com/docs/240630-404)
+
+- 91 [周赛 Weekly Contest 403](https://doc.fenglyulin.com/docs/240623-403)
+
+- 90 [React 五子棋入门项目 Tic-Tac-Toe](https://doc.fenglyulin.com/docs/240622-01-react-project-tic-tac-toe)
+
+- 89 [React Nextjs Foundation 基础](https://doc.fenglyulin.com/docs/240622-02-react-nextjs-foundation)
+
+- 88 [Leetcode problem rating](https://doc.fenglyulin.com/docs/ref)
+
+- 87 [周赛 Weekly Contest 402](https://doc.fenglyulin.com/docs/240616-402)
+
+- 86 [周赛 Weekly Contest 401](https://doc.fenglyulin.com/docs/240609-401)
+
+- 85 [Python 常用语法 Python Frequently Used Syntax](https://doc.fenglyulin.com/docs/python-常用语法)
+
+- 84 [LRU缓存](https://doc.fenglyulin.com/docs/240525-lru)
+
+- 83 [堆 Heap](https://doc.fenglyulin.com/docs/240525-heap)
+
+- 82 [图最短路径 Graph V2](https://doc.fenglyulin.com/docs/240524-graph-v2)
+
+- 81 [排序 Sort](https://doc.fenglyulin.com/docs/240523-sort)
+
+- 80 [单调队列 Monotonic Queue](https://doc.fenglyulin.com/docs/240515-monotonic-queue)
+
+- 79 [单调栈 Monotonic Stack](https://doc.fenglyulin.com/docs/240514-monotonic-stack)
+
+- 78 [背包动态规划 Backup DP](https://doc.fenglyulin.com/docs/240326-dp-backup)
+
+- 77 [容灾与备份 Disaster Tolerance, Backup, Failover](https://doc.fenglyulin.com/docs/20240603-disaster-recovery)
+
+- 76 [周赛 Weekly Contest 400](https://doc.fenglyulin.com/docs/240602-400)
+
+- 75 [Math Todo](https://doc.fenglyulin.com/docs/todo)
+
+- 74 [容斥定理 Inclusion–exclusion principle](https://doc.fenglyulin.com/docs/240601-inclusion-exclusion-principle)
+
+- 73 [Storage and Retrieval](https://doc.fenglyulin.com/docs/20240527-db-storage-and-retrieval)
+
+- 72 [传输层 The Transport Layer](https://doc.fenglyulin.com/docs/240428-240527-04-transport-layer)
+
+- 71 [数据链路层 The Data Link Layer](https://doc.fenglyulin.com/docs/240414-02-data-link-layer)
+
+- 70 [Full Score in NUS CS5223](https://doc.fenglyulin.com/docs/240528-milestone)
+
+- 69 [分布式思考 Distributed Thinking](https://doc.fenglyulin.com/docs/240528-distributed-thinking)
+
+- 68 [周赛 Weekly Contest 131](https://doc.fenglyulin.com/docs/240526-131-biweekly)
+
+- 67 [常见单词](https://doc.fenglyulin.com/docs/eng)
+
+- 66 [Go 语言](https://doc.fenglyulin.com/docs/main)
+
+- 65 [Git Command Cheatsheet](https://doc.fenglyulin.com/docs/git)
+
+- 64 [Docker Cheat Sheet](https://doc.fenglyulin.com/docs/20241001-docker)
+
+- 63 [敏捷开发、DDD与TDD](https://doc.fenglyulin.com/docs/20241001-development-mode)
+
+- 62 [系统调用和零拷贝技术](https://doc.fenglyulin.com/docs/system-call-and-zero-copy)
+
+- 61 [Go常用语法 Golang Syntax](https://doc.fenglyulin.com/docs/golang-常用语法)
+
+- 60 [图遍历 Graph Traversal, Topological Sort, Unicom Branch](https://doc.fenglyulin.com/docs/240524-graph-v1-iteration)
+
+- 59 [回溯之子集 Backtrace-Subset](https://doc.fenglyulin.com/docs/240315-backtrace-subset)
+
+- 58 [二叉树层序遍历 Binary Tree Level Order Traversal](https://doc.fenglyulin.com/docs/240311-bp-level-order-traversal)
+
+- 57 [二叉树前中后向遍历 Binary Tree Front, Middle, and Post Order Traversal](https://doc.fenglyulin.com/docs/240309-09-bt-front-middle-back-traversal)
+
+- 56 [Deadlock and Lock Types](https://doc.fenglyulin.com/docs/240521-deadlock)
+
+- 55 [Link](https://doc.fenglyulin.com/docs/240521-link)
+
+- 54 [操作系统内存管理 Memory Management](https://doc.fenglyulin.com/docs/240521-memory-management)
+
+- 53 [操作系统设备管理 Device Management](https://doc.fenglyulin.com/docs/240520-device-management)
+
+- 52 [Socket](https://doc.fenglyulin.com/docs/Socket)
+
+- 51 [操作系统进程管理 Process Management](https://doc.fenglyulin.com/docs/240520-process-management)
+
+- 50 [周赛 Weekly Contest 398](https://doc.fenglyulin.com/docs/240519-398)
+
+- 49 [操作系统概览 Operating System Overview](https://doc.fenglyulin.com/docs/240515-overview)
+
+- 48 [Topics Todolist](https://doc.fenglyulin.com/docs/todolist)
+
+- 47 [树形动态规划 Tree DP](https://doc.fenglyulin.com/docs/240513-dp-tree)
+
+- 46 [间隔动态规划 Interval DP](https://doc.fenglyulin.com/docs/240512-dp-interval)
+
+- 45 [状态机动态规划 State Machine DP](https://doc.fenglyulin.com/docs/240512-dp-state-machine)
+
+- 44 [双周赛 Weekly Contest 130](https://doc.fenglyulin.com/docs/240512-130-biweekly)
+
+- 43 [聊天系统 Chat System](https://doc.fenglyulin.com/docs/20240601-chat-system)
+
+- 42 [Lab4 ShardStoreServer](https://doc.fenglyulin.com/docs/04-shard-store-server)
+
+- 41 [Lab3 Paxos Fault Tolerance](https://doc.fenglyulin.com/docs/03-paxos-tolerance)
+
+- 40 [Lab 2: Primary-Backup Service](https://doc.fenglyulin.com/docs/02-primary-backup-tolerance)
+
+- 39 [Lab 1: Exactly-Once](https://doc.fenglyulin.com/docs/01-exactly-once-kv-store)
+
+- 38 [分布式文件系统 Distributed File System](https://doc.fenglyulin.com/docs/08-distributed-file-system)
+
+- 37 [拜占庭容错 Byzantine Fault Tolerance](https://doc.fenglyulin.com/docs/06-byzantine-fault-tolerance)
+
+- 36 [分布式事务 Distributed Transaction](https://doc.fenglyulin.com/docs/07-distirbuted-transaction)
+
+- 35 [共识协议 Distributed Consensus, State Machine Replication](https://doc.fenglyulin.com/docs/05-consensus-protocol)
+
+- 34 [周赛 Weekly Contest 395](https://doc.fenglyulin.com/docs/240428-395)
+
+- 33 [周赛 Weekly Contest 396](https://doc.fenglyulin.com/docs/240505-396)
+
+- 32 [一个请求的始末 The Beginning and End of a Request](https://doc.fenglyulin.com/docs/the-beginning-and-end-of-a-request)
+
+- 31 [代理与反向代理 Proxy VS Reverse Proxy](https://doc.fenglyulin.com/docs/240503-proxy-vs-reverse-proxy)
+
+- 30 [物理层 The Physical Layer](https://doc.fenglyulin.com/docs/240414-01-physical-layer)
+
+- 29 [分布式状态，如何定义一致性？ Distributed State and Consistency](https://doc.fenglyulin.com/docs/04-state-consistency)
+
+- 28 [物理时钟，Lamport 时钟与 Vector 时钟 Physical Clock, Lamport Logical Clock, and Vector Clock](https://doc.fenglyulin.com/docs/03-logical-lock)
+
+- 27 [Algorithm summary](https://doc.fenglyulin.com/docs/240314-template)
+
+- 26 [应用层 The Application Layer](https://doc.fenglyulin.com/docs/240429-05-application-layer)
+
+- 25 [为什么要学习 LeetCode？ Why practice Leetcode?](https://doc.fenglyulin.com/docs/240201-why)
+
+- 24 [image: https://i.imgur.com/mErPwqL.png](https://doc.fenglyulin.com/docs/01-intro)
+
+- 23 [并行编程 Parallel Programming](https://doc.fenglyulin.com/docs/20240415-csapp-chapter12-concurrent-programming)
+
+- 22 [网络架构的演变 The Evolution of Web Service Architecture](https://doc.fenglyulin.com/docs/20231001-web-architecture)
+
+- 21 [MySQL概览 Overview](https://doc.fenglyulin.com/docs/20230901-mysql-essential-knowledge)
+
+- 20 [优化程序性能 HPC Optimizing program's performance](https://doc.fenglyulin.com/docs/20240415-csapp-chapter05-optimize-program-performance)
+
+- 19 [网络层 The Network Layer](https://doc.fenglyulin.com/docs/240415-03-network-layer)
+
+- 18 [训练机器学习模型预测赢家，在 Kaggle 准确度最高 Game Winner Prediction, best 76.9% w EDA&Finetune](https://doc.fenglyulin.com/docs/)
+
+- 17 [OSI七层模型 OSI Network 7 layers Model](https://doc.fenglyulin.com/docs/240414-00-overview)
+
+- 16 [线性DP Linear DP](https://doc.fenglyulin.com/docs/240329-linear-dp)
+
+- 15 [动态规划原理 DP Principle](https://doc.fenglyulin.com/docs/240324-dp-principle)
+
+- 14 [回溯之排列 Backtrace-Permutation](https://doc.fenglyulin.com/docs/240324-backtrace-permutation)
+
+- 13 [【视频】43秒带你速通分布式系统概念 [Video] A quick tour of Distributed System](https://doc.fenglyulin.com/docs/)
+
+- 12 [回溯之组合 Backtrace Combination](https://doc.fenglyulin.com/docs/240316-backtrace-combination)
+
+- 11 [二叉树与递归，相似平衡 Binary Tree and Recursion v2](https://doc.fenglyulin.com/docs/240309-08-binary-tree-and-recursion-v2)
+
+- 10 [二叉树与递归，最近祖先 Binary Tree and Recursion, Nearest Ancestor of Binary Tree](https://doc.fenglyulin.com/docs/240309-10-bp-nearest-ancestor)
+
+-  9 [二叉树与递归，最大深度 Binary Tree and Recursion](https://doc.fenglyulin.com/docs/240305-07-binary-tree-and-recursion)
+
+-  8 [二分搜索 Binary Search ](https://doc.fenglyulin.com/docs/240229-binary-search)
+
+-  7 [链表删除系列 Linked List Delete Series](https://doc.fenglyulin.com/docs/240303-06-linked-list-remove)
+
+-  6 [链表快慢指针系列 Linked List Fast Slow Series](https://doc.fenglyulin.com/docs/240303-05-linked-list-slow-fast-cycle)
+
+-  5 [一致性哈希 Consistent Hashing](https://doc.fenglyulin.com/docs/20240501-consistent-hashing)
+
+-  4 [反转链表系列 Linked List Reverse Series](https://doc.fenglyulin.com/docs/240229-04-linked-list-reverse)
+
+-  3 [同向指针滑窗 Same Direction Pointer/Sliding Window](https://doc.fenglyulin.com/docs/240228-same-dire-double-pointer-slide-window)
+
+-  2 [双指针 Opposite Double Pointer](https://doc.fenglyulin.com/docs/240224-opposite-double-pointer)
+
+-  1 [规划 Roadmap](https://doc.fenglyulin.com/docs/roadmap)
+
+## ARTIFICIAL INTELLIGENCE
+1. [Linear Neural Network](https://doc.fenglyulin.com/docs/20240917-linear-neural-network)
+2. [Multilayer Perceptrons (MLP)](https://doc.fenglyulin.com/docs/20240922-mlp-multilayer-perceptrons)
+3. [Prompt Collection](https://doc.fenglyulin.com/docs/20240116-prompt-collection)
+4. [PEFT Introduction](https://doc.fenglyulin.com/docs/20241208-pets)
+5. [S-LORA: SERVING THOUSANDS OF CONCURRENT LORA ADAPTERS](https://doc.fenglyulin.com/docs/20241020-S-LoRA)
+6. [LLM Concept](https://doc.fenglyulin.com/docs/20241110-transformer-param)
+7. [Nsight System](https://doc.fenglyulin.com/docs/20241109-nsight)
+8. [Prefill和Decode的分析](https://doc.fenglyulin.com/docs/20241109-analyze-batch-in-tranformer)
+9. [Statistics](https://doc.fenglyulin.com/docs/20241107-statistics)
+10. [Generate Synthetic Workload ](https://doc.fenglyulin.com/docs/20241107-synthetic-workload)
+11. [PEFT - LoRA](https://doc.fenglyulin.com/docs/20240928-peft)
+12. [Deep Learning Overview](https://doc.fenglyulin.com/docs/20230601-deep-learning-overview)
+13. [DL/ML Common Concept](https://doc.fenglyulin.com/docs/20240919-common-concepts)
+14. [Self-Attention](https://doc.fenglyulin.com/docs/20240922-self-attention)
+15. [Convoulutional Neural Network CNN](https://doc.fenglyulin.com/docs/20240923-cnn-convolutional-neural-network)
+16. [Deep Learning Computation](https://doc.fenglyulin.com/docs/20240923-deep-learning-computation)
+17. [Modern CNN](https://doc.fenglyulin.com/docs/20240924-modern-cnn)
+18. [Modern RNN: GRU, Enconder-Deconder, Seq-Seq](https://doc.fenglyulin.com/docs/20240924-modern-rnn)
+19. [RNN Recurrent Neural Network](https://doc.fenglyulin.com/docs/20240924-rnn-recurrent-neural-network)
+20. [Overview](https://doc.fenglyulin.com/docs/20240926-overview)
+21. [The Illustrated Transformer (Notes)](https://doc.fenglyulin.com/docs/20240928-transformer-calculation)
+22. [Transformer Inference Arithmetic](https://doc.fenglyulin.com/docs/20241001-transformer-inference-arithmetic)
+
+## COMPUTER NETWORKS
+1. [数据链路层 The Data Link Layer](https://doc.fenglyulin.com/docs/240414-02-data-link-layer)
+2. [传输层 The Transport Layer](https://doc.fenglyulin.com/docs/240428-240527-04-transport-layer)
+3. [Socket](https://doc.fenglyulin.com/docs/Socket)
+4. [物理层 The Physical Layer](https://doc.fenglyulin.com/docs/240414-01-physical-layer)
+5. [代理与反向代理 Proxy VS Reverse Proxy](https://doc.fenglyulin.com/docs/240503-proxy-vs-reverse-proxy)
+6. [一个请求的始末 The Beginning and End of a Request](https://doc.fenglyulin.com/docs/the-beginning-and-end-of-a-request)
+7. [应用层 The Application Layer](https://doc.fenglyulin.com/docs/240429-05-application-layer)
+8. [网络层 The Network Layer](https://doc.fenglyulin.com/docs/240415-03-network-layer)
+9. [OSI七层模型 OSI Network 7 layers Model](https://doc.fenglyulin.com/docs/240414-00-overview)
+
+## DATABASE
+1. [testing 20250215](https://doc.fenglyulin.com/docs/20250215-testing)
+2. [Redis问题清单 Redis Questions List](https://doc.fenglyulin.com/docs/20250211-questions)
+3. [SQL 练习 Select statement](https://doc.fenglyulin.com/docs/20241001-select-practise)
+4. [MysQL SQL CheatSheet](https://doc.fenglyulin.com/docs/20241009-mysql-sql-cheatsheet)
+5. [Kafka概述 Overview](https://doc.fenglyulin.com/docs/20250130-overview)
+6. [Redis介绍 Overview](https://doc.fenglyulin.com/docs/20250130-overview)
+7. [Overview](https://doc.fenglyulin.com/docs/20250127-overview)
+8. [MySQL执行流程 Execution Flow](https://doc.fenglyulin.com/docs/20250127-01-mysql-execution-flow)
+9. [MySQL索引 Index](https://doc.fenglyulin.com/docs/20250127-02-mysql-index)
+10. [MySQL事务 Transaction](https://doc.fenglyulin.com/docs/20250127-03-mysql-transaction)
+11. [MySQL锁 Lock](https://doc.fenglyulin.com/docs/20250127-04-mysql-lock)
+12. [MysQL日志 Log](https://doc.fenglyulin.com/docs/20250127-05-mysql-log)
+13. [MySQL 问题清单 MySQL Questions List](https://doc.fenglyulin.com/docs/questions)
+14. [Fulltext Index: Lucene](https://doc.fenglyulin.com/docs/20241004-fulltext-index-lucene)
+15. [Storage and Retrieval](https://doc.fenglyulin.com/docs/20240527-db-storage-and-retrieval)
+16. [MySQL概览 Overview](https://doc.fenglyulin.com/docs/20230901-mysql-essential-knowledge)
+
+## DISTRIBUTED SYSTEMS
+1. [RPC 请求语义 RPC Semantics](https://doc.fenglyulin.com/docs/02-rpc-semantics)
+2. [Full Score in NUS CS5223](https://doc.fenglyulin.com/docs/240528-milestone)
+3. [分布式思考 Distributed Thinking](https://doc.fenglyulin.com/docs/240528-distributed-thinking)
+4. [Lab4 ShardStoreServer](https://doc.fenglyulin.com/docs/04-shard-store-server)
+5. [Lab3 Paxos Fault Tolerance](https://doc.fenglyulin.com/docs/03-paxos-tolerance)
+6. [Lab 2: Primary-Backup Service](https://doc.fenglyulin.com/docs/02-primary-backup-tolerance)
+7. [Lab 1: Exactly-Once](https://doc.fenglyulin.com/docs/01-exactly-once-kv-store)
+8. [分布式文件系统 Distributed File System](https://doc.fenglyulin.com/docs/08-distributed-file-system)
+9. [拜占庭容错 Byzantine Fault Tolerance](https://doc.fenglyulin.com/docs/06-byzantine-fault-tolerance)
+10. [分布式事务 Distributed Transaction](https://doc.fenglyulin.com/docs/07-distirbuted-transaction)
+11. [共识协议 Distributed Consensus, State Machine Replication](https://doc.fenglyulin.com/docs/05-consensus-protocol)
+12. [分布式状态，如何定义一致性？ Distributed State and Consistency](https://doc.fenglyulin.com/docs/04-state-consistency)
+13. [物理时钟，Lamport 时钟与 Vector 时钟 Physical Clock, Lamport Logical Clock, and Vector Clock](https://doc.fenglyulin.com/docs/03-logical-lock)
+14. [image: https://i.imgur.com/mErPwqL.png](https://doc.fenglyulin.com/docs/01-intro)
+
+## LEETCODE
+1. [周赛 Weekly Contest 410](https://doc.fenglyulin.com/docs/240811-410)
+2. [周赛 Weekly Contest 411](https://doc.fenglyulin.com/docs/240818-411)
+3. [周赛 Weekly Contest 412](https://doc.fenglyulin.com/docs/240825-412)
+4. [周赛 Weekly Contest 414](https://doc.fenglyulin.com/docs/240908-414)
+5. [周赛 Weekly Contest 417](https://doc.fenglyulin.com/docs/240928-417)
+6. [周赛汇总](https://doc.fenglyulin.com/docs/summary)
+7. [周赛 Weekly Contest 387](https://doc.fenglyulin.com/docs/240303 387)
+8. [周赛 Weekly Contest 408](https://doc.fenglyulin.com/docs/240728-408)
+9. [周赛 Weekly Contest 407](https://doc.fenglyulin.com/docs/240721-407)
+10. [周赛 Weekly Contest 406](https://doc.fenglyulin.com/docs/240714-406)
+11. [周赛 Weekly Contest 405](https://doc.fenglyulin.com/docs/240707-405)
+12. [周赛 Weekly Contest 404](https://doc.fenglyulin.com/docs/240630-404)
+13. [周赛 Weekly Contest 403](https://doc.fenglyulin.com/docs/240623-403)
+14. [Leetcode problem rating](https://doc.fenglyulin.com/docs/ref)
+15. [周赛 Weekly Contest 402](https://doc.fenglyulin.com/docs/240616-402)
+16. [周赛 Weekly Contest 401](https://doc.fenglyulin.com/docs/240609-401)
+17. [背包动态规划 Backup DP](https://doc.fenglyulin.com/docs/240326-dp-backup)
+18. [单调栈 Monotonic Stack](https://doc.fenglyulin.com/docs/240514-monotonic-stack)
+19. [单调队列 Monotonic Queue](https://doc.fenglyulin.com/docs/240515-monotonic-queue)
+20. [排序 Sort](https://doc.fenglyulin.com/docs/240523-sort)
+21. [图最短路径 Graph V2](https://doc.fenglyulin.com/docs/240524-graph-v2)
+22. [堆 Heap](https://doc.fenglyulin.com/docs/240525-heap)
+23. [LRU缓存](https://doc.fenglyulin.com/docs/240525-lru)
+24. [Python 常用语法 Python Frequently Used Syntax](https://doc.fenglyulin.com/docs/python-常用语法)
+25. [周赛 Weekly Contest 400](https://doc.fenglyulin.com/docs/240602-400)
+26. [Math Todo](https://doc.fenglyulin.com/docs/todo)
+27. [容斥定理 Inclusion–exclusion principle](https://doc.fenglyulin.com/docs/240601-inclusion-exclusion-principle)
+28. [周赛 Weekly Contest 131](https://doc.fenglyulin.com/docs/240526-131-biweekly)
+29. [常见单词](https://doc.fenglyulin.com/docs/eng)
+30. [二叉树前中后向遍历 Binary Tree Front, Middle, and Post Order Traversal](https://doc.fenglyulin.com/docs/240309-09-bt-front-middle-back-traversal)
+31. [二叉树层序遍历 Binary Tree Level Order Traversal](https://doc.fenglyulin.com/docs/240311-bp-level-order-traversal)
+32. [回溯之子集 Backtrace-Subset](https://doc.fenglyulin.com/docs/240315-backtrace-subset)
+33. [图遍历 Graph Traversal, Topological Sort, Unicom Branch](https://doc.fenglyulin.com/docs/240524-graph-v1-iteration)
+34. [Go常用语法 Golang Syntax](https://doc.fenglyulin.com/docs/golang-常用语法)
+35. [周赛 Weekly Contest 398](https://doc.fenglyulin.com/docs/240519-398)
+36. [Topics Todolist](https://doc.fenglyulin.com/docs/todolist)
+37. [树形动态规划 Tree DP](https://doc.fenglyulin.com/docs/240513-dp-tree)
+38. [间隔动态规划 Interval DP](https://doc.fenglyulin.com/docs/240512-dp-interval)
+39. [状态机动态规划 State Machine DP](https://doc.fenglyulin.com/docs/240512-dp-state-machine)
+40. [双周赛 Weekly Contest 130](https://doc.fenglyulin.com/docs/240512-130-biweekly)
+41. [周赛 Weekly Contest 395](https://doc.fenglyulin.com/docs/240428-395)
+42. [周赛 Weekly Contest 396](https://doc.fenglyulin.com/docs/240505-396)
+43. [Algorithm summary](https://doc.fenglyulin.com/docs/240314-template)
+44. [为什么要学习 LeetCode？ Why practice Leetcode?](https://doc.fenglyulin.com/docs/240201-why)
+45. [线性DP Linear DP](https://doc.fenglyulin.com/docs/240329-linear-dp)
+46. [动态规划原理 DP Principle](https://doc.fenglyulin.com/docs/240324-dp-principle)
+47. [回溯之排列 Backtrace-Permutation](https://doc.fenglyulin.com/docs/240324-backtrace-permutation)
+48. [回溯之组合 Backtrace Combination](https://doc.fenglyulin.com/docs/240316-backtrace-combination)
+49. [二叉树与递归，相似平衡 Binary Tree and Recursion v2](https://doc.fenglyulin.com/docs/240309-08-binary-tree-and-recursion-v2)
+50. [二叉树与递归，最近祖先 Binary Tree and Recursion, Nearest Ancestor of Binary Tree](https://doc.fenglyulin.com/docs/240309-10-bp-nearest-ancestor)
+51. [二分搜索 Binary Search ](https://doc.fenglyulin.com/docs/240229-binary-search)
+52. [二叉树与递归，最大深度 Binary Tree and Recursion](https://doc.fenglyulin.com/docs/240305-07-binary-tree-and-recursion)
+53. [链表删除系列 Linked List Delete Series](https://doc.fenglyulin.com/docs/240303-06-linked-list-remove)
+54. [链表快慢指针系列 Linked List Fast Slow Series](https://doc.fenglyulin.com/docs/240303-05-linked-list-slow-fast-cycle)
+55. [反转链表系列 Linked List Reverse Series](https://doc.fenglyulin.com/docs/240229-04-linked-list-reverse)
+56. [同向指针滑窗 Same Direction Pointer/Sliding Window](https://doc.fenglyulin.com/docs/240228-same-dire-double-pointer-slide-window)
+57. [双指针 Opposite Double Pointer](https://doc.fenglyulin.com/docs/240224-opposite-double-pointer)
+58. [规划 Roadmap](https://doc.fenglyulin.com/docs/roadmap)
+
+## MLSYS
+1. [GPU](https://doc.fenglyulin.com/docs/20241109-gpu)
+2. [How to do research in the era of LLM](https://doc.fenglyulin.com/docs/20240918-how-to-do-research-in-llm-era)
+3. [Machine Learning Systems Overview](https://doc.fenglyulin.com/docs/20240926-overview)
+4. [Fault Tolerance in LLM Training/Serving Systems](https://doc.fenglyulin.com/docs/20240807-fault-tolerance-in-mlsys-01)
+5. [Distributed Training Overview](https://doc.fenglyulin.com/docs/20240903-distributed-training-06)
+6. [Distributed Training Approaches](https://doc.fenglyulin.com/docs/20240827-distributed-training-02)
+7. [Machine Learning Cluster Architecture](https://doc.fenglyulin.com/docs/20240828-distributed-training-03)
+8. [Distributed Training Collective Communication](https://doc.fenglyulin.com/docs/20240828-distributed-training-04)
+9. [Distributed Training Parameters Server](https://doc.fenglyulin.com/docs/20240828-distributed-training-05)
+10. [Distributed Training System Overview](https://doc.fenglyulin.com/docs/20240826-distributed-training-01)
+11. [MLSys Learning PLAN](https://doc.fenglyulin.com/docs/20240815-mlsys-learning-plan)
+
+## OPERATING SYSTEMS
+1. [Network](https://doc.fenglyulin.com/docs/20250131-network)
+2. [OS Todo](https://doc.fenglyulin.com/docs/todo)
+3. [浮点数](https://doc.fenglyulin.com/docs/20241001-float-number)
+4. [系统调用和零拷贝技术](https://doc.fenglyulin.com/docs/system-call-and-zero-copy)
+5. [Deadlock and Lock Types](https://doc.fenglyulin.com/docs/240521-deadlock)
+6. [Link](https://doc.fenglyulin.com/docs/240521-link)
+7. [操作系统内存管理 Memory Management](https://doc.fenglyulin.com/docs/240521-memory-management)
+8. [操作系统设备管理 Device Management](https://doc.fenglyulin.com/docs/240520-device-management)
+9. [操作系统进程管理 Process Management](https://doc.fenglyulin.com/docs/240520-process-management)
+10. [操作系统概览 Operating System Overview](https://doc.fenglyulin.com/docs/240515-overview)
+11. [并行编程 Parallel Programming](https://doc.fenglyulin.com/docs/20240415-csapp-chapter12-concurrent-programming)
+12. [优化程序性能 HPC Optimizing program's performance](https://doc.fenglyulin.com/docs/20240415-csapp-chapter05-optimize-program-performance)
+
+## SHARING
+1. [我在组内做了一次技术分享：分布式系统，I did a Distributed Systems Sharing in our Team](https://docs.google.com/presentation/d/1WhaGyZQZUH905QXI5QKHfKzojU1wFxcuWiNiF2pq994)
+2. [训练机器学习模型预测赢家，在 Kaggle 准确度最高 Game Winner Prediction, best 76.9% w EDA&Finetune](https://www.kaggle.com/code/kirklin/game-winner-prediction-best-76-9-w-eda-finetune)
+3. [【视频】43秒带你速通分布式系统概念 [Video] A quick tour of Distributed System](https://doc.fenglyulin.com/docs/distributed-systems/overview)
+
+## SYSTEM DESIGN
+1. [一个合格的后端系统](https://doc.fenglyulin.com/docs/20250215-perfect-backend)
+2. [新加坡PR申请数据 sgpass.info](https://doc.fenglyulin.com/docs/20250215-sgpassinfo)
+3. [Overview](https://doc.fenglyulin.com/docs/20250209-overview)
+4. [[TD] Settlement 订单结算系统（简化）](https://doc.fenglyulin.com/docs/20250208-settlement)
+5. [产品系统设计Todo Products Todolist](https://doc.fenglyulin.com/docs/240913-todo)
+6. [从零到一百万用户 Scale from zero to millions of user](https://doc.fenglyulin.com/docs/20231001-from-zero-to-millions)
+7. [秒杀系统 Flash Sale System](https://doc.fenglyulin.com/docs/20240308-flash-sale)
+8. [设计模式 Design Pattern](https://doc.fenglyulin.com/docs/20240527-design-pattern)
+9. [Nginx高可用](https://doc.fenglyulin.com/docs/20240912-nginx-scale)
+10. [ID生成器](https://doc.fenglyulin.com/docs/20240501-id-gen)
+11. [短链生成系统 URL Shortener System](https://doc.fenglyulin.com/docs/20240601-url-shorter)
+12. [容灾与备份 Disaster Tolerance, Backup, Failover](https://doc.fenglyulin.com/docs/20240603-disaster-recovery)
+13. [敏捷开发、DDD与TDD](https://doc.fenglyulin.com/docs/20241001-development-mode)
+14. [聊天系统 Chat System](https://doc.fenglyulin.com/docs/20240601-chat-system)
+15. [网络架构的演变 The Evolution of Web Service Architecture](https://doc.fenglyulin.com/docs/20231001-web-architecture)
+16. [一致性哈希 Consistent Hashing](https://doc.fenglyulin.com/docs/20240501-consistent-hashing)
+
+## WEB FULL STACK
+1. [CURD Problem](https://doc.fenglyulin.com/docs/20250215-crud-problem)
+2. [Shell脚本概述 Shell Script](https://doc.fenglyulin.com/docs/20250122-shell)
+3. [HTTP Q&A](https://doc.fenglyulin.com/docs/20241206-http-qa)
+4. [WIFI Port Redirect public requests to my laptop](https://doc.fenglyulin.com/docs/20241216-wifi-port-redirection)
+5. [pandas](https://doc.fenglyulin.com/docs/20241123-pandas)
+6. [常见CMD 命令](https://doc.fenglyulin.com/docs/241031-cmd)
+7. [Grafana](https://doc.fenglyulin.com/docs/20240903-grafana)
+8. [Encryption, Signature, and Hash](https://doc.fenglyulin.com/docs/20240912-encryption)
+9. [Python GIL](https://doc.fenglyulin.com/docs/20240922-python-gil)
+10. [IoC (Inversion of Control) and AOP (Aspect Oriented Programming)](https://doc.fenglyulin.com/docs/20240926-ioc-and-aop)
+11. [收录 Web 全栈的知识](https://doc.fenglyulin.com/docs/overview)
+12. [Crontab 使用指南](https://doc.fenglyulin.com/docs/240913-crontab)
+13. [Authentication, Authorization, Token and JWT](https://doc.fenglyulin.com/docs/20240911-authentication-01)
+14. [Unix Log CLI](https://doc.fenglyulin.com/docs/20240830-unix-log-cli)
+15. [Linux系统常见概念 Overview](https://doc.fenglyulin.com/docs/20241014-linux)
+16. [Frontend Funfact](https://doc.fenglyulin.com/docs/240502-funfact)
+17. [Nextjs Project Dashboard 01](https://doc.fenglyulin.com/docs/240622-03-nextjs-project-dashboard-01)
+18. [Nextjs Project Dashboard 02](https://doc.fenglyulin.com/docs/240623-04-nextjs-project-dashboard-02)
+19. [Nextjs Project Dashboard 03](https://doc.fenglyulin.com/docs/240625-05-nextjs-project-dashboard-03)
+20. [CSS笔记 Notes](https://doc.fenglyulin.com/docs/240706-css-01)
+21. [TypeScript](https://doc.fenglyulin.com/docs/240710-typescript-01)
+22. [UML 序列图要点 UML Sequence DiagramStress Testing Tool](https://doc.fenglyulin.com/docs/240828-uml-sequence-diagram)
+23. [Frontend技术栈 Tech Stack](https://doc.fenglyulin.com/docs/240829-fe-tech-stack)
+24. [压力测试工具 Stress Testing Tool](https://doc.fenglyulin.com/docs/240829-stress-testing-tool)
+25. [性能测试检查清单 Performance Testing Checklist](https://doc.fenglyulin.com/docs/240830-stress-testing-checklist)
+26. [面试经验 Interview Experience](https://doc.fenglyulin.com/docs/interview)
+27. [React笔记 Notes](https://doc.fenglyulin.com/docs/240710-react-01)
+28. [React 五子棋入门项目 Tic-Tac-Toe](https://doc.fenglyulin.com/docs/240622-01-react-project-tic-tac-toe)
+29. [React Nextjs Foundation 基础](https://doc.fenglyulin.com/docs/240622-02-react-nextjs-foundation)
+30. [Docker Cheat Sheet](https://doc.fenglyulin.com/docs/20241001-docker)
+31. [Git Command Cheatsheet](https://doc.fenglyulin.com/docs/git)
+32. [Go 语言](https://doc.fenglyulin.com/docs/main)
+
+
+
+
+> Auto-generated by [summarize.py](https://github.com/ColaLinN/cs-notes/blob/main/summarize.py)
+> 排版参考 [为什么这么设计系列文章](https://draveness.me/whys-the-design/)
