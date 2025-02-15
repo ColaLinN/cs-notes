@@ -39,7 +39,11 @@ def genAdditionalFiles(header, url, c_time, last_modified_time):
 
 
 def getFileMarkdownLink(file):
-    return f"[{file.header}](https://doc.fenglyulin.com/docs/{file.filename.removesuffix('.md')})\n"
+    if file.is_additional_file:
+        return f"[{file.header}]({file.url})\n"
+    # get docs/xxx/xxx/ form path
+    path = file.path.split("docs/")[1]
+    return f"[{file.header}](https://doc.fenglyulin.com/docs/{path.removesuffix('.md')})\n"
 
 
 def getFileCreationTime(path_to_file):

@@ -51,7 +51,7 @@
 
 下图为MySQL的结构图，索引和数据就是位于存储引擎中：
 
-![img](./20250127-02-mysql-index.assets/1623727651911_20170928110355446.png)
+![img](./20250127-mysql-index.assets/1623727651911_20170928110355446.png)
 
 ## 索引的分类
 
@@ -96,13 +96,13 @@ CREATE TABLE `product_tab` (
 
 在商品表中插入以下行数据
 
-![img](./20250127-02-mysql-index.assets/824c43b801c64e81acb0a9b042d50311.png)
+![img](./20250127-mysql-index.assets/824c43b801c64e81acb0a9b042d50311.png)
 
 Id 主键即为聚簇索引（主键索引），其结构为B+ Tree，下图为基于当前数据建立的B+ Tree表。
 
 - 第一层和第二层都是索引值，而叶子节点是实际数据，每个叶子节点间都有双向指针来支持范围查询。
 
-![image-20250127161530940](./20250127-02-mysql-index.assets/image-20250127161530940.png)
+![image-20250127161530940](./20250127-mysql-index.assets/image-20250127161530940.png)
 
 对于下面的查询，我们可以推演其查询过程
 
@@ -122,7 +122,7 @@ CREATE INDEX idx_product_no ON product_tab (product_no);
 
 
 
-![image-20250127161438857](./20250127-02-mysql-index.assets/image-20250127161438857.png)
+![image-20250127161438857](./20250127-mysql-index.assets/image-20250127161438857.png)
 
 那么下面的查询，我们可以推演其查询过程
 
@@ -234,7 +234,7 @@ where b = 2 and c = 3
 
 下图为(a, b, c)联合索引的B+ Tree的图
 
-![img](./20250127-02-mysql-index.assets/联合索引案例.drawio.png)
+![img](./20250127-mysql-index.assets/联合索引案例.drawio.png)
 
 利用索引的前提是key是有序的。
 
@@ -271,7 +271,7 @@ where b = 2 and c = 3
 
   - `name like 'j%'`是一个`[j, k)`的前闭后开区间，即包含了单字母`j`。同上，当`name='j'`时，可以通过`age=22`来缩小查询范围。参考下图
 
-    ![img](./20250127-02-mysql-index.assets/q4-2.drawio.png)
+    ![img](./20250127-mysql-index.assets/q4-2.drawio.png)
 
   - 通过EXPLAIN查看执行计划可以发现，`key_len`为126，代表联合索引中的name（122字节）和age（4字节）都被使用到了。
 
@@ -300,7 +300,7 @@ where b = 2 and c = 3
 - 区分度越低，代表唯一性越低，效率越低。如性别字段。
   - MySQL中的查询优化器如果发现某个值出现在表数据行的百分比很高时（惯用界限30%），会忽略索引，进行全表扫描。
 
-![区分度计算公式](./20250127-02-mysql-index.assets/区分度.png)
+![区分度计算公式](./20250127-mysql-index.assets/区分度.png)
 
 ### 联合索引进行排序
 
@@ -382,7 +382,7 @@ EXPLAIN select * from xx_tab where id = 1;
 
 下图为明显的由于在查询条件中对索引列进行了计算、函数、类型转换操作，造成索引失效，只能够全表搜索。
 
-![img](./20250127-02-mysql-index.assets/798ab1331d1d6dff026e262e788f1a28.png)
+![img](./20250127-mysql-index.assets/798ab1331d1d6dff026e262e788f1a28.png)
 
 有如下参数
 

@@ -107,7 +107,7 @@ Read View 有四个重要的字段：
 -   max_trx_id ：这个并不是 m_ids 的最大值，而是**创建 Read View 时当前数据库中应该给下一个事务的 id 值**，也就是全局事务中最大的事务 id 值 + 1；
 -   creator_trx_id ：指的是**创建该 Read View 的事务的事务 id**。
 
-![image-20240528162027126](./20250127-03-mysql-transaction.assets/image-20240528162027126.png)
+![image-20240528162027126](./20250127-mysql-transaction.assets/image-20240528162027126.png)
 
 使用 InnoDB 存储引擎的数据库表，它的聚簇索引记录中都包含下面两个隐藏列：
 
@@ -116,13 +116,13 @@ Read View 有四个重要的字段：
 
 ### Version Chain
 
-![image-20240528163513824](./20250127-03-mysql-transaction.assets/image-20240528163513824.png)
+![image-20240528163513824](./20250127-mysql-transaction.assets/image-20240528163513824.png)
 
 ### 可重复读 Repeatable Read
 
 可见范围
 
-![image-20240528162345069](./20250127-03-mysql-transaction.assets/image-20240528162345069.png)
+![image-20240528162345069](./20250127-mysql-transaction.assets/image-20240528162345069.png)
 
 实例
 

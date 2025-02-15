@@ -12,7 +12,7 @@ select * from tab_1 where id = 1;
 
 **可以把MySQL分为两大部分：Server层和存储引擎层。**
 
-![查询语句执行流程](./20250127-01-mysql-execution-flow.assets/mysql查询流程.png)
+![查询语句执行流程](./20250127-mysql-execution-flow.assets/mysql查询流程.png)
 
 ## Server层
 
@@ -42,7 +42,7 @@ mysql -h -u -p
 
 如下，通过`show processlist`可以看到当前建立的客户端连接，可以看到各连接的command、state等。
 
-![img](./20250127-01-mysql-execution-flow.assets/查看连接.png)
+![img](./20250127-mysql-execution-flow.assets/查看连接.png)
 
 ### 空闲连接会一直占用着吗？
 
@@ -52,7 +52,7 @@ mysql -h -u -p
 show variables like 'wait_timeout';
 ```
 
-![image-20250128235304906](./20250127-01-mysql-execution-flow.assets/image-20250128235304906.png)
+![image-20250128235304906](./20250127-mysql-execution-flow.assets/image-20250128235304906.png)
 
 也可以手动kill掉空闲连接
 
@@ -60,7 +60,7 @@ show variables like 'wait_timeout';
 kill connection +id
 ```
 
-![image-20250128235258167](./20250127-01-mysql-execution-flow.assets/image-20250128235258167.png)
+![image-20250128235258167](./20250127-mysql-execution-flow.assets/image-20250128235258167.png)
 
 ### MySQL的连接数有限制吗？
 
@@ -70,13 +70,13 @@ kill connection +id
 show variables like 'max_connections';
 ```
 
-![image-20250128235432327](./20250127-01-mysql-execution-flow.assets/image-20250128235432327.png)
+![image-20250128235432327](./20250127-mysql-execution-flow.assets/image-20250128235432327.png)
 
 ### 长连接和短连接？
 
 和HTTP长短连接类似，短连接用于执行一条命令，很快结束。而长连接允许执行多条命令。
 
-![image-20250128235544864](./20250127-01-mysql-execution-flow.assets/image-20250128235544864.png)
+![image-20250128235544864](./20250127-mysql-execution-flow.assets/image-20250128235544864.png)
 
 容易看到，长连接可以减少TCP握手挥手的时延，所以ORM框架一般都维护着一套连接池。
 
