@@ -1,6 +1,6 @@
 
 
-# Proxy VS Reverse Proxy
+# 代理与反向代理 Proxy VS Reverse Proxy
 
 ## Proxy
 

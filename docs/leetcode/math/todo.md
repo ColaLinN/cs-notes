@@ -2,11 +2,7 @@
 
 
 
-
-
-
-
-TODO
+# Math Todo
 
 - [【题单】数学算法（数论/组合/概率期望/博弈/计算几何/随机算法）](https://leetcode.cn/circle/discuss/IYT3ss/)
 

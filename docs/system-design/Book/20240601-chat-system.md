@@ -3,7 +3,7 @@ sidebar_position: 12
 tags: [System Design]
 ---
 
-# 即时通信系统 Chat System
+# 聊天系统 Chat System
 
 In this article, we will explore the design of chat system including the following points.
 

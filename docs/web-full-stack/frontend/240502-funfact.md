@@ -1,6 +1,4 @@
-
-
-# Funfact
+# Frontend Funfact
 
 为什么homepage的第一段话都叫hero？class="superhero-contrast"
 

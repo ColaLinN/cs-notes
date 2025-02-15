@@ -1,6 +1,6 @@
 
 
-# Parallel Programming
+# 并行编程 Parallel Programming
 
 如果逻辑控制流在时间上重叠，那么它们就是并发的（concurrent）
 

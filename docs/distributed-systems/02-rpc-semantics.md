@@ -1,14 +1,11 @@
 ---
-title: Request Semantics
 tags:
   - distributed system
   - system
 sidebar_position: 2
 ---
 
-
-
-## RPC Semantics
+# RPC 请求语义 RPC Semantics
 
 ### Definition
 

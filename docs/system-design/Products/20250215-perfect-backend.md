@@ -18,7 +18,7 @@
    2. 能够定时精准触发、错误重试、错误报警、接入日志平台
 6. 配置平台（config）
    1. 配置中心一般大厂都有，用于配置、隔离各个环境（test、uat、staging、live）的upstream API config、feature configs、app cofigs、DB/MQ configs等
-7. Service Observability
+7. 可观测性（Service Observability）
    1. 监控报警系统（monitors、alert）
       1. 对于系统重要的接口应当有监控（P99错误率，QPS），报警应当有Email、IM、Phone
       2. 对于重要的业务指标应当有业务监控，比如订单量，订单计税量

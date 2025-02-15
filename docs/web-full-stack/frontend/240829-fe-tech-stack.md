@@ -1,6 +1,4 @@
-
-
-# FE Tech Stack
+# Frontend技术栈 Tech Stack
 
 - ORM: [prisma](https://www.prisma.io/data-platform/accelerate)
 - Package Manager: pnpm

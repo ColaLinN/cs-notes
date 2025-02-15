@@ -1,8 +1,4 @@
-
-
-
-
-# 容灾、备份与恢复 Disaster Tolerance, Backup, Failover
+# 容灾与备份 Disaster Tolerance, Backup, Failover
 
 https://pdai.tech/md/arch/arch-y-backup.html
 

@@ -1,10 +1,11 @@
 ---
-title: Distributed State and Consistency
 tags:
   - distributed system
   - system
 sidebar_position: 4
 ---
+
+# 分布式状态，如何定义一致性？ Distributed State and Consistency
 
 ![image-20240518210219532](./04-state-consistency.assets/image-20240518210219532.png)
 

@@ -1,4 +1,4 @@
-# React Nextjs Foundation
+# React Nextjs Foundation 基础
 
 https://nextjs.org/learn/react-foundations/what-is-react-and-nextjs#building-blocks-of-a-web-application
 

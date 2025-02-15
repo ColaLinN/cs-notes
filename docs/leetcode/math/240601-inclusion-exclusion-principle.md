@@ -1,8 +1,6 @@
 
 
-
-
-# Inclusion–exclusion principle
+# 容斥定理 Inclusion–exclusion principle
 
 
 

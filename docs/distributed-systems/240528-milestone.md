@@ -1,4 +1,4 @@
-# 100 Score in NUS CS5223
+# Full Score in NUS CS5223
 
 I got a score of 100 in NUS CS5223 Distributed Systems.
 

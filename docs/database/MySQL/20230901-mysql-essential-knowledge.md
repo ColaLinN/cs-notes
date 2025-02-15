@@ -4,7 +4,7 @@ title: Essential Knowledge of MySQL
 tags: [MySQL, Database]
 ---
 
-# Essential Knowledge of MySQL
+# MySQL概览 Overview
 
 ## How is a query processed?
 

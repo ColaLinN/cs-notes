@@ -1,4 +1,4 @@
-# The Float Storage in OS & How to deal with Decimal in Financial system?
+# 浮点数
 
 以 float32 为例，其存储 32bits 由以下三部分（`1+8+23=32`）组成
 

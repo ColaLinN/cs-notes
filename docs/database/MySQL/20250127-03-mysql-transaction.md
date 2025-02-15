@@ -1,4 +1,4 @@
-# MySQL Transaction
+# MySQL事务 Transaction
 
 ## 事务四个特性
 

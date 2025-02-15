@@ -1,6 +1,4 @@
-
-
-# UML Sequence Diagram
+# UML 序列图要点 UML Sequence DiagramStress Testing Tool
 
 https://plantuml.com/
 
@@ -40,7 +38,7 @@ FE -> BE : <font color=red>test_red_text</font>
 @enduml
 ```
 
-![image-20240828114136356](240828-uml-sequence-diagram.assets/image-20240828114136356.png)
+![image-20250215125345811](./240828-uml-sequence-diagram.assets/image-20250215125345811.png)
 
 ## TODO
 

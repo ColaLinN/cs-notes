@@ -1,6 +1,6 @@
 
 
-# Distributed File System
+# 分布式文件系统 Distributed File System
 
 ![image-20240510015655403](./01-intro.assets/image-20240510015655403.png)
 

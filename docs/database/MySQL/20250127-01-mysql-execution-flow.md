@@ -1,4 +1,4 @@
-# MySQL Execution Flow
+# MySQL执行流程 Execution Flow
 
 ## 一个查询是怎么执行的？
 
@@ -93,8 +93,6 @@ show variables like 'max_connections';
 所以在MySQL 8.0版本之后就将查询缓存器删除了（这里指的是server层的查询缓存，不是存储引擎的buffer pool）。对于8.0之前的版本，可以将参数query_cache_type设置为DEMAND来关闭查询缓存。
 
 ## 3) 解析SQL
-
-
 
 ## 存储引擎
 

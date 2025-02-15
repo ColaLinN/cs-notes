@@ -1,6 +1,6 @@
 
 
-# Distributed Transaction
+# 分布式事务 Distributed Transaction
 
 In this article, we are going to talk about the Distributed Transaction.
 

@@ -1,6 +1,6 @@
 
 
-# Distributed Thinking
+# 分布式思考 Distributed Thinking
 
 Distributed Thinking is the most valuable thing I learned from the Distributed Systems.
 

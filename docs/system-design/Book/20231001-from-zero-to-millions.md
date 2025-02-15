@@ -4,7 +4,7 @@ id: from-zero-to-millions
 tags: [System Design, Scalability, Load Balancer, Cache, Database, CDN, Message Queue, Logging, Metrics, Automation]
 ---
 
-# 从零到一百万 Scale from zero to millions of user
+# 从零到一百万用户 Scale from zero to millions of user
 
 ## Single server
 

@@ -1,10 +1,11 @@
 ---
-title: Physical Clock, Lamport Logical Clock, and Vector Clock
 tags:
   - distributed system
   - system
 sidebar_position: 3
 ---
+
+# 物理时钟，Lamport 时钟与 Vector 时钟 Physical Clock, Lamport Logical Clock, and Vector Clock
 
 ## Time, Clock, and Ordering of Event
 

@@ -1,6 +1,6 @@
 
 
-# HPC Optimizing program's performance
+# 优化程序性能 HPC Optimizing program's performance
 
 1. 优化编译器的能力和局限性
    1. 因为**指针引用**问题，无法判断函数的功能，所以无法判断是否应当优化，改变函数调用的位置和次数后是否和原来还相同。所以不同的优化等级能达到的效果是不相同的。

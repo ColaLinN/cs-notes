@@ -1,10 +1,11 @@
 ---
-title: Distributed Consensus, State Machine Replication
 tags:
   - distributed system
   - system
 sidebar_position: 5
 ---
+
+# 共识协议 Distributed Consensus, State Machine Replication
 
 If you have ever used MySQL, Redis, Kafka, Etcd, etc, you might have heard concepts such as Follower, Leader Election, Primary Backup, Raft, Paxos, and so on. Yes! In this article, we are going to discuss the consensus protocols.
 

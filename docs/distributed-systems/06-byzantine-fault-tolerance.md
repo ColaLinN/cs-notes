@@ -1,4 +1,4 @@
-# Byzantine Fault Tolerance
+# 拜占庭容错 Byzantine Fault Tolerance
 
 ![image-20240510015222164](./06-byzantine-fault-tolerance.assets/image-20240510015222164.png)
 

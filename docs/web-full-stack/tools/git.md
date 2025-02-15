@@ -1,4 +1,4 @@
-## Git Command Cheatsheet
+# Git Command Cheatsheet
 
 ![git command](./git.assets/git command.png)
 

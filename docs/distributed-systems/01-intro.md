@@ -1,18 +1,15 @@
 ---
-slug: overview # the header
+slug: overview
 title: Overview
-# id: the-overview-of-distributed-systems
-# hide_title: false
 hide_table_of_contents: false
-# sidebar_label: Markdown :)
-# custom_edit_url: https://github.com/facebook/docusaurus/edit/master/docs/api-doc-markdown.md
-description: Distributed systems are a collection of independent computers that appear to the users of the system as a single computer.
 tags:
   - distributed system
   - system
 # image: https://i.imgur.com/mErPwqL.png
 sidebar_position: 1
 ---
+
+# 分布式系统概述 Distributed Systems Introduction
 
 I note down the critical concept of distributed system. 
 

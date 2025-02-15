@@ -1,8 +1,6 @@
 
 
-
-
-# Performance Testing Checklist
+# 性能测试检查清单 Performance Testing Checklist
 
 目的：借此纠正你的认知，“性能测试”不仅仅包括测试执行，还包括测试前的需求分析、过程中的监控分析以及调优。
 

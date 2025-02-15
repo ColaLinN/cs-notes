@@ -1,4 +1,4 @@
-## React Tutorial: Tic-Tac-Toe
+# React 五子棋入门项目 Tic-Tac-Toe
 
 [Tutorial: Tic-Tac-Toe](https://react.dev/learn/tutorial-tic-tac-toe)
 

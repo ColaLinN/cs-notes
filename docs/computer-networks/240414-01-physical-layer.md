@@ -4,7 +4,7 @@ title: The Physical Layer
 tags: [Networks]
 ---
 
-# The Physical Layer
+# 物理层 The Physical Layer
 
 ## 通信方式
 

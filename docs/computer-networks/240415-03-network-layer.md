@@ -5,7 +5,7 @@ tags: [Networks]
 ---
 
 
-# The Network Layer
+# 网络层 The Network Layer
 
 1. The network layer is responsible for facilitating data transfer between two different networks. If two devices communicating are on the same network, then the network layer is unecessary.
 2. Ability:

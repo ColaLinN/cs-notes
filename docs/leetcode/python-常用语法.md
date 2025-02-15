@@ -1,8 +1,9 @@
 ---
 sidebar_position: 2
-title: Python Frequently Used Syntax
 tags: [leetcode]
 ---
+
+# Python 常用语法 Python Frequently Used Syntax
 
 ## Built-in Types
 

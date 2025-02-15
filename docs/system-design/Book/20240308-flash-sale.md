@@ -3,7 +3,7 @@ sidebar_position: 20
 tags: [System Design]
 ---
 
-# 闪购系统 Flash Sale System
+# 秒杀系统 Flash Sale System
 
 秒杀设计
 

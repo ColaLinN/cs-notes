@@ -1,4 +1,5 @@
-## Deadlock and Lock
+
+# Deadlock and Lock Types
 
 锁的类型
 
