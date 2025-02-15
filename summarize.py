@@ -37,6 +37,11 @@ def genAdditionalFiles(header, url, c_time, last_modified_time):
         url=url,
     )
 
+import re
+def process_filename(filename):
+    if re.match(r'^\d+-\d+-', filename):
+        return filename
+    return re.sub(r'^\d+-[^-]+-', '', filename)
 
 def getFileMarkdownLink(file):
     if file.is_additional_file:
@@ -46,7 +51,7 @@ def getFileMarkdownLink(file):
     paths = path.split("/")
     paths[-1] = paths[-1].removesuffix(".md")
     # remove the beginning number until "-"
-    paths[-1] = "-".join(paths[-1].split("-")[1:])
+    paths[-1] = process_filename(paths[-1])
     path = "/".join(paths)
     return f"[{file.header}](https://doc.fenglyulin.com/docs/{path.removesuffix('.md')})\n"
 
