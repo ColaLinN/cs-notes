@@ -41,7 +41,7 @@ import re
 def process_filename(filename):
     if re.match(r'^\d+-\d+-', filename):
         return filename
-    return re.sub(r'^\d+-[^-]+-', '', filename)
+    return re.sub(r'^\d+-', '', filename)
 
 def getFileMarkdownLink(file):
     if file.is_additional_file:
