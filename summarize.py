@@ -277,7 +277,7 @@ for domain in domainToSFiles:
 
 # print(domainToc)
 
-allToc = "# 全部文章 All Articles\n\n"
+allToc = "## 全部文章 All Articles\n\n"
 summary = sorted(summary, key=lambda x: x.ctime, reverse=False)
 for i in range(len(summary) - 1, -1, -1):
     # idxNumStr = "%3d" % (i + 1)
