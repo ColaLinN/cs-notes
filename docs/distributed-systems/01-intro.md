@@ -5,7 +5,6 @@ hide_table_of_contents: false
 tags:
   - distributed system
   - system
-# image: https://i.imgur.com/mErPwqL.png
 sidebar_position: 1
 ---
 

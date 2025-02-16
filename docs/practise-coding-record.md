@@ -193,7 +193,7 @@ tags: [intro]
 - 027 [Algorithm summary](https://doc.fenglyulin.com/docs/leetcode/template)
 - 026 [应用层 The Application Layer](https://doc.fenglyulin.com/docs/computer-networks/240429-05-application-layer)
 - 025 [为什么要学习 LeetCode？ Why practice Leetcode?](https://doc.fenglyulin.com/docs/leetcode/why)
-- 024 [image: https://i.imgur.com/mErPwqL.png](https://doc.fenglyulin.com/docs/distributed-systems/intro)
+- 024 [分布式系统概述 Distributed Systems Introduction](https://doc.fenglyulin.com/docs/distributed-systems/intro)
 - 023 [并行编程 Parallel Programming](https://doc.fenglyulin.com/docs/operating-systems/csapp-chapter12-concurrent-programming)
 - 022 [网络架构的演变 The Evolution of Web Service Architecture](https://doc.fenglyulin.com/docs/system-design/Common/web-architecture)
 - 021 [MySQL概览 Overview](https://doc.fenglyulin.com/docs/database/MySQL/mysql-essential-knowledge)
@@ -283,7 +283,7 @@ tags: [intro]
 11. [共识协议 Distributed Consensus, State Machine Replication](https://doc.fenglyulin.com/docs/distributed-systems/consensus-protocol)
 12. [分布式状态，如何定义一致性？ Distributed State and Consistency](https://doc.fenglyulin.com/docs/distributed-systems/state-consistency)
 13. [物理时钟，Lamport 时钟与 Vector 时钟 Physical Clock, Lamport Logical Clock, and Vector Clock](https://doc.fenglyulin.com/docs/distributed-systems/logical-lock)
-14. [image: https://i.imgur.com/mErPwqL.png](https://doc.fenglyulin.com/docs/distributed-systems/intro)
+14. [分布式系统概述 Distributed Systems Introduction](https://doc.fenglyulin.com/docs/distributed-systems/intro)
 
 ## LEETCODE
 1. [周赛 Weekly Contest 410](https://doc.fenglyulin.com/docs/leetcode/weekly-competition/240811-410)
