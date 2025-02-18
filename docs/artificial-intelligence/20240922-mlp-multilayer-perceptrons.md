@@ -136,7 +136,7 @@ d2l.plot(x.detach(), x.grad, 'x', 'grad of tanh', figsize=(5, 2.5))
 
 ### sigmod与tanh的局限
 
-- 会存在零梯度的问题，导致weights无法被更新
+- 会存在零梯度的问题，导致weights无法被更新（gradient vanishment)
 
 - ReLU的梯度可以是1，所以大的梯度更新会被apply
 

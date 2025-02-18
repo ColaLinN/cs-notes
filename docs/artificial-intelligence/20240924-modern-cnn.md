@@ -85,6 +85,11 @@ Motivation: 考虑到卷积核的大小到底该怎么选，我们可以都要�
 
 之后不同的版本：V2V3V4V5
 
+## ResNet
+
+- 在过去，模型不能够太深，如果后面梯度太小，前面的参数无法被有效地更新
+- 而
+
 ## ClUON Model Zoo
 
 scikit-learn https://scikit-learn.org/stable/index.html
@@ -101,6 +106,5 @@ GLUON classification https://cv.gluon.ai/slides.html
 
 -   可重复的卷积块
 -   卷积块个数和超参数可以得到不同复杂度的变种与结果
-
 
 
