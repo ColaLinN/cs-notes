@@ -1,8 +1,6 @@
 # Regular Expressions Cheatsheet 正则表达式小抄
 
-工作中有时处理csv表格，生成update的sql语句。
-
-加入有如下csv表格
+假如有如下csv表格
 
 ```
 order_id, fee_amount <br>
@@ -18,7 +16,7 @@ UPDATE xx_tab SET fee_amount = 666 WHERE order_id = 2; <br>
 ...
 ```
 
-我们可以通过正则在vscode、或写脚本快速完成
+可以使用正则在vscode替换、或写脚本快速完成
 
 ```python
 import re
