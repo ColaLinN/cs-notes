@@ -1,6 +1,6 @@
-# 压力测试工具 Stress Testing Tool
+# 压力测试工具 Stress Testing Tools
 
-## 测试工具
+## 测试工具比较
 
 | 工具           | 特点                                   | 优点                                | 缺点                              |
 | -------------- | -------------------------------------- | ----------------------------------- | --------------------------------- |
@@ -14,7 +14,7 @@
 | **BlazeMeter** | 云端平台，兼容JMeter和Gatling          | 支持大规模分布式测试，与JMeter兼容  | 大规模测试可能需要付费            |
 | **Tsung**      | 分布式负载测试工具，多协议支持         | 高性能，支持大规模测试              | 配置复杂，文档较少                |
 
-## Wrk - CLI HTTP Testing
+## Wrk：CLI HTTP Testing
 
 https://github.com/wg/wrk
 
@@ -162,8 +162,6 @@ Transfer/sec:      4.13MB
 
 ## 官方脚本样例
 
-官方脚本
-
 -   设置 HTTP POST 请求参数
 -   按计数变更请求
 -   在每次请求前延时 10~50 毫秒
@@ -173,9 +171,7 @@ Transfer/sec:      4.13MB
 -   其他
     -   多服务器场景下，给 thread 分配随机服务器地址，测试负载均衡
 
-详情
-
--   设置 HTTP POST 请求参数
+### 设置 HTTP POST 请求参数
 
 ```lua
 -- example HTTP POST script which demonstrates setting the
@@ -186,7 +182,7 @@ wrk.body   = "foo=bar&baz=quux"
 wrk.headers["Content-Type"] = "application/x-www-form-urlencoded"
 ```
 
--   按计数变更请求
+### 按计数变更请求
 
 ```lua
 -- example dynamic request script which demonstrates changing
@@ -205,7 +201,7 @@ request = function()
 end
 ```
 
--   在每次请求前延时 10~50 毫秒
+### 在每次请求前延时 10~50 毫秒
 
 ```lua
 -- example script that demonstrates adding a random
@@ -216,7 +212,7 @@ function delay()
 end
 ```
 
--   在满足特定条件时停止一个线程，以及计数
+### 在满足特定条件时停止一个线程，以及计数
 
 ```lua
 -- example script that demonstrates use of thread:stop()
@@ -231,9 +227,10 @@ function response()
 end
 ```
 
--   在 `wrk` 负载测试完成后输出延迟的关键百分位数，并以 CSV 格式展示
-    -   50% (中位数): 表示一半请求的延迟在这个时间内。
-    -   99.999%: 表示几乎所有请求（即99.999%）的延迟在这个时间内，帮助识别极端情况的响应时间。
+### 在 `wrk` 负载测试完成后输出延迟的关键百分位数，并以 CSV 格式展示
+
+-   50% (中位数): 表示一半请求的延迟在这个时间内。
+-   99.999%: 表示几乎所有请求（即99.999%）的延迟在这个时间内，帮助识别极端情况的响应时间。
 
 ```lua
 -- example reporting script which demonstrates a custom
@@ -248,7 +245,9 @@ done = function(summary, latency, requests) -- 这是 wrk 在测试完成后调�
 end
 ```
 
--   使用 `wrk` 负载测试工具模拟一个简单的身份验证流程，获取一个认证令牌（token），并将该令牌附加到所有后续请求的头部中
+### 使用 `wrk` 负载测试工具模拟简单的身份验证流程
+
+获取一个认证令牌（token），并将该令牌附加到所有后续请求的头部中
 
 ```lua
 -- example script that demonstrates response handling and
@@ -271,7 +270,9 @@ response = function(status, headers, body)
 end
 ```
 
-## 脚本复合实例
+## 复合脚本实例
+
+### 检查是否已达到最大请求页数，停止测试
 
 这里仅使用一个线程
 
@@ -297,9 +298,7 @@ Transfer/sec:      1.62MB
 99.999%,319484
 ```
 
-lua 脚本 
-
--   检查是否已达到最大请求页数，停止测试
+lua 脚本 test_script.lua
 
 ```lua
 // test_script.lua
@@ -430,11 +429,11 @@ done = function(summary, latency, requests)
 
 这些方法可以帮助你在进行负载测试时，也触发 `vercel analytics` 或其他基于JavaScript的统计工具。
 
-## JMeter - GUI, Report, Powerful
+## JMeter：CLI & GUI & Report
 
 https://github.com/apache/jmeter
 
-完全由 Java 编写，可以对静态或动态的服务器进行压测。
+由 Java 编写，可以对静态或动态的服务器进行压测。
 
 支持
 
@@ -463,3 +462,8 @@ https://github.com/apache/jmeter
 -   支持提取成不同的格式 HTML, JSON, XML or any textual format
 
 ![Dashboard screenshot](https://raw.githubusercontent.com/apache/jmeter/master/xdocs/images/screenshots/dashboard/response_time_percentiles_over_time.png)
+
+## Reference
+
+1.   wrk https://github.com/wg/wrk
+2.   JMeter https://github.com/apache/jmeter
