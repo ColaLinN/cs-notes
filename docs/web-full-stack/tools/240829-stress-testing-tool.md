@@ -162,6 +162,8 @@ Transfer/sec:      4.13MB
 
 ## 官方脚本样例
 
+下面的样例可在[github repo](https://github.com/wg/wrk/tree/master/scripts)中找到
+
 -   设置 HTTP POST 请求参数
 -   按计数变更请求
 -   在每次请求前延时 10~50 毫秒
@@ -467,3 +469,4 @@ https://github.com/apache/jmeter
 
 1.   wrk https://github.com/wg/wrk
 2.   JMeter https://github.com/apache/jmeter
+3.   HTTP压测工具wrk的实现原理  https://whatacold.io/zh-cn/blog/2021-02-27-wrk-yuanli/
