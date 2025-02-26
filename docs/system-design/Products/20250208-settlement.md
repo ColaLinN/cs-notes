@@ -110,7 +110,7 @@
    2. elastic search
 
 
-## 状态机与对账任务 State Machine and Reconcile Jobs
+## 状态机
 
 对于每个状态（转移），都应当有对应的reoncile jobs定时监测、修复可能存在的不一致的状态
 
@@ -124,6 +124,8 @@
    3. `failed`
       1. 
    4. `failed_no_retry`
+
+### 对账任务 State Machine and Reconcile Jobs
 
 ## 监控告警 Monitors and Alerts
 
