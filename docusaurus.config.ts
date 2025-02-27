@@ -2,6 +2,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import TOCInline from '@theme/TOCInline';
+import { lazy } from 'react';
 
 const config: Config = {
   title: 'Fenglyu\'s Doc',
@@ -59,6 +60,7 @@ const config: Config = {
       minHeadingLevel: 2,
       maxHeadingLevel: 5,
     },
+    themes: ['@docusaurus/theme-search-algolia'],
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     // image: 'img/fenglyu-v1.jpg',
@@ -69,6 +71,39 @@ const config: Config = {
     // textColor: "#091E42", // Defaults to `#000`.
     // },
     // hideableSidebar: true,
+    algolia: {
+      // The application ID provided by Algolia
+      appId: 'JYA67C7803',
+
+      // Public API key: it is safe to commit it
+      apiKey: 'e253041559bea558b7309ab840d22229',
+
+      indexName: 'fenglyulin',
+
+      // Optional: see doc section below
+      contextualSearch: true,
+
+      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+      externalUrlRegex: 'external\\.com|domain\\.com',
+
+      // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
+      replaceSearchResultPathname: {
+        from: '/docs/', // or as RegExp: /\/docs\//
+        to: '/',
+      },
+
+      // Optional: Algolia search parameters
+      searchParameters: {},
+
+      // Optional: path for search page that enabled by default (`false` to disable it)
+      searchPagePath: 'search',
+
+      // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
+      insights: false,
+
+      //... other Algolia params
+    },
+
     navbar: {
       title: 'Fenglyu\'s Doc',
       logo: {
@@ -89,86 +124,110 @@ const config: Config = {
           type: 'doc',
           docId: 'practise-coding-record',
           position: 'right',
-          label: "Docs Summary",
+          label: "💾 Docs Summary",
         },
+        // {
+        //   type: 'doc',
+        //   docId: 'distributed-systems/intro',
+        //   position: 'right',
+        //   label: 'Distributed Systems', // the name
+        // },
+        // {
+        //   type: 'doc',
+        //   docId: 'leetcode/240201-why',
+        //   position: 'right',
+        //   label: 'Leetcode',
+        // },
+        // {
+        //   type: 'doc',
+        //   docId: 'system-design/overview',
+        //   position: 'right',
+        //   label: 'System Design',
+        // },
+        // {
+        //   type: 'doc',
+        //   docId: 'web-full-stack/overview',
+        //   position: 'right',
+        //   label: 'Web Full Stack',
+        // },
         {
-          type: 'doc',
-          docId: 'distributed-systems/intro',
-          position: 'right',
-          label: 'Distributed Systems', // the name
-        },
-        {
-          type: 'doc',
-          docId: 'leetcode/240201-why',
-          position: 'right',
-          label: 'Leetcode',
-        },
-        {
-          type: 'doc',
-          docId: 'system-design/overview',
-          position: 'right',
-          label: 'System Design',
-        },
-        {
-          type: 'doc',
-          docId: 'operating-systems/overview',
-          position: 'right',
-          label: 'Operating Systems',
-        },
-        {
-          type: 'doc',
-          docId: 'database/overview',
-          position: 'right',
-          label: 'Database',
-        },
-        {
-          type: 'doc',
-          docId: 'computer-networks/overview',
-          position: 'right',
-          label: 'Computer Networks',
-        },
-        {
-          type: 'doc',
-          docId: 'web-full-stack/overview',
-          position: 'right',
-          label: 'Web Full Stack',
-        },
-        {
-          type: 'doc',
-          docId: 'mlsys/overview',
-          position: 'right',
-          label: 'MLSys',
-        },
-        {
-          type: 'doc',
-          docId: 'artificial-intelligence/overview',
-          position: 'right',
-          label: 'AI/ML',
-        },
-        {
-          label: "More",
+          label: "🤖 AI/MLsys",
           position: "right",
           items: [
             {
-              label: "Tech Videos",
-              to: "todo",
+              label: "AI/ML",
+              to: "docs/artificial-intelligence/overview",
             },
             {
-              label: "All",
-              to: "docs/intro",
+              label: "MLSys",
+              to: "docs/mlsys/overview",
             },
           ],
         },
         {
-          // to: '/blog', 
-          href: 'https://fenglyulin.com/',
-          label: 'Fenglyu\'Log', position: 'right'
+          label: "👨‍💻 Software Engineering",
+          position: "right",
+          items: [
+            {
+              label: "System Design",
+              to: "docs/system-design/overview",
+            },
+            {
+              label: "Leetcode",
+              to: "docs/leetcode/240201-why",
+            },
+            {
+              label: "Web Full Stack",
+              to: "docs/web-full-stack/overview",
+            },
+          ],
         },
         {
-          href: 'https://github.com/ColaLinN/fenglyu-docs-site-v1',
-          label: 'GitHub',
-          position: 'right',
+          label: "🍔 CS-Stack",
+          position: "right",
+          items: [
+            {
+              label: "Operating Systems",
+              to: "docs/operating-systems/overview",
+            },
+            {
+              label: "Database",
+              to: "docs/database/overview",
+            },
+            {
+              label: "Computer Networks",
+              to: "docs/computer-networks/overview",
+            },
+            {
+              label: "Distributed Systems",
+              to: "docs/distributed-systems/overview",
+            }
+          ],
         },
+        // {
+        //   label: "More",
+        //   position: "right",
+        //   items: [
+        //     {
+        //       label: "Tech Videos",
+        //       to: "todo",
+        //     },
+        //     {
+        //       label: "All",
+        //       to: "docs/intro",
+        //     },
+        //   ],
+        // },
+        // {
+        //   // to: '/blog', 
+        //   href: 'https://fenglyulin.com/',
+        //   label: 'Fenglyu\'Log', position: 'right'
+        // },
+        // {
+        //   href: 'https://github.com/ColaLinN/fenglyu-docs-site-v1',
+        //   label: 'GitHub',
+        //   position: 'right',
+        // },
       ],
     },
     footer: {
@@ -239,10 +298,10 @@ const config: Config = {
               label: 'Blog',
               to: '/blog',
             },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/ColaLinN/fenglyu-docs-site-v1',
-            },
+            // {
+            //   label: 'GitHub',
+            //   href: 'https://github.com/ColaLinN/fenglyu-docs-site-v1',
+            // },
             // {
             //   html: `
             //     <a href="https://docusaurus.io/" target="_blank" rel="noreferrer noopener">
