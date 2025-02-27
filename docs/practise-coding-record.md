@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 id: practise-coding-record
+slug: /
 title: Docs Summary
 tags: [intro]
 ---
