@@ -76,7 +76,7 @@ const config: Config = {
       appId: 'JYA67C7803',
 
       // Public API key: it is safe to commit it
-      apiKey: '880e03eeac519808fd841d5d26f4fca7',
+      apiKey: 'e253041559bea558b7309ab840d22229',
 
       indexName: 'fenglyulin',
 
@@ -94,7 +94,7 @@ const config: Config = {
 
       // Optional: Algolia search parameters
       searchParameters: {
-        initialQuery: 'test', // Optional
+        // initialQuery: 'test', // Optional
       },
 
       // Optional: path for search page that enabled by default (`false` to disable it)
