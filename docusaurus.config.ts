@@ -94,7 +94,7 @@ const config: Config = {
 
       // Optional: Algolia search parameters
       searchParameters: {
-        // initialQuery: 'test', // Optional
+        initialQuery: 'test', // Optional
       },
 
       // Optional: path for search page that enabled by default (`false` to disable it)
@@ -126,7 +126,7 @@ const config: Config = {
         {
           type: 'doc',
           docId: 'practise-coding-record',
-          position: 'right',
+          position: 'left',
           label: "💾 Docs Summary",
         },
         // {
@@ -190,6 +190,10 @@ const config: Config = {
           position: "right",
           items: [
             {
+              label: "🚀 Distributed Systems",
+              to: "docs/distributed-systems/overview",
+            },
+            {
               label: "Operating Systems",
               to: "docs/operating-systems/overview",
             },
@@ -201,10 +205,7 @@ const config: Config = {
               label: "Computer Networks",
               to: "docs/computer-networks/overview",
             },
-            {
-              label: "Distributed Systems",
-              to: "docs/distributed-systems/overview",
-            }
+
           ],
         },
         // {
@@ -240,41 +241,41 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Distribution Systems',
-              to: '/docs/distributed-systems/overview',
+              label: 'Docs Summary',
+              to: '/docs/practise-coding-record',
             },
-            {
-              label: 'Leetcode',
-              to: '/docs/leetcode/240201-why',
-            },
+            // {
+            //   label: 'Leetcode',
+            //   to: '/docs/leetcode/240201-why',
+            // },
             {
               label: 'System Design',
-              to: '/docs/system-design/from-zero-to-millions',
+              to: '/docs/system-design/overview',
             },
-            {
-              label: 'Operating Systems',
-              to: '/docs/operating-systems/overview',
-            },
-            {
-              label: 'Database',
-              to: '/docs/database/essential-knowledge',
-            },
-            {
-              label: 'Computer Networks',
-              to: '/docs/computer-networks/overview',
-            },
-            {
-              label: 'Web Full Stack',
-              to: '/docs/web-full-stack/overview',
-            },
-            {
-              label: 'MLSys',
-              to: '/docs/mlsys/overview',
-            },
-            {
-              label: 'AI/ML',
-              to: '/docs/artificial-intelligence/overview',
-            },
+            // {
+            //   label: 'Operating Systems',
+            //   to: '/docs/operating-systems/overview',
+            // },
+            // {
+            //   label: 'Database',
+            //   to: '/docs/database/essential-knowledge',
+            // },
+            // {
+            //   label: 'Computer Networks',
+            //   to: '/docs/computer-networks/overview',
+            // },
+            // {
+            //   label: 'Web Full Stack',
+            //   to: '/docs/web-full-stack/overview',
+            // },
+            // {
+            //   label: 'MLSys',
+            //   to: '/docs/mlsys/overview',
+            // },
+            // {
+            //   label: 'AI/ML',
+            //   to: '/docs/artificial-intelligence/overview',
+            // },
           ],
         },
         // {
