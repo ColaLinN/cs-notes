@@ -1,4 +1,4 @@
-# 绕过应用头像的GIF上传限制 Bypass the GIF Upload Restriction
+# 绕过应用头像GIF上传限制 Bypass the GIF Upload Restriction
 
 想要实现在有GIF上传限制的应用绕过GIF限制，我们需要知道这个限制在那个环节，是怎么工作的。
 
