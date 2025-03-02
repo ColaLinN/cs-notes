@@ -1,5 +1,6 @@
 {
   "label": "MySQL",
+  "collapsed": false,
   "position": 10,
   "link": {
     "type": "generated-index"
