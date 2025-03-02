@@ -9,7 +9,7 @@ tags: [intro]
 
 ## 全部文章 All Articles
 
-- 198 [定义一个简单的全连接层](https://doc.fenglyulin.com/docs/artificial-intelligence/Tools/pytorch)
+- 198 [Pytorch Cheatsheet](https://doc.fenglyulin.com/docs/artificial-intelligence/Tools/pytorch)
 - 197 [常见CMD 命令](https://doc.fenglyulin.com/docs/web-full-stack/tools/cmd)
 - 196 [性能测试检查清单 Performance Testing Checklist](https://doc.fenglyulin.com/docs/web-full-stack/tools/stress-testing-checklist)
 - 195 [压力测试工具 Stress Testing Tools](https://doc.fenglyulin.com/docs/web-full-stack/tools/stress-testing-tool)
@@ -208,7 +208,7 @@ tags: [intro]
 - 002 [双指针 Opposite Double Pointer](https://doc.fenglyulin.com/docs/leetcode/topics/opposite-double-pointer)
 - 001 [规划 Roadmap](https://doc.fenglyulin.com/docs/leetcode/topics/roadmap)
 ## ARTIFICIAL INTELLIGENCE
-1. [定义一个简单的全连接层](https://doc.fenglyulin.com/docs/artificial-intelligence/Tools/pytorch)
+1. [Pytorch Cheatsheet](https://doc.fenglyulin.com/docs/artificial-intelligence/Tools/pytorch)
 2. [Linear Neural Network](https://doc.fenglyulin.com/docs/artificial-intelligence/linear-neural-network)
 3. [Multilayer Perceptrons (MLP)](https://doc.fenglyulin.com/docs/artificial-intelligence/mlp-multilayer-perceptrons)
 4. [Prompt Collection](https://doc.fenglyulin.com/docs/artificial-intelligence/LLM/prompt-collection)
