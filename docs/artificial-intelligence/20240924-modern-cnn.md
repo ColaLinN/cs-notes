@@ -1,5 +1,15 @@
 # Modern CNN
 
+### 经典卷积神经网络 LeNet 1995
+
+![image-20240923220932708](./20240924-modern-cnn.assets/image-20240923220932708.png)
+
+总结：
+
+1.   LeNet是早期成功的神经网络
+2.   最先使用卷积层来学习图片空间信息
+3.   最后使用全连接层来转换到类别空间
+
 ## AlexNet 2012
 
 Paper: ImageNet Classification with Deep Convolutional Neural Networks https://papers.nips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf
@@ -71,7 +81,7 @@ NiN块现在用得不多，但是提出了之后常用的概念：
 
 Motivation: 考虑到卷积核的大小到底该怎么选，我们可以都要。
 
-提出Inception块（盗梦空间）
+提出Inception块
 
 ![image-20230723210638693](./20240924-modern-cnn.assets/image-20230723210638693.png)
 
@@ -85,12 +95,20 @@ Motivation: 考虑到卷积核的大小到底该怎么选，我们可以都要�
 
 之后不同的版本：V2V3V4V5
 
-## ResNet
+## ResNet（2015）
+
+提出了残差神经网络 (Residual neural network)
 
 - 在过去，模型不能够太深，如果后面梯度太小，前面的参数无法被有效地更新
-- 而
+- 而ResNet的提出解决了这个问题，通过残差连接，让前面的层也能够被有效地梯度更新。
 
-## ClUON Model Zoo
+Deep Residual Learning for Image Recognition https://arxiv.org/abs/1512.03385
+
+![image-20250303165250365](./20240924-modern-cnn.assets/image-20250303165250365.png)
+
+## GLUON Model Zoo
+
+https://cv.gluon.ai/model_zoo/index.html
 
 scikit-learn https://scikit-learn.org/stable/index.html
 
@@ -102,9 +120,5 @@ GLUON classification https://cv.gluon.ai/slides.html
 
 ![image-20230723022606145](./20240924-modern-cnn.assets/image-20230723022606145.png)
 
-启发
-
--   可重复的卷积块
--   卷积块个数和超参数可以得到不同复杂度的变种与结果
 
 
