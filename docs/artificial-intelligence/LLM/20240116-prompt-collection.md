@@ -2,7 +2,7 @@
 
 # Prompt Collection
 
-`iterm2` AI integration Prompt
+## `iterm2` AI integration Prompt
 
 https://iterm2.com/
 
@@ -13,3 +13,10 @@ The script should do this: \(ai.prompt)
 ```
 
 ![image-20250116024624509](./20240116-prompt-collection.assets/image-20250116024624509.png)
+
+## Rewrite/Polish with American High School Students Way
+
+```
+Rewrite this passage with alternating sentence lengths between adjacent sentences. Avoid using complex vocabulary that American high school students might not know.
+```
+
