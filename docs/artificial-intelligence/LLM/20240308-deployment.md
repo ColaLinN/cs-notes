@@ -1,4 +1,4 @@
-# LLM部署实践
+# DeepSeek、WebGUI、RAG本地部署实践
 
 ## 部署本地LLM
 
@@ -79,7 +79,7 @@ RAG的技术如下所示，其需要
 - 向量数据库：存储知识库，根据数据（如文本）相似度检索相关上下文数据
 - LLM：处理输入的prompt，生成结果
 
-![img](./20240308-deployment.assets/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff4a34a68-5097-4f7c-822f-bd9948af3782_1412x1080.gif)
+![img](./20240308-deployment.assets/image-rag.gif)
 
 在这里参考网上教程，我们使用ragflow
 

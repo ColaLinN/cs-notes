@@ -9,7 +9,7 @@ tags: [intro]
 
 ## 全部文章 All Articles
 
-- 199 [LLM部署实践](https://doc.fenglyulin.com/docs/artificial-intelligence/LLM/deployment)
+- 199 [DeepSeek、WebGUI、RAG本地部署实践](https://doc.fenglyulin.com/docs/artificial-intelligence/LLM/deployment)
 - 198 [优化算法 Optimization Algorithmn](https://doc.fenglyulin.com/docs/artificial-intelligence/optimization)
 - 197 [Pytorch Cheatsheet](https://doc.fenglyulin.com/docs/artificial-intelligence/Tools/pytorch)
 - 196 [常见CMD 命令](https://doc.fenglyulin.com/docs/web-full-stack/tools/cmd)
@@ -209,7 +209,7 @@ tags: [intro]
 - 002 [双指针 Opposite Double Pointer](https://doc.fenglyulin.com/docs/leetcode/topics/opposite-double-pointer)
 - 001 [规划 Roadmap](https://doc.fenglyulin.com/docs/leetcode/topics/roadmap)
 ## ARTIFICIAL INTELLIGENCE
-1. [LLM部署实践](https://doc.fenglyulin.com/docs/artificial-intelligence/LLM/deployment)
+1. [DeepSeek、WebGUI、RAG本地部署实践](https://doc.fenglyulin.com/docs/artificial-intelligence/LLM/deployment)
 2. [优化算法 Optimization Algorithmn](https://doc.fenglyulin.com/docs/artificial-intelligence/optimization)
 3. [Pytorch Cheatsheet](https://doc.fenglyulin.com/docs/artificial-intelligence/Tools/pytorch)
 4. [Linear Neural Network](https://doc.fenglyulin.com/docs/artificial-intelligence/linear-neural-network)
