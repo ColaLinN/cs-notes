@@ -192,3 +192,4 @@ docker compose -f docker-compose.yml up -d
 5. What is running on host.docker.internal host? https://stackoverflow.com/questions/72827527/what-is-running-on-host-docker-internal-host
 6. Open-webui https://github.com/open-webui/open-webui
 7. 特朗普发表史上最长总统国会演讲：“美国回来了” https://cn.nytimes.com/usa/20250305/trump-speech-congress/
+8. DeepSeek + RAGFlow 构建个人知识库 https://www.bilibili.com/video/BV1WiP2ezE5a/?spm_id_from=333.337.search-card.all.click&vd_source=66a0b89065d7f04805223fd7f2d613a6
