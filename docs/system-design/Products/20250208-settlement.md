@@ -161,3 +161,7 @@
 3. 使用了event driven的开发模式
 4. 使用了Clickhouse作为secondary index
 
+## 参考
+
+1. draw io https://app.diagrams.net/#G1TkMoFWkTV5fOSGyAv4LKJY3hwbc6EyWp#%7B%22pageId%22%3A%22UhMiziOJx4cKlkmajD5_%22%7D
+
