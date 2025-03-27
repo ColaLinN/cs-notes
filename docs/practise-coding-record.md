@@ -9,11 +9,11 @@ tags: [intro]
 
 ## 全部文章 All Articles
 
-- 202 [效率工具汇总](https://doc.fenglyulin.com/docs/web-full-stack/tools/efficient-tools)
-- 201 [[TD] Settlement 订单结算系统（简化）](https://doc.fenglyulin.com/docs/system-design/Products/settlement)
-- 200 [Kafka VS Flink](https://doc.fenglyulin.com/docs/database/Kafka/flink)
-- 199 [Kafka概述 Overview](https://doc.fenglyulin.com/docs/database/Kafka/overview)
-- 198 [RAG技术详解](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/rag-basic)
+- 202 [RAG技术详解](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/rag-basic)
+- 201 [效率工具汇总](https://doc.fenglyulin.com/docs/web-full-stack/tools/efficient-tools)
+- 200 [[TD] Settlement 订单结算系统（简化）](https://doc.fenglyulin.com/docs/system-design/Products/settlement)
+- 199 [Kafka VS Flink](https://doc.fenglyulin.com/docs/database/Kafka/flink)
+- 198 [Kafka概述 Overview](https://doc.fenglyulin.com/docs/database/Kafka/overview)
 - 197 [DeepSeek、WebGUI、RAG本地部署实践](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/deployment)
 - 196 [优化算法 Optimization Algorithmn](https://doc.fenglyulin.com/docs/artificial-intelligence/optimization)
 - 195 [Pytorch Cheatsheet](https://doc.fenglyulin.com/docs/artificial-intelligence/Tools/pytorch)
@@ -212,8 +212,8 @@ tags: [intro]
 - 002 [训练机器学习模型预测赢家，在 Kaggle 准确度最高 Game Winner Prediction, best 76.9% w EDA&Finetune](https://www.kaggle.com/code/kirklin/game-winner-prediction-best-76-9-w-eda-finetune)
 - 001 [【视频】43秒带你速通分布式系统概念 [Video] A quick tour of Distributed System](https://doc.fenglyulin.com/docs/distributed-systems/overview)
 ## ARTIFICIAL INTELLIGENCE
-1. [DeepSeek、WebGUI、RAG本地部署实践](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/deployment)
-2. [RAG技术详解](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/rag-basic)
+1. [RAG技术详解](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/rag-basic)
+2. [DeepSeek、WebGUI、RAG本地部署实践](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/deployment)
 3. [Prompt Collection](https://doc.fenglyulin.com/docs/artificial-intelligence/LLM/prompt-collection)
 4. [Linear Neural Network](https://doc.fenglyulin.com/docs/artificial-intelligence/linear-neural-network)
 5. [Multilayer Perceptrons (MLP)](https://doc.fenglyulin.com/docs/artificial-intelligence/mlp-multilayer-perceptrons)
