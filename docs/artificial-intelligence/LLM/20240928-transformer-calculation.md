@@ -91,7 +91,7 @@ Query，Key 和 Value 的矩阵计算如下图所示，为 `(WQ, WK, WV)`
 
 通过使用多个头，可以
 
-- 增加了对不同位置的关注能力。原始的自注意力中，单词本身的权重很大。如果我们训练 “The animal didn’t cross the street because it was too tired”，可以帮助了解到 “it” 指的是什么。
+- 增加对不同位置的关注能力。原始的自注意力中，单词本身的权重很大。如果我们训练 “The animal didn’t cross the street because it was too tired”，可以帮助了解到 “it” 指的是什么。
 - 为注意层提供了多个“表征子空间”（representation subspaces），帮助模型从不同的角度和特征维度处理输入，每个头都有独立的一套 `Wq,Wk,Wv` 参数
 
 ![image-20240928112821415](./20240928-transformer-calculation.assets/image-20240928112821415.png)
@@ -120,7 +120,7 @@ Query，Key 和 Value 的矩阵计算如下图所示，为 `(WQ, WK, WV)`
 
 ![image-20240928115142737](./20240928-transformer-calculation.assets/image-20240928115142737.png)
 
-如果把 8 个注意力头放在一起，就有些难解释了
+如果把 8 个注意力头放在一起，表示了it对不同词的注意度
 
 ![image-20240928115229284](./20240928-transformer-calculation.assets/image-20240928115229284.png)
 
