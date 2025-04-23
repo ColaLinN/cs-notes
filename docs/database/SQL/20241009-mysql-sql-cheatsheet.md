@@ -62,6 +62,17 @@ SHOW TABLE STATUS WHERE Name = 'employees';
 SHOW FULL COLUMNS FROM employees;
 ```
 
+### 增加字段
+
+```sql
+ALTER TABLE table_name
+ADD column_name datatype;
+
+-- example
+ALTER TABLE Customers
+ADD Email varchar(255);
+```
+
 ## 增删查改 CRUD
 
 ### select
