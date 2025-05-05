@@ -49,6 +49,40 @@ Each section should have atleast 2 sections with clear black titles.
 -   find memory bug
 -   Creating a CLI instantly
 
+## OpenAI Cases
+
+### Extract search keywords
+
+System message
+
+```
+You will be provided with a user query. Your goal is to extract a few keywords from the text to perform a search. Keep the search query to a few keywords that capture the user's intent. Only output the keywords, without any additional text.
+```
+
+User message
+
+```
+I'm having a hard time figuring out how to make sure my data disappears after 30 days of inactivity. Can you help me find out?
+```
+
+Code
+
+```python
+from openai import OpenAI
+client = OpenAI()
+
+
+response = client.chat.completions.create(
+  model="gpt-4o-mini",
+  messages=[
+    {"role": "system", "content": f"You will be provided with a user query. Your goal is to extract a few keywords from the text to perform a search.\nKeep the search query to a few keywords that capture the user's intent.\nOnly output the keywords, without any additional text."},
+    {"role": "user", "content": f"I'm having a hard time figuring out how to make sure my data disappears after 30 days of inactivity.\nCan you help me find out?"}
+  ]
+)  
+
+print(response.choices[0].message.content)
+```
+
 ## Reference
 
 1.   gpt-4-for-code https://github.com/anysphere/gpt-4-for-code/tree/main
