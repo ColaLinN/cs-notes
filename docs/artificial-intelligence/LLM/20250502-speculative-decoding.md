@@ -1,6 +1,6 @@
 
 
-
+# Speculative Decoding
 
 Speculative decoding uses two models:
 
