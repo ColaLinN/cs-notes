@@ -9,7 +9,7 @@ tags: [intro]
 
 ## 全部文章 All Articles
 
-- 216 [(Todo) RAG深入理解 RAG Deep Dive](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/rag-deep-dive)
+- 216 [RAG深入理解 RAG Deep Dive](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/rag-deep-dive)
 - 215 [Promising Problems on AI Coding from Cursor](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/cursor-promising-problems)
 - 214 [ChatGPT Fine Tuning](https://doc.fenglyulin.com/docs/artificial-intelligence/LLM/chatgpt-fine-tune)
 - 213 [Deep Research Agents](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/deep-research)
@@ -226,7 +226,7 @@ tags: [intro]
 - 002 [训练机器学习模型预测赢家，在 Kaggle 准确度最高 Game Winner Prediction, best 76.9% w EDA&Finetune](https://www.kaggle.com/code/kirklin/game-winner-prediction-best-76-9-w-eda-finetune)
 - 001 [【视频】43秒带你速通分布式系统概念 [Video] A quick tour of Distributed System](https://doc.fenglyulin.com/docs/distributed-systems/overview)
 ## ARTIFICIAL INTELLIGENCE
-1. [(Todo) RAG深入理解 RAG Deep Dive](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/rag-deep-dive)
+1. [RAG深入理解 RAG Deep Dive](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/rag-deep-dive)
 2. [Promising Problems on AI Coding from Cursor](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/cursor-promising-problems)
 3. [ChatGPT Fine Tuning](https://doc.fenglyulin.com/docs/artificial-intelligence/LLM/chatgpt-fine-tune)
 4. [Deep Research Agents](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/deep-research)
