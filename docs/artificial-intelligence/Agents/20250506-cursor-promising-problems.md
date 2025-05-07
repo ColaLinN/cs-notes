@@ -21,8 +21,6 @@
     -   have already built a really fast Merkle-tree-based codebase syncing engine in Rus
     -   custom indexing system
 
-
-
 ## Other problems from cursor
 
 -   Next Action Prediction
@@ -55,4 +53,7 @@
         -   Clever dataset curation (likely synthetic data) and RL on frontier code models to improve calibration.
         -   Infinite context and near-perfect codebase understanding.
 
-## 
+## Reference
+
+1.   Our Problems from Cursor team https://www.cursor.com/blog/problems-2023
+2.   More Problems from Cursor team https://www.cursor.com/blog/problems-2024
