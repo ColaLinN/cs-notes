@@ -2,8 +2,6 @@
 
 # Chat Template
 
-
-
 https://github.com/openai/openai-python/blob/release-v0.28.0/chatml.md
 
 Traditionally, GPT models consumed unstructured text. ChatGPT models instead expect a structured format, called Chat Markup Language (ChatML for short).
