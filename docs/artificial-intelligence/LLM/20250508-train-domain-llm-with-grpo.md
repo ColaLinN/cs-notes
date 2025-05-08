@@ -18,9 +18,26 @@ would have forced me to think about
 
 hoping that my model would learn something.
 
+## problem
+
+This type of problem falls under [Interval scheduling](https://en.wikipedia.org/wiki/Interval_scheduling).
+
+This specific problem is a variant of the Weighted Interval Scheduling problem, that can be solved efficiently using Dynamic Programming.
+
+That's great because it allows us to easily compute the best possible score for any given input, a target for our model to aim for during training.
 
 
 
+In verifiable domains like math, building a dataset for GRPO is often easier.
+
+
+
+Given these requirements, writing a dataset generation script is relatively easy.
+
+-   We use event names from different categories (🎶 Music Festival, 🎓 University, 🧑‍💻 Tech Conference, ...).
+-   Each example includes a random number of events (between 4 and 8) with varying durations.
+-   We make sure some events overlap.
+-   We randomly mark some events as priorities.
 
 ## Reference
 
