@@ -192,8 +192,7 @@ domains = getDirs(folder_path)
 domainToMarkdownFiles = {}
 domainToSFiles = {}  # SFile object
 for domain in domains:
-    if domain.endswith(".assets"):
-    # or domain == "misc":
+    if domain.endswith(".assets") or domain == "misc":
         continue
 
     domainPath = os.path.join(folder_path, domain)
