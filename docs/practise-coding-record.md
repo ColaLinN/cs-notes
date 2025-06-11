@@ -9,7 +9,7 @@ tags: [intro]
 
 ## 全部文章 All Articles
 
-- 225 [VSCode Hyperlink](https://doc.fenglyulin.com/docs/web-full-stack/backend/vscode-mac-hyperlink)
+- 225 [DeepLink](https://doc.fenglyulin.com/docs/web-full-stack/backend/vscode-mac-hyperlink)
 - 224 [HTTPs Setup](https://doc.fenglyulin.com/docs/web-full-stack/backend/dns-certificate)
 - 223 [PR Agents Benchmark Evaluator](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/pr-agents-evaluator)
 - 222 [AI Coding Products](https://doc.fenglyulin.com/docs/artificial-intelligence/AICoding/product-survey)
@@ -436,7 +436,7 @@ tags: [intro]
 17. [产品系统设计Todo Products Todolist](https://doc.fenglyulin.com/docs/system-design/Products/todo)
 
 ## WEB FULL STACK
-1. [VSCode Hyperlink](https://doc.fenglyulin.com/docs/web-full-stack/backend/vscode-mac-hyperlink)
+1. [DeepLink](https://doc.fenglyulin.com/docs/web-full-stack/backend/vscode-mac-hyperlink)
 2. [HTTPs Setup](https://doc.fenglyulin.com/docs/web-full-stack/backend/dns-certificate)
 3. [插入内容的js脚本](https://doc.fenglyulin.com/docs/web-full-stack/frontend/js-relate)
 4. [爬虫关键技术](https://doc.fenglyulin.com/docs/web-full-stack/security/crawler)
