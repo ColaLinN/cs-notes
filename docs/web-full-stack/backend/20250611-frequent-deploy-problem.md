@@ -16,14 +16,25 @@
 
 -   需要配置证书，参考 https://doc.fenglyulin.com/docs/web-full-stack/backend/dns-certificate#dns
 
-## IP路由 debug
+## IP路由追踪
+
+如果遇到ping ip timeout
+
+![image-20250613233113008](./20250611-frequent-deploy-problem.assets/image-20250613233113008.png)
+
+可以使用traceroute命令看看ICMP报文卡在了哪里
+
+```
+traceroute 10.xxx.xx.xx
+```
+
+![image-20250613233051026](./20250611-frequent-deploy-problem.assets/image-20250613233051026.png)
 
 mtr命令
 
 ```
 mtr -4 -c 100 -r 10.xxx.xx.xx
 ```
-
 
 ## 工作中部署MCP的卡点
 
