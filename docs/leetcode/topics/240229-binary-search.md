@@ -17,151 +17,57 @@ tags: [leetcode]
 
 ## Template
 
-### (i, j) and [i, j]
-
-![image-20240525052016591](./240229-binary-search.assets/image-20240525052016591.png)
-
-### [i, j) and [i, j]
-
-![image-20240525052342672](./240229-binary-search.assets/image-20240525052342672.png)
-
-### Explanation
-
-开区间指的是区间边界的两个值不包括在内，格式为：
-
-```
-(a, b)
-a < x < b
-```
-
-闭区间指的是区间边界的两个值包括在内，格式为：
-
-```
-[a,b]
-a <= x <=b
-```
-
-下面是一个最终收敛到左闭右开区间 `[left, right)` 的例子
-
-```go
-    //...
-    left := 0  # 初始值的设置其实可以直接设为0和n-1
-    right := len(nums) - 1
-    for left < right { // (1)
-        mid := (left + right) / 2 // (2)
-        if nums[mid] < nums[mid+1] { // (3) nums[mid] < nums[mid+1] can be abstract as a func `isRed()`
-            left = mid + 1 // (4.1)
-        } else {
-            right = mid // (4.2)
-        }
-    }
-```
-
-影响红蓝染色法收敛结果的因素
-
-1. `(1)` for 循环
-2. `(4)` left 和 right 是否赋值 mid 或更进一步 (left = mid + 1 or right = mid -1)
-
-```
-1. (1) 这是影响收敛的重要条件，决定了left和right停下的条件，部分决定了开闭性质
-   1. (1) left <= right，闭区间
-   2. (1) left < right，半开半闭区间
-   3. (1) left +1 < right，开区间
-2. (2)一般为向下取整。（向下取整很少溢出，而向上取整可能会溢出，，需要分情况讨论。）
-3. (3)是收敛的另一个重要条件
-4. (4.1) (4.2)和(1)共同部分决定了left和right开闭的性质，如果设置与(1)不配套，会使得(1) for loop无法收敛
-   1. (left, right) 闭区间。需要初始化 i = 0, j = n-1
-      1. (1) left <= right
-      2. (4.1) left = mid + 1
-      3. (4.2) right = mid - 1
-      4. (4.1) and (4.2) must be like the condition above, otherwise the program will trap into infinite loop
-   2. [left, right)  左闭右开区间。需要初始化 i = -1, j = n-1
-      1. Difference:
-         1. 和3的区别在于(4.1)(4.2)
-         2. 如果换成1的(4.1)(4.2)，收敛的时候会使得left==right，且不稳定，要么位于<target的地方，要么等于target的地方
-         3. 如果换成4的(4.1)(4.2)，会无法收敛
-      2. (1) left < right
-      3. (4.1) left = mid + 1
-      4. (4.2) right = mid
-      5. (4.1) and (4.2) must be like the condition above, otherwise the program will trap into infinite loop
-   3. (left, right]  左开右闭区间。需要初始化 i = 0, j = n
-      1. (1) left < right
-      2. (4.1) left = mid
-      3. (4.2) right = mid - 1
-   4. [left, right]  开区间。 需要初始化 i = -1, j = n
-      1. Difference:
-         1. 这里的初始化可以是left=0, right=n-1, 而不一定不用包含。
-      2. (1) left + 1 < right
-      3. (4.1) left = mid
-      4. (4.2) right = mid 
-```
-## bisect_left (4 solutions)
+## bisect_left
 
 ### (i, j)
 
 ```python
 # (i, j) -> i <= j; i = mid + 1, j = mid - 1
-def bisect_left_v1(nums, target):
+def bisect_left(nums, target):
     i = 0
     j = len(nums) - 1
     while i <= j:
         mid = (i+j) // 2
-        if nums[mid] < target: # red
+        if nums[mid] < target:
             i = mid + 1
-        else: # blue
+        else:
             j = mid - 1
-    return j + 1
+    return i
 ```
 
-### (i, j]
-
-```python
-# (i, j] -> i < j; i = mid + 1, j = mid
-def bisect_left_v2(nums, target):
-    i = 0
-    j = len(nums)
-    while i < j:
-        mid = (i+j) // 2
-        if nums[mid] < target: # red
-            i = mid + 1
-        else: # blue
-            j = mid
-    return j
-```
-
-### [i, j
+### [i, j)
 
 There is problem, I cannot figure it out for now.
 
 ```python
 # [i, j) -> i < j; i = mid, j = mid - 1
-def bisect_left_v3(nums, target):
+def bisect_left(nums, target):
     i = 0
-    j = len(nums) - 1
+    j = len(nums)  # 使用半开区间 [i, j)
     while i < j:
-        # print(i, j, nums[i], nums[j], target)
-        mid = (i+j) // 2
-        if mid <= 0: return 0
-        # if mid == i: 
-        if nums[mid] < target: # red
-            i = mid
-        else: # blue
-            j = mid - 1
-    return j
+        mid = (i + j) // 2
+        if nums[mid] < target:  # 注意这里是 < 而不是 <=
+            i = mid + 1
+        else:
+            j = mid
+    return i
+
+for i in range(1, 10):
+    print(i, bisect_left_v1([1,2,3,4,5], i))
 ```
 
 ### [i, j]
 
 ```python
 # [i, j] -> i + 1 < j; i = mid, j = mid
-def bisect_left_v4(nums, target):
+def bisect_left(nums, target):
     i = -1
     j = len(nums)
     while i + 1 < j:
         mid = (i+j) // 2
-        if nums[mid] < target: # red
+        if nums[mid] < target:
             i = mid
-        else: # blue
+        else:
             j = mid
     return i + 1
 ```
@@ -308,4 +214,28 @@ class Solution:
             left+=1
         pos = len(nums) - 1 - left
         return max(neg, pos)
+```
+
+## others
+
+### (i, j) and [i, j]
+
+![image-20240525052016591](./240229-binary-search.assets/image-20240525052016591.png)
+
+### [i, j) and [i, j]
+
+![image-20240525052342672](./240229-binary-search.assets/image-20240525052342672.png)
+
+开区间指的是区间边界的两个值不包括在内，格式为：
+
+```
+(a, b)
+a < x < b
+```
+
+闭区间指的是区间边界的两个值包括在内，格式为：
+
+```
+[a,b]
+a <= x <=b
 ```
