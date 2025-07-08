@@ -209,6 +209,27 @@ class Solution:
 
 ```
 
+## [105. Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+        if not preorder:
+            return None
+        rootVal = preoder[0]
+        leftLen = inorder.index(rootVal)
+        left = self.buildTree(preorder[1:1+leftLen], inorder[:leftLen])
+        right = self.buildTree(preoder[1+leftLen], inorder[1+leftLen:])
+        return TreeNode(preoder[0], left, right)
+        
+```
+
 ## Reference
 
 1. [二叉树：前中后序迭代方式统一写法](https://zhuanlan.zhihu.com/p/260497281)
