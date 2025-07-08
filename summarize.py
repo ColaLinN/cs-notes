@@ -247,6 +247,8 @@ for domain in domainToSFiles:
 
         if "daily-challenge" in sfile.path:
             continue
+        if "introduction/main" in sfile.path:
+            continue
 
         if not sfile.is_additional_file:
             header = ""
