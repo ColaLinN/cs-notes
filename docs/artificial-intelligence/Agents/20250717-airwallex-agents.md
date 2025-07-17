@@ -10,7 +10,7 @@ Revolutionising business with AI-powered automations at every step
         1.  business objectives — north star vision
     2.  User segmentation
         1.  User profile: the static property of a user(age, degree, occupation, preference, etc)
-    3.  User needs/Pain points 
+    3.  User needs/Pain points(Product-Market-Fit)
         1.  User journey
         2.  Analysis
     4.  What are the user benefits and our value proposition/differentiation
