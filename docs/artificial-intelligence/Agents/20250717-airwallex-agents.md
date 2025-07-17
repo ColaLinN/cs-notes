@@ -1,6 +1,30 @@
 # Automated Financial Agent
 
-North Star Vision: Revolutionising business with AI-powered automations at every step
+Revolutionising business with AI-powered automations at every step
+
+## Product Study Thinking#
+
+1.  Clarification
+2.  Thinking Structure
+    1.  Why now, why this
+        1.  business objectives — north star vision
+    2.  User segmentation
+        1.  User profile: the static property of a user(age, degree, occupation, preference, etc)
+    3.  User needs/Pain points 
+        1.  User journey
+        2.  Analysis
+    4.  What are the user benefits and our value proposition/differentiation
+    5.  solutions(IoT, AI, VR, AR, social network, etc.)
+        1.  Technical Tradeoff(balance innovation with practical implementation considerations)
+            1.  pros
+            2.  cons
+    6.  metrics
+        1.  DAU
+        2.  PV/UV
+        3.  Click-through rate (CTR)  /  Conversion rate (CVR)
+        4.  Precision/Recall
+        5.  Accuracy
+        6.  Acceptance rate
 
 ## LLM vs traditional NLP/ML/SDE
 
