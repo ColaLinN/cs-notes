@@ -25,7 +25,8 @@ Revolutionising business with AI-powered automations at every step
             2.  cons
         2.  Evaluation
     6.  Deep Dive?
-3.  Metrics
+3.  Marketing
+4.  Metrics
     1.  DAU
     2.  PV/UV
     3.  Click-through rate (CTR)  /  Conversion rate (CVR)
