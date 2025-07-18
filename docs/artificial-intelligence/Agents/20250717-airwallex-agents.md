@@ -2,23 +2,22 @@
 
 Revolutionising business with AI-powered automations at every step
 
-## Product Study Thinking#
+## Product Study Thinking
 
 1.  Clarification
 2.  Thinking Structure
-    1.  Why now, why this
+    1.  Why now, why this, why us
         1.  business objectives — north star vision
-    2.  User segmentation
+    2.  User
         1.  User profile: the static property of a user(age, degree, occupation, preference, etc)
-    3.  User needs/Pain points(Product-Market-Fit)
-        1.  User journey
-        2.  Analysis
+        2.  User journey
+    3.  User needs/Pain points(Product-Market-Fit) Analysis
     4.  What are the user benefits and our value proposition/differentiation
-    5.  solutions(IoT, AI, VR, AR, social network, etc.)
+    5.  Solutions(IoT, AI, VR, AR, social network, etc.)
         1.  Technical Tradeoff(balance innovation with practical implementation considerations)
             1.  pros
             2.  cons
-    6.  metrics
+    6.  Evaluation/Metrics
         1.  DAU
         2.  PV/UV
         3.  Click-through rate (CTR)  /  Conversion rate (CVR)
@@ -51,7 +50,7 @@ Revolutionising business with AI-powered automations at every step
 2.   客观指标: have options on the test dataset
      1.   文本生成类任务: NLU, ROUGE, BLEU
 
-## Products List
+## AirWallex Product List
 
 -  [ ] existing
     -   [ ] kyc verification
@@ -69,9 +68,9 @@ Revolutionising business with AI-powered automations at every step
     -   [ ] process card dispute
     -   [ ] automated financial process
 
-## Customer wants?
+## AirWallex User Journey
 
-Customers want tailored services, immediate assistance, and intuitive access to their data
+-   Customers want tailored services, immediate assistance, and intuitive access to their data
 
 ##   Existing Products
 
@@ -101,27 +100,29 @@ Improvement
 
 ### AI Auto: Account payable process and pay bills
 
-reference
+Reference
 
 -   https://www.airwallex.com/sg/blog/introducing-bill-pay-automate-your-accounts-payable-process-and-pay-bills
 
-features
+Features
 
 -   Eliminate manual data entry
+-   Uses AI to check for duplicate invoices
+-   Check that the payment details match the invoice
 
 Employees can now upload bills directly and Airwallex will automatically extract all relevant details using AI and OCR technology, so no manual data entry is needed. 
 
-Employees can now upload bills directly and Airwallex will automatically extract all relevant details using AI and OCR technology, so no manual data entry is needed. With your chart of account data imported from your accounting software, bills can be easily coded by employees as well. Later, when the bill is ready for payment, Airwallex uses AI to check for duplicate invoices and to check that the payment details match the invoice to ensure money is being sent to the right recipient. 
+With your chart of account data imported from your accounting software, bills can be easily coded by employees as well. Later, when the bill is ready for payment, Airwallex uses AI to check for duplicate invoices and to check that the payment details match the invoice to ensure money is being sent to the right recipient. 
 
 ![image-20250717154502499](20250717-airwallex-agents.assets/image-20250717154502499.png)
 
 ## Incoming Products
 
-### Building an “AI co‑pilot” across user workflows
+### Building an AI Copilot across user workflows
 
 Reference
 
--   Airwallex blog & fintech coverage
+-   Airwallex blog
 
 Requirement
 
@@ -144,8 +145,7 @@ Improvement
 
 1.  Smarter spend, faster payments, powered by AI
     -   No more manual data entry
-        -   Time-saving automations, powered by AI Leverage workflows designed to reduce manual tasks including AI-powered receipt and bill extraction and auto-categorised expenses.
-    -   Save time with automated expense categorisation
+        -   Receipt and bill extraction and auto-categorised expenses.
     -   Batch payments with built-in error handling
 2.  https://www.airwallex.com/uk/blog/ai-spend-management
 3.  https://www.airwallex.com/uk/spend-management
