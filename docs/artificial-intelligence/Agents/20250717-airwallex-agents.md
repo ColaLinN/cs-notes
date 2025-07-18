@@ -38,7 +38,7 @@ Revolutionising business with AI-powered automations at every step
 
 The global payments and financial platform for growing businesses
 
-**Global Payment Network**
+### Global Payment Network
 
 A single account to manage your global payments and finances
 
@@ -47,7 +47,7 @@ A single account to manage your global payments and finances
 -   Receive Funds in 20+ currencies
 -   Global Transfer
 
-**Spend Management**
+### Spend Management
 
 Manage Company Spend, end-to-end
 
@@ -58,7 +58,7 @@ Manage Company Spend, end-to-end
 -   Manage and Pay Bills
 -   Sync all data and accounting information from QuickBooks, etc
 
-**Payments**
+### Payments
 
 Online payment acceptance to grow your international customer base
 
@@ -66,7 +66,7 @@ Online payment acceptance to grow your international customer base
 -   Accept payment worldwise
 -   Accept plug-and-play integrations with Shopify
 
-**APIs Platform**
+### APIs Platform
 
 APIs to build and monetise your own global financial products
 
@@ -83,9 +83,13 @@ APIs to build and monetise your own global financial products
     -   Improve the performance by integrating with structured data
 -   AI Chatbot
     -   Improve efficiency of Customer Service, reduce cost
--   Contract Analysis and Review
+    -   Improve User Experience
+        -   Users can run queries and automations on all types of finance functions. 
+-   Document Review
+    -   Contract Analysis and Review
+    -   KYC Assessment
 -   Report Generation
-    -   Generate comments on abnormal data
+    -   Generate comments on anomalous data
 -   API Platform
     -   Chatbot
     -   Online Monitoring
