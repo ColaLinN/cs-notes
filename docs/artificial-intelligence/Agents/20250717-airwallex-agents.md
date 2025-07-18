@@ -6,18 +6,23 @@ Revolutionising business with AI-powered automations at every step
 
 1.  Clarification
 2.  Thinking Structure
-    1.  Why now, why this, why us
-        1.  business objectives — north star vision
+    1.  Business objectives
+        1.  North star vision
+        2.  Why now, why this, why us
     2.  User
         1.  User profile: the static property of a user(age, degree, occupation, preference, etc)
         2.  User journey
-    3.  User needs/Pain points(Product-Market-Fit) Analysis
-    4.  What are the user benefits and our value proposition/differentiation
-    5.  Solutions(IoT, AI, VR, AR, social network, etc.)
-        1.  Technical Tradeoff(balance innovation with practical implementation considerations)
+    3.  Pain points
+        1.  User needs Analysis
+        2.  Product-Market-Fit
+    4.  Value proposition
+        1.  User benefits
+    5.  Solutions (IoT, AI, VR, AR, social network, etc.)
+        1.  Technical Tradeoff (balance innovation with practical implementation considerations)
             1.  pros
             2.  cons
-    6.  Evaluation/Metrics
+        2.  Evaluation
+    6.  Metrics
         1.  DAU
         2.  PV/UV
         3.  Click-through rate (CTR)  /  Conversion rate (CVR)
@@ -142,6 +147,36 @@ Improvement
 -   Scaling from single‑task chat queries to robust, embedded financial workflows with AI assistance
 
 ### Spend management
+
+**User Journey**
+
+-   Spend management refers to how an organisation tracks, controls, and optimises its expenses, from supplier payments to employee reimbursements.
+-   Strong spend management helps biz
+    -   Stay within budget
+    -   Improve financial accuracy
+    -   Prevent unnecessary costs
+    -   Make confident, data-backed decisions
+
+**Pain Points**
+
+-   In spend management, many businesses are still relying on outdated tools, manual processes, and disconnected platforms.
+-   Time lost in
+    -   Reconciling receipts
+    -   Approvals stuck in inboxes
+    -   Limited visibility over where money’s actually going
+
+**Value Proposition**
+
+-   AI-powered spend management can help with smarter budgeting, proactive control, and freeing up time across your organisation.
+
+**Fatures**
+
+-   Auto-matching receipts to transactions
+-   Real-time alerts for out-of-policy spend
+-   Predictive forecasts for upcoming budget changes
+-   AI-powered categorisation and fraud detection
+
+**Reference**
 
 1.  Smarter spend, faster payments, powered by AI
     -   No more manual data entry
