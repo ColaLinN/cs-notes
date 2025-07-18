@@ -10,7 +10,7 @@ tags: [intro]
 ## 全部文章 All Articles
 
 - 229 [LLM vs traditional NLP/ML/SDE](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/llm-vs-ml)
-- 228 [Automated Financial Agent](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/airwallex-agents)
+- 228 [AI Financial Agent](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/airwallex-agents)
 - 227 [二叉树前中后向遍历 Binary Tree Front, Middle, and Post Order Traversal](https://doc.fenglyulin.com/docs/leetcode/topics/240309-09-bt-front-middle-back-traversal)
 - 226 [二分搜索 Binary Search ](https://doc.fenglyulin.com/docs/leetcode/topics/binary-search)
 - 225 [成为AI大师吧 Become AI master](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/master)
@@ -240,7 +240,7 @@ tags: [intro]
 - 001 [【视频】43秒带你速通分布式系统概念 [Video] A quick tour of Distributed System](https://doc.fenglyulin.com/docs/distributed-systems/overview)
 ## ARTIFICIAL INTELLIGENCE
 1. [LLM vs traditional NLP/ML/SDE](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/llm-vs-ml)
-2. [Automated Financial Agent](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/airwallex-agents)
+2. [AI Financial Agent](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/airwallex-agents)
 3. [成为AI大师吧 Become AI master](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/master)
 4. [PR Agents Benchmark Evaluator](https://doc.fenglyulin.com/docs/artificial-intelligence/Agents/pr-agents-evaluator)
 5. [AI Coding Products](https://doc.fenglyulin.com/docs/artificial-intelligence/AICoding/product-survey)

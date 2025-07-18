@@ -1,4 +1,4 @@
-# Automated Financial Agent
+# AI Financial Agent
 
 Revolutionising business with AI-powered automations at every step
 
