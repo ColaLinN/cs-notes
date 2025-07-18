@@ -13,10 +13,6 @@ dev workflow
      1.   LLM 
 5.   MR merged
 
-MVP
-
-Chatgpt API
-
 ## Expense Platform
 
 1.   Clarification
@@ -43,7 +39,9 @@ Chatgpt API
                5.   Cons
                     1.   Generalise
           2.   LLM
-               1.   pros: generalise, understand context
+               1.   pros: 
+                    1.   generalise
+                    2.   understand context
                2.   cons:
                     1.   expensive
                     2.   Halluciation
@@ -52,12 +50,10 @@ Chatgpt API
           1.   Dataset
                1.   Data entry: invoice/receipt files
                2.   Answer: category
-     2.   
      3.   Online
           1.   user survery edge cases
      4.   Offline
           1.   Dataset
-6.   
 
 
 
