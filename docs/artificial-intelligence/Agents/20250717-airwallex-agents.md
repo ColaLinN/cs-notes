@@ -2,6 +2,65 @@
 
 Revolutionising business with AI-powered automations at every step
 
+## AI For Dev Efficiency
+
+dev workflow
+
+1.   PRD
+2.   TD
+3.   code
+4.   Merge Request for code review
+     1.   LLM 
+5.   MR merged
+
+MVP
+
+Chatgpt API
+
+## Expense Platform
+
+1.   Clarification
+     1.   features
+          1.   Invoice categorisation?
+     2.   150k
+2.   User Expectation
+     1.   Upload Invoice/Receipt for processing
+3.   User Profile
+     1.   customers
+4.   Solution
+     1.   Traditional Software
+          1.   approval system
+          2.   invoice categorise API
+          3.   user profile login
+          4.   Display
+     2.   Categorisation
+          1.   ML
+               1.   CNN
+               2.   OCR
+               3.   PDF to Text
+               4.   Pros:
+                    1.   Metrics
+               5.   Cons
+                    1.   Generalise
+          2.   LLM
+               1.   pros: generalise, understand context
+               2.   cons:
+                    1.   expensive
+                    2.   Halluciation
+5.   Metrics
+     1.   Evaluation pipeline
+          1.   Dataset
+               1.   Data entry: invoice/receipt files
+               2.   Answer: category
+     2.   
+     3.   Online
+          1.   user survery edge cases
+     4.   Offline
+          1.   Dataset
+6.   
+
+
+
 ## Product Case Study
 
 1.  Clarification
@@ -34,9 +93,7 @@ Revolutionising business with AI-powered automations at every step
     5.  Accuracy
     6.  Acceptance rate
 
-## AirWallex User Journey
-
-The global payments and financial platform for growing businesses
+## AirWallex
 
 ### Global Payment Network
 
@@ -151,8 +208,6 @@ Reference
 
 -   Time-consuming on munual data entry, duplicate invoices checking, 
 
-
-
 Employees can now upload bills directly and Airwallex will automatically extract all relevant details using AI and OCR technology, so no manual data entry is needed. 
 
 With your chart of account data imported from your accounting software, bills can be easily coded by employees as well. Later, when the bill is ready for payment, Airwallex uses AI to check for duplicate invoices and to check that the payment details match the invoice to ensure money is being sent to the right recipient. 
@@ -242,5 +297,14 @@ Reference
 ## Reference
 
 1.   Former CTO of Funding Societies Ishan Agrawal Joins Airwallex as Head of Engineering https://fintechnews.sg/107292/payments/former-cto-of-funding-societies-ishan-agrawal-joins-airwallex-as-head-of-engineering/?utm_source=chatgpt.com
-1.   
+
+1.   Introducing Bill Pay: Automate your accounts payable process and pay bills globally, all in one place https://www.airwallex.com/sg/blog/introducing-bill-pay-automate-your-accounts-payable-process-and-pay-bills
+
+1.   We’ve always believed in supporting entrepreneurs and startups because we’ve been in their shoes. This funding is a major step forward in helping more businesses grow globally, faster, and with fewer roadblocks. https://x.com/awxjack/status/1925232335068205495
+
+1.   Online payment fraud detection: best strategies and prevention tips https://www.airwallex.com/uk/blog/online-payment-fraud-detection
+
+1.   Airwallex Spend: Revolutionising business spend management, with AI-powered automations at every step 
+
+     https://www.airwallex.com/sg/blog/introducing-airwallex-spend
 
