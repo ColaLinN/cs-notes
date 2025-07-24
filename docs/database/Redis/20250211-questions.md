@@ -1,4 +1,4 @@
-# Redis问题清单 Redis Questions List
+# Redis FAQ
 
 1. Redis是单线程还是多线程？
 2. 那为什么 Redis 在 4.0 之前会选择使用单线程？而且使用单线程还那么快？
@@ -161,6 +161,56 @@ Redis Cluster 将自己分成了 16384 个 Slot（槽位），也就是`[0, 1638
 | 4    | 13500~16383 |
 
 如果我们不采用一致性哈希，而采用传统的sharding策略，那么在增加节点时，由于sharding的base变了，从3变成4。那么3个节点几乎都有数据复制、转移操作，增加了操作的复杂性。
+
+## 什么是缓存雪崩、击穿、穿透？
+
+| 问题类型                          | 触发条件                            | 危害特点                                | 解决方案汇总                                                 |
+| --------------------------------- | ----------------------------------- | --------------------------------------- | ------------------------------------------------------------ |
+| **缓存雪崩（Cache Avalanche）**   | 大量缓存同一时间过期，或 Redis 故障 | 瞬时大量请求打到数据库，系统崩溃风险    | 1. 缓存过期时间随机化（TTL 加偏移）<br>2. 热点缓存永不过期 + 后台刷新<br/>3. 多级缓存（本地+Redis）<br/>4. 请求限流+服务降级<br/>5. Redis 高可用部署（主从、集群、哨兵） |
+| **缓存击穿（Cache Breakdown）**   | 某个热点 key 突然失效（高并发访问） | 请求集中打到数据库，瞬时压力骤增        | 1. 使用分布式锁更新缓存（Double Check）<br/>2. 永不过期 + 后台异步刷新<br/>3. 预加载或延迟双删策略 |
+| **缓存穿透（Cache Penetration）** | 请求的是数据库中没有的数据          | 每次请求都穿透缓存直达 DB，可能引发攻击 | 1. 将空值写入缓存（缓存空对象/布尔标记）<br/>2. 使用布隆过滤器拦截非法 key<br/>3. 校验参数合法性（请求预过滤）<br/>4. 限制异常流量（如验证码、接口限速） |
+
+### 代码实践
+
+缓存雪崩
+
+```
+# 设置 TTL 加上随机时间，避免同时过期
+expire_time = 3600 + random.randint(0, 600)
+redis.set(key, value, ex=expire_time)
+```
+
+缓存击穿
+
+```
+# 获取缓存失败，使用分布式锁 + double check 再更新缓存
+if not redis.get(key):
+    if acquire_lock(key):
+        if not redis.get(key):
+            val = db.query(key)
+            redis.set(key, val, ex=TTL)
+        release_lock(key)
+```
+
+缓存穿透
+
+```
+# 缓存不存在数据时，也缓存一个“空值”或布尔
+val = redis.get(key)
+if val is None:
+    data = db.query(key)
+    if data:
+        redis.set(key, data, ex=TTL)
+    else:
+        redis.set(key, "__NULL__", ex=300)  # 缓存空值防止穿透
+```
+
+使用布隆过滤器防止穿透（例如 Guava、RedisBloom）
+
+```
+if not bloom_filter.contains(key):
+    return "非法请求，直接拦截"
+```
 
 ## Reference
 
