@@ -23,7 +23,7 @@
 2.  High Availability
     1.  99.99% SLA
 3.  Low Latency
-    1.  <1s response latency
+    1.  `<`1s response latency
 
 ## Architecture
 
