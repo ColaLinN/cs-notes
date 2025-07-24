@@ -9,7 +9,7 @@ tags: [intro]
 
 ## 全部文章 All Articles
 
-- 235 [The Challenges and Problem I faced](https://doc.fenglyulin.com/docs/system-design/Products/problems)
+- 235 [The Challenges and Problems I Encountered](https://doc.fenglyulin.com/docs/system-design/Products/problems)
 - 234 [SD FAQ](https://doc.fenglyulin.com/docs/system-design/Common/qa-list)
 - 233 [[System Design] AI Chatbot](https://doc.fenglyulin.com/docs/system-design/Products/ai-chatbot)
 - 232 [MQ](https://doc.fenglyulin.com/docs/database/Kafka/message-queue)
@@ -431,7 +431,7 @@ tags: [intro]
 3. [【视频】43秒带你速通分布式系统概念 [Video] A quick tour of Distributed System](https://doc.fenglyulin.com/docs/distributed-systems/overview)
 
 ## SYSTEM DESIGN
-1. [The Challenges and Problem I faced](https://doc.fenglyulin.com/docs/system-design/Products/problems)
+1. [The Challenges and Problems I Encountered](https://doc.fenglyulin.com/docs/system-design/Products/problems)
 2. [[System Design] AI Chatbot](https://doc.fenglyulin.com/docs/system-design/Products/ai-chatbot)
 3. [SD FAQ](https://doc.fenglyulin.com/docs/system-design/Common/qa-list)
 4. [System Performance Data](https://doc.fenglyulin.com/docs/system-design/Common/metrics)
