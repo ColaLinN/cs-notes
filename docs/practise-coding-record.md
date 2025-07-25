@@ -15,7 +15,7 @@ tags: [intro]
 - 233 [System Performance Data](https://doc.fenglyulin.com/docs/system-design/Common/metrics)
 - 232 [一致性哈希 Consistent Hashing](https://doc.fenglyulin.com/docs/system-design/Book/consistent-hashing)
 - 231 [Redis FAQ](https://doc.fenglyulin.com/docs/database/Redis/questions)
-- 230 [Redis介绍 Overview](https://doc.fenglyulin.com/docs/database/Redis/overview)
+- 230 [Redis Overview](https://doc.fenglyulin.com/docs/database/Redis/overview)
 - 229 [MysQL日志 Log](https://doc.fenglyulin.com/docs/database/MySQL/mysql-log)
 - 228 [MQ](https://doc.fenglyulin.com/docs/database/Kafka/message-queue)
 - 227 [System Design FAQ](https://doc.fenglyulin.com/docs/system-design/Common/qa-list)
@@ -306,7 +306,7 @@ tags: [intro]
 
 ## DATABASE
 1. [MysQL日志 Log](https://doc.fenglyulin.com/docs/database/MySQL/mysql-log)
-2. [Redis介绍 Overview](https://doc.fenglyulin.com/docs/database/Redis/overview)
+2. [Redis Overview](https://doc.fenglyulin.com/docs/database/Redis/overview)
 3. [Redis FAQ](https://doc.fenglyulin.com/docs/database/Redis/questions)
 4. [MQ](https://doc.fenglyulin.com/docs/database/Kafka/message-queue)
 5. [SQL 最佳实践 Best Practise](https://doc.fenglyulin.com/docs/database/SQL/mysql-sql-best-practise)
