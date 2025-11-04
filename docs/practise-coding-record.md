@@ -9,7 +9,7 @@ tags: [intro]
 
 ## 全部文章 All Articles
 
-- 236 [我在Shopee的工作分享：AI Code Review](https://docs.google.com/presentation/d/1ODDjmijZP5m4rQsmEAfQSM8EOl4UlCudrSOhUbubV24)
+- 236 [我在Shopee的工作分享：AI Code Review; My work sharing in Shopee: AI Code Review](https://docs.google.com/presentation/d/1ODDjmijZP5m4rQsmEAfQSM8EOl4UlCudrSOhUbubV24)
 - 235 [The Challenges and Problems I Encountered](https://doc.fenglyulin.com/docs/system-design/Products/problems)
 - 234 [SD FAQ](https://doc.fenglyulin.com/docs/system-design/Common/qa-list)
 - 233 [[System Design] AI Chatbot](https://doc.fenglyulin.com/docs/system-design/Products/ai-chatbot)
@@ -427,7 +427,7 @@ tags: [intro]
 11. [优化程序性能 HPC Optimizing program's performance](https://doc.fenglyulin.com/docs/operating-systems/csapp-chapter05-optimize-program-performance)
 
 ## SHARING
-1. [我在Shopee的工作分享：AI Code Review](https://docs.google.com/presentation/d/1ODDjmijZP5m4rQsmEAfQSM8EOl4UlCudrSOhUbubV24)
+1. [我在Shopee的工作分享：AI Code Review; My work sharing in Shopee: AI Code Review](https://docs.google.com/presentation/d/1ODDjmijZP5m4rQsmEAfQSM8EOl4UlCudrSOhUbubV24)
 2. [我在组内做了一次技术分享：分布式系统，I did a Distributed Systems Sharing in our Team](https://docs.google.com/presentation/d/1WhaGyZQZUH905QXI5QKHfKzojU1wFxcuWiNiF2pq994)
 3. [训练机器学习模型预测赢家，在 Kaggle 准确度最高 Game Winner Prediction, best 76.9% w EDA&Finetune](https://www.kaggle.com/code/kirklin/game-winner-prediction-best-76-9-w-eda-finetune)
 4. [【视频】43秒带你速通分布式系统概念 [Video] A quick tour of Distributed System](https://doc.fenglyulin.com/docs/distributed-systems/overview)
