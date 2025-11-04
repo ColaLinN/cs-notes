@@ -1,5 +1,3 @@
-
-
 # Cloud Native
 
 ## 从Cloud-ready, Cloud-optimised 到Cloud-native
