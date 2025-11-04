@@ -119,8 +119,8 @@ SharingDomain = {
         genAdditionalFiles(
             "我在Shopee的工作分享：AI Code Review; My work sharing in Shopee: AI Code Review",
             "https://docs.google.com/presentation/d/1ODDjmijZP5m4rQsmEAfQSM8EOl4UlCudrSOhUbubV24",
-            getTimestampFromYearMonthDay(2025, 10, 5),
-            getTimestampFromYearMonthDay(2025, 10, 5),
+            getTimestampFromYearMonthDay(2025, 11, 5),
+            getTimestampFromYearMonthDay(2025, 11, 5),
         ),
         genAdditionalFiles(
             "我在组内做了一次技术分享：分布式系统，I did a Distributed Systems Sharing in our Team",
