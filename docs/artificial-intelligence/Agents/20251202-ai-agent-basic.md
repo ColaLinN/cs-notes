@@ -59,9 +59,27 @@ RAG的优势
 2. 动态更新问题。新知识进来后，必须能即时查询和替换答案，长Context做不到增量更新。
 3. 成本问题。用RAG做100个文档查询，token成本可能是长Context方案的1/10甚至更低。
 
+## LangChain VS LangGraph
+
+LangChain
+
+- 链式思维。适合线性流程，比如简单的 RAG 问答、文档摘要等。就像流水线一样，一步步往下走。
+- 适合简单任务
+- 适合MVP原型期，上手快
+
+LangGraph
+
+- 图式思维。支持循环、分支、并行执行，适合复杂场景。可以实现"做-检查-改进-再检查"的迭代流程。
+- 可支持多智能体
+- 复杂业务流程
+- 高度控制，复杂的条件分支
+- 人机协作，流程中需要人工审批或介入 
+- 支持流式中间输出
+
 # Reference
 
 1. R1的这种有反思和自我纠正的cot，比一般的step by step更好的原因是什么啊？https://www.xiaohongshu.com/discovery/item/6822e74a0000000022007153?source=webshare&xhsshare=pc_web&xsec_token=ABs3j-Wu_fF4r7stR6s9I6VSv02G3moDXwtC7Q-fTh6KU=&xsec_source=pc_share
-2. RAG是企业落地AI的第一工程 59https://www.xiaohongshu.com/discovery/item/68b8db35000000001d003b37?source=webshare&xhsshare=pc_web&xsec_token=ABNuf6q4BycUPvxF4Y3rwiujCdcYRpqvnSxXtgtgP9sx8=&xsec_source=pc_share
+2. RAG是企业落地AI的第一工程 https://www.xiaohongshu.com/discovery/item/68b8db35000000001d003b37?source=webshare&xhsshare=pc_web&xsec_token=ABNuf6q4BycUPvxF4Y3rwiujCdcYRpqvnSxXtgtgP9sx8=&xsec_source=pc_share
 3. Agentic-RAG为什么必须要做 https://www.xiaohongshu.com/discovery/item/68fdfa850000000004021a96?source=webshare&xhsshare=pc_web&xsec_token=AB12n3l7JIED3R9jxd1R4HhZR-1Jq2m3pEVeAKRcXMxAE=&xsec_source=pc_share
+4. LangGraph和langchain的区别？  https://www.xiaohongshu.com/discovery/item/688f747e0000000025024c6b?source=webshare&xhsshare=pc_web&xsec_token=ABsE_Z_XyEEXE6y-RqQ0jmAKkHNrcOXIugR7p90STY4nE=&xsec_source=pc_share
 
