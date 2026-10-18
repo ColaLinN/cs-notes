@@ -133,7 +133,7 @@ docker compose -f docker-compose.yml up -d
 
 ![image-20250308112652152](./20240308-deployment.assets/image-20250308112652152.png)
 
-点开后，如下图填写。基础URL可以直接填写 http://host.docker.internal:11434，最大token数按理说要看ollama和模型的配置，这里先填一个10000吧。
+点开后，如下图填写。基础URL可以直接填写 `http://host.docker.internal:11434`，最大token数按理说要看ollama和模型的配置，这里先填一个10000吧。
 
 ![image-20250308113024177](./20240308-deployment.assets/image-20250308113024177.png)
 
