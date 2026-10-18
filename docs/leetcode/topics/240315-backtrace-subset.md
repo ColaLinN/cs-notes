@@ -5,29 +5,33 @@ tags: [leetcode]
 
 # 回溯之子集 Backtrace-Subset
 
-## Idea
+## 思路
 
 回溯三问
 1. 子问题？
 2. 当前操作？
 3. 下一个子问题？
 
-## Template [78. Subsets](https://leetcode.cn/problems/subsets/)
+## 模板：78. 子集 / Subsets
 
-### Example
+[LeetCode 中文站](https://leetcode.cn/problems/subsets/) · [LeetCode 国际站](https://leetcode.com/problems/subsets/)
+
+**简要题意：** nums 中元素互不相同，返回它的所有子集，包含空集和全集。子集顺序及子集内元素顺序不限。
+
+### 示例
 
 ```
 Input: nums = [1,2,3]
 Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
 ```
 
-### Template 1
+### 模板一：从输入出发
 
 ![image-20240525203203182](./240315-backtrace-subset.assets/image-20240525203203182.png)
 
-Thinking on the perspective of input, choose or not choose?
+从输入的角度思考：对于当前元素，选择还是不选择？
 
-- Choose
+- 选择当前元素
 
   ```python
   path.append(nums[i]) # append current number to path
@@ -35,16 +39,16 @@ Thinking on the perspective of input, choose or not choose?
   path.pop() # recover path
   ```
 
-- Not Choose
+- 不选择当前元素
 
   ```python
   dfs(i+1) # skip current number
   ```
 
 
-Time Complexity: Traverse a Binary Tree `O(n^2)`
+时间复杂度：搜索树有 O(2ⁿ) 个叶子；每份结果需要复制路径，总计 O(n·2ⁿ)。（原文的 O(n²) 标注有误。）
 
-Space Complexity: `O(n)`
+额外空间复杂度：`O(n)`，不计输出答案。
 
 ```python
 class Solution:
@@ -71,15 +75,15 @@ class Solution:
         return ans
 ```
 
-### Template 2
+### 模板二：从答案出发
 
-Thinking on the perspective of answer，Which to choose?
+从答案的角度思考：下一个要选择哪个元素？
 
-- Each node is an answer.
+- 搜索树上的每个结点都对应一个合法子集。
 
-- Traverse every remaining elements at each layer.
+- 每一层枚举当前位置之后的所有候选元素。
 
-Algorithm
+算法步骤
 
 1. 子问题？从下标 `>=i` 的数组中构造子集
 2. 当前元素？应该选择满足 `j >= i` 的 `j` 元素加入路径
@@ -111,6 +115,6 @@ class Solution:
         return ans
 ```
 
-## Reference
+## 参考资料
 
 1. [子集型回溯，分割回文串](https://www.bilibili.com/video/BV1mG4y1A7Gu/?spm_id_from=333.788&vd_source=66a0b89065d7f04805223fd7f2d613a6)

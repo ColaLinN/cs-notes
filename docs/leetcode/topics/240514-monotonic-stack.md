@@ -4,7 +4,9 @@
 
 # 单调栈 Monotonic Stack
 
-[739. 每日温度](https://leetcode.cn/problems/daily-temperatures/)
+[739. 每日温度 / Daily Temperatures](https://leetcode.cn/problems/daily-temperatures/)<br/>[LeetCode 中文站](https://leetcode.cn/problems/daily-temperatures/) · [LeetCode 国际站](https://leetcode.com/problems/daily-temperatures/)
+
+**简要题意：** 对每天的温度，计算至少还要等多少天才能遇到严格更高的温度。之后没有更高温度则记为 0。
 
 https://leetcode.cn/problems/daily-temperatures/solutions/2470179/shi-pin-jiang-qing-chu-wei-shi-yao-yao-y-k0ks/
 

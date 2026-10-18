@@ -2,9 +2,13 @@
 
 # 间隔动态规划 Interval DP
 
-## [516. Longest Palindromic Subsequence](https://leetcode.cn/problems/longest-palindromic-subsequence/)
+## 516. 最长回文子序列 / Longest Palindromic Subsequence
 
-> Palindromic 回文
+[LeetCode 中文站](https://leetcode.cn/problems/longest-palindromic-subsequence/) · [LeetCode 国际站](https://leetcode.com/problems/longest-palindromic-subsequence/)
+
+**简要题意：** 返回 s 中最长回文子序列的长度。可以删除若干字符但须保留相对顺序；不要求连续。
+
+> 回文：从左到右与从右到左读，字符序列相同。
 
 ### 递归
 
@@ -12,10 +16,10 @@
 
 `dfs(i, j)` =
 
-- `if i > j` return 0
-- `if i == j` return 1
-- `if s[i] == s[j]` return `2 + dfs(i+1, j-1)`
-- return `max(dfs(i+1, j), dfs(i, j-1))`
+- 若 `i > j`，区间为空，返回 `0`。
+- 若 `i == j`，单个字符是回文，返回 `1`。
+- 若 `s[i] == s[j]`，选择两个端点，返回 `2 + dfs(i+1, j-1)`。
+- 否则舍弃一个端点，返回 `max(dfs(i+1, j), dfs(i, j-1))`。
 
 ```python
 class Solution:
@@ -110,6 +114,6 @@ class Solution:
         return dp[0]
 ```
 
-## Reference
+## 参考资料
 
 1. [区间 DP：最长回文子序列](https://www.bilibili.com/video/BV1Gs4y1E7EU/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70)

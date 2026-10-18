@@ -5,7 +5,11 @@ tags: [leetcode]
 
 # 二叉树与递归，相似平衡 Binary Tree and Recursion v2
 
-## [100. Same Tree](https://leetcode.cn/problems/same-tree/)
+## 100. 相同的树 / Same Tree
+
+[LeetCode 中文站](https://leetcode.cn/problems/same-tree/) · [LeetCode 国际站](https://leetcode.com/problems/same-tree/)
+
+**简要题意：** 两棵二叉树的结构完全相同，且对应结点的值相等时称为相同的树。判断给定的 p、q 是否相同。
 
 ```
 # Definition for a binary tree node.
@@ -21,9 +25,13 @@ class Solution:
         return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 ```
 
-## [101. Symmetric Tree](https://leetcode.cn/problems/symmetric-tree/)
+## 101. 对称二叉树 / Symmetric Tree
 
-要理解递归思路，要知道不管怎么样都可以递归成比较两个子树是否symmetric对称
+[LeetCode 中文站](https://leetcode.cn/problems/symmetric-tree/) · [LeetCode 国际站](https://leetcode.com/problems/symmetric-tree/)
+
+**简要题意：** 判断二叉树是否关于根节点左右镜像对称，结构和对应节点值都必须匹配。
+
+理解递归的关键：把“整棵树是否对称”转化为“左右两棵子树是否互为镜像”，再比较外侧与内侧的子树。
 
 ![image-20240525172101822](./240309-08-binary-tree-and-recursion-v2.assets/image-20240525172101822.png)
 
@@ -44,7 +52,11 @@ class Solution:
         return self.isSameTree(root.left, root.right)
 ```
 
-## [110. Balanced Binary Tree](https://leetcode.cn/problems/balanced-binary-tree/)
+## 110. 平衡二叉树 / Balanced Binary Tree
+
+[LeetCode 中文站](https://leetcode.cn/problems/balanced-binary-tree/) · [LeetCode 国际站](https://leetcode.com/problems/balanced-binary-tree/)
+
+**简要题意：** 判断二叉树是否平衡：每个节点的左右子树高度差都不超过 1。
 
 ```
 # Definition for a binary tree node.
@@ -70,7 +82,11 @@ class Solution:
         return getHeight(root) != -1
 ```
 
-## [199. Binary Tree Right Side View](https://leetcode.cn/problems/binary-tree-right-side-view/)
+## 199. 二叉树的右视图 / Binary Tree Right Side View
+
+[LeetCode 中文站](https://leetcode.cn/problems/binary-tree-right-side-view/) · [LeetCode 国际站](https://leetcode.com/problems/binary-tree-right-side-view/)
+
+**简要题意：** 从右侧观察二叉树，返回从上到下每层最右边可见节点的值。
 
 ![image-20240525173509990](./240309-08-binary-tree-and-recursion-v2.assets/image-20240525173509990.png)
 
@@ -94,7 +110,7 @@ class Solution:
         return ans
 ```
 
-## Reference
+## 参考资料
 
 1. [二叉树与递归 - 深入理解](https://www.bilibili.com/video/BV1UD4y1Y769/)
 2. [如何灵活运用递归？基础算法精讲 10](https://www.bilibili.com/video/BV18M411z7bb/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70)

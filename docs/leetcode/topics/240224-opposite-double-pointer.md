@@ -5,14 +5,14 @@ tags: [leetcode]
 
 # 双指针 Opposite Double Pointer
 
-## Idea
+## 思路
 
-May need to sort the array in ascending order
+通常需要先将数组按非递减顺序排序。
 
-1. Brute Force Solution only get O(1) info in O(1) time
-2. Double Pointer Solution takes O(1) time to konw O(n) info, without checking the rest O(n)
+1. 暴力解法每花费 O(1) 时间，只能检查一组候选答案。
+2. 双指针利用单调性，每次比较花费 O(1) 时间，就能排除一整批候选，不必逐一检查其余 O(n) 种情况。
 
-## Template - 3Sum
+## 模板：三数之和
 
 ![image-20240525031800443](./240224-opposite-double-pointer.assets/image-20240525031800443.png)
 
@@ -53,7 +53,11 @@ class Solution:
         return res
 ```
 
-## [167. Two Sum II - Input Array Is Sorted](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/)
+## 167. 两数之和 II - 输入有序数组 / Two Sum II - Input Array Is Sorted
+
+[LeetCode 中文站](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/) · [LeetCode 国际站](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
+
+**简要题意：** 在非递减数组中找到两个不同位置，使元素和为 target，返回从 1 开始的下标；保证恰有一组答案，要求常数额外空间。
 
 ```python
 class Solution:
@@ -71,7 +75,11 @@ class Solution:
         return None
 ```
 
-## [15. 3Sum](https://leetcode.cn/problems/3sum/)
+## 15. 三数之和 / 3Sum
+
+[LeetCode 中文站](https://leetcode.cn/problems/3sum/) · [LeetCode 国际站](https://leetcode.com/problems/3sum/)
+
+**简要题意：** 返回数组中所有由三个不同位置组成、元素之和为 0 的三元组。相同数值的三元组只返回一次，结果顺序不限。
 
 ```python
 class Solution:
@@ -110,7 +118,11 @@ class Solution:
         return res
 ```
 
-## [16. 3Sum Closest](https://leetcode.cn/problems/3sum-closest/)
+## 16. 最接近的三数之和 / 3Sum Closest
+
+[LeetCode 中文站](https://leetcode.cn/problems/3sum-closest/) · [LeetCode 国际站](https://leetcode.com/problems/3sum-closest/)
+
+**简要题意：** 从整数数组中选取三个不同位置的数，返回最接近目标值 target 的三数之和。
 
 ```python
 class Solution:
@@ -157,9 +169,13 @@ class Solution:
         return ans
 ```
 
-## [2824. Count Pairs Whose Sum is Less than Target](https://leetcode.cn/problems/count-pairs-whose-sum-is-less-than-target/)
+## 2824. 统计和小于目标的下标对数目 / Count Pairs Whose Sum is Less than Target
 
-Brute Force Solution
+[LeetCode 中文站](https://leetcode.cn/problems/count-pairs-whose-sum-is-less-than-target/) · [LeetCode 国际站](https://leetcode.com/problems/count-pairs-whose-sum-is-less-than-target/)
+
+**简要题意：** 统计数组中下标 i 小于 j 且 nums[i] + nums[j] 小于 target 的数对数量。
+
+暴力解法
 
 ```
 func countPairs(nums []int, target int) int {
@@ -175,7 +191,7 @@ func countPairs(nums []int, target int) int {
 }
 ```
 
-Opposite Double Pointer
+相向双指针
 
 ```python
 class Solution:
@@ -194,7 +210,11 @@ class Solution:
         return ans
 ```
 
-## [611. Valid Triangle Number](https://leetcode.cn/problems/valid-triangle-number/)
+## 611. 有效三角形的个数 / Valid Triangle Number
+
+[LeetCode 中文站](https://leetcode.cn/problems/valid-triangle-number/) · [LeetCode 国际站](https://leetcode.com/problems/valid-triangle-number/)
+
+**简要题意：** 从非负整数数组中选择三个不同下标，统计对应长度能组成非退化三角形的三元组数量。
 
 ```
 func triangleNumber(nums []int) int {
@@ -223,7 +243,11 @@ func triangleNumber(nums []int) int {
 }
 ```
 
-## [11. Container With Most Water](https://leetcode.cn/problems/container-with-most-water/)
+## 11. 盛最多水的容器 / Container With Most Water
+
+[LeetCode 中文站](https://leetcode.cn/problems/container-with-most-water/) · [LeetCode 国际站](https://leetcode.com/problems/container-with-most-water/)
+
+**简要题意：** 在下标 i 处竖起高度为 `height[i]` 的线段。选择两条线段，与横轴构成容器。容量为两线段距离乘较短高度，返回最大容量。
 
 ```python
 class Solution:
@@ -240,9 +264,13 @@ class Solution:
         return res
 ```
 
-## Prefix Sum
+## 前缀和
 
-## [42. Trapping Rain Water](https://leetcode.cn/problems/trapping-rain-water/)
+## 42. 接雨水 / Trapping Rain Water
+
+[LeetCode 中文站](https://leetcode.cn/problems/trapping-rain-water/) · [LeetCode 国际站](https://leetcode.com/problems/trapping-rain-water/)
+
+**简要题意：** 给定宽度均为 1 的非负柱高数组，计算下雨后柱子之间能储存的总水量。
 
 ![image-20240525030835025](./240224-opposite-double-pointer.assets/image-20240525030835025.png)
 
@@ -273,6 +301,6 @@ func trap(height []int) int {
 }
 ```
 
-## Reference
+## 参考资料
 
 1. [灵神视频](https://www.bilibili.com/video/BV1bP411c7oJ/?vd_source=66a0b89065d7f04805223fd7f2d613a6)

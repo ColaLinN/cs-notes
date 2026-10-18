@@ -5,15 +5,15 @@ tags: [leetcode]
 
 # 同向指针滑窗 Same Direction Pointer/Sliding Window
 
-## Idea
+## 思路
 
-Same Direction Pointer is a changable sliding window
+同向双指针可以维护长度可变的滑动窗口。
 
-The most important thing is to find the monotonicity, i.e. finding the subarray/element with same conditions at once.
+关键是找到单调性：移动边界后，能够一次判断一批子数组或元素是否满足条件。
 
 > 同向双指针是一种可变的滑动窗口，固定的叫做滑动窗口。最重要的就是要发现单调性，发现可以通过一次比较来发现多个相同条件的子数组/元素
 
-## Sliding Window Cheat Sheet
+## 滑动窗口模板速查
 
 ```python
 # https://leetcode.cn/problems/max-consecutive-ones-iii/solutions/609055/fen-xiang-hua-dong-chuang-kou-mo-ban-mia-f76z/
@@ -35,9 +35,13 @@ def findSubArray(nums):
     return res
 ```
 
-## [209. Minimum Size Subarray Sum](https://leetcode.cn/problems/minimum-size-subarray-sum/)
+## 209. 长度最小的子数组 / Minimum Size Subarray Sum
 
-Subarray: A **subarray** is a contiguous **non-empty** sequence of elements within an array.
+[LeetCode 中文站](https://leetcode.cn/problems/minimum-size-subarray-sum/) · [LeetCode 国际站](https://leetcode.com/problems/minimum-size-subarray-sum/)
+
+**简要题意：** 在正整数数组 `nums` 中，找和至少为 `target` 的最短非空连续子数组，返回长度；不存在时返回 0。
+
+子数组（subarray）是数组中一段**连续且非空**的元素序列。
 
 ```
 func minSubArrayLen(target int, nums []int) int {
@@ -62,7 +66,11 @@ func minSubArrayLen(target int, nums []int) int {
 }
 ```
 
-## [3. Longest Substring Without Repeating Characters](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)
+## 3. 无重复字符的最长子串 / Longest Substring Without Repeating Characters
+
+[LeetCode 中文站](https://leetcode.cn/problems/longest-substring-without-repeating-characters/) · [LeetCode 国际站](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+
+**简要题意：** 给定字符串，返回不含重复字符的最长连续子串长度。
 
 ```
 func lengthOfLongestSubstring(s string) int {
@@ -83,7 +91,11 @@ func lengthOfLongestSubstring(s string) int {
 }
 ```
 
-## [713. Subarray Product Less Than K](https://leetcode.cn/problems/subarray-product-less-than-k/)
+## 713. 乘积小于 K 的子数组 / Subarray Product Less Than K
+
+[LeetCode 中文站](https://leetcode.cn/problems/subarray-product-less-than-k/) · [LeetCode 国际站](https://leetcode.com/problems/subarray-product-less-than-k/)
+
+**简要题意：** 给定正整数数组，统计元素乘积严格小于 k 的非空连续子数组数量。
 
 ```
 func numSubarrayProductLessThanK(nums []int, k int) int {
@@ -116,7 +128,11 @@ func numSubarrayProductLessThanK(nums []int, k int) int {
 }
 ```
 
-## [1004. Max Consecutive Ones III](https://leetcode.cn/problems/max-consecutive-ones-iii/)
+## 1004. 最大连续 1 的个数 III / Max Consecutive Ones III
+
+[LeetCode 中文站](https://leetcode.cn/problems/max-consecutive-ones-iii/) · [LeetCode 国际站](https://leetcode.com/problems/max-consecutive-ones-iii/)
+
+**简要题意：** `nums` 只含 0 和 1。最多将 k 个 0 翻转为 1，返回可以得到的最长连续 1 的长度。
 
 ```
 func longestOnes(nums []int, k int) int {
@@ -147,7 +163,11 @@ func longestOnes(nums []int, k int) int {
 }
 ```
 
-## [283. Move Zeroes](https://leetcode.cn/problems/move-zeroes/)
+## 283. 移动零 / Move Zeroes
+
+[LeetCode 中文站](https://leetcode.cn/problems/move-zeroes/) · [LeetCode 国际站](https://leetcode.com/problems/move-zeroes/)
+
+**简要题意：** 原地将数组中的所有 0 移到末尾，同时保持其他元素的相对顺序。
 
 ```python
 class Solution:
@@ -167,8 +187,8 @@ class Solution:
                     break
 ```
 
-## Reference
+## 参考资料
 
-1. [Sliding Window Template](https://leetcode.cn/problems/max-consecutive-ones-iii/solutions/609055/fen-xiang-hua-dong-chuang-kou-mo-ban-mia-f76z/)
-2. [C++ Maximum Sliding Window Cheatsheet Template!](https://leetcode.com/problems/frequency-of-the-most-frequent-element/solutions/1175088/C++-Maximum-Sliding-Window-Cheatsheet-Template!/)
-3. [C++ O(N) Time Sliding Window + "At Most to Equal" trick](https://leetcode.com/problems/count-vowel-substrings-of-a-string/solutions/1563765/c-on-time-sliding-window/comments/1141941/)
+1. [滑动窗口模板](https://leetcode.cn/problems/max-consecutive-ones-iii/solutions/609055/fen-xiang-hua-dong-chuang-kou-mo-ban-mia-f76z/)
+2. [C++ 滑动窗口模板速查](https://leetcode.com/problems/frequency-of-the-most-frequent-element/solutions/1175088/C++-Maximum-Sliding-Window-Cheatsheet-Template!/)
+3. [C++ 线性时间滑动窗口：用“至多”推导“恰好”的技巧](https://leetcode.com/problems/count-vowel-substrings-of-a-string/solutions/1563765/c-on-time-sliding-window/comments/1141941/)

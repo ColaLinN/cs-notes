@@ -4,7 +4,9 @@
 
 # 单调队列 Monotonic Queue
 
-[239. 滑动窗口最大值](https://leetcode.cn/problems/sliding-window-maximum/)
+[239. 滑动窗口最大值 / Sliding Window Maximum](https://leetcode.cn/problems/sliding-window-maximum/)<br/>[LeetCode 中文站](https://leetcode.cn/problems/sliding-window-maximum/) · [LeetCode 国际站](https://leetcode.com/problems/sliding-window-maximum/)
+
+**简要题意：** 长度为 k 的窗口从 nums 左端逐格移向右端。按顺序返回每个窗口内的最大值。
 
 https://leetcode.cn/problems/sliding-window-maximum/solutions/2499715/shi-pin-yi-ge-shi-pin-miao-dong-dan-diao-ezj6/
 

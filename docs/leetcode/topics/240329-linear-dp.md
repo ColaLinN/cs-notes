@@ -63,15 +63,19 @@ class Solution:
 2. 子问题，是计算当前dfs(i, j)
 3. 下一个子问题，是计算当前的dfs(i, j)，需要多少下一个子问题来联合判断
 
-![image-20240329172350775](./240329 线性DP.assets/image-20240329172350775.png)
+![image-20240329172350775](./240329%20%E7%BA%BF%E6%80%A7DP.assets/image-20240329172350775.png)
 
-### [72. Edit Distance](https://leetcode.cn/problems/edit-distance/)
+### 72. 编辑距离 / Edit Distance
+
+[LeetCode 中文站](https://leetcode.cn/problems/edit-distance/) · [LeetCode 国际站](https://leetcode.com/problems/edit-distance/)
+
+**简要题意：** 给定两个字符串，每次可插入、删除或替换一个字符，求将第一个字符串变成第二个的最少操作数。
 
 编辑距离：
 
-1. if(x=y)
+1. 如果 `x == y`：
    1. dfs(i, j) = dfs(i-1, j-1)
-2. else
+2. 否则：
    1. Dfs(i, j) = min(dfs(i-1, j) + dfs(i, j-1) + dfs(i-1, j-1)) + 1
 
 ```python
@@ -93,7 +97,7 @@ class Solution:
         return f[len(word2)]
 ```
 
-## 二、最长递增子序列 Longest Increasing Subqequence
+## 二、最长递增子序列（LIS）
 
 【最长递增子序列【基础算法精讲 20】】 https://www.bilibili.com/video/BV1ub411Q7sB/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70
 

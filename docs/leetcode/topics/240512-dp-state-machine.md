@@ -1,10 +1,14 @@
 # 状态机动态规划 State Machine DP
 
-## Idea
+## 思路
 
 ![image-20240512221510697](./240512-dp-state-machine.assets/image-20240512221510697.png)
 
-## [122. Best Time to Buy and Sell Stock II](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/)
+## 122. 买卖股票的最佳时机 II / Best Time to Buy and Sell Stock II
+
+[LeetCode 中文站](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/) · [LeetCode 国际站](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
+
+**简要题意：** prices[i] 为第 i 天股价。可完成多次买入卖出，但任意时刻最多持有一股。可在同一天先卖再买。返回最大总利润，不交易时利润为 0。
 
 ```python
 class Solution:
@@ -18,7 +22,11 @@ class Solution:
         return f0
 ```
 
-## [123. Best Time to Buy and Sell Stock III](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iii/) => At most two transactions
+## 123. 买卖股票的最佳时机 III / Best Time to Buy and Sell Stock III：最多完成两笔交易
+
+[LeetCode 中文站](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iii/) · [LeetCode 国际站](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/)
+
+**简要题意：** 给定每日股价，最多完成两次买入和卖出，同一时间只能持有一股，求最大利润。
 
 ```python
 class Solution:
@@ -33,7 +41,11 @@ class Solution:
         return dp[len(prices)-1][2][0]
 ```
 
-## [188. Best Time to Buy and Sell Stock IV](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/) => At most k transactions
+## 188. 买卖股票的最佳时机 IV / Best Time to Buy and Sell Stock IV：最多完成 k 笔交易
+
+[LeetCode 中文站](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/) · [LeetCode 国际站](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/)
+
+**简要题意：** 给定每日股价和交易上限 k，最多完成 k 次交易，同一时间只能持有一股，求最大利润。
 
 ```markdown
 Input: k = 2, prices = [3,2,6,5,0,3]
@@ -93,7 +105,7 @@ class Solution:
 
 1. 理解为什么是 dfs(n - 1, k, False)，因为 k == 0 时是最多交易 0 次，是有意义的。
 2. 递归中 j 是从 -1 到 k，所以有 k+2 个不同的 j，这个维度是 k+2
-3. 如果我们把 `i == -1` 当做边界，那需要 handle 从 -1 到 n - 1 的 i，所以有 n+1 个不同的 i，这个维度是 n+1
+3. 如果把 `i == -1` 作为边界，就需要处理从 `-1` 到 `n-1` 的所有 `i`，共 `n+1` 种取值，因此这一维需要 `n+1` 个位置。
 
 ![image-20240513010017067](./240512-dp-state-machine.assets/image-20240513010017067.png)
 
@@ -113,7 +125,7 @@ class Solution:
         return f[-1][-1][0]
 ```
 
-### f sample
+### 状态表 `f` 示例
 
 ![image-20240513011111890](./240512-dp-state-machine.assets/image-20240513011111890.png)
 
@@ -121,10 +133,18 @@ class Solution:
 
 ## 正好交易k次
 
-## [309. Best Time to Buy and Sell Stock with Cooldown](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-cooldown/)
+## 309. 买卖股票的最佳时机含冷冻期 / Best Time to Buy and Sell Stock with Cooldown
 
-## [714. Best Time to Buy and Sell Stock with Transaction Fee](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
+[LeetCode 中文站](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-cooldown/) · [LeetCode 国际站](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)
 
-## Reference
+**简要题意：** 可以多次买卖股票且最多持有一股。卖出后的下一天是冷冻期，不能买入；再下一天可以。返回最大利润。
+
+## 714. 买卖股票的最佳时机含手续费 / Best Time to Buy and Sell Stock with Transaction Fee
+
+[LeetCode 中文站](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/) · [LeetCode 国际站](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
+
+**简要题意：** 可多次买卖股票，同一时间只能持有一股，每笔完整交易支付一次手续费，求最大利润。
+
+## 参考资料
 
 1. [买卖股票的最佳时机【基础算法精讲 21】](https://www.bilibili.com/video/BV1ho4y1W7QK/?share_source=copy_web&vd_source=5d4accef9045e3ed4e08bbb7a80f3c70)

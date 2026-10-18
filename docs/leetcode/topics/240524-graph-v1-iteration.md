@@ -2,7 +2,7 @@
 
 # 图遍历 Graph Traversal, Topological Sort, Unicom Branch
 
-## Depth First Search Tree
+## 深度优先搜索（DFS）
 
 递归形式
 
@@ -30,11 +30,11 @@ def dfs(node):
                 visited[edgeW] = True
 ```
 
-## Bread First Search Tree
+## 广度优先搜索（BFS）
 
 https://leetcode.cn/problems/word-ladder/
 
-Stack
+队列：广度优先搜索使用先进先出的队列逐层访问。
 
 ## 图的无回路判定
 

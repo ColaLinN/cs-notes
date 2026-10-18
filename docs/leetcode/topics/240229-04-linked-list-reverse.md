@@ -5,9 +5,9 @@ tags: [leetcode]
 
 # 反转链表系列 Linked List Reverse Series
 
-## Idea
+## 思路
 
-### Reverse linked list
+### 反转链表
 
 ```python
 # Definition for singly-linked list.
@@ -30,7 +30,7 @@ class Solution:
 
 ![image-20240525152652093](./240229-04-linked-list-reverse.assets/image-20240525152652093.png)
 
-### Reverse Nodes in K-Group
+### 每 K 个结点一组反转链表
 
 ```python
 # Definition for singly-linked list.
@@ -76,11 +76,15 @@ class Solution:
 
 ![image-20240525162951593](./240229-04-linked-list-reverse.assets/image-20240525162951593.png)
 
-## [206. Reverse Linked List](https://leetcode.cn/problems/reverse-linked-list/)
+## 206. 反转链表 / Reverse Linked List
 
-prev = pre
+[LeetCode 中文站](https://leetcode.cn/problems/reverse-linked-list/) · [LeetCode 国际站](https://leetcode.com/problems/reverse-linked-list/)
 
-next = nxt
+**简要题意：** 反转单链表中所有节点的连接方向，返回反转后的头节点；空链表返回空。
+
+`prev` 与 `pre` 都表示前一个结点。
+
+`next` 与 `nxt` 都表示下一个结点。
 
 ```python
 # Definition for singly-linked list.
@@ -101,7 +105,11 @@ class Solution:
         return prev
 ```
 
-## [92. Reverse Linked List II](https://leetcode.cn/problems/reverse-linked-list-ii/)
+## 92. 反转链表 II / Reverse Linked List II
+
+[LeetCode 中文站](https://leetcode.cn/problems/reverse-linked-list-ii/) · [LeetCode 国际站](https://leetcode.com/problems/reverse-linked-list-ii/)
+
+**简要题意：** 反转单链表中从第 left 到第 right 个节点的部分，下标从 1 开始，其余节点保持不变。
 
 ```python
 # Definition for singly-linked list.
@@ -130,7 +138,11 @@ class Solution:
         return dummy.next
 ```
 
-## [25. Reverse Nodes in k-Group](https://leetcode.cn/problems/reverse-nodes-in-k-group/)
+## 25. K 个一组翻转链表 / Reverse Nodes in k-Group
+
+[LeetCode 中文站](https://leetcode.cn/problems/reverse-nodes-in-k-group/) · [LeetCode 国际站](https://leetcode.com/problems/reverse-nodes-in-k-group/)
+
+**简要题意：** 每 k 个节点为一组反转链表，最后不足 k 个的部分保持原样，不能只交换节点值。
 
 ```python
 # Definition for singly-linked list.
@@ -174,7 +186,11 @@ class Solution:
         return dummy.next
 ```
 
-## [24. Swap Nodes in Pairs](https://leetcode.cn/problems/swap-nodes-in-pairs/)
+## 24. 两两交换链表中的节点 / Swap Nodes in Pairs
+
+[LeetCode 中文站](https://leetcode.cn/problems/swap-nodes-in-pairs/) · [LeetCode 国际站](https://leetcode.com/problems/swap-nodes-in-pairs/)
+
+**简要题意：** 两两交换链表中相邻节点，若最后剩一个节点则保持原样，不能只交换节点值。
 
 ```python
 # Definition for singly-linked list.
@@ -204,7 +220,11 @@ class Solution:
         return dummy.next
 ```
 
-## [2816. Double a Number Represented as a Linked List](https://leetcode.cn/problems/double-a-number-represented-as-a-linked-list/)
+## 2816. 翻倍以链表形式表示的数字 / Double a Number Represented as a Linked List
+
+[LeetCode 中文站](https://leetcode.cn/problems/double-a-number-represented-as-a-linked-list/) · [LeetCode 国际站](https://leetcode.com/problems/double-a-number-represented-as-a-linked-list/)
+
+**简要题意：** 非负整数以高位在前的链表表示，将其乘以 2，并用相同形式返回结果。
 
 ```python
 # Definition for singly-linked list.
@@ -244,7 +264,11 @@ class Solution:
         return reverseList(dHead)
 ```
 
-## [445. Add Two Numbers II](https://leetcode.cn/problems/add-two-numbers-ii/)
+## 445. 两数相加 II / Add Two Numbers II
+
+[LeetCode 中文站](https://leetcode.cn/problems/add-two-numbers-ii/) · [LeetCode 国际站](https://leetcode.com/problems/add-two-numbers-ii/)
+
+**简要题意：** 两个非负整数按高位在前存入链表，返回它们的和，结果也用高位在前的链表表示。
 
 ```python
 # Definition for singly-linked list.
@@ -290,7 +314,11 @@ class Solution:
         return ral1
 ```
 
-## [2. Add Two Numbers](https://leetcode.cn/problems/add-two-numbers/)
+## 2. 两数相加 / Add Two Numbers
+
+[LeetCode 中文站](https://leetcode.cn/problems/add-two-numbers/) · [LeetCode 国际站](https://leetcode.com/problems/add-two-numbers/)
+
+**简要题意：** 两个非负整数按低位在前存入链表，逐位相加，返回同样以低位在前表示结果的新链表。
 
 ```python
 # Definition for singly-linked list.
@@ -333,12 +361,12 @@ class Solution:
         return al1
 ```
 
-ENG
+题面语句释义
 
-1. `k` is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of `k` then left-out nodes, in the end, should remain as it is.
-   1. the number of nodes is not a multiple of `k` then left-out nodes
-   2. should remain as it is.
+1. `k` 是不大于链表长度的正整数。若结点总数不是 `k` 的倍数，末尾不足 `k` 个结点的部分应保持原来的顺序。
+   1. “结点数量不是 `k` 的倍数”意味着末尾会剩下一组不足 `k` 个的结点。
+   2. “保持原样”意味着这部分不进行反转。
 
-## Reference
+## 参考资料
 
 1. [灵神视频，反转链表](https://www.bilibili.com/video/BV1sd4y1x7KN/?spm_id_from=333.788&vd_source=66a0b89065d7f04805223fd7f2d613a6)

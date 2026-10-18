@@ -13,7 +13,11 @@ tags: [leetcode]
 
 自底向上：递推，即递推
 
-## 01 [198. House Robber](https://leetcode.cn/problems/house-robber/)
+## 01 198. 打家劫舍 / House Robber
+
+[LeetCode 中文站](https://leetcode.cn/problems/house-robber/) · [LeetCode 国际站](https://leetcode.com/problems/house-robber/)
+
+**简要题意：** 房屋沿直线排列，第 i 间存有 nums[i] 金额。不能同时选择相邻房屋，返回可获得的最大金额。可以不选择任何房屋。
 
 ### 递归思路（自顶向下）
 
@@ -26,7 +30,7 @@ tags: [leetcode]
    2. 可以发现他们都需要dfs(n-2)，我们可以用一个cache数组把他们记忆住
 4. 时间复杂度：O(n)
 5. 空间复杂度：O(n)
-6. end
+6. 完成状态定义、转移和边界后，再实现代码。
 
 ```
 class Solution:
@@ -94,7 +98,7 @@ class Solution:
 
 ### 配图
 
-![image-20240329014541239](./240324 02 DP核心思想.assets/image-20240329014541239.png)
+![image-20240329014541239](./240324%2002%20DP%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3.assets/image-20240329014541239.png)
 
 ### 原理
 
@@ -105,4 +109,4 @@ class Solution:
 
 
 
-![image-20240324015214280](./240324 DP核心思想.assets/image-20240324015214280.png)
+![image-20240324015214280](./240324%20DP%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3.assets/image-20240324015214280.png)

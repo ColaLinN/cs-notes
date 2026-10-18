@@ -5,15 +5,15 @@ tags: [leetcode]
 
 # 二叉树前中后向遍历 Binary Tree Front, Middle, and Post Order Traversal
 
-## Idea
+## 思路
 
-### Front, Middle, and Post Order Traversal
+### 前序、中序与后序遍历
 
 ![image-20240525180800174](./240309-09-bt-front-middle-back-traversal.assets/image-20240525180800174.png)
 
-### Traversal Recursion Template
+### 递归遍历模板
 
-Middle-order traversal
+以中序遍历为例：
 
 ```python
 # Definition for a binary tree node.
@@ -55,14 +55,14 @@ print(res)
 # post: [2, 3, 1]
 ```
 
-### Traversal Iteration Template
+### 迭代遍历模板
 
 在递归中，节点的访问关系是存在函数调用栈中的。
 
 如果我们想用迭代的方法来实现树的前中后序访问，我们需要一个栈，以及记录节点被访问与否。
 
-- Approach 1，在 root 节点上压入 null 节点来辨别 root 节点。
-- Approach 2，用一个 visited map 来记录已经 加入结果集/被访问 的节点。
+- 方法一：在栈中给待处理的 `root` 结点配一个空结点标记，用来区分“继续展开”与“正式访问”。
+- 方法二：用访问标记表记录结点是否已经展开或加入结果集。
 
 下面代码为中序遍历，在 root 节点上压入 null 节点来辨别 root 节点。
 
@@ -109,9 +109,13 @@ root.right = TreeNode(3)
 print(iterateTree(root))
 ```
 
-## [98. Validate Binary Search Tree](https://leetcode.cn/problems/validate-binary-search-tree/)
+## 98. 验证二叉搜索树 / Validate Binary Search Tree
 
-### My Recursion Solution
+[LeetCode 中文站](https://leetcode.cn/problems/validate-binary-search-tree/) · [LeetCode 国际站](https://leetcode.com/problems/validate-binary-search-tree/)
+
+**简要题意：** 判断二叉树是否为严格二叉搜索树：每个结点左子树的所有值都小于它，右子树的所有值都大于它；左右子树也必须满足此条件。不允许重复值。
+
+### 递归解法
 
 ```python
 # Definition for a binary tree node.
@@ -131,9 +135,9 @@ class Solution:
         return isBST(root, float("-inf"), float("inf"))
 ```
 
-### Front Order Traversal
+### 前序遍历
 
-We can pass the root's value to subnodes
+可以把祖先结点带来的取值上下界传给子结点，从上到下检查每个结点是否处在合法范围内。
 
 ![image-20240525183040277](./240309-09-bt-front-middle-back-traversal.assets/image-20240525183040277.png)
 
@@ -151,12 +155,12 @@ class Solution:
         return left < root.val < right and self.isValidBST(root.left, left, root.val) and self.isValidBST(root.right, root.val, right)
 ```
 
-### Middle Order Traversal
+### 中序遍历
 
-It is like iterating through a monotonically increasing array 
+二叉搜索树的中序遍历应当像遍历一个严格递增的数组。
 
-- The current node's value must be smaller than previous node's value
-- The initial previous node's value is `-inf` to ensure the first node's value is valid
+- 当前结点的值必须严格大于前一个结点的值。（原文误写为“小于”，此处按中序递增的判定条件修正。）
+- 将前一个结点的初始值设为负无穷 `-inf`，使第一个结点也能通过比较。
 
 ![image-20240525183101194](./240309-09-bt-front-middle-back-traversal.assets/image-20240525183101194.png)
 
@@ -182,9 +186,9 @@ class Solution:
         return True
 ```
 
-### Post Order Traversal
+### 后序遍历
 
-Needs to return the valid values range for checking
+子树需要向上返回可用于验证的最小值与最大值，再检查根结点是否大于左子树所有值、且小于右子树所有值。
 
 ![image-20240525183415930](./240309-09-bt-front-middle-back-traversal.assets/image-20240525183415930.png)
 
@@ -209,7 +213,11 @@ class Solution:
 
 ```
 
-## [105. Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+## 105. 从前序与中序遍历序列构造二叉树 / Construct Binary Tree from Preorder and Inorder Traversal
+
+[LeetCode 中文站](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) · [LeetCode 国际站](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+
+**简要题意：** 给定同一棵二叉树的前序和中序遍历，节点值互不相同，重建并返回二叉树。
 
 ```python
 # Definition for a binary tree node.
@@ -230,7 +238,7 @@ class Solution:
         
 ```
 
-## Reference
+## 参考资料
 
 1. [二叉树：前中后序迭代方式统一写法](https://zhuanlan.zhihu.com/p/260497281)
 1. [二叉搜索树判断](https://www.bilibili.com/video/BV14G411P7C1/?spm_id_from=333.788&vd_source=66a0b89065d7f04805223fd7f2d613a6)

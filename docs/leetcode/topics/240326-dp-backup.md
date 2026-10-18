@@ -36,13 +36,17 @@ tags: [leetcode]
 2. 恰好装capacity，求方案数/最大/最小价值和
 3. 至少装capacity，求方案数/最小价值和
 
-## 01 [494. Target Sum](https://leetcode.cn/problems/target-sum/) 01 背包
+## 01 494. 目标和 / Target Sum 01 背包
+
+[LeetCode 中文站](https://leetcode.cn/problems/target-sum/) · [LeetCode 国际站](https://leetcode.com/problems/target-sum/)
+
+**简要题意：** 在每个 nums[i] 前独立选择 + 或 -，将所有带符号的数相加。返回结果等于 target 的符号选择数量。+0 和 -0 是两种不同选择。
 
 ### 递归写法，记忆化搜索
 
-1. if nums[i] > c
+1. 如果 `nums[i] > c`，当前元素无法放入剩余容量：
    1. dfs(n, c) = dfs(n-1, c)
-2. else
+2. 否则：
    1. dfs(n, c) = dfs(n-1, c) + dfs(n-1, nums[i]-c)
 
 ```python
@@ -101,9 +105,9 @@ class Solution:
 
 f[n] [c] = f[n-1] [c] + f[n-1] [nums[i] - c]
 
-1. if nums[i] > c
+1. 如果 `nums[i] > c`，当前元素无法放入剩余容量：
    1. f[n+1] [c] = f[n] [c]
-2. else
+2. 否则：
    1. f[n+1] [c] = f[n] [c] + f[n] [nums[i] - c]
 
 ```python
@@ -169,13 +173,17 @@ class Solution:
         return f[target]
 ```
 
-## 02 [322. Coin Change](https://leetcode.cn/problems/coin-change/) 完全背包
+## 02 322. 零钱兑换 / Coin Change 完全背包
+
+[LeetCode 中文站](https://leetcode.cn/problems/coin-change/) · [LeetCode 国际站](https://leetcode.com/problems/coin-change/)
+
+**简要题意：** 每种硬币有无限枚，求恰好凑出 amount 的最少硬币数。不可能时返回 -1，amount=0 时返回 0。
 
 ### 递归思路，自顶向下记忆化搜索
 
-1. if remained_amount < x， 只能不选当前硬币
+1. 如果剩余金额 `remained_amount < x`，只能不选当前硬币。
    1. dfs(n, amount) = dfs(n-1, amount)
-2. Else，选或不选当前硬币，且可以重复选择当前硬币
+2. 否则，可以选择或不选择当前硬币；选择后仍可继续使用同一种硬币。
    1. dfs(n, amount) = min(dfs(n-1, amount), dfs(n, amount-nums[n])+1)
 
 ### 递推
@@ -224,7 +232,11 @@ class Solution:
 
 
 
-## 03 [518. Coin Change II](https://leetcode.cn/problems/coin-change-ii/)
+## 03 518. 零钱兑换 II / Coin Change II
+
+[LeetCode 中文站](https://leetcode.cn/problems/coin-change-ii/) · [LeetCode 国际站](https://leetcode.com/problems/coin-change-ii/)
+
+**简要题意：** 给定硬币面额和总金额，每种硬币可使用任意次，求凑出该金额的组合数；不同排列算同一组合。
 
 管你0-1背包还是完全背包我都一把梭
 

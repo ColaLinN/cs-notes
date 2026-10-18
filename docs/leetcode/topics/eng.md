@@ -4,21 +4,20 @@
 1. 连续的
 
    1. "Consecutive" 更多用于描述时间、数字或事件的连续性，强调按顺序或连贯地发生。例如，“连续五天下雨”或“连续三个数字”。"Contiguous" 则更常用于描述物理空间上的接近或相邻，强调在空间上相接触或毗邻。
-   2. consecutive。Given a binary array `nums` and an integer `k`, return *the maximum number of consecutive* `1`*'s in the array if you can flip at most* `k` `0`'s.
+   2. `consecutive`：连续的。例如：给定二进制数组 `nums` 和整数 `k`，最多可以把 `k` 个 `0` 翻转成 `1`，返回数组中连续 `1` 的最大个数。
 
-   3. contiguous 相邻的，连续的。Subarray: A **subarray** is a contiguous **non-empty** sequence of elements within an array.
+   3. `contiguous`：相邻的、连续的。例如：子数组（subarray）是数组中一段**连续且非空**的元素序列。
 
-2. `n` is a multiple of `4`.倍数
+2. `multiple`：倍数。`n is a multiple of 4` 的意思是“`n` 是 `4` 的倍数”。
 
-3. The window size can grow and shrink depending upon the number of zeros we have (we don't acutally have to flip the zeros here!)
+3. 窗口大小可以根据其中 `0` 的数量扩大或缩小；只需统计窗口中的 `0`，无需真的修改数组来翻转它们。
 
-4. substrig means the contiguous sequence of elements within an array
+4. `substring`：子串，指字符串中一段连续的字符；`subarray` 指数组中一段连续的元素。原文将 `substring` 拼成了 `substrig`，并混用了数组与字符串的表述，此处区分说明。
 
-5. "O(n)" is pronounced as "oh of en" or "big oh of en." It's a way of describing the time complexity of an algorithm, indicating that the algorithm's performance grows linearly with the size of the input (n).
+5. `O(n)` 可读作 “oh of en” 或 “big oh of en”。它用于描述算法的时间复杂度：随着输入规模 `n` 增大，运行所需的操作次数按线性规模增长。
 
-6. 单调递增的线段 monotonically increasing line segment
-   1. Suppose an array of length `n` sorted in ascending order
-   1. There is an integer array `nums` sorted in ascending order (with **distinct** values).
+6. `monotonically increasing line segment`：单调递增的线段。
+   1. 题面“假设有一个长度为 `n`、按升序排列的数组”，是在给出数组长度与排序条件。
+   2. 题面“有一个按升序排列、元素**互不相同**的整数数组 `nums`”，其中 `distinct` 表示没有重复值。
 
-7. mid => middle
-
+7. `mid` 是 `middle` 的缩写，通常表示中间位置或中间下标。
