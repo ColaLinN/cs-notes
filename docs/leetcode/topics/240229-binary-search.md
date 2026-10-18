@@ -19,10 +19,10 @@ tags: [leetcode]
 
 ## bisect_left
 
-### (i, j)
+### [i, j] 闭区间
 
 ```python
-# (i, j) -> i <= j; i = mid + 1, j = mid - 1
+# [i, j] -> i <= j; i = mid + 1, j = mid - 1
 def bisect_left(nums, target):
     i = 0
     j = len(nums) - 1
@@ -35,12 +35,12 @@ def bisect_left(nums, target):
     return i
 ```
 
-### [i, j)
+### [i, j) 半开区间
 
 There is problem, I cannot figure it out for now.
 
 ```python
-# [i, j) -> i < j; i = mid, j = mid - 1
+# [i, j) -> i < j; i = mid + 1, j = mid
 def bisect_left(nums, target):
     i = 0
     j = len(nums)  # 使用半开区间 [i, j)
@@ -56,10 +56,10 @@ for i in range(1, 10):
     print(i, bisect_left_v1([1,2,3,4,5], i))
 ```
 
-### [i, j]
+### (i, j) 开区间
 
 ```python
-# [i, j] -> i + 1 < j; i = mid, j = mid
+# (i, j) -> i + 1 < j; i = mid, j = mid
 def bisect_left(nums, target):
     i = -1
     j = len(nums)
@@ -69,7 +69,7 @@ def bisect_left(nums, target):
             i = mid
         else:
             j = mid
-    return i + 1
+    return i + 1 # j
 ```
 
 ## [162. Find Peak Element](https://leetcode.cn/problems/find-peak-element/)

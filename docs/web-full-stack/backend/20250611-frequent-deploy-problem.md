@@ -41,7 +41,7 @@ mtr -4 -c 100 -r 10.xxx.xx.xx
 1.  纠结于选择语言更符合前后端开发的习惯，python还是typescript，最后选了Python
     1.  人生苦短，我选python
 2.  纠结于是否创建服务、还是和原有服务共用instance并且设置alb域名映射到新端口
-    1.  直接创建了新服务
+    1.  直接创建新服务
 3.  不明白sse和http的区别，看文档看到最后才知道sse是为了server-to-client，以后只会推streamable-http
 4.  对于health_check的理解生疏了，应该配到`0.0.0.0`（监听本机所有IP地址，接收本机所有网卡发送到本进程端口的请求），而不是`127.0.0.1`（localhost, 也即环回地址）
     1.  简单来说想让外网通过访问，需要配置到`0.0.0.0`
