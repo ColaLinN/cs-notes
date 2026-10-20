@@ -216,4 +216,3 @@ if not bloom_filter.contains(key):
 
 1. [Redis进阶 - 高可用：哨兵机制（Redis Sentinel）详解](https://pdai.tech/md/db/nosql-redis/db-redis-x-sentinel.html)
 2. [12 道 Redis 精选面试题](https://javabetter.cn/interview/redis-12.html)
-3. [一致性哈希 Consistent Hashing](https://doc.fenglyulin.com/docs/system-design/Book/consistent-hashing)

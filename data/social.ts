@@ -29,7 +29,7 @@ const social: Social = {
   discord: 'https://discord.gg/',
 }
 
-const socialSet: Record<keyof Social | 'rss', SocialValue> = {
+const socialSet: Record<keyof Social, SocialValue> = {
   github: {
     href: social.github,
     title: 'GitHub',
@@ -83,12 +83,6 @@ const socialSet: Record<keyof Social | 'rss', SocialValue> = {
     title: '网易云',
     icon: 'ri:netease-cloud-music-line',
     color: '#C20C0C',
-  },
-  rss: {
-    href: '/blog/rss.xml',
-    title: 'RSS',
-    icon: 'ri:rss-line',
-    color: '#FFA501',
   },
 }
 

@@ -43,12 +43,7 @@ const config: Config = {
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           showLastUpdateTime: true,
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -296,26 +291,6 @@ const config: Config = {
         //     },
         //   ],
         // },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            // {
-            //   label: 'GitHub',
-            //   href: 'https://github.com/ColaLinN/fenglyu-docs-site-v1',
-            // },
-            // {
-            //   html: `
-            //     <a href="https://docusaurus.io/" target="_blank" rel="noreferrer noopener">
-            //       <img src="/img/buildwith.png" alt="build with docusaurus" width="120" height="50"/>
-            //     <a/>
-            //     `,
-            // },
-          ],
-        },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Fenglyu`,
     },

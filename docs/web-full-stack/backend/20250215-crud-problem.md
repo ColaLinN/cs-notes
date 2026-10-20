@@ -1,5 +1,0 @@
-
-
-# CURD Problem
-
-Abc
